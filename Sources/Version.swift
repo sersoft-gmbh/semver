@@ -105,14 +105,18 @@ public struct Version: Hashable, Comparable, LosslessStringConvertible {
     }
     
     public static func <(lhs: Version, rhs: Version) -> Bool {
-        return (lhs.major, lhs.minor, lhs.patch, lhs.prerelease)
-                                    <
-               (rhs.major, rhs.minor, rhs.patch, rhs.prerelease)
+        return (lhs.major, lhs.minor, lhs.patch)
+                                <
+               (rhs.major, rhs.minor, rhs.patch)
+                                || // A version with a prerelease has a lower precedence than the same without
+               ((!lhs.prerelease.isEmpty && rhs.prerelease.isEmpty) || (lhs.prerelease < rhs.prerelease))
     }
     
     public static func >(lhs: Version, rhs: Version) -> Bool {
-        return (lhs.major, lhs.minor, lhs.patch, lhs.prerelease)
-                                    >
-               (rhs.major, rhs.minor, rhs.patch, rhs.prerelease)
+        return (lhs.major, lhs.minor, lhs.patch)
+                                >
+               (rhs.major, rhs.minor, rhs.patch)
+                                || // A version with a prerelease has a lower precedence than the same without
+               ((lhs.prerelease.isEmpty && !rhs.prerelease.isEmpty) || (lhs.prerelease > rhs.prerelease))
     }
 }
