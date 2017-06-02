@@ -70,8 +70,10 @@ public struct Version: Hashable, Comparable, LosslessStringConvertible {
             else { return nil }
         
         let prerelease: String
-        if let range = description.range(of: "-[0-9A-Za-z-]+", options: [.regularExpression]) {
-            prerelease = description.substring(with: description.index(after: range.lowerBound)..<range.upperBound)
+        if let searchRange = description.range(of: "(^|\\.)[0-9]+-[0-9A-Za-z-]+(\\+|$)", options: [.regularExpression]),
+            case let substr = description.substring(with: searchRange),
+            let range = substr.range(of: "[0-9]-[0-9A-Za-z-]+", options: [.regularExpression]) {
+            prerelease = substr.substring(with: substr.index(range.lowerBound, offsetBy: 2)..<range.upperBound)
         } else {
             prerelease = ""
         }
