@@ -57,11 +57,11 @@ public struct Version: Hashable, Comparable, LosslessStringConvertible {
     }
     
     public init?(_ description: String) {
-        guard description.range(of: "^([0-9]+\\.){2}[0-9]+(-[0-9A-Za-z-]+)?(\\+[0-9A-Za-z-]+\\.?)*$", options: [.regularExpression]) != nil
+        guard description.range(of: "^([0-9]+\\.){2}[0-9]+(-[0-9A-Za-z-]+)?(\\+([0-9A-Za-z-]+\\.?)*)?$", options: [.regularExpression]) != nil
             else { return nil }
         
         // This should be fine after above's regular expression
-        let idx = description.range(of: "[0-9](+|\\-)", options: [.regularExpression])?.upperBound ?? description.endIndex
+        let idx = description.range(of: "[0-9](\\+|-)", options: [.regularExpression]).map { description.index(before: $0.upperBound) } ?? description.endIndex
         let parts = description.substring(to: idx).components(separatedBy: ".")
         guard parts.count == 3, // TODO: Should we support versions like "1.0"?
             let major = Int(parts[0]),
@@ -75,9 +75,9 @@ public struct Version: Hashable, Comparable, LosslessStringConvertible {
         } else {
             prerelease = ""
         }
-
+        
         let metadata: [String]
-        if let range = description.range(of: "(\\+[0-9A-Za-z-]+\\.?)+$", options: [.regularExpression]) {
+        if let range = description.range(of: "\\+([0-9A-Za-z-]+\\.?)+$", options: [.regularExpression]) {
             let metadataString = description.substring(with: description.index(after: range.lowerBound)..<range.upperBound)
             metadata = metadataString.components(separatedBy: ".")
         } else {
