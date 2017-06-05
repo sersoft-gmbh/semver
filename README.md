@@ -92,5 +92,5 @@ If you find a bug / like to see a new feature in SemVer there are a few ways of 
 
 ## License
 
-See LICENSE.md.
+See LICENSE file.
 
