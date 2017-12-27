@@ -24,8 +24,8 @@ public struct Version: Hashable, Comparable, LosslessStringConvertible {
     }
     public var metadata: [String] {
         willSet {
-            assert(newValue.first { !CharacterSet(charactersIn: $0).isSubset(of: .versionSuffixAllowed) } == nil)
-            assert(newValue.first { $0.isEmpty } == nil)
+            assert(!newValue.contains { !CharacterSet(charactersIn: $0).isSubset(of: .versionSuffixAllowed) })
+            assert(!newValue.contains { $0.isEmpty })
         }
     }
 
@@ -42,8 +42,8 @@ public struct Version: Hashable, Comparable, LosslessStringConvertible {
         assert(minor >= 0)
         assert(patch >= 0)
         assert(CharacterSet(charactersIn: prerelease).isSubset(of: .versionSuffixAllowed))
-        assert(metadata.first { !CharacterSet(charactersIn: $0).isSubset(of: .versionSuffixAllowed) } == nil)
-        assert(metadata.first { $0.isEmpty } == nil)
+        assert(!metadata.contains { !CharacterSet(charactersIn: $0).isSubset(of: .versionSuffixAllowed) })
+        assert(!metadata.contains { $0.isEmpty })
 
         self.major = major
         self.minor = minor
@@ -61,8 +61,8 @@ public struct Version: Hashable, Comparable, LosslessStringConvertible {
             else { return nil }
 
         // This should be fine after above's regular expression
-        let idx = description.range(of: "[0-9](\\+|-)", options: [.regularExpression]).map { description.index(before: $0.upperBound) } ?? description.endIndex
-        let parts = description.substring(to: idx).components(separatedBy: ".")
+        let idx = description.range(of: "[0-9](\\+|-)", options: .regularExpression).map { description.index(before: $0.upperBound) } ?? description.endIndex
+        let parts = description[..<idx].components(separatedBy: ".")
         guard parts.count == 3, // TODO: Should we support versions like "1.0"?
             let major = Int(parts[0]),
             let minor = Int(parts[1]),
@@ -70,17 +70,17 @@ public struct Version: Hashable, Comparable, LosslessStringConvertible {
             else { return nil }
 
         let prerelease: String
-        if let searchRange = description.range(of: "(^|\\.)[0-9]+-[0-9A-Za-z-]+(\\+|$)", options: [.regularExpression]),
-            case let substr = description.substring(with: searchRange),
-            let range = substr.range(of: "[0-9]-[0-9A-Za-z-]+", options: [.regularExpression]) {
-            prerelease = substr.substring(with: substr.index(range.lowerBound, offsetBy: 2)..<range.upperBound)
+        if let searchRange = description.range(of: "(^|\\.)[0-9]+-[0-9A-Za-z-]+(\\+|$)", options: .regularExpression),
+            case let substr = description[searchRange],
+            let range = substr.range(of: "[0-9]-[0-9A-Za-z-]+", options: .regularExpression) {
+            prerelease = String(substr[substr.index(range.lowerBound, offsetBy: 2)..<range.upperBound])
         } else {
             prerelease = ""
         }
 
         let metadata: [String]
-        if let range = description.range(of: "\\+([0-9A-Za-z-]+\\.?)+$", options: [.regularExpression]) {
-            let metadataString = description.substring(with: description.index(after: range.lowerBound)..<range.upperBound)
+        if let range = description.range(of: "\\+([0-9A-Za-z-]+\\.?)+$", options: .regularExpression) {
+            let metadataString = description[description.index(after: range.lowerBound)..<range.upperBound]
             metadata = metadataString.components(separatedBy: ".")
         } else {
             metadata = []
