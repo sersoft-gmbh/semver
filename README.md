@@ -32,17 +32,27 @@ patchRelease.versionString() // -> "3.2.1"
 
 ### Version Strings
 
-As seen in above's examples, there's a func to return a string represenation of a `Version`.
-The `versionString(includingPrerelease: Bool = default, includingMetadata: Bool = default)` function allows to selectively include the `prerelease` and `metadata` fields (if they exist). Those fields are always excluded if they are empty.
+As seen in above's examples, there's a func to return a string represenation of a `Version`. The `versionString(formattedWith options: FormattingOptions = default)` function allows to retrieve a formatted string using the options passed. By default the full version is returned.
+The following options currently exist:
+
+- `.dropPatchIfZero`: If `patch` is `0`, it won't be added to the version string.
+- `.dropMinorIfZero`: If `minor` and `patch` are both `0`, only the `major` number is added. Requires `.dropPatchIfZero`.
+- `.dropTrailingZeros`: A convenience combination of `.dropPatchIfZero` and `.dropMinorIfZero`.
+- `.includePrerelease`: If `prerelease` is not empty, it is added to the version string.
+- `.includeMetadata`: If `metadata` is not empty, it is added to the version string.
+- `.fullVersion`: A convenience combination of `.includePrerelease` and `.includeMetadata`. The default if you don't pass anything to `versionString`.
 
 ```swift
 let version = Version(major: 1, minor: 2, patch: 3,
                       prerelease: "beta",
                       metadata: "exp", "test")
-version.versionString(includingMetadata: false) // -> "1.2.3-beta"
-version.versionString(includingPrerelease: false) // -> "1.2.3+exp.test"
-version.versionString(includingPrerelease: false, includingMetadata: false) // -> "1.2.3"
+version.versionString(formattedWith: .includePrerelease]) // -> "1.2.3-beta"
+version.versionString(formattedWith: .includeMetadata) // -> "1.2.3+exp.test"
+version.versionString(formattedWith: []) // -> "1.2.3"
 
+let version2 = Version(major: 2)
+version2.versionString(formattedWith: .dropPatchIfZero) // -> "2.0"
+version2.versionString(formattedWith: .dropTrailingZeros) // -> "2"
 ```
 
 A `Version` can also be created from a String. All Strings created by the `versionString` func should result in the same `Version` they were created from:
@@ -79,7 +89,7 @@ prereleaseVersion < finalVersion // -> true
 
 ### Validity Checks
 
-`Version` performs some validity checks on its fields. This means, that no negative numbers are allowed for `major`, `minor` and `patch`. Also, the `prerelease` and `metadata` Strings must only contain alphanumeric characters plus `-` (hyphen). However, to keep working with `Version` easy, these rules are only checked in non-optimized builds (using `assert()`). The result of using not allowed numbers / characters in optimized builds is undetermined. While calling `versionString()` very likely won't break, it certainly won't be possible to recreate a version containing invalid numbers / characters using `init(_ description: String)`.
+`Version` performs some validity checks on its fields. This means, that no negative numbers are allowed for `major`, `minor` and `patch`. Also, the `prerelease` and `metadata` Strings must only contain alphanumeric characters plus `-` (hyphen). However, to keep working with `Version` production-safe, these rules are only checked in non-optimized builds (using `assert()`). The result of using not allowed numbers / characters in optimized builds is undetermined. While calling `versionString()` very likely won't break, it certainly won't be possible to recreate a version containing invalid numbers / characters using `init(_ description: String)`.
 
 
 ## Contributing

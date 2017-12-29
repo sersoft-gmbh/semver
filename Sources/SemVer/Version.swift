@@ -57,17 +57,18 @@ public struct Version: Hashable, Comparable, LosslessStringConvertible {
     }
 
     public init?(_ description: String) {
-        guard description.range(of: "^([0-9]+\\.){2}[0-9]+(-[0-9A-Za-z-]+)?(\\+([0-9A-Za-z-]+\\.?)*)?$", options: [.regularExpression]) != nil
+        guard !description.isEmpty else { return nil }
+        guard description.range(of: "^([0-9]+\\.){0,2}[0-9]+(-[0-9A-Za-z-]+)?(\\+([0-9A-Za-z-]+\\.?)*)?$", options: .regularExpression) != nil
             else { return nil }
 
         // This should be fine after above's regular expression
         let idx = description.range(of: "[0-9](\\+|-)", options: .regularExpression).map { description.index(before: $0.upperBound) } ?? description.endIndex
-        let parts = description[..<idx].components(separatedBy: ".")
-        guard parts.count == 3, // TODO: Should we support versions like "1.0"?
-            let major = Int(parts[0]),
-            let minor = Int(parts[1]),
-            let patch = Int(parts[2])
+        var parts: Array<String> = description[..<idx].components(separatedBy: ".").reversed()
+        guard (1...3).contains(parts.count),
+            let major = parts.popLast().flatMap(Int.init)
             else { return nil }
+        let minor = parts.popLast().flatMap(Int.init) ?? 0
+        let patch = parts.popLast().flatMap(Int.init) ?? 0
 
         let prerelease: String
         if let searchRange = description.range(of: "(^|\\.)[0-9]+-[0-9A-Za-z-]+(\\+|$)", options: .regularExpression),
@@ -89,17 +90,25 @@ public struct Version: Hashable, Comparable, LosslessStringConvertible {
         self.init(major: major, minor: minor, patch: patch, prerelease: prerelease, metadata: metadata)
     }
 
-    public func versionString(includingPrerelease: Bool = true, includingMetadata: Bool = true) -> String {
-        var versionString = "\(major).\(minor).\(patch)"
-        if includingPrerelease, !prerelease.isEmpty {
+    public func versionString(formattedWith options: FormattingOptions = .fullVersion) -> String {
+        var versionString = "\(major)"
+        if !options.contains(.dropPatchIfZero) || patch != 0 {
+            versionString += ".\(minor).\(patch)"
+        } else if !options.contains(.dropMinorIfZero) || minor != 0 {
+            versionString += ".\(minor)"
+        }
+        if options.contains(.includePrerelease) && !prerelease.isEmpty {
             versionString += "-\(prerelease)"
         }
-        if includingMetadata, !metadata.isEmpty {
+        if options.contains(.includeMetadata) && !metadata.isEmpty {
             versionString += "+\(metadata.joined(separator: "."))"
         }
         return versionString
     }
+}
 
+// MARK: - Comparison
+public extension Version {
     public static func ==(lhs: Version, rhs: Version) -> Bool {
         return (lhs.major, lhs.minor, lhs.patch, lhs.prerelease)
                                     ==
@@ -120,5 +129,48 @@ public struct Version: Hashable, Comparable, LosslessStringConvertible {
                (rhs.major, rhs.minor, rhs.patch)
                                 || // A version with a prerelease has a lower precedence than the same without
                ((lhs.prerelease.isEmpty && !rhs.prerelease.isEmpty) || (lhs.prerelease > rhs.prerelease))
+    }
+}
+
+// MARK: - Formatting Options
+public extension Version {
+    public struct FormattingOptions: OptionSet {
+        public typealias RawValue = Int
+
+        public let rawValue: RawValue
+        public init(rawValue: RawValue) { self.rawValue = rawValue }
+    }
+}
+
+public extension Version.FormattingOptions {
+    static let dropPatchIfZero: Version.FormattingOptions = .init(rawValue: 1 << 0)
+    static let dropMinorIfZero: Version.FormattingOptions = .init(rawValue: 1 << 1)
+    static let includePrerelease: Version.FormattingOptions = .init(rawValue: 1 << 2)
+    static let includeMetadata: Version.FormattingOptions = .init(rawValue: 1 << 3)
+
+    /// Combination of .includePrerelease and .includeMetadata
+    public static let fullVersion: Version.FormattingOptions = [.includePrerelease, .includeMetadata]
+    /// Combination of .dropPatchIfZero and .dropMinorIfZero
+    public static let dropTrailingZeros: Version.FormattingOptions = [.dropMinorIfZero, .dropPatchIfZero]
+}
+
+// MARK: - Deprecations
+public extension Version {
+    @available(*, deprecated, message: "Use formatting options")
+    public func versionString(includingPrerelease: Bool, includingMetadata: Bool) -> String {
+        var options: FormattingOptions = []
+        if includingPrerelease { options.insert(.includePrerelease) }
+        if includingMetadata { options.insert(.includeMetadata) }
+        return versionString(formattedWith: options)
+    }
+
+    @available(*, deprecated, message: "Use formatting options")
+    public func versionString(includingPrerelease: Bool) -> String {
+        return versionString(includingPrerelease: includingPrerelease, includingMetadata: true)
+    }
+
+    @available(*, deprecated, message: "Use formatting options")
+    public func versionString(includingMetadata: Bool) -> String {
+        return versionString(includingPrerelease: true, includingMetadata: includingMetadata)
     }
 }
