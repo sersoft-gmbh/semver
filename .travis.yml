@@ -1,3 +1,6 @@
+branches:
+  only:
+    - master
 language: swift
 os: osx
 osx_image: xcode10
