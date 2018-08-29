@@ -24,13 +24,8 @@ public struct Version: Hashable, Comparable, LosslessStringConvertible {
     }
     public var metadata: [String] {
         willSet {
-            assert(!newValue.contains { !CharacterSet(charactersIn: $0).isSubset(of: .versionSuffixAllowed) })
-            assert(!newValue.contains { $0.isEmpty })
+            assert(newValue.allSatisfy { !$0.isEmpty && CharacterSet(charactersIn: $0).isSubset(of: .versionSuffixAllowed) })
         }
-    }
-
-    public var hashValue: Int {
-        return major.hashValue ^ minor.hashValue ^ patch.hashValue ^ prerelease.hashValue
     }
 
     public var description: String {
@@ -42,8 +37,7 @@ public struct Version: Hashable, Comparable, LosslessStringConvertible {
         assert(minor >= 0)
         assert(patch >= 0)
         assert(CharacterSet(charactersIn: prerelease).isSubset(of: .versionSuffixAllowed))
-        assert(!metadata.contains { !CharacterSet(charactersIn: $0).isSubset(of: .versionSuffixAllowed) })
-        assert(!metadata.contains { $0.isEmpty })
+        assert(metadata.allSatisfy { !$0.isEmpty && CharacterSet(charactersIn: $0).isSubset(of: .versionSuffixAllowed) })
 
         self.major = major
         self.minor = minor
@@ -88,6 +82,13 @@ public struct Version: Hashable, Comparable, LosslessStringConvertible {
         }
 
         self.init(major: major, minor: minor, patch: patch, prerelease: prerelease, metadata: metadata)
+    }
+
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(major)
+        hasher.combine(minor)
+        hasher.combine(patch)
+        hasher.combine(prerelease)
     }
 
     public func versionString(formattedWith options: FormattingOptions = .fullVersion) -> String {
