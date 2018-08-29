@@ -133,21 +133,21 @@ final class VersionTests: XCTestCase {
 
         // We need to compare metadata manually here, since it's not considered in equality check
         XCTAssertEqual(v1, v1FromString)
-        XCTAssertEqual(v1.metadata, v1FromString?.metadata ?? ["nope"])
+        XCTAssertEqual(v1.metadata, v1FromString?.metadata)
         XCTAssertEqual(v2, v2FromString)
-        XCTAssertEqual(v2.metadata, v2FromString?.metadata ?? ["nope"])
+        XCTAssertEqual(v2.metadata, v2FromString?.metadata)
         XCTAssertEqual(v3, v3FromString)
-        XCTAssertEqual(v3.metadata, v3FromString?.metadata ?? ["nope"])
+        XCTAssertEqual(v3.metadata, v3FromString?.metadata)
         XCTAssertEqual(v4, v4FromString)
-        XCTAssertEqual(v4.metadata, v4FromString?.metadata ?? ["nope"])
+        XCTAssertEqual(v4.metadata, v4FromString?.metadata)
         XCTAssertEqual(v5, v5FromString)
-        XCTAssertEqual(v5.metadata, v5FromString?.metadata ?? ["nope"])
+        XCTAssertEqual(v5.metadata, v5FromString?.metadata)
         XCTAssertEqual(v6, v6FromString)
-        XCTAssertEqual(v6.metadata, v6FromString?.metadata ?? ["nope"])
+        XCTAssertEqual(v6.metadata, v6FromString?.metadata)
         XCTAssertEqual(v7, v7FromString)
-        XCTAssertEqual(v7.metadata, v7FromString?.metadata ?? ["nope"])
+        XCTAssertEqual(v7.metadata, v7FromString?.metadata)
         XCTAssertEqual(v8, v8FromString)
-        XCTAssertEqual(v8.metadata, v8FromString?.metadata ?? ["nope"])
+        XCTAssertEqual(v8.metadata, v8FromString?.metadata)
     }
 
     func testHashable() {
@@ -155,15 +155,34 @@ final class VersionTests: XCTestCase {
         let v2 = Version(major: 1, minor: 2, patch: 3, prerelease: "beta")
         let v3 = Version(major: 3)
 
-        var dict: Dictionary<Version, String> = [:]
-        dict[v1] = "test1"
-        dict[v2] = "test2" // this should replace test1
-        dict[v3] = "test3"
+        let v1Hash: Int = {
+            var hasher = Hasher()
+            hasher.combine(v1.major)
+            hasher.combine(v1.minor)
+            hasher.combine(v1.patch)
+            hasher.combine(v1.prerelease)
+            return hasher.finalize()
+        }()
+        let v2Hash: Int = {
+            var hasher = Hasher()
+            hasher.combine(v2.major)
+            hasher.combine(v2.minor)
+            hasher.combine(v2.patch)
+            hasher.combine(v2.prerelease)
+            return hasher.finalize()
+        }()
+        let v3Hash: Int = {
+            var hasher = Hasher()
+            hasher.combine(v3.major)
+            hasher.combine(v3.minor)
+            hasher.combine(v3.patch)
+            hasher.combine(v3.prerelease)
+            return hasher.finalize()
+        }()
 
-        XCTAssertEqual(dict.count, 2)
-        XCTAssertEqual(dict[v3], "test3")
-        XCTAssertEqual(dict[v2], "test2")
-        XCTAssertEqual(dict[v1], "test2")
+        XCTAssertEqual(v1.hashValue, v1Hash)
+        XCTAssertEqual(v2.hashValue, v2Hash)
+        XCTAssertEqual(v3.hashValue, v3Hash)
     }
 
     static var allTests = [
