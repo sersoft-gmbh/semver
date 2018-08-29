@@ -1,6 +1,15 @@
 # SemVer
+![GitHub release](https://img.shields.io/github/release/sersoft-gmbh/semver.svg?style=flat)
+![CI Status](https://travis-ci.com/sersoft-gmbh/SemVer.svg?branch=master)
 
 This repository contains a complete implementation of a `Version` struct that conforms to the rules of semantic versioning which are described at [semver.org](https://semver.org).
+
+## Installation
+
+Add the following dependency to your `Package.swift`:
+```swift
+.package(url: "https://github.com/sersoft-gmbh/semver.git", from: "2.0.0"),
+```
 
 ## Usage
 
