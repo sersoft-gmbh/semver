@@ -1,10 +1,23 @@
 branches:
   only:
     - master
-language: swift
+
 os: osx
 osx_image: xcode10
-before_script:
-  - swift package clean
-script:
-  - swift test
+language: swift
+
+before_script: swift package clean
+
+jobs:
+  include:
+    - name: "macOS"
+      script: swift test
+    - name: "Linux"
+      os: linux
+      distro: trusty
+      language: generic
+      sudo: required
+      services:
+        - docker
+      install: docker pull swift:4.2
+      script: ./scripts/build_linux.sh '4.2' 'swift test'
