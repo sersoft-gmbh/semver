@@ -9,7 +9,7 @@ SWIFT_VERSION="$1"
 SCRIPT_COMMAND="$2"
 CONTAINER_TAG="swift:$SWIFT_VERSION"
 VOLUME_SRC="$(pwd)"
-VOLUME_TARGET="/CI"
+VOLUME_TARGET="/$(basename "$VOLUME_SRC")"
 
 docker run \
 	--mount src="$VOLUME_SRC",target="$VOLUME_TARGET",type=bind \
