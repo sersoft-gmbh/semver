@@ -1,6 +1,8 @@
 import XCTest
-@testable import SemVerTests
 
-XCTMain([
-    testCase(VersionTests.allTests),
-])
+import SemVerTests
+
+var tests = [XCTestCaseEntry]()
+tests += SemVerTests.__allTests()
+
+XCTMain(tests)

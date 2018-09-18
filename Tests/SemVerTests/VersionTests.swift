@@ -184,20 +184,4 @@ final class VersionTests: XCTestCase {
         XCTAssertEqual(v2.hashValue, v2Hash)
         XCTAssertEqual(v3.hashValue, v3Hash)
     }
-
-    static var allTests = [
-        ("testFullVersionString", testFullVersionString),
-        ("testFullVersionStringWithSuffixWithoutData", testFullVersionStringWithSuffixWithoutData),
-        ("testFullVersionStringWithoutPrereleaseDataWithMetadataData", testFullVersionStringWithoutPrereleaseDataWithMetadataData),
-        ("testFullVersionStringWithPrereleaseDataWithoutMetadataData", testFullVersionStringWithPrereleaseDataWithoutMetadataData),
-        ("testVersionStringExcludingPrerelease", testVersionStringExcludingPrerelease),
-        ("testVersionStringExcludingMetadata", testVersionStringExcludingMetadata),
-        ("testVersionStringWhenDroppingZeros", testVersionStringWhenDroppingZeros),
-        ("testDescriptionIsEqualToFullVersionString", testDescriptionIsEqualToFullVersionString),
-        ("testVersionEqualityWithBasicVersion", testVersionEqualityWithBasicVersion),
-        ("testVersionEqualityWithMetadataDifference", testVersionEqualityWithMetadataDifference),
-        ("testVersionComparisonWithBasicVersion", testVersionComparisonWithBasicVersion),
-        ("testLosslessStringConvertible", testLosslessStringConvertible),
-        ("testHashable", testHashable),
-    ]
 }
