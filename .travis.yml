@@ -6,11 +6,10 @@ os: osx
 osx_image: xcode10
 language: swift
 
-before_script: swift package clean
-
 jobs:
   include:
     - name: "macOS"
+      before_script: swift package clean
       script: swift test
     - name: "Linux"
       os: linux
@@ -20,4 +19,5 @@ jobs:
       services:
         - docker
       install: docker pull swift:4.2
-      script: ./scripts/build_linux.sh '4.2' 'swift test'
+      before_script: ./scripts/run_on_linux.sh '4.2' 'swift package clean'
+      script: ./scripts/run_on_linux.sh '4.2' 'swift test'
