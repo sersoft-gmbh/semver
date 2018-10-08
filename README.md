@@ -43,12 +43,12 @@ patchRelease.versionString() // -> "3.2.1"
 As seen in above's examples, there's a func to return a string represenation of a `Version`. The `versionString(formattedWith options: FormattingOptions = default)` function allows to retrieve a formatted string using the options passed. By default the full version is returned.
 The following options currently exist:
 
--  `.dropPatchIfZero`: If `patch` is `0`, it won't be added to the version string.
--  `.dropMinorIfZero`: If `minor` and `patch` are both `0`, only the `major` number is added. Requires `.dropPatchIfZero`.
--  `.dropTrailingZeros`: A convenience combination of `.dropPatchIfZero` and `.dropMinorIfZero`.
--  `.includePrerelease`: If `prerelease` is not empty, it is added to the version string.
--  `.includeMetadata`: If `metadata` is not empty, it is added to the version string.
--  `.fullVersion`: A convenience combination of `.includePrerelease` and `.includeMetadata`. The default if you don't pass anything to `versionString`.
+-   `.dropPatchIfZero`: If `patch` is `0`, it won't be added to the version string.
+-   `.dropMinorIfZero`: If `minor` and `patch` are both `0`, only the `major` number is added. Requires `.dropPatchIfZero`.
+-   `.dropTrailingZeros`: A convenience combination of `.dropPatchIfZero` and `.dropMinorIfZero`.
+-   `.includePrerelease`: If `prerelease` is not empty, it is added to the version string.
+-   `.includeMetadata`: If `metadata` is not empty, it is added to the version string.
+-   `.fullVersion`: A convenience combination of `.includePrerelease` and `.includeMetadata`. The default if you don't pass anything to `versionString`.
 
 ```swift
 let version = Version(major: 1, minor: 2, patch: 3,
@@ -102,9 +102,9 @@ prereleaseVersion < finalVersion // -> true
 
 If you find a bug / like to see a new feature in SemVer there are a few ways of helping out:
 
--  If you can fix the bug / implement the feature yourself please do and open a PR!
--  If you know how to code (which you probably do), please add a (failing) test and open a PR. We'll try to get your test green ASAP.
--  If you can't do neither, then open an issue. While this might be the easiest way, it will likely take the longest for the bug to be fixed / feature to be implemented.
+-   If you can fix the bug / implement the feature yourself please do and open a PR!
+-   If you know how to code (which you probably do), please add a (failing) test and open a PR. We'll try to get your test green ASAP.
+-   If you can't do neither, then open an issue. While this might be the easiest way, it will likely take the longest for the bug to be fixed / feature to be implemented.
 
 ## License
 
