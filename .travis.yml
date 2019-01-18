@@ -38,4 +38,4 @@ jobs:
       script: ./scripts/run_on_linux.sh 'swift test --parallel'
 
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
+  - bash <(curl -s https://codecov.io/bash) -J "SemVer"
