@@ -35,7 +35,7 @@ jobs:
         - docker
       install: docker pull swift:${SWIFT_VERSION}
       before_script: ./scripts/run_on_linux.sh 'swift package clean'
-      script: ./scripts/run_on_linux.sh 'swift test --parallel --sanitize thread'
+      script: ./scripts/run_on_linux.sh 'swift test --parallel'
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
