@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		07426D1921DE51E800393E78 /* SemVer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07426D0F21DE51E800393E78 /* SemVer.framework */; };
-		07426D2021DE51E800393E78 /* SemVer.h in Headers */ = {isa = PBXBuildFile; fileRef = 07426D1221DE51E800393E78 /* SemVer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		07426D2B21DE53F200393E78 /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07426D2A21DE53F200393E78 /* Version.swift */; };
-		07426D2D21DE551B00393E78 /* VersionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07426D2C21DE551B00393E78 /* VersionTests.swift */; };
+		07783CD121F2323300585133 /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07783CD021F2323300585133 /* Version.swift */; };
+		07783CE021F2327D00585133 /* SemVer.h in Headers */ = {isa = PBXBuildFile; fileRef = 07783CDE21F2327D00585133 /* SemVer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		07783CE921F232DB00585133 /* VersionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07783CE221F232B200585133 /* VersionTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,12 +25,12 @@
 
 /* Begin PBXFileReference section */
 		07426D0F21DE51E800393E78 /* SemVer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SemVer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		07426D1221DE51E800393E78 /* SemVer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SemVer.h; sourceTree = "<group>"; };
-		07426D1321DE51E800393E78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07426D1821DE51E800393E78 /* SemVerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SemVerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		07426D1F21DE51E800393E78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		07426D2A21DE53F200393E78 /* Version.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Version.swift; path = ../../Sources/SemVer/Version.swift; sourceTree = "<group>"; };
-		07426D2C21DE551B00393E78 /* VersionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VersionTests.swift; path = ../../Tests/SemVerTests/VersionTests.swift; sourceTree = "<group>"; };
+		07783CD021F2323300585133 /* Version.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
+		07783CDD21F2327D00585133 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = SemVer/Info.plist; sourceTree = SOURCE_ROOT; };
+		07783CDE21F2327D00585133 /* SemVer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SemVer.h; path = SemVer/SemVer.h; sourceTree = SOURCE_ROOT; };
+		07783CE221F232B200585133 /* VersionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersionTests.swift; sourceTree = "<group>"; };
+		07783CE721F232D700585133 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = SemVerTests/Info.plist; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +55,13 @@
 		07426D0521DE51E800393E78 = {
 			isa = PBXGroup;
 			children = (
-				07426D1121DE51E800393E78 /* SemVer */,
-				07426D1C21DE51E800393E78 /* SemVerTests */,
+				07783CCF21F2323300585133 /* SemVer */,
+				07783CE121F232B200585133 /* SemVerTests */,
 				07426D1021DE51E800393E78 /* Products */,
 			);
+			indentWidth = 3;
 			sourceTree = "<group>";
+			tabWidth = 3;
 		};
 		07426D1021DE51E800393E78 /* Products */ = {
 			isa = PBXGroup;
@@ -70,29 +72,39 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		07426D1121DE51E800393E78 /* SemVer */ = {
+		07783CCF21F2323300585133 /* SemVer */ = {
 			isa = PBXGroup;
 			children = (
-				07426D2A21DE53F200393E78 /* Version.swift */,
-				07426D2921DE53E200393E78 /* Supporting Files */,
+				07783CD021F2323300585133 /* Version.swift */,
+				07783CDC21F2327000585133 /* Supporting Files */,
 			);
-			path = SemVer;
+			name = SemVer;
+			path = ../Sources/SemVer;
 			sourceTree = "<group>";
 		};
-		07426D1C21DE51E800393E78 /* SemVerTests */ = {
+		07783CDC21F2327000585133 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				07426D2C21DE551B00393E78 /* VersionTests.swift */,
-				07426D1F21DE51E800393E78 /* Info.plist */,
+				07783CDD21F2327D00585133 /* Info.plist */,
+				07783CDE21F2327D00585133 /* SemVer.h */,
 			);
-			path = SemVerTests;
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		07426D2921DE53E200393E78 /* Supporting Files */ = {
+		07783CE121F232B200585133 /* SemVerTests */ = {
 			isa = PBXGroup;
 			children = (
-				07426D1221DE51E800393E78 /* SemVer.h */,
-				07426D1321DE51E800393E78 /* Info.plist */,
+				07783CE221F232B200585133 /* VersionTests.swift */,
+				07783CE621F232C700585133 /* Supporting Files */,
+			);
+			name = SemVerTests;
+			path = ../Tests/SemVerTests;
+			sourceTree = "<group>";
+		};
+		07783CE621F232C700585133 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				07783CE721F232D700585133 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -104,7 +116,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07426D2021DE51E800393E78 /* SemVer.h in Headers */,
+				07783CE021F2327D00585133 /* SemVer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,7 +219,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07426D2B21DE53F200393E78 /* Version.swift in Sources */,
+				07783CD121F2323300585133 /* Version.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,7 +227,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07426D2D21DE551B00393E78 /* VersionTests.swift in Sources */,
+				07783CE921F232DB00585133 /* VersionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
