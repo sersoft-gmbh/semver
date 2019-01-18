@@ -1,6 +1,8 @@
 import struct Foundation.CharacterSet
 
 public extension CharacterSet {
+   /// Contains the allowed characters for a Version suffix (Version.prelease and Version.metadata)
+   /// Allowed are alphanumerics and hyphen.
    public static let versionSuffixAllowed: CharacterSet = {
       var validCharset = alphanumerics
       validCharset.insert(charactersIn: "-")
@@ -8,20 +10,28 @@ public extension CharacterSet {
    }()
 }
 
-// See http://semver.org
+/// A Version struct that implements the rules of semantic versioning.
+/// - SeeAlso: http://semver.org
 public struct Version: Hashable, Comparable, LosslessStringConvertible {
+   /// The major part of this version. Must be >= 0.
    public var major: Int {
       willSet { assert(newValue >= 0) }
    }
+   /// The minor part of this version. Must be >= 0.
    public var minor: Int {
       willSet { assert(newValue >= 0) }
    }
+   /// The patch part of this version. Must be >= 0.
    public var patch: Int {
       willSet { assert(newValue >= 0) }
    }
+   /// The prelease part of this version. Must only contain caracters in `CharacterSet.versionSuffixAllowed`.
+   /// - SeeAlso: `CharacterSet.versionSuffixAllowed`
    public var prerelease: String {
       willSet { assert(CharacterSet(charactersIn: newValue).isSubset(of: .versionSuffixAllowed)) }
    }
+   /// The metadata of this version. Must only contain caracters in `CharacterSet.versionSuffixAllowed`.
+   /// - SeeAlso: `CharacterSet.versionSuffixAllowed`
    public var metadata: [String] {
       willSet {
          assert(newValue.allSatisfy { !$0.isEmpty && CharacterSet(charactersIn: $0).isSubset(of: .versionSuffixAllowed) })
@@ -32,6 +42,14 @@ public struct Version: Hashable, Comparable, LosslessStringConvertible {
       return versionString()
    }
 
+   /// Creates a new version with the given parts.
+   ///
+   /// - Parameters:
+   ///   - major: The major part of this version. Must be >= 0.
+   ///   - minor: The minor part of this version. Must be >= 0.
+   ///   - patch: The patch part of this version. Must be >= 0.
+   ///   - prerelease: The prelease part of this version. Must only contain caracters in `CharacterSet.versionSuffixAllowed`.
+   ///   - metadata: The metadata of this version. Must only contain caracters in `CharacterSet.versionSuffixAllowed`.
    public init(major: Int, minor: Int = 0, patch: Int = 0, prerelease: String = "", metadata: [String] = []) {
       assert(major >= 0)
       assert(minor >= 0)
@@ -46,6 +64,14 @@ public struct Version: Hashable, Comparable, LosslessStringConvertible {
       self.metadata = metadata
    }
 
+   /// Creates a new version with the given parts.
+   ///
+   /// - Parameters:
+   ///   - major: The major part of this version. Must be >= 0.
+   ///   - minor: The minor part of this version. Must be >= 0.
+   ///   - patch: The patch part of this version. Must be >= 0.
+   ///   - prerelease: The prelease part of this version. Must only contain caracters in `CharacterSet.versionSuffixAllowed`.
+   ///   - metadata: The metadata of this version. Must only contain caracters in `CharacterSet.versionSuffixAllowed`.
    public init(major: Int, minor: Int = 0, patch: Int = 0, prerelease: String = "", metadata: String...) {
       self.init(major: major, minor: minor, patch: patch, prerelease: prerelease, metadata: metadata)
    }
@@ -91,6 +117,10 @@ public struct Version: Hashable, Comparable, LosslessStringConvertible {
       hasher.combine(prerelease)
    }
 
+   /// Creates a version string using the given options.
+   ///
+   /// - Parameter options: The options to use for creating the version string.
+   /// - Returns: A string containing the version formatted with the given options.
    public func versionString(formattedWith options: FormattingOptions = .fullVersion) -> String {
       var versionString = "\(major)"
       if !options.contains(.dropPatchIfZero) || patch != 0 {
@@ -144,9 +174,13 @@ public extension Version {
 }
 
 public extension Version.FormattingOptions {
+   /// Leave out patch part if it's zero.
    static let dropPatchIfZero: Version.FormattingOptions = .init(rawValue: 1 << 0)
+   /// Leave out minor part if it's zero. Requires `dropPatchIfZero`.
    static let dropMinorIfZero: Version.FormattingOptions = .init(rawValue: 1 << 1)
+   /// Include the prerelease part of the version.
    static let includePrerelease: Version.FormattingOptions = .init(rawValue: 1 << 2)
+   /// Include the metadata part of the version.
    static let includeMetadata: Version.FormattingOptions = .init(rawValue: 1 << 3)
 
    /// Combination of .includePrerelease and .includeMetadata
