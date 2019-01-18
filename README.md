@@ -1,7 +1,8 @@
 # SemVer
-![GitHub release](https://img.shields.io/github/release/sersoft-gmbh/semver.svg?style=flat)
-![CI Status](https://travis-ci.com/sersoft-gmbh/SemVer.svg?branch=master)
+[![GitHub release](https://img.shields.io/github/release/sersoft-gmbh/semver.svg?style=flat)](https://github.com/sersoft-gmbh/SemVer/releases/latest)
+[![CI Status](https://travis-ci.com/sersoft-gmbh/SemVer.svg?branch=master)](https://travis-ci.com/sersoft-gmbh/SemVer)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/748e2d31257540e991546da13440cb0f)](https://www.codacy.com/app/ffried/SemVer?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=sersoft-gmbh/SemVer&amp;utm_campaign=Badge_Grade)
+[![codecov](https://codecov.io/gh/sersoft-gmbh/SemVer/branch/master/graph/badge.svg)](https://codecov.io/gh/sersoft-gmbh/SemVer)
 
 This repository contains a complete implementation of a `Version` struct that conforms to the rules of semantic versioning which are described at [semver.org](https://semver.org).
 
