@@ -8,7 +8,7 @@ language: swift
 
 env:
   global:
-    - XCODE_WORKSPACE="Xcode/SemVer.xcodeproj"
+    - XCODE_PROJECT="Xcode/SemVer.xcodeproj"
     - XCODE_SCHEME=SemVer
     - SWIFT_VERSION=4.2.1
 
