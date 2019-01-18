@@ -11,7 +11,6 @@
 		07783CD121F2323300585133 /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07783CD021F2323300585133 /* Version.swift */; };
 		07783CE021F2327D00585133 /* SemVer.h in Headers */ = {isa = PBXBuildFile; fileRef = 07783CDE21F2327D00585133 /* SemVer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		07783CE921F232DB00585133 /* VersionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07783CE221F232B200585133 /* VersionTests.swift */; };
-		07783CEA21F232DE00585133 /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07783CE321F232B200585133 /* XCTestManifests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,7 +30,6 @@
 		07783CDD21F2327D00585133 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = SemVer/Info.plist; sourceTree = SOURCE_ROOT; };
 		07783CDE21F2327D00585133 /* SemVer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SemVer.h; path = SemVer/SemVer.h; sourceTree = SOURCE_ROOT; };
 		07783CE221F232B200585133 /* VersionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersionTests.swift; sourceTree = "<group>"; };
-		07783CE321F232B200585133 /* XCTestManifests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
 		07783CE721F232D700585133 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = SemVerTests/Info.plist; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -95,7 +93,6 @@
 			isa = PBXGroup;
 			children = (
 				07783CE221F232B200585133 /* VersionTests.swift */,
-				07783CE321F232B200585133 /* XCTestManifests.swift */,
 				07783CE621F232C700585133 /* Supporting Files */,
 			);
 			name = SemVerTests;
@@ -229,7 +226,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				07783CE921F232DB00585133 /* VersionTests.swift in Sources */,
-				07783CEA21F232DE00585133 /* XCTestManifests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
