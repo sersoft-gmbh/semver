@@ -59,7 +59,9 @@
 				07783CE121F232B200585133 /* SemVerTests */,
 				07426D1021DE51E800393E78 /* Products */,
 			);
+			indentWidth = 3;
 			sourceTree = "<group>";
+			tabWidth = 3;
 		};
 		07426D1021DE51E800393E78 /* Products */ = {
 			isa = PBXGroup;
