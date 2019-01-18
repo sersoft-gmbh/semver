@@ -1,12 +1,16 @@
 #!/bin/sh
 
-if [ "$#" -ne "2" ]; then
-	echo "Missing arguments [swift_version] and [script_command]"
+if [ "$#" -ne "1" ]; then
+	echo "Missing argument [script_command]"
 	exit 1
 fi
 
-SWIFT_VERSION="$1"
-SCRIPT_COMMAND="$2"
+if [ -z "$SWIFT_VERSION" ]; then
+	echo "Missing environment variable SWIFT_VERSION!"
+	exit 1
+fi
+
+SCRIPT_COMMAND="$1"
 CONTAINER_TAG="swift:$SWIFT_VERSION"
 VOLUME_SRC="$(pwd)"
 VOLUME_TARGET="/$(basename "$VOLUME_SRC")"
