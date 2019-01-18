@@ -24,7 +24,7 @@ jobs:
 
     - name: "macOS SwiftPM"
       before_script: swift package clean
-      script: swift test
+      script: swift test --parallel --sanitize thread
 
     - name: "Linux SwiftPM"
       os: linux
@@ -35,7 +35,7 @@ jobs:
         - docker
       install: docker pull swift:${SWIFT_VERSION}
       before_script: ./scripts/run_on_linux.sh 'swift package clean'
-      script: ./scripts/run_on_linux.sh 'swift test'
+      script: ./scripts/run_on_linux.sh 'swift test --parallel --sanitize thread'
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
