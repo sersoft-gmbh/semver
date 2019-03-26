@@ -1,6 +1,6 @@
 import struct Foundation.CharacterSet
 
-public extension CharacterSet {
+extension CharacterSet {
    /// Contains the allowed characters for a Version suffix (Version.prelease and Version.metadata)
    /// Allowed are alphanumerics and hyphen.
    public static let versionSuffixAllowed: CharacterSet = {
@@ -78,6 +78,36 @@ public struct Version: Hashable, Comparable, LosslessStringConvertible {
 
    public init?(_ description: String) {
       guard !description.isEmpty else { return nil }
+      #if swift(>=5)
+      guard description.range(of: #"^([0-9]+\.){0,2}[0-9]+(-[0-9A-Za-z-]+)?(\+([0-9A-Za-z-]+\.?)*)?$"#, options: .regularExpression) != nil
+         else { return nil }
+
+      // This should be fine after above's regular expression
+      let idx = description.range(of: #"[0-9](\+|-)"#, options: .regularExpression).map { description.index(before: $0.upperBound) } ?? description.endIndex
+      var parts: Array<String> = description[..<idx].components(separatedBy: ".").reversed()
+      guard (1...3).contains(parts.count),
+         let major = parts.popLast().flatMap(Int.init)
+         else { return nil }
+      let minor = parts.popLast().flatMap(Int.init) ?? 0
+      let patch = parts.popLast().flatMap(Int.init) ?? 0
+
+      let prerelease: String
+      if let searchRange = description.range(of: #"(^|\.)[0-9]+-[0-9A-Za-z-]+(\+|$)"#, options: .regularExpression),
+         case let substr = description[searchRange],
+         let range = substr.range(of: "[0-9]-[0-9A-Za-z-]+", options: .regularExpression) {
+         prerelease = String(substr[substr.index(range.lowerBound, offsetBy: 2)..<range.upperBound])
+      } else {
+         prerelease = ""
+      }
+
+      let metadata: [String]
+      if let range = description.range(of: #"\+([0-9A-Za-z-]+\.?)+$"#, options: .regularExpression) {
+         let metadataString = description[description.index(after: range.lowerBound)..<range.upperBound]
+         metadata = metadataString.components(separatedBy: ".")
+      } else {
+         metadata = []
+      }
+      #else
       guard description.range(of: "^([0-9]+\\.){0,2}[0-9]+(-[0-9A-Za-z-]+)?(\\+([0-9A-Za-z-]+\\.?)*)?$", options: .regularExpression) != nil
          else { return nil }
 
@@ -106,6 +136,7 @@ public struct Version: Hashable, Comparable, LosslessStringConvertible {
       } else {
          metadata = []
       }
+      #endif
 
       self.init(major: major, minor: minor, patch: patch, prerelease: prerelease, metadata: metadata)
    }
@@ -139,7 +170,7 @@ public struct Version: Hashable, Comparable, LosslessStringConvertible {
 }
 
 // MARK: - Comparison
-public extension Version {
+extension Version {
    public static func ==(lhs: Version, rhs: Version) -> Bool {
       return (lhs.major, lhs.minor, lhs.patch, lhs.prerelease)
              ==
@@ -164,7 +195,7 @@ public extension Version {
 }
 
 // MARK: - Formatting Options
-public extension Version {
+extension Version {
    public struct FormattingOptions: OptionSet {
       public typealias RawValue = Int
 
@@ -173,15 +204,15 @@ public extension Version {
    }
 }
 
-public extension Version.FormattingOptions {
+extension Version.FormattingOptions {
    /// Leave out patch part if it's zero.
-   static let dropPatchIfZero: Version.FormattingOptions = .init(rawValue: 1 << 0)
+   public static let dropPatchIfZero: Version.FormattingOptions = .init(rawValue: 1 << 0)
    /// Leave out minor part if it's zero. Requires `dropPatchIfZero`.
-   static let dropMinorIfZero: Version.FormattingOptions = .init(rawValue: 1 << 1)
+   public static let dropMinorIfZero: Version.FormattingOptions = .init(rawValue: 1 << 1)
    /// Include the prerelease part of the version.
-   static let includePrerelease: Version.FormattingOptions = .init(rawValue: 1 << 2)
+   public static let includePrerelease: Version.FormattingOptions = .init(rawValue: 1 << 2)
    /// Include the metadata part of the version.
-   static let includeMetadata: Version.FormattingOptions = .init(rawValue: 1 << 3)
+   public static let includeMetadata: Version.FormattingOptions = .init(rawValue: 1 << 3)
 
    /// Combination of .includePrerelease and .includeMetadata
    public static let fullVersion: Version.FormattingOptions = [.includePrerelease, .includeMetadata]
@@ -190,7 +221,7 @@ public extension Version.FormattingOptions {
 }
 
 // MARK: - Deprecations
-public extension Version {
+extension Version {
    @available(*, deprecated, message: "Use formatting options")
    public func versionString(includingPrerelease: Bool, includingMetadata: Bool) -> String {
       var options: FormattingOptions = []
