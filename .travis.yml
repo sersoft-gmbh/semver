@@ -3,19 +3,19 @@ branches:
     - master
 
 os: osx
-osx_image: xcode10.1
+osx_image: xcode10.2
 language: swift
 
 env:
   global:
     - XCODE_PROJECT="Xcode/SemVer.xcodeproj"
     - XCODE_SCHEME=SemVer
-    - SWIFT_VERSION=4.2.1
+    - SWIFT_VERSION=5.0
 
 jobs:
   include:
     - name: "iOS Xcode"
-      env: XCODE_DESTINATION="platform=iOS Simulator,OS=12.1,name=iPad Pro (9.7-inch)"
+      env: XCODE_DESTINATION="platform=iOS Simulator,OS=12.2,name=iPad Pro (9.7-inch)"
       script: ./scripts/build_xcode.sh
 
     - name: "macOS Xcode"
