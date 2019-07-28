@@ -114,7 +114,7 @@ jobs:
       name: watchOS Swift Release (build only)
       script: |
         set -o pipefail
-        xcodebuild -workspace "${TRAVIS_XCODE_WORKSPACE}" -scheme "${TRAVIS_XCODE_SCHEME}" \
+        xcodebuild -project "${TRAVIS_XCODE_PROJECT}" -scheme "${TRAVIS_XCODE_SCHEME}" \
           -destination 'platform=watchOS Simulator,OS=latest,name=Apple Watch Series 4 - 44mm' \
           build | xcpretty
       after_success: false
@@ -124,7 +124,7 @@ jobs:
       osx_image: xcode11
       script: |
         set -o pipefail
-        xcodebuild -workspace "${TRAVIS_XCODE_WORKSPACE}" -scheme "${TRAVIS_XCODE_SCHEME}" \
+        xcodebuild -project "${TRAVIS_XCODE_PROJECT}" -scheme "${TRAVIS_XCODE_SCHEME}" \
           -destination 'platform=watchOS Simulator,OS=6.0,name=Apple Watch Series 4 - 44mm' \
           build | xcpretty
       after_success: false
