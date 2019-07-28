@@ -222,6 +222,13 @@ extension Version.FormattingOptions {
 
 // MARK: - Deprecations
 extension Version {
+   /// Creates a version string by calling `versionString(formattedWith:)`.
+   ///
+   /// - Parameters:
+   ///   - includingPrerelease: Whether or not the `.includePrerelease` option should included in the call to `versionString(formattedWith:)`.
+   ///   - includingMetadata: Whether or not the `.includeMetadata` option should included in the call to `versionString(formattedWith:)`.
+   /// - Returns: The result of `versionString(formattedWith:)`.
+   /// - SeeAlso: `versionString(formattedWith:)`
    @available(*, deprecated, message: "Use formatting options")
    public func versionString(includingPrerelease: Bool, includingMetadata: Bool) -> String {
       var options: FormattingOptions = []
@@ -230,11 +237,21 @@ extension Version {
       return versionString(formattedWith: options)
    }
 
+   /// Creates a version string by calling `versionString(formattedWith:)`.
+   ///
+   /// - Parameter includingPrerelease: Whether or not the `.includePrerelease` option should included in the call to `versionString(formattedWith:)`.
+   /// - Returns: The result of `versionString(formattedWith:)`.
+   /// - SeeAlso: `versionString(formattedWith:)`
    @available(*, deprecated, message: "Use formatting options")
    public func versionString(includingPrerelease: Bool) -> String {
       return versionString(includingPrerelease: includingPrerelease, includingMetadata: true)
    }
 
+   /// Creates a version string by calling `versionString(formattedWith:)`.
+   ///
+   /// - Parameter includingMetadata: Whether or not the `.includeMetadata` option should included in the call to `versionString(formattedWith:)`.
+   /// - Returns: The result of `versionString(formattedWith:)`.
+   /// - SeeAlso: `versionString(formattedWith:)`
    @available(*, deprecated, message: "Use formatting options")
    public func versionString(includingMetadata: Bool) -> String {
       return versionString(includingPrerelease: true, includingMetadata: includingMetadata)

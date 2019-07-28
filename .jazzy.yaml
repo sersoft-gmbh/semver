@@ -1,0 +1,17 @@
+clean: true
+
+theme: fullwidth
+
+output: docs
+source_directory: Sources
+readme: README.md
+
+xcodebuild_arguments:
+  -  -project
+  -  ../Xcode/SemVer.xcodeproj
+module: SemVer
+undocumented_text: ""
+github_url: https://github.com/sersoft-gmbh/SemVer
+
+author: ser.soft GmbH
+author_url: https://sersoft.de

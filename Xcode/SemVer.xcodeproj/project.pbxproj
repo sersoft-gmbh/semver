@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		07426D1921DE51E800393E78 /* SemVer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07426D0F21DE51E800393E78 /* SemVer.framework */; };
-		07783CD121F2323300585133 /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07783CD021F2323300585133 /* Version.swift */; };
-		07783CE021F2327D00585133 /* SemVer.h in Headers */ = {isa = PBXBuildFile; fileRef = 07783CDE21F2327D00585133 /* SemVer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		07783CE921F232DB00585133 /* VersionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07783CE221F232B200585133 /* VersionTests.swift */; };
+		07A6E71222EE009E001C7770 /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A6E70E22EE009E001C7770 /* Version.swift */; };
+		07A6E71322EE009E001C7770 /* SemVer.h in Headers */ = {isa = PBXBuildFile; fileRef = 07A6E71022EE009E001C7770 /* SemVer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		07A6E71A22EE00A6001C7770 /* VersionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A6E71622EE00A6001C7770 /* VersionTests.swift */; };
+		07A6E71C22EE00A6001C7770 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07A6E71922EE00A6001C7770 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,11 +27,11 @@
 /* Begin PBXFileReference section */
 		07426D0F21DE51E800393E78 /* SemVer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SemVer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		07426D1821DE51E800393E78 /* SemVerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SemVerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		07783CD021F2323300585133 /* Version.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
-		07783CDD21F2327D00585133 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = SemVer/Info.plist; sourceTree = SOURCE_ROOT; };
-		07783CDE21F2327D00585133 /* SemVer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SemVer.h; path = SemVer/SemVer.h; sourceTree = SOURCE_ROOT; };
-		07783CE221F232B200585133 /* VersionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersionTests.swift; sourceTree = "<group>"; };
-		07783CE721F232D700585133 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = SemVerTests/Info.plist; sourceTree = SOURCE_ROOT; };
+		07A6E70E22EE009E001C7770 /* Version.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
+		07A6E71022EE009E001C7770 /* SemVer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SemVer.h; sourceTree = "<group>"; };
+		07A6E71122EE009E001C7770 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		07A6E71622EE00A6001C7770 /* VersionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersionTests.swift; sourceTree = "<group>"; };
+		07A6E71922EE00A6001C7770 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,8 +56,8 @@
 		07426D0521DE51E800393E78 = {
 			isa = PBXGroup;
 			children = (
-				07783CCF21F2323300585133 /* SemVer */,
-				07783CE121F232B200585133 /* SemVerTests */,
+				07A6E70D22EE009E001C7770 /* SemVer */,
+				07A6E71522EE00A6001C7770 /* SemVerTests */,
 				07426D1021DE51E800393E78 /* Products */,
 			);
 			indentWidth = 3;
@@ -72,41 +73,41 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		07783CCF21F2323300585133 /* SemVer */ = {
+		07A6E70D22EE009E001C7770 /* SemVer */ = {
 			isa = PBXGroup;
 			children = (
-				07783CD021F2323300585133 /* Version.swift */,
-				07783CDC21F2327000585133 /* Supporting Files */,
+				07A6E70E22EE009E001C7770 /* Version.swift */,
+				07A6E70F22EE009E001C7770 /* Supporting Files */,
 			);
 			name = SemVer;
 			path = ../Sources/SemVer;
 			sourceTree = "<group>";
 		};
-		07783CDC21F2327000585133 /* Supporting Files */ = {
+		07A6E70F22EE009E001C7770 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				07783CDD21F2327D00585133 /* Info.plist */,
-				07783CDE21F2327D00585133 /* SemVer.h */,
+				07A6E71022EE009E001C7770 /* SemVer.h */,
+				07A6E71122EE009E001C7770 /* Info.plist */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		07783CE121F232B200585133 /* SemVerTests */ = {
+		07A6E71522EE00A6001C7770 /* SemVerTests */ = {
 			isa = PBXGroup;
 			children = (
-				07783CE221F232B200585133 /* VersionTests.swift */,
-				07783CE621F232C700585133 /* Supporting Files */,
+				07A6E71622EE00A6001C7770 /* VersionTests.swift */,
+				07A6E71822EE00A6001C7770 /* Supporting Files */,
 			);
 			name = SemVerTests;
 			path = ../Tests/SemVerTests;
 			sourceTree = "<group>";
 		};
-		07783CE621F232C700585133 /* Supporting Files */ = {
+		07A6E71822EE00A6001C7770 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				07783CE721F232D700585133 /* Info.plist */,
+				07A6E71922EE00A6001C7770 /* Info.plist */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -116,7 +117,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07783CE021F2327D00585133 /* SemVer.h in Headers */,
+				07A6E71322EE009E001C7770 /* SemVer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +211,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07A6E71C22EE00A6001C7770 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,7 +222,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07783CD121F2323300585133 /* Version.swift in Sources */,
+				07A6E71222EE009E001C7770 /* Version.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,7 +230,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07783CE921F232DB00585133 /* VersionTests.swift in Sources */,
+				07A6E71A22EE00A6001C7770 /* VersionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,11 +384,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = ABWZ8YVS69;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = SemVer/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/../Sources/$(TARGET_NAME)/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -410,11 +411,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = ABWZ8YVS69;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = SemVer/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/../Sources/$(TARGET_NAME)/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -437,8 +437,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ABWZ8YVS69;
-				INFOPLIST_FILE = SemVerTests/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/../Tests/$(TARGET_NAME)/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -459,8 +458,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ABWZ8YVS69;
-				INFOPLIST_FILE = SemVerTests/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/../Tests/$(TARGET_NAME)/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
