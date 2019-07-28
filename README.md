@@ -3,6 +3,7 @@
 [![CI Status](https://travis-ci.com/sersoft-gmbh/SemVer.svg?branch=master)](https://travis-ci.com/sersoft-gmbh/SemVer)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/748e2d31257540e991546da13440cb0f)](https://www.codacy.com/app/ffried/SemVer?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=sersoft-gmbh/SemVer&amp;utm_campaign=Badge_Grade)
 [![codecov](https://codecov.io/gh/sersoft-gmbh/SemVer/branch/master/graph/badge.svg)](https://codecov.io/gh/sersoft-gmbh/SemVer)
+[![jazzy](https://raw.githubusercontent.com/sersoft-gmbh/SemVer/gh-pages/badge.svg?sanitize=true)](https://sersoft-gmbh.github.io/SemVer)
 
 This repository contains a complete implementation of a `Version` struct that conforms to the rules of semantic versioning which are described at [semver.org](https://semver.org).
 
@@ -98,6 +99,10 @@ prereleaseVersion < finalVersion // -> true
 ### Validity Checks
 
 `Version` performs some validity checks on its fields. This means, that no negative numbers are allowed for `major`, `minor` and `patch`. Also, the `prerelease` and `metadata` Strings must only contain alphanumeric characters plus `-` (hyphen). However, to keep working with `Version` production-safe, these rules are only checked in non-optimized builds (using `assert()`). The result of using not allowed numbers / characters in optimized builds is undetermined. While calling `versionString()` very likely won't break, it certainly won't be possible to recreate a version containing invalid numbers / characters using `init(_ description: String)`.
+
+## Documentation
+
+The API is documented using header doc. If you prefer to view the documentation as a webpage, there is an [online version](https://sersoft-gmbh.github.io/SemVer) available for you.
 
 ## Contributing
 
