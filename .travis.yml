@@ -15,7 +15,7 @@ jobs:
   include:
     - stage: validate tests
       name: Validate SwiftPM generated linux test files
-      osx_image: xcode10.2
+      osx_image: xcode11
       script: swift test --generate-linuxmain && git diff --exit-code
 
     - &linux
@@ -47,24 +47,24 @@ jobs:
         - SWIFT_SKIP_APT=1
         - SWIFT_INSTALL_TARGET="./.swift"
         - SWIFT_PLATFORM="ubuntu18.04"
-        - SWIFT_BRANCH="swift-5.0.2-release"
-        - SWIFT_VERSION="swift-5.0.2-RELEASE"
+        - SWIFT_BRANCH="swift-5.1-release"
+        - SWIFT_VERSION="swift-5.1-RELEASE"
       install: eval "$(curl -fsL 'https://bitbucket.org/!api/2.0/snippets/sersoftgmbh/7AgnAp/files/install_swift_linux.sh')"
       script: ./.swift/usr/bin/swift test --parallel
 
-    - <<: *linux
-      name: SwiftPM Linux Beta
-      env:
-        - SWIFT_SKIP_APT=1
-        - SWIFT_INSTALL_TARGET="./.swift"
-        - SWIFT_PLATFORM="ubuntu18.04"
-        - SWIFT_BRANCH="swift-5.1-branch"
-        - SWIFT_VERSION="swift-5.1-DEVELOPMENT-SNAPSHOT-2019-07-25-a"
+    # - <<: *linux
+    #   name: SwiftPM Linux Beta
+    #   env:
+    #     - SWIFT_SKIP_APT=1
+    #     - SWIFT_INSTALL_TARGET="./.swift"
+    #     - SWIFT_PLATFORM="ubuntu18.04"
+    #     - SWIFT_BRANCH="swift-5.1-branch"
+    #     - SWIFT_VERSION="swift-5.1-DEVELOPMENT-SNAPSHOT-2019-09-15-a"
 
     - &macOS
       stage: test
       name: SwiftPM macOS Release
-      osx_image: xcode10.2
+      osx_image: xcode11
       script: swift test --parallel
 
     - <<: *macOS
@@ -74,41 +74,41 @@ jobs:
     - &xcode
       stage: test
       name: macOS Swift Release
-      osx_image: xcode10.2
+      osx_image: xcode11
       xcode_destination: platform=macOS
       after_success: bash <(curl -fsL https://codecov.io/bash) -J "SemVer"
 
-    - <<: *xcode
-      name: macOS Swift Beta
-      osx_image: xcode11
-      xcode_destination: platform=macOS
+    # - <<: *xcode
+    #   name: macOS Swift Beta
+    #   osx_image: xcode11
+    #   xcode_destination: platform=macOS
 
     - <<: *xcode
       name: iOS Swift Release
       xcode_destination: platform=iOS Simulator,OS=latest,name=iPhone Xs Max
 
-    - <<: *xcode
-      name: iOS Swift Beta
-      osx_image: xcode11
-      xcode_destination: platform=iOS Simulator,OS=13.0,name=iPhone Xs Max
+    # - <<: *xcode
+    #   name: iOS Swift Beta
+    #   osx_image: xcode11
+    #   xcode_destination: platform=iOS Simulator,OS=13.0,name=iPhone Xs Max
 
     - <<: *xcode
       name: iPadOS Swift Release
       xcode_destination: platform=iOS Simulator,OS=latest,name=iPad Pro (11-inch)
 
-    - <<: *xcode
-      name: iPadOS Swift Beta
-      osx_image: xcode11
-      xcode_destination: platform=iOS Simulator,OS=13.0,name=iPad Pro (11-inch)
+    # - <<: *xcode
+    #   name: iPadOS Swift Beta
+    #   osx_image: xcode11
+    #   xcode_destination: platform=iOS Simulator,OS=13.0,name=iPad Pro (11-inch)
 
     - <<: *xcode
       name: tvOS Swift Release
       xcode_destination: platform=tvOS Simulator,OS=latest,name=Apple TV 4K
 
-    - <<: *xcode
-      name: tvOS Swift Beta
-      osx_image: xcode11
-      xcode_destination: platform=tvOS Simulator,OS=13.0,name=Apple TV 4K
+    # - <<: *xcode
+    #   name: tvOS Swift Beta
+    #   osx_image: xcode11
+    #   xcode_destination: platform=tvOS Simulator,OS=13.0,name=Apple TV 4K
 
     - <<: *xcode
       name: watchOS Swift Release (build only)
@@ -119,19 +119,19 @@ jobs:
           build | xcpretty
       after_success: false
 
-    - <<: *xcode
-      name: watchOS Swift Beta (build only)
-      osx_image: xcode11
-      script: |
-        set -o pipefail
-        xcodebuild -project "${TRAVIS_XCODE_PROJECT}" -scheme "${TRAVIS_XCODE_SCHEME}" \
-          -destination 'platform=watchOS Simulator,OS=6.0,name=Apple Watch Series 4 - 44mm' \
-          build | xcpretty
-      after_success: false
+    # - <<: *xcode
+    #   name: watchOS Swift Beta (build only)
+    #   osx_image: xcode11
+    #   script: |
+    #     set -o pipefail
+    #     xcodebuild -project "${TRAVIS_XCODE_PROJECT}" -scheme "${TRAVIS_XCODE_SCHEME}" \
+    #       -destination 'platform=watchOS Simulator,OS=6.0,name=Apple Watch Series 4 - 44mm' \
+    #       build | xcpretty
+    #   after_success: false
 
     - stage: publish docs
       name: Generate and publish documentation
-      osx_image: xcode10.2
+      osx_image: xcode11
       install: gem install jazzy
       script: jazzy --module-version $TRAVIS_TAG
       deploy:
