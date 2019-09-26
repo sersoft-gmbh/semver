@@ -386,6 +386,7 @@
 					"$(inherited)",
 					"@loader_path/../Frameworks",
 				);
+				MARKETING_VERSION = 2.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = de.sersoft.SemVer;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -413,6 +414,7 @@
 					"$(inherited)",
 					"@loader_path/../Frameworks",
 				);
+				MARKETING_VERSION = 2.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = de.sersoft.SemVer;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
