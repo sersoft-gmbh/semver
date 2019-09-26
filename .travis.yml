@@ -58,8 +58,8 @@ jobs:
     #     - SWIFT_SKIP_APT=1
     #     - SWIFT_INSTALL_TARGET="./.swift"
     #     - SWIFT_PLATFORM="ubuntu18.04"
-    #     - SWIFT_BRANCH="swift-5.1-branch"
-    #     - SWIFT_VERSION="swift-5.1-DEVELOPMENT-SNAPSHOT-2019-09-15-a"
+    #     - SWIFT_BRANCH="swift-5.2-branch"
+    #     - SWIFT_VERSION="swift-5.2-DEVELOPMENT-SNAPSHOT-2019-11-11-a"
 
     - &macOS
       stage: test
@@ -69,7 +69,7 @@ jobs:
 
     # - <<: *macOS
     #   name: SwiftPM macOS Beta
-    #   osx_image: xcode11
+    #   osx_image: xcode11.2
 
     - &xcode
       stage: test
@@ -80,17 +80,17 @@ jobs:
 
     # - <<: *xcode
     #   name: macOS Swift Beta
-    #   osx_image: xcode11
+    #   osx_image: xcode11.2
     #   xcode_destination: platform=macOS
 
     - <<: *xcode
       name: iOS Swift Release
-      xcode_destination: platform=iOS Simulator,OS=latest,name=iPhone Xs Max
+      xcode_destination: platform=iOS Simulator,OS=latest,name=iPhone 11 Pro
 
     # - <<: *xcode
     #   name: iOS Swift Beta
-    #   osx_image: xcode11
-    #   xcode_destination: platform=iOS Simulator,OS=13.0,name=iPhone Xs Max
+    #   osx_image: xcode11.2
+    #   xcode_destination: platform=iOS Simulator,OS=13.2,name=iPhone 11 Pro
 
     - <<: *xcode
       name: iPadOS Swift Release
@@ -98,8 +98,8 @@ jobs:
 
     # - <<: *xcode
     #   name: iPadOS Swift Beta
-    #   osx_image: xcode11
-    #   xcode_destination: platform=iOS Simulator,OS=13.0,name=iPad Pro (11-inch)
+    #   osx_image: xcode11.2
+    #   xcode_destination: platform=iOS Simulator,OS=13.2,name=iPad Pro (11-inch)
 
     - <<: *xcode
       name: tvOS Swift Release
@@ -107,25 +107,25 @@ jobs:
 
     # - <<: *xcode
     #   name: tvOS Swift Beta
-    #   osx_image: xcode11
-    #   xcode_destination: platform=tvOS Simulator,OS=13.0,name=Apple TV 4K
+    #   osx_image: xcode11.2
+    #   xcode_destination: platform=tvOS Simulator,OS=13.2,name=Apple TV 4K
 
     - <<: *xcode
       name: watchOS Swift Release (build only)
       script: |
         set -o pipefail
         xcodebuild -project "${TRAVIS_XCODE_PROJECT}" -scheme "${TRAVIS_XCODE_SCHEME}" \
-          -destination 'platform=watchOS Simulator,OS=latest,name=Apple Watch Series 4 - 44mm' \
+          -destination 'platform=watchOS Simulator,OS=latest,name=Apple Watch Series 5 - 44mm' \
           build | xcpretty
       after_success: false
 
     # - <<: *xcode
     #   name: watchOS Swift Beta (build only)
-    #   osx_image: xcode11
+    #   osx_image: xcode11.2
     #   script: |
     #     set -o pipefail
     #     xcodebuild -project "${TRAVIS_XCODE_PROJECT}" -scheme "${TRAVIS_XCODE_SCHEME}" \
-    #       -destination 'platform=watchOS Simulator,OS=6.0,name=Apple Watch Series 4 - 44mm' \
+    #       -destination 'platform=watchOS Simulator,OS=6.1,name=Apple Watch Series 5 - 44mm' \
     #       build | xcpretty
     #   after_success: false
 
