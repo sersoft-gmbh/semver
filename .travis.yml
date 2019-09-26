@@ -67,9 +67,9 @@ jobs:
       osx_image: xcode11
       script: swift test --parallel
 
-    - <<: *macOS
-      name: SwiftPM macOS Beta
-      osx_image: xcode11
+    # - <<: *macOS
+    #   name: SwiftPM macOS Beta
+    #   osx_image: xcode11
 
     - &xcode
       stage: test
