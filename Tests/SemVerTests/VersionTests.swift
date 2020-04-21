@@ -205,4 +205,15 @@ final class VersionTests: XCTestCase {
       XCTAssertNil(Version("-1.2.0"))
       XCTAssertNil(Version("🥴"))
    }
+
+   @available(*, deprecated, message: "Testing deprecated versionString APIs")
+   func testDeprecatedVersionStringMethods() {
+      let version1 = Version(major: 1, minor: 2, patch: 3, prerelease: "beta", metadata: ["testing", "deprecated", "api"])
+      XCTAssertEqual(version1.versionString(includingMetadata: false), version1.versionString(formattedWith: [.includePrerelease]))
+      XCTAssertEqual(version1.versionString(includingPrerelease: false, includingMetadata: false), version1.versionString(formattedWith: []))
+      XCTAssertEqual(version1.versionString(includingPrerelease: false), version1.versionString(formattedWith: [.includeMetadata]))
+      XCTAssertEqual(version1.versionString(includingMetadata: true), version1.versionString(formattedWith: [.includePrerelease, .includeMetadata]))
+      XCTAssertEqual(version1.versionString(includingPrerelease: true, includingMetadata: true), version1.versionString(formattedWith: [.includePrerelease, .includeMetadata]))
+      XCTAssertEqual(version1.versionString(includingPrerelease: true), version1.versionString(formattedWith: [.includePrerelease, .includeMetadata]))
+   }
 }
