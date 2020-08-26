@@ -11,8 +11,13 @@ This repository contains a complete implementation of a `Version` struct that co
 
 Add the following dependency to your `Package.swift`:
 ```swift
-.package(url: "https://github.com/sersoft-gmbh/semver.git", from: "2.0.0"),
+.package(url: "https://github.com/sersoft-gmbh/semver.git", from: "3.0.0"),
 ```
+
+## Compatibility
+
+- For Swift up to version 5.2, use SemVer version 2.x.y.
+- For Swift as of version 5.3, use SemVer version 3.x.y.
 
 ## Usage
 
