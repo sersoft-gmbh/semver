@@ -6,7 +6,6 @@ extension VersionTests {
     //   `swift test --generate-linuxmain`
     // to regenerate.
     static let __allTests__VersionTests = [
-        ("testDeprecatedVersionStringMethods", testDeprecatedVersionStringMethods),
         ("testDescriptionIsEqualToFullVersionString", testDescriptionIsEqualToFullVersionString),
         ("testFullVersionString", testFullVersionString),
         ("testFullVersionStringWithoutPrereleaseDataWithMetadataData", testFullVersionStringWithoutPrereleaseDataWithMetadataData),
