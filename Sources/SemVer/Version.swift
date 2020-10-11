@@ -38,6 +38,7 @@ public struct Version: Hashable, Comparable, LosslessStringConvertible {
         }
     }
 
+    /// inherited
     @inlinable
     public var description: String { versionString() }
 
@@ -71,13 +72,15 @@ public struct Version: Hashable, Comparable, LosslessStringConvertible {
     ///   - patch: The patch part of this version. Must be >= 0.
     ///   - prerelease: The prelease part of this version. Must only contain caracters in `CharacterSet.versionSuffixAllowed`.
     ///   - metadata: The metadata of this version. Must only contain caracters in `CharacterSet.versionSuffixAllowed`.
+    @inlinable
     public init(major: Int, minor: Int = 0, patch: Int = 0, prerelease: String = "", metadata: String...) {
         self.init(major: major, minor: minor, patch: patch, prerelease: prerelease, metadata: metadata)
     }
 
+    /// inherited
     public init?(_ description: String) {
-        guard !description.isEmpty else { return nil }
-        guard description.range(of: #"^([0-9]+\.){0,2}[0-9]+(-[0-9A-Za-z-]+)?(\+([0-9A-Za-z-]+\.?)*)?$"#, options: .regularExpression) != nil
+        guard !description.isEmpty &&
+              description.range(of: #"^([0-9]+\.){0,2}[0-9]+(-[0-9A-Za-z-]+)?(\+([0-9A-Za-z-]+\.?)*)?$"#, options: .regularExpression) != nil
         else { return nil }
 
         // This should be fine after above's regular expression
@@ -109,6 +112,7 @@ public struct Version: Hashable, Comparable, LosslessStringConvertible {
         self.init(major: major, minor: minor, patch: patch, prerelease: prerelease, metadata: metadata)
     }
 
+    /// inherited
     public func hash(into hasher: inout Hasher) {
         hasher.combine(major)
         hasher.combine(minor)
@@ -138,28 +142,48 @@ public struct Version: Hashable, Comparable, LosslessStringConvertible {
     }
 }
 
+/* This currently does not work, due to the compiler ignoring the `init(_ description:)` for `Version("blah")` now.
+//// MARK: - String Literal Conversion
+/// - Note: This conformance will crash if the given String literal is not a valid version!
+extension Version: ExpressibleByStringLiteral {
+    /// inherited
+    public typealias StringLiteralType = String
+
+    /// inherited
+    public init(stringLiteral value: String) {
+        guard let version = Self.init(value) else {
+            fatalError("'\(value)' is not a valid semantic version!")
+        }
+        self = version
+    }
+}
+*/
+
 // MARK: - Comparison
 extension Version {
+    /// inherited
     public static func ==(lhs: Version, rhs: Version) -> Bool {
-        return (lhs.major, lhs.minor, lhs.patch, lhs.prerelease)
+        (lhs.major, lhs.minor, lhs.patch, lhs.prerelease)
             ==
-            (rhs.major, rhs.minor, rhs.patch, rhs.prerelease)
+        (rhs.major, rhs.minor, rhs.patch, rhs.prerelease)
     }
 
+    /// inherited
     public static func <(lhs: Version, rhs: Version) -> Bool {
-        return (lhs.major, lhs.minor, lhs.patch)
+        (lhs.major, lhs.minor, lhs.patch)
             <
-            (rhs.major, rhs.minor, rhs.patch)
+        (rhs.major, rhs.minor, rhs.patch)
             || // A version with a prerelease has a lower precedence than the same without
-            ((!lhs.prerelease.isEmpty && rhs.prerelease.isEmpty) || (lhs.prerelease < rhs.prerelease))
+        ((!lhs.prerelease.isEmpty && rhs.prerelease.isEmpty) || (lhs.prerelease < rhs.prerelease))
     }
 
+    /// inherited
     public static func >(lhs: Version, rhs: Version) -> Bool {
-        return (lhs.major, lhs.minor, lhs.patch)
+        (lhs.major, lhs.minor, lhs.patch)
             >
-            (rhs.major, rhs.minor, rhs.patch)
+        (rhs.major, rhs.minor, rhs.patch)
             || // A version with a prerelease has a lower precedence than the same without
-            ((lhs.prerelease.isEmpty && !rhs.prerelease.isEmpty) || (lhs.prerelease > rhs.prerelease))
+        ((lhs.prerelease.isEmpty && !rhs.prerelease.isEmpty) || (lhs.prerelease > rhs.prerelease))
     }
 }
 
@@ -169,6 +193,7 @@ extension Version {
     public enum NumericPart: Hashable, CustomStringConvertible {
         case major, minor, patch
 
+        /// inherited
         public var description: String {
             switch self {
             case .major: return "major"
@@ -225,11 +250,16 @@ extension Version {
 extension Version {
     /// Describes a set options that define the formatting behavior.
     public struct FormattingOptions: OptionSet {
+        /// inherited
         public typealias RawValue = Int
 
+        /// inherited
         public let rawValue: RawValue
 
-        public init(rawValue: RawValue) { self.rawValue = rawValue }
+        /// inherited
+        public init(rawValue: RawValue) {
+            self.rawValue = rawValue
+        }
     }
 }
 
@@ -243,8 +273,8 @@ extension Version.FormattingOptions {
     /// Include the metadata part of the version.
     public static let includeMetadata: Version.FormattingOptions = .init(rawValue: 1 << 3)
 
-    /// Combination of .includePrerelease and .includeMetadata
+    /// Combination of `.includePrerelease` and `.includeMetadata`
     public static let fullVersion: Version.FormattingOptions = [.includePrerelease, .includeMetadata]
-    /// Combination of .dropPatchIfZero and .dropMinorIfZero
+    /// Combination of `.dropPatchIfZero` and `.dropMinorIfZero`
     public static let dropTrailingZeros: Version.FormattingOptions = [.dropMinorIfZero, .dropPatchIfZero]
 }
