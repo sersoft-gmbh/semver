@@ -20,7 +20,7 @@ jobs:
   test-spm:
     strategy:
       matrix:
-        os: [macos-latest, ubuntu-18.04]
+        os: [macos-latest, ubuntu-18.04, ubuntu-20.04]
 
     runs-on: ${{matrix.os}}
 
@@ -32,6 +32,7 @@ jobs:
         uses: sersoft-gmbh/SwiftyActions@v1
         with:
           release-version: 5.3
+          platform: ${{matrix.os}}
       - uses: actions/checkout@v2
       - name: Build & Test
         run: swift test -v --parallel --enable-code-coverage
