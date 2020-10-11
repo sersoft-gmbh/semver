@@ -10,7 +10,7 @@ jobs:
   validate-linux-tests:
     runs-on: macos-latest
     steps:
-      - run: sudo xcode-select -s /Applications/Xcode_12_beta.app/Contents/Developer
+      - run: sudo xcode-select -s /Applications/Xcode_12.app/Contents/Developer
       - uses: actions/checkout@v2
       - name: Generate Linux Tests
         run: swift test --generate-linuxmain
@@ -25,14 +25,13 @@ jobs:
     runs-on: ${{matrix.os}}
 
     steps:
-      - run: sudo xcode-select -s /Applications/Xcode_12_beta.app/Contents/Developer
+      - run: sudo xcode-select -s /Applications/Xcode_12.app/Contents/Developer
         if: runner.os == 'macOS'
       - name: Install Swift
         if: runner.os == 'Linux'
         uses: sersoft-gmbh/SwiftyActions@v1
         with:
-          branch-name: swift-5.3-branch
-          version-tag: swift-5.3-DEVELOPMENT-SNAPSHOT-2020-08-18-a
+          release-version: 5.3
       - uses: actions/checkout@v2
       - name: Build & Test
         run: swift test -v --parallel --enable-code-coverage
