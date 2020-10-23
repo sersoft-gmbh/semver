@@ -12,6 +12,12 @@ jobs:
     steps:
       - run: sudo xcode-select -s /Applications/Xcode_12.1.app/Contents/Developer
       - uses: actions/checkout@v2
+      - uses: actions/cache@v2
+        with:
+          path: .build
+          key: ${{runner.os}}-spm-${{hashFiles('**/Package.resolved')}}
+          restore-keys: |
+            ${{runner.os}}-spm-
       - name: Generate Linux Tests
         run: swift test --generate-linuxmain
       - name: Check for git differences
