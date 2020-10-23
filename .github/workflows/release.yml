@@ -10,10 +10,16 @@ jobs:
   publish-docs:
     runs-on: macos-latest
     steps:
-      - run: sudo xcode-select -s /Applications/Xcode_12.app/Contents/Developer
-      - uses: actions/checkout@v2
+      - run: sudo xcode-select -s /Applications/Xcode_12.1.app/Contents/Developer
       - uses: dawidd6/action-get-tag@v1.0.0
         id: get-tag
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v2
+        with:
+          path: .build
+          key: ${{runner.os}}-spm-${{hashFiles('**/Package.resolved')}}
+          restore-keys: |
+            ${{runner.os}}-spm-
       - uses: sersoft-gmbh/swifty-docs-action@v1
         with:
           module-version: ${{steps.get-tag.outputs.tag}}
