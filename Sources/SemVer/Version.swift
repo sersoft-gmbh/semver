@@ -191,7 +191,12 @@ extension Version {
 extension Version {
     /// Lists all the numeric parts of a version (major, minor and patch).
     public enum NumericPart: Hashable, CustomStringConvertible {
-        case major, minor, patch
+        /// The major version part.
+        case major
+        /// The minor version part.
+        case minor
+        /// The patch version part.
+        case patch
 
         /// inherited
         public var description: String {
@@ -249,6 +254,7 @@ extension Version {
 // MARK: - Formatting Options
 extension Version {
     /// Describes a set options that define the formatting behavior.
+    @frozen
     public struct FormattingOptions: OptionSet {
         /// inherited
         public typealias RawValue = Int

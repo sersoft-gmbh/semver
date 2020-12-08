@@ -10,7 +10,7 @@ jobs:
   validate-linux-tests:
     runs-on: macos-latest
     steps:
-      - run: sudo xcode-select -s /Applications/Xcode_12.1.app/Contents/Developer
+      - run: sudo xcode-select -s /Applications/Xcode_12.2.app/Contents/Developer
       - uses: actions/checkout@v2
       - uses: actions/cache@v2
         with:
@@ -31,13 +31,13 @@ jobs:
     runs-on: ${{matrix.os}}
 
     steps:
-      - run: sudo xcode-select -s /Applications/Xcode_12.1.app/Contents/Developer
+      - run: sudo xcode-select -s /Applications/Xcode_12.2.app/Contents/Developer
         if: runner.os == 'macOS'
       - name: Install Swift
         if: runner.os == 'Linux'
         uses: sersoft-gmbh/SwiftyActions@v1
         with:
-          release-version: 5.3
+          release-version: 5.3.1
           platform: ${{matrix.os}}
       - uses: actions/checkout@v2
       - name: Build & Test
@@ -72,7 +72,7 @@ jobs:
         #     destination: platform=watchOS Simulator,OS=latest,name=Apple Watch Series 6 - 44mm
         #     additional-flags: ''
     steps:
-      - run: sudo xcode-select -s /Applications/Xcode_12.1.app/Contents/Developer
+      - run: sudo xcode-select -s /Applications/Xcode_12.2.app/Contents/Developer
       - uses: actions/checkout@v2
       - uses: sersoft-gmbh/xcodebuild-action@v1
         with:
@@ -80,8 +80,8 @@ jobs:
           scheme: semver
           destination: ${{matrix.destination}}
           action: ${{matrix.action}}
-          build-settings: -parallel-testing-enabled YES -enableCodeCoverage YES
-          # build-settings: ${{matrix.additional-flags}}
+          parallel-testing-enabled: true
+          enable-code-coverage: true
       - uses: codecov/codecov-action@v1
         with:
           token: ${{secrets.CODECOV_TOKEN}}
