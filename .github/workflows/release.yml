@@ -17,9 +17,9 @@ jobs:
       - uses: actions/cache@v2
         with:
           path: .build
-          key: ${{runner.os}}-spm-${{hashFiles('**/Package.resolved')}}
+          key: ${{runner.os}}-${{github.repository}}-spm-${{hashFiles('**/Package.resolved')}}
           restore-keys: |
-            ${{runner.os}}-spm-
+            ${{runner.os}}-${{github.repository}}-spm-
       - uses: sersoft-gmbh/swifty-docs-action@v1
         with:
           module-version: ${{steps.get-tag.outputs.tag}}

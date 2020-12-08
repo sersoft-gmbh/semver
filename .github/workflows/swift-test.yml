@@ -15,9 +15,9 @@ jobs:
       - uses: actions/cache@v2
         with:
           path: .build
-          key: ${{runner.os}}-spm-${{hashFiles('**/Package.resolved')}}
+          key: ${{runner.os}}-${{github.repository}}-spm-${{hashFiles('**/Package.resolved')}}
           restore-keys: |
-            ${{runner.os}}-spm-
+            ${{runner.os}}-${{github.repository}}-spm-
       - name: Generate Linux Tests
         run: swift test --generate-linuxmain
       - name: Check for git differences
@@ -40,6 +40,12 @@ jobs:
           release-version: 5.3.1
           platform: ${{matrix.os}}
       - uses: actions/checkout@v2
+      - uses: actions/cache@v2
+        with:
+          path: .build
+          key: ${{runner.os}}-${{github.repository}}-spm-${{hashFiles('**/Package.resolved')}}
+          restore-keys: |
+            ${{runner.os}}-${{github.repository}}-spm-
       - name: Build & Test
         run: swift test -v --parallel --enable-code-coverage
       - name: Generate Coverage Files
