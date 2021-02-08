@@ -12,7 +12,7 @@ jobs:
     steps:
       - run: sudo xcode-select -s /Applications/Xcode_12.2.app/Contents/Developer
       - uses: actions/checkout@v2
-      - uses: actions/cache@v2
+      - uses: actions/cache@v2.1.4
         with:
           path: .build
           key: ${{runner.os}}-${{github.repository}}-spm-${{hashFiles('**/Package.resolved')}}
@@ -40,7 +40,7 @@ jobs:
           release-version: 5.3.1
           platform: ${{matrix.os}}
       - uses: actions/checkout@v2
-      - uses: actions/cache@v2
+      - uses: actions/cache@v2.1.4
         with:
           path: .build
           key: ${{runner.os}}-${{github.repository}}-spm-${{hashFiles('**/Package.resolved')}}
