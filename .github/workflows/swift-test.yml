@@ -7,22 +7,6 @@ on:
     branches: [ master ]
 
 jobs:
-  validate-linux-tests:
-    runs-on: macos-latest
-    steps:
-      - run: sudo xcode-select -s /Applications/Xcode_12.2.app/Contents/Developer
-      - uses: actions/checkout@v2
-      - uses: actions/cache@v2.1.5
-        with:
-          path: .build
-          key: ${{runner.os}}-${{github.repository}}-spm-${{hashFiles('**/Package.resolved')}}
-          restore-keys: |
-            ${{runner.os}}-${{github.repository}}-spm-
-      - name: Generate Linux Tests
-        run: swift test --generate-linuxmain
-      - name: Check for git differences
-        run: git diff --exit-code
-
   test-spm:
     strategy:
       matrix:
@@ -31,13 +15,13 @@ jobs:
     runs-on: ${{matrix.os}}
 
     steps:
-      - run: sudo xcode-select -s /Applications/Xcode_12.2.app/Contents/Developer
+      - run: sudo xcode-select -s /Applications/Xcode_12.5.app/Contents/Developer
         if: runner.os == 'macOS'
       - name: Install Swift
         if: runner.os == 'Linux'
         uses: sersoft-gmbh/SwiftyActions@v1
         with:
-          release-version: 5.3.1
+          release-version: 5.4.0
           platform: ${{matrix.os}}
       - uses: actions/checkout@v2
       - uses: actions/cache@v2.1.5
@@ -79,7 +63,7 @@ jobs:
         #     parallel-testing-enabled: false
         #     enable-code-coverage: false
     steps:
-      - run: sudo xcode-select -s /Applications/Xcode_12.2.app/Contents/Developer
+      - run: sudo xcode-select -s /Applications/Xcode_12.5.app/Contents/Developer
       - uses: actions/checkout@v2
       - uses: sersoft-gmbh/xcodebuild-action@v1
         with:
