@@ -24,7 +24,7 @@ jobs:
         if: runner.os == 'Linux'
         uses: sersoft-gmbh/SwiftyActions@v1
         with:
-          release-version: 5.4.0
+          release-version: 5.4
           platform: ${{matrix.os}}
       - uses: actions/checkout@v2
       - uses: actions/cache@v2.1.5
