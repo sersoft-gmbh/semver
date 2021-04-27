@@ -10,7 +10,7 @@ jobs:
   test-spm:
     strategy:
       matrix:
-        os: [macos-11.0, ubuntu-18.04, ubuntu-20.04]
+        os: [macos-latest, ubuntu-18.04, ubuntu-20.04]
 
     runs-on: ${{matrix.os}}
 
@@ -19,7 +19,7 @@ jobs:
         if: runner.os == 'macOS'
         uses: maxim-lobanov/setup-xcode@v1
         with:
-          xcode-version: ^12.5
+          xcode-version: ^12.4
       - name: Install Swift
         if: runner.os == 'Linux'
         uses: sersoft-gmbh/SwiftyActions@v1
@@ -48,7 +48,7 @@ jobs:
           fail_ci_if_error: true
 
   test-xcode:
-    runs-on: macos-11.0
+    runs-on: macos-latest
     strategy:
       matrix:
         action: [test]
@@ -68,7 +68,7 @@ jobs:
     steps:
       - uses: maxim-lobanov/setup-xcode@v1
         with:
-          xcode-version: ^12.5
+          xcode-version: ^12.4
       - uses: actions/checkout@v2
       - uses: sersoft-gmbh/xcodebuild-action@v1
         with:
