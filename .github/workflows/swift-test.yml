@@ -70,7 +70,7 @@ jobs:
         with:
           xcode-version: ^12.4
       - uses: actions/checkout@v2
-      - uses: sersoft-gmbh/xcodebuild-action@v1
+      - uses: sersoft-gmbh/xcodebuild-action@v1.4
         with:
           spm-package: "./"
           scheme: semver
