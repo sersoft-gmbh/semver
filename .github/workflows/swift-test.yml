@@ -26,7 +26,7 @@ jobs:
         with:
           release-version: 5.4
           platform: ${{matrix.os}}
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2.3.4
       - uses: actions/cache@v2.1.5
         with:
           path: .build
@@ -69,7 +69,7 @@ jobs:
       - uses: maxim-lobanov/setup-xcode@v1.2.3
         with:
           xcode-version: ^12.4
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2.3.4
       - uses: sersoft-gmbh/xcodebuild-action@v1.4
         with:
           spm-package: "./"
