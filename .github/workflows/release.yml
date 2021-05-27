@@ -22,7 +22,7 @@ jobs:
           key: ${{runner.os}}-${{github.repository}}-spm-${{hashFiles('**/Package.resolved')}}
           restore-keys: |
             ${{runner.os}}-${{github.repository}}-spm-
-      - uses: sersoft-gmbh/swifty-docs-action@v1.1.3
+      - uses: sersoft-gmbh/swifty-docs-action@v1.2
         with:
           module-version: ${{steps.get-tag.outputs.tag}}
           output: docs
