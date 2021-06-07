@@ -5,7 +5,7 @@ extension CharacterSet {
     /// Allowed are alphanumerics and hyphen.
     public static let versionSuffixAllowed: CharacterSet = {
         var validCharset = alphanumerics
-        validCharset.insert(charactersIn: "-")
+        validCharset.insert("-")
         return validCharset
     }()
 }
@@ -143,7 +143,7 @@ public struct Version: Hashable, Comparable, LosslessStringConvertible {
 }
 
 /* This currently does not work, due to the compiler ignoring the `init(_ description:)` for `Version("blah")` now.
-//// MARK: - String Literal Conversion
+// MARK: - String Literal Conversion
 /// - Note: This conformance will crash if the given String literal is not a valid version!
 extension Version: ExpressibleByStringLiteral {
     /// inherited
@@ -271,16 +271,18 @@ extension Version {
 
 extension Version.FormattingOptions {
     /// Leave out patch part if it's zero.
-    public static let dropPatchIfZero: Version.FormattingOptions = .init(rawValue: 1 << 0)
+    public static let dropPatchIfZero = Version.FormattingOptions(rawValue: 1 << 0)
     /// Leave out minor part if it's zero. Requires `dropPatchIfZero`.
-    public static let dropMinorIfZero: Version.FormattingOptions = .init(rawValue: 1 << 1)
+    public static let dropMinorIfZero = Version.FormattingOptions(rawValue: 1 << 1)
     /// Include the prerelease part of the version.
-    public static let includePrerelease: Version.FormattingOptions = .init(rawValue: 1 << 2)
+    public static let includePrerelease = Version.FormattingOptions(rawValue: 1 << 2)
     /// Include the metadata part of the version.
-    public static let includeMetadata: Version.FormattingOptions = .init(rawValue: 1 << 3)
+    public static let includeMetadata = Version.FormattingOptions(rawValue: 1 << 3)
 
     /// Combination of `.includePrerelease` and `.includeMetadata`
-    public static let fullVersion: Version.FormattingOptions = [.includePrerelease, .includeMetadata]
+    @inlinable
+    public static var fullVersion: Version.FormattingOptions { [.includePrerelease, .includeMetadata] }
     /// Combination of `.dropPatchIfZero` and `.dropMinorIfZero`
-    public static let dropTrailingZeros: Version.FormattingOptions = [.dropMinorIfZero, .dropPatchIfZero]
+    @inlinable
+    public static var dropTrailingZeros: Version.FormattingOptions { [.dropMinorIfZero, .dropPatchIfZero] }
 }
