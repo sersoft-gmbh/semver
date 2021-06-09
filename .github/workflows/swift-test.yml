@@ -42,7 +42,7 @@ jobs:
       - name: Generate Coverage Files
         if: runner.os == 'Linux'
         run: llvm-cov export -format="lcov" .build/debug/*PackageTests.xctest -instr-profile .build/debug/codecov/default.profdata > coverage.lcov
-      - uses: codecov/codecov-action@v1.5.0
+      - uses: codecov/codecov-action@v1.5.2
         with:
           token: ${{secrets.CODECOV_TOKEN}}
           file: coverage.lcov
@@ -81,7 +81,7 @@ jobs:
           enable-code-coverage: true
           # parallel-testing-enabled: ${{matrix.parallel-testing-enabled}}
           # enable-code-coverage: ${{matrix.enable-code-coverage}}
-      - uses: codecov/codecov-action@v1.5.0
+      - uses: codecov/codecov-action@v1.5.2
         with:
           token: ${{secrets.CODECOV_TOKEN}}
           fail_ci_if_error: true
