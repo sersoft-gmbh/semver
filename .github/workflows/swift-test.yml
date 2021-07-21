@@ -86,6 +86,7 @@ jobs:
           # enable-code-coverage: ${{matrix.enable-code-coverage}}
       - uses: sersoft-gmbh/xcode-coverage-action@v1.0.0
         id: xcode-cov
+        if: matrix.action == 'test'
       - uses: codecov/codecov-action@v2.0.1
         with:
           token: ${{secrets.CODECOV_TOKEN}}
