@@ -117,6 +117,8 @@ If you find a bug / like to see a new feature in SemVer there are a few ways of 
 -   If you know how to code (which you probably do), please add a (failing) test and open a PR. We'll try to get your test green ASAP.
 -   If you can't do neither, then open an issue. While this might be the easiest way, it will likely take the longest for the bug to be fixed / feature to be implemented.
 
-## License
+## License & Copyright
 
 See [LICENSE](./LICENSE) file.
+
+Copyright &copy; 2016-2021 ser.soft GmbH.
