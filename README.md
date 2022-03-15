@@ -1,7 +1,7 @@
 # SemVer
 [![GitHub release](https://img.shields.io/github/release/sersoft-gmbh/semver.svg?style=flat)](https://github.com/sersoft-gmbh/semver/releases/latest)
 ![Tests](https://github.com/sersoft-gmbh/semver/workflows/Tests/badge.svg)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/748e2d31257540e991546da13440cb0f)](https://www.codacy.com/app/ffried/SemVer?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=sersoft-gmbh/semver&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/d36d463d4085404b914e5c5ffd45a725)](https://www.codacy.com/gh/sersoft-gmbh/semver/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=sersoft-gmbh/semver&amp;utm_campaign=Badge_Grade)
 [![codecov](https://codecov.io/gh/sersoft-gmbh/semver/branch/master/graph/badge.svg)](https://codecov.io/gh/sersoft-gmbh/semver)
 [![jazzy](https://raw.githubusercontent.com/sersoft-gmbh/semver/gh-pages/badge.svg?sanitize=true)](https://sersoft-gmbh.github.io/semver)
 
