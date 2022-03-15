@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>SemVer  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+    <script src="js/lunr.min.js" defer></script>
+    <script src="js/typeahead.jquery.js" defer></script>
+    <script src="js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+
+
+    <a title="SemVer  Reference"></a>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="index.html">
+          SemVer 3.3.1 Docs
+        </a>
+         (100% documented)
+      </p>
+    
+      <div class="header-col--secondary">
+        <form role="search" action="search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </div>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="https://github.com/sersoft-gmbh/semver">
+            <img class="header-icon" src="img/gh.png" alt="GitHub"/>
+            View on GitHub
+          </a>
+        </p>
+    
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="index.html">SemVer Reference</a>
+      <img class="carat" src="img/carat.png" alt=""/>
+      SemVer  Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Extensions/CharacterSet.html">CharacterSet</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Structs/Version.html">Version</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Structs/Version/NumericPart.html">– NumericPart</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Structs/Version/FormattingOptions.html">– FormattingOptions</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content top-matter">
+            
+            <h1 id='semver' class='heading'>SemVer</h1>
+
+<p><a href="https://github.com/sersoft-gmbh/semver/releases/latest"><img src="https://img.shields.io/github/release/sersoft-gmbh/semver.svg?style=flat" alt="GitHub release"></a>
+<img src="https://github.com/sersoft-gmbh/semver/workflows/Tests/badge.svg" alt="Tests">
+<a href="https://www.codacy.com/gh/sersoft-gmbh/semver/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=sersoft-gmbh/semver&amp;utm_campaign=Badge_Grade"><img src="https://app.codacy.com/project/badge/Grade/d36d463d4085404b914e5c5ffd45a725" alt="Codacy Badge"></a>
+<a href="https://codecov.io/gh/sersoft-gmbh/semver"><img src="https://codecov.io/gh/sersoft-gmbh/semver/branch/master/graph/badge.svg" alt="codecov"></a>
+<a href="https://sersoft-gmbh.github.io/semver"><img src="https://raw.githubusercontent.com/sersoft-gmbh/semver/gh-pages/badge.svg?sanitize=true" alt="jazzy"></a></p>
+
+<p>This repository contains a complete implementation of a <code><a href="Structs/Version.html">Version</a></code> struct that conforms to the rules of semantic versioning which are described at <a href="https://semver.org">semver.org</a>.</p>
+<h2 id='installation' class='heading'>Installation</h2>
+
+<p>Add the following dependency to your <code>Package.swift</code>:</p>
+<pre class="highlight swift"><code><span class="o">.</span><span class="nf">package</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="s">"https://github.com/sersoft-gmbh/semver.git"</span><span class="p">,</span> <span class="nv">from</span><span class="p">:</span> <span class="s">"3.0.0"</span><span class="p">),</span>
+</code></pre>
+<h2 id='compatibility' class='heading'>Compatibility</h2>
+
+<ul>
+<li>For Swift up to version 5.2, use SemVer version 2.x.y.</li>
+<li>For Swift as of version 5.3, use SemVer version 3.x.y.</li>
+</ul>
+<h2 id='usage' class='heading'>Usage</h2>
+<h3 id='creating-versions' class='heading'>Creating Versions</h3>
+
+<p>You can create a version like this:</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">version</span> <span class="o">=</span> <span class="kt">Version</span><span class="p">(</span><span class="nv">major</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nv">minor</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nv">patch</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+                      <span class="nv">prerelease</span><span class="p">:</span> <span class="s">"beta"</span><span class="p">,</span>
+                      <span class="nv">metadata</span><span class="p">:</span> <span class="s">"exp"</span><span class="p">,</span> <span class="s">"test"</span><span class="p">)</span> <span class="c1">// metadata could also be ["exp, test"]</span>
+<span class="n">version</span><span class="o">.</span><span class="nf">versionString</span><span class="p">()</span> <span class="c1">// -&gt; "1.2.3-beta+exp.test"</span>
+</code></pre>
+
+<p>Of course there are simpler ways:</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">initialRelease</span> <span class="o">=</span> <span class="kt">Version</span><span class="p">(</span><span class="nv">major</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">initialRelease</span><span class="o">.</span><span class="nf">versionString</span><span class="p">()</span> <span class="c1">// -&gt; "1.0.0"</span>
+
+<span class="k">let</span> <span class="nv">minorRelease</span> <span class="o">=</span> <span class="kt">Version</span><span class="p">(</span><span class="nv">major</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nv">minor</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">minorRelease</span><span class="o">.</span><span class="nf">versionString</span><span class="p">()</span> <span class="c1">// -&gt; "2.1.0"</span>
+
+<span class="k">let</span> <span class="nv">patchRelease</span> <span class="o">=</span> <span class="kt">Version</span><span class="p">(</span><span class="nv">major</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="nv">minor</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nv">patch</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">patchRelease</span><span class="o">.</span><span class="nf">versionString</span><span class="p">()</span> <span class="c1">// -&gt; "3.2.1"</span>
+</code></pre>
+<h3 id='version-strings' class='heading'>Version Strings</h3>
+
+<p>As seen in above&rsquo;s examples, there&rsquo;s a func to return a string represenation of a <code><a href="Structs/Version.html">Version</a></code>. The <code>versionString(formattedWith options: FormattingOptions = default)</code> function allows to retrieve a formatted string using the options passed. By default the full version is returned.
+The following options currently exist:</p>
+
+<ul>
+<li><code>.dropPatchIfZero</code>: If <code>patch</code> is <code>0</code>, it won&rsquo;t be added to the version string.</li>
+<li><code>.dropMinorIfZero</code>: If <code>minor</code> and <code>patch</code> are both <code>0</code>, only the <code>major</code> number is added. Requires <code>.dropPatchIfZero</code>.</li>
+<li><code>.dropTrailingZeros</code>: A convenience combination of <code>.dropPatchIfZero</code> and <code>.dropMinorIfZero</code>.</li>
+<li><code>.includePrerelease</code>: If <code>prerelease</code> is not empty, it is added to the version string.</li>
+<li><code>.includeMetadata</code>: If <code>metadata</code> is not empty, it is added to the version string.</li>
+<li><code>.fullVersion</code>: A convenience combination of <code>.includePrerelease</code> and <code>.includeMetadata</code>. The default if you don&rsquo;t pass anything to <code>versionString</code>.</li>
+</ul>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">version</span> <span class="o">=</span> <span class="kt">Version</span><span class="p">(</span><span class="nv">major</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nv">minor</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nv">patch</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+                      <span class="nv">prerelease</span><span class="p">:</span> <span class="s">"beta"</span><span class="p">,</span>
+                      <span class="nv">metadata</span><span class="p">:</span> <span class="s">"exp"</span><span class="p">,</span> <span class="s">"test"</span><span class="p">)</span>
+<span class="n">version</span><span class="o">.</span><span class="nf">versionString</span><span class="p">(</span><span class="nv">formattedWith</span><span class="p">:</span> <span class="o">.</span><span class="n">includePrerelease</span><span class="p">])</span> <span class="c1">// -&gt; "1.2.3-beta"</span>
+<span class="n">version</span><span class="o">.</span><span class="nf">versionString</span><span class="p">(</span><span class="nv">formattedWith</span><span class="p">:</span> <span class="o">.</span><span class="n">includeMetadata</span><span class="p">)</span> <span class="c1">// -&gt; "1.2.3+exp.test"</span>
+<span class="n">version</span><span class="o">.</span><span class="nf">versionString</span><span class="p">(</span><span class="nv">formattedWith</span><span class="p">:</span> <span class="p">[])</span> <span class="c1">// -&gt; "1.2.3"</span>
+
+<span class="k">let</span> <span class="nv">version2</span> <span class="o">=</span> <span class="kt">Version</span><span class="p">(</span><span class="nv">major</span><span class="p">:</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">version2</span><span class="o">.</span><span class="nf">versionString</span><span class="p">(</span><span class="nv">formattedWith</span><span class="p">:</span> <span class="o">.</span><span class="n">dropPatchIfZero</span><span class="p">)</span> <span class="c1">// -&gt; "2.0"</span>
+<span class="n">version2</span><span class="o">.</span><span class="nf">versionString</span><span class="p">(</span><span class="nv">formattedWith</span><span class="p">:</span> <span class="o">.</span><span class="n">dropTrailingZeros</span><span class="p">)</span> <span class="c1">// -&gt; "2"</span>
+</code></pre>
+
+<p>A <code><a href="Structs/Version.html">Version</a></code> can also be created from a String. All Strings created by the <code>versionString</code> func should result in the same <code><a href="Structs/Version.html">Version</a></code> they were created from:</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">version</span> <span class="o">=</span> <span class="kt">Version</span><span class="p">(</span><span class="nv">major</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nv">minor</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nv">patch</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+                      <span class="nv">prerelease</span><span class="p">:</span> <span class="s">"beta"</span><span class="p">,</span>
+                      <span class="nv">metadata</span><span class="p">:</span> <span class="s">"exp"</span><span class="p">,</span> <span class="s">"test"</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">str</span> <span class="o">=</span> <span class="n">version</span><span class="o">.</span><span class="nf">versionString</span><span class="p">()</span> <span class="c1">// -&gt; "1.2.3-beta+exp.test"</span>
+<span class="k">let</span> <span class="nv">recreatedVersion</span> <span class="o">=</span> <span class="kt">Version</span><span class="p">(</span><span class="n">str</span><span class="p">)</span> <span class="c1">// recreatedVersion is Optional&lt;Version&gt;</span>
+<span class="n">recreatedVersion</span> <span class="o">==</span> <span class="n">version</span> <span class="c1">// -&gt; true</span>
+</code></pre>
+<h3 id='comparing-versions' class='heading'>Comparing Versions</h3>
+
+<p>A <code><a href="Structs/Version.html">Version</a></code> can also be compared to other versions. This also follows the rules of semantic versioning. This means that <code>metadata</code> has no effect on comparing at all. This also means that a version with and without metadata are <strong>treated as equal</strong>:</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">versionWithMetadata</span> <span class="o">=</span> <span class="kt">Version</span><span class="p">(</span><span class="nv">major</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nv">minor</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nv">patch</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+                                  <span class="nv">metadata</span><span class="p">:</span> <span class="s">"exp"</span><span class="p">,</span> <span class="s">"test"</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">versionWithoutMetadata</span> <span class="o">=</span> <span class="kt">Version</span><span class="p">(</span><span class="nv">major</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nv">minor</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nv">patch</span><span class="p">:</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">versionWithMetadata</span> <span class="o">==</span> <span class="n">versionWithoutMetadata</span> <span class="c1">// -&gt; true</span>
+</code></pre>
+
+<p>Otherwise, comparing two <code><a href="Structs/Version.html">Version</a></code>&lsquo;s basically compares their major/minor/patch numbers. A <code><a href="Structs/Version.html">Version</a></code> with a <code>prerelease</code> is ordered <strong>before</strong> a the same version without <code>prerelease</code>:</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">prereleaseVersion</span> <span class="o">=</span> <span class="kt">Version</span><span class="p">(</span><span class="nv">major</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nv">minor</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nv">patch</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+                                <span class="nv">prerelease</span><span class="p">:</span> <span class="s">"beta"</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">finalVersion</span> <span class="o">=</span> <span class="kt">Version</span><span class="p">(</span><span class="nv">major</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nv">minor</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nv">patch</span><span class="p">:</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">prereleaseVersion</span> <span class="o">&lt;</span> <span class="n">finalVersion</span> <span class="c1">// -&gt; true</span>
+</code></pre>
+<h3 id='validity-checks' class='heading'>Validity Checks</h3>
+
+<p><code><a href="Structs/Version.html">Version</a></code> performs some validity checks on its fields. This means, that no negative numbers are allowed for <code>major</code>, <code>minor</code> and <code>patch</code>. Also, the <code>prerelease</code> and <code>metadata</code> Strings must only contain alphanumeric characters plus <code>-</code> (hyphen). However, to keep working with <code><a href="Structs/Version.html">Version</a></code> production-safe, these rules are only checked in non-optimized builds (using <code>assert()</code>). The result of using not allowed numbers / characters in optimized builds is undetermined. While calling <code>versionString()</code> very likely won&rsquo;t break, it certainly won&rsquo;t be possible to recreate a version containing invalid numbers / characters using <code>init(_ description: String)</code>.</p>
+<h2 id='documentation' class='heading'>Documentation</h2>
+
+<p>The API is documented using header doc. If you prefer to view the documentation as a webpage, there is an <a href="https://sersoft-gmbh.github.io/SemVer">online version</a> available for you.</p>
+<h2 id='contributing' class='heading'>Contributing</h2>
+
+<p>If you find a bug / like to see a new feature in SemVer there are a few ways of helping out:</p>
+
+<ul>
+<li>If you can fix the bug / implement the feature yourself please do and open a PR!</li>
+<li>If you know how to code (which you probably do), please add a (failing) test and open a PR. We&rsquo;ll try to get your test green ASAP.</li>
+<li>If you can&rsquo;t do neither, then open an issue. While this might be the easiest way, it will likely take the longest for the bug to be fixed / feature to be implemented.</li>
+</ul>
+<h2 id='license-amp-copyright' class='heading'>License &amp; Copyright</h2>
+
+<p>See <a href="./LICENSE">LICENSE</a> file.</p>
+
+<p>Copyright &copy; 2016-2021 ser.soft GmbH.</p>
+
+          </div>
+        </section>
+
+
+      </article>
+    </div>
+    <section class="footer">
+      <p>&copy; 2022 <a class="link" href="https://sersoft.de" target="_blank" rel="external noopener">ser.soft GmbH</a>. All rights reserved. (Last updated: 2022-03-15)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+    </section>
+  </body>
+</html>
