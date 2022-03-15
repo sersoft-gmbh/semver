@@ -32,7 +32,7 @@ public struct Version: Hashable, Comparable, LosslessStringConvertible {
     }
     /// The metadata of this version. Must only contain caracters in `CharacterSet.versionSuffixAllowed`.
     /// - SeeAlso: `CharacterSet.versionSuffixAllowed`
-    public var metadata: [String] {
+    public var metadata: Array<String> {
         willSet {
             assert(newValue.allSatisfy { !$0.isEmpty && CharacterSet(charactersIn: $0).isSubset(of: .versionSuffixAllowed) })
         }
@@ -50,7 +50,7 @@ public struct Version: Hashable, Comparable, LosslessStringConvertible {
     ///   - patch: The patch part of this version. Must be >= 0.
     ///   - prerelease: The prelease part of this version. Must only contain caracters in `CharacterSet.versionSuffixAllowed`.
     ///   - metadata: The metadata of this version. Must only contain caracters in `CharacterSet.versionSuffixAllowed`.
-    public init(major: Int, minor: Int = 0, patch: Int = 0, prerelease: String = "", metadata: [String] = []) {
+    public init(major: Int, minor: Int = 0, patch: Int = 0, prerelease: String = "", metadata: Array<String> = .init()) {
         assert(major >= 0)
         assert(minor >= 0)
         assert(patch >= 0)
@@ -101,12 +101,12 @@ public struct Version: Hashable, Comparable, LosslessStringConvertible {
             prerelease = ""
         }
 
-        let metadata: [String]
+        let metadata: Array<String>
         if let range = description.range(of: #"\+([0-9A-Za-z-]+\.?)+$"#, options: .regularExpression) {
             let metadataString = description[description.index(after: range.lowerBound)..<range.upperBound]
             metadata = metadataString.components(separatedBy: ".")
         } else {
-            metadata = []
+            metadata = .init()
         }
 
         self.init(major: major, minor: minor, patch: patch, prerelease: prerelease, metadata: metadata)
@@ -126,7 +126,7 @@ public struct Version: Hashable, Comparable, LosslessStringConvertible {
     /// - Parameter options: The options to use for creating the version string.
     /// - Returns: A string containing the version formatted with the given options.
     public func versionString(formattedWith options: FormattingOptions = .fullVersion) -> String {
-        var versionString = "\(major)"
+        var versionString = String(major)
         if !options.contains(.dropPatchIfZero) || patch != 0 {
             versionString += ".\(minor).\(patch)"
         } else if !options.contains(.dropMinorIfZero) || minor != 0 {
@@ -150,7 +150,7 @@ extension Version: ExpressibleByStringLiteral {
     public typealias StringLiteralType = String
 
     /// inherited
-    public init(stringLiteral value: String) {
+    public init(stringLiteral value: StringLiteralType) {
         guard let version = Self.init(value) else {
             fatalError("'\(value)' is not a valid semantic version!")
         }
