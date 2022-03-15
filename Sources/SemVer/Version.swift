@@ -279,10 +279,16 @@ extension Version.FormattingOptions {
     /// Include the metadata part of the version.
     public static let includeMetadata = Version.FormattingOptions(rawValue: 1 << 3)
 
-    /// Combination of `.includePrerelease` and `.includeMetadata`
+    /// Combination of `.includePrerelease` and `.includeMetadata`.
     @inlinable
     public static var fullVersion: Version.FormattingOptions { [.includePrerelease, .includeMetadata] }
-    /// Combination of `.dropPatchIfZero` and `.dropMinorIfZero`
+    /// Combination of `.dropPatchIfZero` and `.dropMinorIfZero`.
     @inlinable
     public static var dropTrailingZeros: Version.FormattingOptions { [.dropMinorIfZero, .dropPatchIfZero] }
 }
+
+#if compiler(>=5.5) && canImport(_Concurrency)
+extension Version: Sendable {}
+extension Version.NumericPart: Sendable {}
+extension Version.FormattingOptions: Sendable {}
+#endif
