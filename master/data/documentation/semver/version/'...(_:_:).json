@@ -10,7 +10,7 @@
       [
         "doc:\/\/SemVer\/documentation\/SemVer",
         "doc:\/\/SemVer\/documentation\/SemVer\/Version",
-        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/-Implementations"
+        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/Comparable-Implementations"
       ]
     ]
   },
@@ -313,7 +313,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -377,17 +377,6 @@
   "title" : "Version",
   "type" : "topic",
   "url" : "\/documentation\/semver\/version"
-},
-"doc://SemVer/documentation/SemVer/Version/-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : " Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/semver\/version\/-implementations"
 },
 "doc://SemVer/documentation/SemVer/Version/...(_:_:)": {
   "abstract" : [
@@ -465,6 +454,17 @@
   "title" : "...(_:_:)",
   "type" : "topic",
   "url" : "\/documentation\/semver\/version\/'...(_:_:)"
+},
+"doc://SemVer/documentation/SemVer/Version/Comparable-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/Comparable-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Comparable Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version\/comparable-implementations"
 }
 }
 }
