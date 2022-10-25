@@ -12,7 +12,7 @@ extension CharacterSet {
 
 /// A Version struct that implements the rules of semantic versioning.
 /// - SeeAlso: https://semver.org
-public struct Version: Hashable, Comparable, LosslessStringConvertible {
+public struct Version: Sendable, Hashable, Comparable, LosslessStringConvertible {
     /// The major part of this version. Must be >= 0.
     public var major: Int {
         willSet { assert(newValue >= 0) }
@@ -38,7 +38,6 @@ public struct Version: Hashable, Comparable, LosslessStringConvertible {
         }
     }
 
-    /// inherited
     @inlinable
     public var description: String { versionString() }
 
@@ -77,7 +76,6 @@ public struct Version: Hashable, Comparable, LosslessStringConvertible {
         self.init(major: major, minor: minor, patch: patch, prerelease: prerelease, metadata: metadata)
     }
 
-    /// inherited
     public init?(_ description: String) {
         guard !description.isEmpty &&
               description.range(of: #"^([0-9]+\.){0,2}[0-9]+(-[0-9A-Za-z-]+)?(\+([0-9A-Za-z-]+\.?)*)?$"#, options: .regularExpression) != nil
@@ -112,7 +110,6 @@ public struct Version: Hashable, Comparable, LosslessStringConvertible {
         self.init(major: major, minor: minor, patch: patch, prerelease: prerelease, metadata: metadata)
     }
 
-    /// inherited
     public func hash(into hasher: inout Hasher) {
         hasher.combine(major)
         hasher.combine(minor)
@@ -146,10 +143,8 @@ public struct Version: Hashable, Comparable, LosslessStringConvertible {
 // MARK: - String Literal Conversion
 /// - Note: This conformance will crash if the given String literal is not a valid version!
 extension Version: ExpressibleByStringLiteral {
-    /// inherited
     public typealias StringLiteralType = String
 
-    /// inherited
     public init(stringLiteral value: StringLiteralType) {
         guard let version = Self.init(value) else {
             fatalError("'\(value)' is not a valid semantic version!")
@@ -161,14 +156,12 @@ extension Version: ExpressibleByStringLiteral {
 
 // MARK: - Comparison
 extension Version {
-    /// inherited
     public static func ==(lhs: Version, rhs: Version) -> Bool {
         (lhs.major, lhs.minor, lhs.patch, lhs.prerelease)
             ==
         (rhs.major, rhs.minor, rhs.patch, rhs.prerelease)
     }
 
-    /// inherited
     public static func <(lhs: Version, rhs: Version) -> Bool {
         (lhs.major, lhs.minor, lhs.patch)
             <
@@ -177,7 +170,6 @@ extension Version {
         ((!lhs.prerelease.isEmpty && rhs.prerelease.isEmpty) || (lhs.prerelease < rhs.prerelease))
     }
 
-    /// inherited
     public static func >(lhs: Version, rhs: Version) -> Bool {
         (lhs.major, lhs.minor, lhs.patch)
             >
@@ -190,7 +182,7 @@ extension Version {
 // MARK: - Incrementing
 extension Version {
     /// Lists all the numeric parts of a version (major, minor and patch).
-    public enum NumericPart: Hashable, CustomStringConvertible {
+    public enum NumericPart: Sendable, Hashable, CustomStringConvertible {
         /// The major version part.
         case major
         /// The minor version part.
@@ -198,7 +190,6 @@ extension Version {
         /// The patch version part.
         case patch
 
-        /// inherited
         public var description: String {
             switch self {
             case .major: return "major"
@@ -255,14 +246,11 @@ extension Version {
 extension Version {
     /// Describes a set options that define the formatting behavior.
     @frozen
-    public struct FormattingOptions: OptionSet {
-        /// inherited
+    public struct FormattingOptions: OptionSet, Hashable, Sendable {
         public typealias RawValue = Int
 
-        /// inherited
         public let rawValue: RawValue
 
-        /// inherited
         public init(rawValue: RawValue) {
             self.rawValue = rawValue
         }
@@ -286,9 +274,3 @@ extension Version.FormattingOptions {
     @inlinable
     public static var dropTrailingZeros: Version.FormattingOptions { [.dropMinorIfZero, .dropPatchIfZero] }
 }
-
-#if compiler(>=5.5) && canImport(_Concurrency)
-extension Version: Sendable {}
-extension Version.NumericPart: Sendable {}
-extension Version.FormattingOptions: Sendable {}
-#endif
