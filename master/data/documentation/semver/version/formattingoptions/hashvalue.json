@@ -4,21 +4,71 @@
       [
         "doc:\/\/SemVer\/documentation\/SemVer",
         "doc:\/\/SemVer\/documentation\/SemVer\/Version",
-        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions"
+        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions",
+        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions\/RawRepresentable-Implementations"
       ]
     ]
   },
   "identifier" : {
     "interfaceLanguage" : "swift",
-    "url" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions\/rawValue-swift.property"
+    "url" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions\/hashValue"
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:6SemVer7VersionV17FormattingOptionsV8rawValueSivp",
+    "conformance" : {
+      "availabilityPrefix" : [
+        {
+          "text" : "Available when",
+          "type" : "text"
+        }
+      ],
+      "conformancePrefix" : [
+        {
+          "text" : "Conforms when",
+          "type" : "text"
+        }
+      ],
+      "constraints" : [
+        {
+          "code" : "Self",
+          "type" : "codeVoice"
+        },
+        {
+          "text" : " conforms to ",
+          "type" : "text"
+        },
+        {
+          "code" : "Hashable",
+          "type" : "codeVoice"
+        },
+        {
+          "text" : " and ",
+          "type" : "text"
+        },
+        {
+          "code" : "RawValue",
+          "type" : "codeVoice"
+        },
+        {
+          "text" : " conforms to ",
+          "type" : "text"
+        },
+        {
+          "code" : "Hashable",
+          "type" : "codeVoice"
+        },
+        {
+          "text" : ".",
+          "type" : "text"
+        }
+      ]
+    },
+    "extendedModule" : "Swift",
+    "externalID" : "s:SYsSHRzSH8RawValueSYRpzrlE04hashB0Sivp::SYNTHESIZED::s:6SemVer7VersionV17FormattingOptionsV",
     "fragments" : [
       {
         "kind" : "keyword",
-        "text" : "let"
+        "text" : "var"
       },
       {
         "kind" : "text",
@@ -26,7 +76,7 @@
       },
       {
         "kind" : "identifier",
-        "text" : "rawValue"
+        "text" : "hashValue"
       },
       {
         "kind" : "text",
@@ -34,26 +84,8 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:6SemVer7VersionV",
-        "text" : "Version"
-      },
-      {
-        "kind" : "text",
-        "text" : "."
-      },
-      {
-        "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:6SemVer7VersionV17FormattingOptionsV",
-        "text" : "FormattingOptions"
-      },
-      {
-        "kind" : "text",
-        "text" : "."
-      },
-      {
-        "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:6SemVer7VersionV17FormattingOptionsV8RawValuea",
-        "text" : "RawValue"
+        "preciseIdentifier" : "s:Si",
+        "text" : "Int"
       }
     ],
     "modules" : [
@@ -64,7 +96,7 @@
     "role" : "symbol",
     "roleHeading" : "Instance Property",
     "symbolKind" : "property",
-    "title" : "rawValue"
+    "title" : "hashValue"
   },
   "primaryContentSections" : [
     {
@@ -79,7 +111,7 @@
           "tokens" : [
             {
               "kind" : "keyword",
-              "text" : "let"
+              "text" : "var"
             },
             {
               "kind" : "text",
@@ -87,37 +119,28 @@
             },
             {
               "kind" : "identifier",
-              "text" : "rawValue"
+              "text" : "hashValue"
             },
             {
               "kind" : "text",
               "text" : ": "
             },
             {
-              "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version",
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:6SemVer7VersionV",
-              "text" : "Version"
+              "preciseIdentifier" : "s:Si",
+              "text" : "Int"
             },
             {
               "kind" : "text",
-              "text" : "."
+              "text" : " { "
             },
             {
-              "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:6SemVer7VersionV17FormattingOptionsV",
-              "text" : "FormattingOptions"
+              "kind" : "keyword",
+              "text" : "get"
             },
             {
               "kind" : "text",
-              "text" : "."
-            },
-            {
-              "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions\/RawValue-swift.typealias",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:6SemVer7VersionV17FormattingOptionsV8RawValuea",
-              "text" : "RawValue"
+              "text" : " }"
             }
           ]
         }
@@ -136,7 +159,7 @@
   "variants" : [
     {
       "paths" : [
-        "\/documentation\/semver\/version\/formattingoptions\/rawvalue-swift.property"
+        "\/documentation\/semver\/version\/formattingoptions\/hashvalue"
       ],
       "traits" : [
         {
@@ -226,45 +249,73 @@
   "type" : "topic",
   "url" : "\/documentation\/semver\/version\/formattingoptions"
 },
-"doc://SemVer/documentation/SemVer/Version/FormattingOptions/RawValue-swift.typealias": {
+"doc://SemVer/documentation/SemVer/Version/FormattingOptions/RawRepresentable-Implementations": {
   "abstract" : [
 
   ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "typealias"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "RawValue"
-    }
-  ],
-  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions\/RawValue-swift.typealias",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "RawValue"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "Version.FormattingOptions.RawValue",
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions\/RawRepresentable-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "RawRepresentable Implementations",
   "type" : "topic",
-  "url" : "\/documentation\/semver\/version\/formattingoptions\/rawvalue-swift.typealias"
+  "url" : "\/documentation\/semver\/version\/formattingoptions\/rawrepresentable-implementations"
 },
-"doc://SemVer/documentation/SemVer/Version/FormattingOptions/rawValue-swift.property": {
+"doc://SemVer/documentation/SemVer/Version/FormattingOptions/hashValue": {
   "abstract" : [
 
   ],
+  "conformance" : {
+    "availabilityPrefix" : [
+      {
+        "text" : "Available when",
+        "type" : "text"
+      }
+    ],
+    "conformancePrefix" : [
+      {
+        "text" : "Conforms when",
+        "type" : "text"
+      }
+    ],
+    "constraints" : [
+      {
+        "code" : "Self",
+        "type" : "codeVoice"
+      },
+      {
+        "text" : " conforms to ",
+        "type" : "text"
+      },
+      {
+        "code" : "Hashable",
+        "type" : "codeVoice"
+      },
+      {
+        "text" : " and ",
+        "type" : "text"
+      },
+      {
+        "code" : "RawValue",
+        "type" : "codeVoice"
+      },
+      {
+        "text" : " conforms to ",
+        "type" : "text"
+      },
+      {
+        "code" : "Hashable",
+        "type" : "codeVoice"
+      },
+      {
+        "text" : ".",
+        "type" : "text"
+      }
+    ]
+  },
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "let"
+      "text" : "var"
     },
     {
       "kind" : "text",
@@ -272,7 +323,7 @@
     },
     {
       "kind" : "identifier",
-      "text" : "rawValue"
+      "text" : "hashValue"
     },
     {
       "kind" : "text",
@@ -280,34 +331,16 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:6SemVer7VersionV",
-      "text" : "Version"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:6SemVer7VersionV17FormattingOptionsV",
-      "text" : "FormattingOptions"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:6SemVer7VersionV17FormattingOptionsV8RawValuea",
-      "text" : "RawValue"
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
     }
   ],
-  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions\/rawValue-swift.property",
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions\/hashValue",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "rawValue",
+  "title" : "hashValue",
   "type" : "topic",
-  "url" : "\/documentation\/semver\/version\/formattingoptions\/rawvalue-swift.property"
+  "url" : "\/documentation\/semver\/version\/formattingoptions\/hashvalue"
 }
 }
 }

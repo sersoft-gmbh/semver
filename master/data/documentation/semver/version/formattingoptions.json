@@ -93,6 +93,7 @@
       "identifiers" : [
         "doc:\/\/SemVer\/SQ",
         "doc:\/\/SemVer\/s25ExpressibleByArrayLiteralP",
+        "doc:\/\/SemVer\/SH",
         "doc:\/\/SemVer\/s9OptionSetP",
         "doc:\/\/SemVer\/SY",
         "doc:\/\/SemVer\/s8SendableP",
@@ -146,6 +147,7 @@
       "identifiers" : [
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions\/Equatable-Implementations",
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions\/OptionSet-Implementations",
+        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions\/RawRepresentable-Implementations",
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions\/SetAlgebra-Implementations"
       ],
       "title" : "Default Implementations"
@@ -165,6 +167,11 @@
   ]
 , 
 "references": {
+"doc://SemVer/SH": {
+  "identifier" : "doc:\/\/SemVer\/SH",
+  "title" : "Swift.Hashable",
+  "type" : "unresolvable"
+},
 "doc://SemVer/SQ": {
   "identifier" : "doc:\/\/SemVer\/SQ",
   "title" : "Swift.Equatable",
@@ -276,12 +283,20 @@
   "type" : "topic",
   "url" : "\/documentation\/semver\/version\/formattingoptions\/optionset-implementations"
 },
+"doc://SemVer/documentation/SemVer/Version/FormattingOptions/RawRepresentable-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions\/RawRepresentable-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "RawRepresentable Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version\/formattingoptions\/rawrepresentable-implementations"
+},
 "doc://SemVer/documentation/SemVer/Version/FormattingOptions/RawValue-swift.typealias": {
   "abstract" : [
-    {
-      "text" : "inherited",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -687,10 +702,7 @@
 },
 "doc://SemVer/documentation/SemVer/Version/FormattingOptions/init(rawValue:)": {
   "abstract" : [
-    {
-      "text" : "inherited",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -746,10 +758,7 @@
 },
 "doc://SemVer/documentation/SemVer/Version/FormattingOptions/rawValue-swift.property": {
   "abstract" : [
-    {
-      "text" : "inherited",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {

@@ -169,6 +169,31 @@
                   {
                     "children" : [
                       {
+                        "title" : "Instance Properties",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "path" : "\/documentation\/semver\/version\/formattingoptions\/hashvalue",
+                        "title" : "var hashValue: Int",
+                        "type" : "property"
+                      },
+                      {
+                        "title" : "Instance Methods",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "path" : "\/documentation\/semver\/version\/formattingoptions\/hash(into:)",
+                        "title" : "func hash(into: inout Hasher)",
+                        "type" : "method"
+                      }
+                    ],
+                    "path" : "\/documentation\/semver\/version\/formattingoptions\/rawrepresentable-implementations",
+                    "title" : "RawRepresentable Implementations",
+                    "type" : "symbol"
+                  },
+                  {
+                    "children" : [
+                      {
                         "title" : "Initializers",
                         "type" : "groupMarker"
                       },

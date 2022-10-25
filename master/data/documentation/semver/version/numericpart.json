@@ -240,10 +240,7 @@
 },
 "doc://SemVer/documentation/SemVer/Version/NumericPart/description": {
   "abstract" : [
-    {
-      "text" : "inherited",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {

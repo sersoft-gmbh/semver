@@ -162,10 +162,7 @@
 },
 "doc://SemVer/documentation/SemVer/Version/==(_:_:)": {
   "abstract" : [
-    {
-      "text" : "inherited",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {

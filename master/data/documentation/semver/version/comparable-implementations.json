@@ -550,10 +550,7 @@
 },
 "doc://SemVer/documentation/SemVer/Version/_(_:_:)-6aloy": {
   "abstract" : [
-    {
-      "text" : "inherited",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -617,10 +614,7 @@
 },
 "doc://SemVer/documentation/SemVer/Version/_(_:_:)-96zme": {
   "abstract" : [
-    {
-      "text" : "inherited",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {

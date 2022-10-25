@@ -317,10 +317,7 @@
 },
 "doc://SemVer/documentation/SemVer/Version/description": {
   "abstract" : [
-    {
-      "text" : "inherited",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -354,10 +351,7 @@
 },
 "doc://SemVer/documentation/SemVer/Version/hash(into:)": {
   "abstract" : [
-    {
-      "text" : "inherited",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -478,10 +472,7 @@
 },
 "doc://SemVer/documentation/SemVer/Version/init(_:)": {
   "abstract" : [
-    {
-      "text" : "inherited",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
