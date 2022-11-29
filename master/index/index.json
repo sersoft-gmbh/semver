@@ -383,6 +383,22 @@
                   {
                     "children" : [
                       {
+                        "title" : "Instance Properties",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "path" : "\/documentation\/semver\/version\/numericpart\/halfwidthcornerquoted",
+                        "title" : "var halfWidthCornerQuoted: String",
+                        "type" : "property"
+                      }
+                    ],
+                    "path" : "\/documentation\/semver\/version\/numericpart\/customstringconvertible-implementations",
+                    "title" : "CustomStringConvertible Implementations",
+                    "type" : "symbol"
+                  },
+                  {
+                    "children" : [
+                      {
                         "title" : "Operators",
                         "type" : "groupMarker"
                       },
@@ -464,6 +480,22 @@
                 ],
                 "path" : "\/documentation\/semver\/version\/comparable-implementations",
                 "title" : "Comparable Implementations",
+                "type" : "symbol"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/semver\/version\/halfwidthcornerquoted",
+                    "title" : "var halfWidthCornerQuoted: String",
+                    "type" : "property"
+                  }
+                ],
+                "path" : "\/documentation\/semver\/version\/customstringconvertible-implementations",
+                "title" : "CustomStringConvertible Implementations",
                 "type" : "symbol"
               },
               {
