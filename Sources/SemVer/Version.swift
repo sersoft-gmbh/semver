@@ -76,9 +76,26 @@ public struct Version: Sendable, Hashable, Comparable, LosslessStringConvertible
         self.init(major: major, minor: minor, patch: patch, prerelease: prerelease, metadata: metadata)
     }
 
-    public init?(_ description: String) {
-        guard !description.isEmpty &&
-              description.range(of: #"^([0-9]+\.){0,2}[0-9]+(-[0-9A-Za-z-]+)?(\+([0-9A-Za-z-]+\.?)*)?$"#, options: .regularExpression) != nil
+#if canImport(_StringProcessing)
+    @available(macOS 13, iOS 16, tvOS 16, watchOS 9, *)
+    private init?(_modern description: String) {
+        assert(!description.isEmpty)
+        let fullRegex = #/^(?'major'\d+)(?:\.(?'minor'\d+)(?:\.(?'patch'\d+))?)?(?'prelease'-[0-9A-Za-z-]+)?(?'build'\+(?:[0-9A-Za-z-]+(?:\.|$))*)?$/#
+        guard let fullMatch = description.wholeMatch(of: fullRegex),
+              fullMatch.output.build?.last != "."
+        else { return nil }
+        let major = Int(fullMatch.output.major) ?? 0
+        let minor = fullMatch.output.minor.flatMap { Int($0) } ?? 0
+        let patch = fullMatch.output.patch.flatMap { Int($0) } ?? 0
+        let prerelease = fullMatch.output.prelease.map { String($0.dropFirst()) } ?? ""
+        let metadata = fullMatch.output.build?.dropFirst().split(separator: ".").map(String.init) ?? []
+        self.init(major: major, minor: minor, patch: patch, prerelease: prerelease, metadata: metadata)
+    }
+#endif
+
+    private init?(_legacy description: String) {
+        assert(!description.isEmpty)
+        guard description.range(of: #"^(?:[0-9]+\.){0,2}[0-9]+(?:-[0-9A-Za-z-]+)?(?:\+(?:[0-9A-Za-z-]+(?:\.|$))*)?$"#, options: .regularExpression) != nil
         else { return nil }
 
         // This should be fine after above's regular expression
@@ -91,7 +108,7 @@ public struct Version: Sendable, Hashable, Comparable, LosslessStringConvertible
         let patch = parts.popLast().flatMap(Int.init) ?? 0
 
         let prerelease: String
-        if let searchRange = description.range(of: #"(^|\.)[0-9]+-[0-9A-Za-z-]+(\+|$)"#, options: .regularExpression),
+        if let searchRange = description.range(of: #"(?:^|\.)[0-9]+-[0-9A-Za-z-]+(?:\+|$)"#, options: .regularExpression),
            case let substr = description[searchRange],
            let range = substr.range(of: "[0-9]-[0-9A-Za-z-]+", options: .regularExpression) {
             prerelease = String(substr[substr.index(range.lowerBound, offsetBy: 2)..<range.upperBound])
@@ -100,7 +117,7 @@ public struct Version: Sendable, Hashable, Comparable, LosslessStringConvertible
         }
 
         let metadata: Array<String>
-        if let range = description.range(of: #"\+([0-9A-Za-z-]+\.?)+$"#, options: .regularExpression) {
+        if let range = description.range(of: #"\+(?:[0-9A-Za-z-]+(?:\.|$))+$"#, options: .regularExpression) {
             let metadataString = description[description.index(after: range.lowerBound)..<range.upperBound]
             metadata = metadataString.components(separatedBy: ".")
         } else {
@@ -108,6 +125,20 @@ public struct Version: Sendable, Hashable, Comparable, LosslessStringConvertible
         }
 
         self.init(major: major, minor: minor, patch: patch, prerelease: prerelease, metadata: metadata)
+    }
+
+
+    public init?(_ description: String) {
+        guard !description.isEmpty else { return nil }
+#if canImport(_StringProcessing)
+        if #available(macOS 13, iOS 16, tvOS 16, watchOS 9, *) {
+            self.init(_modern: description)
+        } else {
+            self.init(_legacy: description)
+        }
+#else
+        self.init(_legacy: description)
+#endif
     }
 
     public func hash(into hasher: inout Hasher) {
