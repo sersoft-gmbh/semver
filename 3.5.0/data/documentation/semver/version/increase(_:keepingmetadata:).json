@@ -1,0 +1,446 @@
+{
+  "abstract" : [
+    {
+      "text" : "Increases the given numeric part of the version, respecting any associated rules:",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/SemVer\/documentation\/SemVer",
+        "doc:\/\/SemVer\/documentation\/SemVer\/Version"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/increase(_:keepingMetadata:)"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "extendedModule" : "SemVer",
+    "externalID" : "s:6SemVer7VersionV8increase_15keepingMetadatayAC11NumericPartO_SbtF",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "func"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "increase"
+      },
+      {
+        "kind" : "text",
+        "text" : "("
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:6SemVer7VersionV",
+        "text" : "Version"
+      },
+      {
+        "kind" : "text",
+        "text" : "."
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:6SemVer7VersionV11NumericPartO",
+        "text" : "NumericPart"
+      },
+      {
+        "kind" : "text",
+        "text" : ", "
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "keepingMetadata"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:Sb",
+        "text" : "Bool"
+      },
+      {
+        "kind" : "text",
+        "text" : ")"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "SemVer"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Instance Method",
+    "symbolKind" : "method",
+    "title" : "increase(_:keepingMetadata:)"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "Linux"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "mutating"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "func"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "increase"
+            },
+            {
+              "kind" : "text",
+              "text" : "("
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "_"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "internalParam",
+              "text" : "part"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:6SemVer7VersionV",
+              "text" : "Version"
+            },
+            {
+              "kind" : "text",
+              "text" : "."
+            },
+            {
+              "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/NumericPart",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:6SemVer7VersionV11NumericPartO",
+              "text" : "NumericPart"
+            },
+            {
+              "kind" : "text",
+              "text" : ", "
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "keepingMetadata"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:Sb",
+              "text" : "Bool"
+            },
+            {
+              "kind" : "text",
+              "text" : " = false)"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "kind" : "parameters",
+      "parameters" : [
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "The numeric part to increase.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "part"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Whether or not the metadata should be kept. Defaults to ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "false",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : ".",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "keepingMetadata"
+        }
+      ]
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "If the major version is increased, minor and patch are set to 0.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "If the minor version is increased, patch is set to 0",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "If the patch version is increased, no other changes are made.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/semver\/version\/increase(_:keepingmetadata:)"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://SemVer/documentation/SemVer": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "SemVer",
+  "type" : "topic",
+  "url" : "\/documentation\/semver"
+},
+"doc://SemVer/documentation/SemVer/Version": {
+  "abstract" : [
+    {
+      "text" : "A Version struct that implements the rules of semantic versioning.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Version"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Version"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Version",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version"
+},
+"doc://SemVer/documentation/SemVer/Version/NumericPart": {
+  "abstract" : [
+    {
+      "text" : "Lists all the numeric parts of a version (major, minor and patch).",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "NumericPart"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/NumericPart",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "NumericPart"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Version.NumericPart",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version\/numericpart"
+},
+"doc://SemVer/documentation/SemVer/Version/increase(_:keepingMetadata:)": {
+  "abstract" : [
+    {
+      "text" : "Increases the given numeric part of the version, respecting any associated rules:",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "increase"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6SemVer7VersionV",
+      "text" : "Version"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6SemVer7VersionV11NumericPartO",
+      "text" : "NumericPart"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "keepingMetadata"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/increase(_:keepingMetadata:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "increase(_:keepingMetadata:)",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version\/increase(_:keepingmetadata:)"
+}
+}
+}

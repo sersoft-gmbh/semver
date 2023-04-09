@@ -1,0 +1,539 @@
+{
+  "interfaceLanguages" : {
+    "swift" : [
+      {
+        "children" : [
+          {
+            "title" : "Structures",
+            "type" : "groupMarker"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Structures",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Initializers",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/semver\/version\/formattingoptions\/init(rawvalue:)",
+                    "title" : "init(rawValue: Version.FormattingOptions.RawValue)",
+                    "type" : "init"
+                  },
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/semver\/version\/formattingoptions\/rawvalue-swift.property",
+                    "title" : "let rawValue: Version.FormattingOptions.RawValue",
+                    "type" : "property"
+                  },
+                  {
+                    "title" : "Type Aliases",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/semver\/version\/formattingoptions\/rawvalue-swift.typealias",
+                    "title" : "Version.FormattingOptions.RawValue",
+                    "type" : "typealias"
+                  },
+                  {
+                    "title" : "Type Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/semver\/version\/formattingoptions\/dropminorifzero",
+                    "title" : "static let dropMinorIfZero: Version.FormattingOptions",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/semver\/version\/formattingoptions\/droppatchifzero",
+                    "title" : "static let dropPatchIfZero: Version.FormattingOptions",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/semver\/version\/formattingoptions\/droptrailingzeros",
+                    "title" : "static var dropTrailingZeros: Version.FormattingOptions",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/semver\/version\/formattingoptions\/fullversion",
+                    "title" : "static var fullVersion: Version.FormattingOptions",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/semver\/version\/formattingoptions\/includemetadata",
+                    "title" : "static let includeMetadata: Version.FormattingOptions",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/semver\/version\/formattingoptions\/includeprerelease",
+                    "title" : "static let includePrerelease: Version.FormattingOptions",
+                    "type" : "property"
+                  },
+                  {
+                    "title" : "Default Implementations",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "children" : [
+                      {
+                        "title" : "Operators",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "path" : "\/documentation\/semver\/version\/formattingoptions\/!=(_:_:)",
+                        "title" : "static func != (Self, Self) -> Bool",
+                        "type" : "op"
+                      }
+                    ],
+                    "path" : "\/documentation\/semver\/version\/formattingoptions\/equatable-implementations",
+                    "title" : "Equatable Implementations",
+                    "type" : "symbol"
+                  },
+                  {
+                    "children" : [
+                      {
+                        "title" : "Initializers",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "path" : "\/documentation\/semver\/version\/formattingoptions\/init()",
+                        "title" : "init()",
+                        "type" : "init"
+                      },
+                      {
+                        "title" : "Instance Methods",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "path" : "\/documentation\/semver\/version\/formattingoptions\/contains(_:)",
+                        "title" : "func contains(Self) -> Bool",
+                        "type" : "method"
+                      },
+                      {
+                        "path" : "\/documentation\/semver\/version\/formattingoptions\/formintersection(_:)",
+                        "title" : "func formIntersection(Self)",
+                        "type" : "method"
+                      },
+                      {
+                        "path" : "\/documentation\/semver\/version\/formattingoptions\/formsymmetricdifference(_:)",
+                        "title" : "func formSymmetricDifference(Self)",
+                        "type" : "method"
+                      },
+                      {
+                        "path" : "\/documentation\/semver\/version\/formattingoptions\/formunion(_:)",
+                        "title" : "func formUnion(Self)",
+                        "type" : "method"
+                      },
+                      {
+                        "path" : "\/documentation\/semver\/version\/formattingoptions\/insert(_:)",
+                        "title" : "func insert(Self.Element) -> (inserted: Bool, memberAfterInsert: Self.Element)",
+                        "type" : "method"
+                      },
+                      {
+                        "path" : "\/documentation\/semver\/version\/formattingoptions\/intersection(_:)",
+                        "title" : "func intersection(Self) -> Self",
+                        "type" : "method"
+                      },
+                      {
+                        "path" : "\/documentation\/semver\/version\/formattingoptions\/remove(_:)",
+                        "title" : "func remove(Self.Element) -> Self.Element?",
+                        "type" : "method"
+                      },
+                      {
+                        "path" : "\/documentation\/semver\/version\/formattingoptions\/symmetricdifference(_:)",
+                        "title" : "func symmetricDifference(Self) -> Self",
+                        "type" : "method"
+                      },
+                      {
+                        "path" : "\/documentation\/semver\/version\/formattingoptions\/union(_:)",
+                        "title" : "func union(Self) -> Self",
+                        "type" : "method"
+                      },
+                      {
+                        "path" : "\/documentation\/semver\/version\/formattingoptions\/update(with:)",
+                        "title" : "func update(with: Self.Element) -> Self.Element?",
+                        "type" : "method"
+                      }
+                    ],
+                    "path" : "\/documentation\/semver\/version\/formattingoptions\/optionset-implementations",
+                    "title" : "OptionSet Implementations",
+                    "type" : "symbol"
+                  },
+                  {
+                    "children" : [
+                      {
+                        "title" : "Instance Properties",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "path" : "\/documentation\/semver\/version\/formattingoptions\/hashvalue",
+                        "title" : "var hashValue: Int",
+                        "type" : "property"
+                      },
+                      {
+                        "title" : "Instance Methods",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "path" : "\/documentation\/semver\/version\/formattingoptions\/hash(into:)",
+                        "title" : "func hash(into: inout Hasher)",
+                        "type" : "method"
+                      }
+                    ],
+                    "path" : "\/documentation\/semver\/version\/formattingoptions\/rawrepresentable-implementations",
+                    "title" : "RawRepresentable Implementations",
+                    "type" : "symbol"
+                  },
+                  {
+                    "children" : [
+                      {
+                        "title" : "Initializers",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "path" : "\/documentation\/semver\/version\/formattingoptions\/init(_:)",
+                        "title" : "init<S>(S)",
+                        "type" : "init"
+                      },
+                      {
+                        "path" : "\/documentation\/semver\/version\/formattingoptions\/init(arrayliteral:)",
+                        "title" : "init(arrayLiteral: Self.Element...)",
+                        "type" : "init"
+                      },
+                      {
+                        "title" : "Instance Properties",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "path" : "\/documentation\/semver\/version\/formattingoptions\/isempty",
+                        "title" : "var isEmpty: Bool",
+                        "type" : "property"
+                      },
+                      {
+                        "title" : "Instance Methods",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "path" : "\/documentation\/semver\/version\/formattingoptions\/isdisjoint(with:)",
+                        "title" : "func isDisjoint(with: Self) -> Bool",
+                        "type" : "method"
+                      },
+                      {
+                        "path" : "\/documentation\/semver\/version\/formattingoptions\/isstrictsubset(of:)",
+                        "title" : "func isStrictSubset(of: Self) -> Bool",
+                        "type" : "method"
+                      },
+                      {
+                        "path" : "\/documentation\/semver\/version\/formattingoptions\/isstrictsuperset(of:)",
+                        "title" : "func isStrictSuperset(of: Self) -> Bool",
+                        "type" : "method"
+                      },
+                      {
+                        "path" : "\/documentation\/semver\/version\/formattingoptions\/issubset(of:)",
+                        "title" : "func isSubset(of: Self) -> Bool",
+                        "type" : "method"
+                      },
+                      {
+                        "path" : "\/documentation\/semver\/version\/formattingoptions\/issuperset(of:)",
+                        "title" : "func isSuperset(of: Self) -> Bool",
+                        "type" : "method"
+                      },
+                      {
+                        "path" : "\/documentation\/semver\/version\/formattingoptions\/subtract(_:)",
+                        "title" : "func subtract(Self)",
+                        "type" : "method"
+                      },
+                      {
+                        "path" : "\/documentation\/semver\/version\/formattingoptions\/subtracting(_:)",
+                        "title" : "func subtracting(Self) -> Self",
+                        "type" : "method"
+                      }
+                    ],
+                    "path" : "\/documentation\/semver\/version\/formattingoptions\/setalgebra-implementations",
+                    "title" : "SetAlgebra Implementations",
+                    "type" : "symbol"
+                  }
+                ],
+                "path" : "\/documentation\/semver\/version\/formattingoptions",
+                "title" : "Version.FormattingOptions",
+                "type" : "struct"
+              },
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/semver\/version\/init(_:)",
+                "title" : "init?(String)",
+                "type" : "init"
+              },
+              {
+                "path" : "\/documentation\/semver\/version\/init(major:minor:patch:prerelease:metadata:)-4li3d",
+                "title" : "init(major: Int, minor: Int, patch: Int, prerelease: String, metadata: String...)",
+                "type" : "init"
+              },
+              {
+                "path" : "\/documentation\/semver\/version\/init(major:minor:patch:prerelease:metadata:)-66wtk",
+                "title" : "init(major: Int, minor: Int, patch: Int, prerelease: String, metadata: Array<String>)",
+                "type" : "init"
+              },
+              {
+                "title" : "Instance Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/semver\/version\/description",
+                "title" : "var description: String",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/semver\/version\/major",
+                "title" : "var major: Int",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/semver\/version\/metadata",
+                "title" : "var metadata: Array<String>",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/semver\/version\/minor",
+                "title" : "var minor: Int",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/semver\/version\/patch",
+                "title" : "var patch: Int",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/semver\/version\/prerelease",
+                "title" : "var prerelease: String",
+                "type" : "property"
+              },
+              {
+                "title" : "Instance Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/semver\/version\/hash(into:)",
+                "title" : "func hash(into: inout Hasher)",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/semver\/version\/increase(_:keepingmetadata:)",
+                "title" : "func increase(Version.NumericPart, keepingMetadata: Bool)",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/semver\/version\/next(_:keepingmetadata:)",
+                "title" : "func next(Version.NumericPart, keepingMetadata: Bool) -> Version",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/semver\/version\/versionstring(formattedwith:)",
+                "title" : "func versionString(formattedWith: Version.FormattingOptions) -> String",
+                "type" : "method"
+              },
+              {
+                "title" : "Enumerations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Enumeration Cases",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/semver\/version\/numericpart\/major",
+                    "title" : "case major",
+                    "type" : "case"
+                  },
+                  {
+                    "path" : "\/documentation\/semver\/version\/numericpart\/minor",
+                    "title" : "case minor",
+                    "type" : "case"
+                  },
+                  {
+                    "path" : "\/documentation\/semver\/version\/numericpart\/patch",
+                    "title" : "case patch",
+                    "type" : "case"
+                  },
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/semver\/version\/numericpart\/description",
+                    "title" : "var description: String",
+                    "type" : "property"
+                  },
+                  {
+                    "title" : "Default Implementations",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "children" : [
+                      {
+                        "title" : "Instance Properties",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "path" : "\/documentation\/semver\/version\/numericpart\/halfwidthcornerquoted",
+                        "title" : "var halfWidthCornerQuoted: String",
+                        "type" : "property"
+                      }
+                    ],
+                    "path" : "\/documentation\/semver\/version\/numericpart\/customstringconvertible-implementations",
+                    "title" : "CustomStringConvertible Implementations",
+                    "type" : "symbol"
+                  },
+                  {
+                    "children" : [
+                      {
+                        "title" : "Operators",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "path" : "\/documentation\/semver\/version\/numericpart\/!=(_:_:)",
+                        "title" : "static func != (Self, Self) -> Bool",
+                        "type" : "op"
+                      }
+                    ],
+                    "path" : "\/documentation\/semver\/version\/numericpart\/equatable-implementations",
+                    "title" : "Equatable Implementations",
+                    "type" : "symbol"
+                  }
+                ],
+                "path" : "\/documentation\/semver\/version\/numericpart",
+                "title" : "Version.NumericPart",
+                "type" : "enum"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Operators",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/semver\/version\/'...(_:)-3jne3",
+                    "title" : "static func ... (Self) -> PartialRangeThrough<Self>",
+                    "type" : "op"
+                  },
+                  {
+                    "path" : "\/documentation\/semver\/version\/'...(_:)-7zfgp",
+                    "title" : "static func ... (Self) -> PartialRangeFrom<Self>",
+                    "type" : "op"
+                  },
+                  {
+                    "path" : "\/documentation\/semver\/version\/'...(_:_:)",
+                    "title" : "static func ... (Self, Self) -> ClosedRange<Self>",
+                    "type" : "op"
+                  },
+                  {
+                    "path" : "\/documentation\/semver\/version\/'.._(_:)",
+                    "title" : "static func ..< (Self) -> PartialRangeUpTo<Self>",
+                    "type" : "op"
+                  },
+                  {
+                    "path" : "\/documentation\/semver\/version\/'.._(_:_:)",
+                    "title" : "static func ..< (Self, Self) -> Range<Self>",
+                    "type" : "op"
+                  },
+                  {
+                    "path" : "\/documentation\/semver\/version\/_(_:_:)-53xj6",
+                    "title" : "static func > (Self, Self) -> Bool",
+                    "type" : "op"
+                  },
+                  {
+                    "path" : "\/documentation\/semver\/version\/_(_:_:)-6aloy",
+                    "title" : "static func < (Version, Version) -> Bool",
+                    "type" : "op"
+                  },
+                  {
+                    "path" : "\/documentation\/semver\/version\/_(_:_:)-96zme",
+                    "title" : "static func > (Version, Version) -> Bool",
+                    "type" : "op"
+                  },
+                  {
+                    "path" : "\/documentation\/semver\/version\/_=(_:_:)-6z215",
+                    "title" : "static func <= (Self, Self) -> Bool",
+                    "type" : "op"
+                  },
+                  {
+                    "path" : "\/documentation\/semver\/version\/_=(_:_:)-7km7s",
+                    "title" : "static func >= (Self, Self) -> Bool",
+                    "type" : "op"
+                  }
+                ],
+                "path" : "\/documentation\/semver\/version\/comparable-implementations",
+                "title" : "Comparable Implementations",
+                "type" : "symbol"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/semver\/version\/halfwidthcornerquoted",
+                    "title" : "var halfWidthCornerQuoted: String",
+                    "type" : "property"
+                  }
+                ],
+                "path" : "\/documentation\/semver\/version\/customstringconvertible-implementations",
+                "title" : "CustomStringConvertible Implementations",
+                "type" : "symbol"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Operators",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/semver\/version\/!=(_:_:)",
+                    "title" : "static func != (Self, Self) -> Bool",
+                    "type" : "op"
+                  },
+                  {
+                    "path" : "\/documentation\/semver\/version\/==(_:_:)",
+                    "title" : "static func == (Version, Version) -> Bool",
+                    "type" : "op"
+                  }
+                ],
+                "path" : "\/documentation\/semver\/version\/equatable-implementations",
+                "title" : "Equatable Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/semver\/version",
+            "title" : "Version",
+            "type" : "struct"
+          }
+        ],
+        "path" : "\/documentation\/semver",
+        "title" : "SemVer",
+        "type" : "module"
+      }
+    ]
+  },
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 1,
+    "patch" : 0
+  }
+}
