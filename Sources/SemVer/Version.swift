@@ -76,7 +76,7 @@ public struct Version: Sendable, Hashable, Comparable, LosslessStringConvertible
         self.init(major: major, minor: minor, patch: patch, prerelease: prerelease, metadata: metadata)
     }
 
-#if canImport(_StringProcessing)
+#if swift(>=5.7)
     @available(macOS 13, iOS 16, tvOS 16, watchOS 9, *)
     private init?(_modern description: String) {
         assert(!description.isEmpty)
@@ -130,7 +130,7 @@ public struct Version: Sendable, Hashable, Comparable, LosslessStringConvertible
 
     public init?(_ description: String) {
         guard !description.isEmpty else { return nil }
-#if canImport(_StringProcessing)
+#if swift(>=5.7)
         if #available(macOS 13, iOS 16, tvOS 16, watchOS 9, *) {
             self.init(_modern: description)
         } else {
