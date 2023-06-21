@@ -21,14 +21,19 @@ extension Version {
     }
     
     /// The strategy for encoding a ``Version``.
-    public enum EncodingStrategy: Sendable {
+    public enum EncodingStrategy {
         /// Encodes the version's components as separete keys.
         case components
         /// Encodes a version string using the given format.
         case string(Version.FormattingOptions)
+#if swift(>=5.7)
         /// Uses the given closure for encoding a version.
         @preconcurrency
         case custom(@Sendable (Version, any Encoder) throws -> ())
+#else
+        /// Uses the given closure for encoding a version.
+        case custom((Version, any Encoder) throws -> ())
+#endif
 
         /// Convenience accessor representing `.string(.fullVersion)`.
         public static var string: Self { .string(.fullVersion) }
@@ -38,19 +43,29 @@ extension Version {
     }
 
     /// The strategy for decoding a ``Version``.
-    public enum DecodingStrategy: Sendable {
+    public enum DecodingStrategy {
         /// Decodes the version's components as separete keys.
         case components
         /// Decodes a version from a string.
         case string
+#if swift(>=5.7)
         /// Uses the given closure for decoding a version.
         @preconcurrency
         case custom(@Sendable (any Decoder) throws -> Version)
+#else
+        /// Uses the given closure for decoding a version.
+        case custom((any Decoder) throws -> Version)
+#endif
 
         @usableFromInline
         static var _default: Self { .components }
     }
 }
+
+#if swift(>=5.7)
+extension Version.EncodingStrategy: Sendable {}
+extension Version.DecodingStrategy: Sendable {}
+#endif
 
 extension Version: Encodable {
     /// Encodes the version to the given encoder using the given strategy.
