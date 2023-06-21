@@ -259,6 +259,18 @@ final class VersionTests: XCTestCase {
         XCTAssertNil(Version("🥴"))
     }
 
+    func testCodable() throws {
+        guard let version = Version("1.2.3") else {
+            XCTFail("String literal init failed")
+            return
+        }
+        XCTAssertNoThrow(try JSONEncoder().encode(version))
+        let encoded = try JSONEncoder().encode(version)
+        XCTAssertNotNil(encoded)
+        let decoded = try JSONDecoder().decode(Version.self, from: encoded)
+        XCTAssertEqual(decoded, version)
+    }
+
     /*
     func testStringLiteralConversion() {
         XCTAssertEqual("1.2.3", Version(major: 1, minor: 2, patch: 3))

@@ -305,3 +305,5 @@ extension Version.FormattingOptions {
     @inlinable
     public static var dropTrailingZeros: Version.FormattingOptions { [.dropMinorIfZero, .dropPatchIfZero] }
 }
+
+extension Version: Codable { }
