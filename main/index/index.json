@@ -289,6 +289,11 @@
                 "type" : "groupMarker"
               },
               {
+                "path" : "\/documentation\/semver\/version\/debugdescription",
+                "title" : "var debugDescription: String",
+                "type" : "property"
+              },
+              {
                 "path" : "\/documentation\/semver\/version\/description",
                 "title" : "var description: String",
                 "type" : "property"

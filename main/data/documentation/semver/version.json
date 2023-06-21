@@ -82,6 +82,7 @@
     {
       "identifiers" : [
         "doc:\/\/SemVer\/SL",
+        "doc:\/\/SemVer\/s28CustomDebugStringConvertibleP",
         "doc:\/\/SemVer\/s23CustomStringConvertibleP",
         "doc:\/\/SemVer\/SQ",
         "doc:\/\/SemVer\/SH",
@@ -118,6 +119,7 @@
     },
     {
       "identifiers" : [
+        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/debugDescription",
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/description",
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/major",
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/metadata",
@@ -326,6 +328,40 @@
   "title" : "Version.NumericPart",
   "type" : "topic",
   "url" : "\/documentation\/semver\/version\/numericpart"
+},
+"doc://SemVer/documentation/SemVer/Version/debugDescription": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "debugDescription"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/debugDescription",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "debugDescription",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version\/debugdescription"
 },
 "doc://SemVer/documentation/SemVer/Version/description": {
   "abstract" : [
@@ -1096,6 +1132,11 @@
 "doc://SemVer/s25LosslessStringConvertibleP": {
   "identifier" : "doc:\/\/SemVer\/s25LosslessStringConvertibleP",
   "title" : "Swift.LosslessStringConvertible",
+  "type" : "unresolvable"
+},
+"doc://SemVer/s28CustomDebugStringConvertibleP": {
+  "identifier" : "doc:\/\/SemVer\/s28CustomDebugStringConvertibleP",
+  "title" : "Swift.CustomDebugStringConvertible",
   "type" : "unresolvable"
 },
 "doc://SemVer/s8SendableP": {
