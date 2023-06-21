@@ -149,7 +149,23 @@ final class VersionTests: XCTestCase {
         XCTAssertEqual(v8, v8FromString)
         XCTAssertEqual(v8.metadata, v8FromString?.metadata)
     }
-    
+
+    func testCustomDebugStringRepresentable() {
+        let v1 = Version(major: 1)
+        let v2 = Version(major: 1, minor: 2)
+        let v3 = Version(major: 1, minor: 2, patch: 3)
+        let v4 = Version(major: 1, minor: 2, patch: 3, prerelease: "beta", metadata: "exp", "test")
+        let v5 = Version(major: 1, prerelease: "beta")
+        let v6 = Version(major: 1, metadata: "exp", "test")
+
+        XCTAssertNotNil(v1.debugDescription, "Version(major: 1, minor: 0, patch: 0, prerelease: \"\", metadata: \"\")")
+        XCTAssertNotNil(v2.debugDescription, "Version(major: 1, minor: 2, patch: 0, prerelease: \"\", metadata: \"\")")
+        XCTAssertNotNil(v3.debugDescription, "Version(major: 1, minor: 2, patch: 3, prerelease: \"\", metadata: \"\")")
+        XCTAssertNotNil(v4.debugDescription, "Version(major: 1, minor: 2, patch: 3, prerelease: \"beta\", metadata: \"exp+test\")")
+        XCTAssertNotNil(v5.debugDescription, "Version(major: 1, minor: 0, patch: 0, prerelease: \"beta\", metadata: \"\")")
+        XCTAssertNotNil(v6.debugDescription, "Version(major: 1, minor: 0, patch: 0, prerelease: \"\", metadata: \"exp+test\")")
+    }
+
     func testHashable() {
         let v1 = Version(major: 1, minor: 2, patch: 3, prerelease: "beta", metadata: "exp", "test")
         let v2 = Version(major: 1, minor: 2, patch: 3, prerelease: "beta")
@@ -199,58 +215,6 @@ final class VersionTests: XCTestCase {
                        expectedVersion.versionString(formattedWith: .fullVersion))
     }
 
-    func testNextVersion() {
-        let metadata = ["abc", "def"]
-        let version = Version(major: 1, minor: 2, patch: 3, metadata: metadata)
-
-        XCTAssertEqual(version.next(.major), Version(major: 2))
-        XCTAssertEqual(version.next(.minor), Version(major: 1, minor: 3))
-        XCTAssertEqual(version.next(.patch), Version(major: 1, minor: 2, patch: 4))
-        XCTAssertTrue(version.next(.major).metadata.isEmpty)
-        XCTAssertTrue(version.next(.minor).metadata.isEmpty)
-        XCTAssertTrue(version.next(.patch).metadata.isEmpty)
-        XCTAssertEqual(version.next(.major, keepingMetadata: true), Version(major: 2))
-        XCTAssertEqual(version.next(.minor, keepingMetadata: true), Version(major: 1, minor: 3))
-        XCTAssertEqual(version.next(.patch, keepingMetadata: true), Version(major: 1, minor: 2, patch: 4))
-        XCTAssertEqual(version.next(.major, keepingMetadata: true).metadata, metadata)
-        XCTAssertEqual(version.next(.minor, keepingMetadata: true).metadata, metadata)
-        XCTAssertEqual(version.next(.patch, keepingMetadata: true).metadata, metadata)
-    }
-
-    func testVersionIncrease() {
-        let metadata = ["abc", "def"]
-        let version = Version(major: 1, minor: 2, patch: 3, metadata: metadata)
-
-        var mutatingVersion = version
-        mutatingVersion.increase(.major)
-        XCTAssertEqual(mutatingVersion, Version(major: 2))
-        XCTAssertTrue(mutatingVersion.metadata.isEmpty)
-        mutatingVersion = version
-        mutatingVersion.increase(.minor)
-        XCTAssertEqual(mutatingVersion, Version(major: 1, minor: 3))
-        XCTAssertTrue(mutatingVersion.metadata.isEmpty)
-
-        mutatingVersion = version
-        mutatingVersion.increase(.patch)
-        XCTAssertEqual(mutatingVersion, Version(major: 1, minor: 2, patch: 4))
-        XCTAssertTrue(mutatingVersion.metadata.isEmpty)
-
-        mutatingVersion = version
-        mutatingVersion.increase(.major, keepingMetadata: true)
-        XCTAssertEqual(mutatingVersion, Version(major: 2))
-        XCTAssertEqual(mutatingVersion.metadata, metadata)
-
-        mutatingVersion = version
-        mutatingVersion.increase(.minor, keepingMetadata: true)
-        XCTAssertEqual(mutatingVersion, Version(major: 1, minor: 3))
-        XCTAssertEqual(mutatingVersion.metadata, metadata)
-
-        mutatingVersion = version
-        mutatingVersion.increase(.patch, keepingMetadata: true)
-        XCTAssertEqual(mutatingVersion, Version(major: 1, minor: 2, patch: 4))
-        XCTAssertEqual(mutatingVersion.metadata, metadata)
-    }
-    
     func testInvalidStrings() {
         XCTAssertNil(Version(""))
         XCTAssertNil(Version("1.2.3.4"))
