@@ -2,7 +2,7 @@
 [![GitHub release](https://img.shields.io/github/release/sersoft-gmbh/semver.svg?style=flat)](https://github.com/sersoft-gmbh/semver/releases/latest)
 ![Tests](https://github.com/sersoft-gmbh/semver/workflows/Tests/badge.svg)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/d36d463d4085404b914e5c5ffd45a725)](https://www.codacy.com/gh/sersoft-gmbh/semver/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=sersoft-gmbh/semver&amp;utm_campaign=Badge_Grade)
-[![codecov](https://codecov.io/gh/sersoft-gmbh/semver/branch/master/graph/badge.svg)](https://codecov.io/gh/sersoft-gmbh/semver)
+[![codecov](https://codecov.io/gh/sersoft-gmbh/semver/branch/main/graph/badge.svg)](https://codecov.io/gh/sersoft-gmbh/semver)
 [![Docs](https://img.shields.io/badge/-documentation-informational)](https://sersoft-gmbh.github.io/semver)
 
 This repository contains a complete implementation of a `Version` struct that conforms to the rules of semantic versioning which are described at [semver.org](https://semver.org).
@@ -16,8 +16,8 @@ Add the following dependency to your `Package.swift`:
 
 ## Compatibility
 
-- For Swift up to version 5.2, use SemVer version 2.x.y.
-- For Swift as of version 5.3, use SemVer version 3.x.y.
+-  For Swift up to version 5.2, use SemVer version 2.x.y.
+-  For Swift as of version 5.3, use SemVer version 3.x.y.
 
 ## Usage
 

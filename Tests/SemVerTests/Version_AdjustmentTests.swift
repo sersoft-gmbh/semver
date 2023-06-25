@@ -2,6 +2,12 @@ import XCTest
 import SemVer
 
 final class Version_AdjustmentTests: XCTestCase {
+    func testVersionNumericPartDescription() {
+        XCTAssertEqual(String(describing: Version.NumericPart.major), "major")
+        XCTAssertEqual(String(describing: Version.NumericPart.minor), "minor")
+        XCTAssertEqual(String(describing: Version.NumericPart.patch), "patch")
+    }
+
     func testNextVersion() {
         let metadata = ["abc", "def"]
         let version = Version(major: 1, minor: 2, patch: 3, metadata: metadata)
