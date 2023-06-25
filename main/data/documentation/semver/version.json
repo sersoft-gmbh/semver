@@ -84,6 +84,8 @@
         "doc:\/\/SemVer\/SL",
         "doc:\/\/SemVer\/s28CustomDebugStringConvertibleP",
         "doc:\/\/SemVer\/s23CustomStringConvertibleP",
+        "doc:\/\/SemVer\/Se",
+        "doc:\/\/SemVer\/SE",
         "doc:\/\/SemVer\/SQ",
         "doc:\/\/SemVer\/SH",
         "doc:\/\/SemVer\/s25LosslessStringConvertibleP",
@@ -140,6 +142,8 @@
     },
     {
       "identifiers" : [
+        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/DecodingStrategy",
+        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/EncodingStrategy",
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/NumericPart"
       ],
       "title" : "Enumerations"
@@ -149,6 +153,8 @@
       "identifiers" : [
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/Comparable-Implementations",
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/CustomStringConvertible-Implementations",
+        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/Decodable-Implementations",
+        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/Encodable-Implementations",
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/Equatable-Implementations"
       ],
       "title" : "Default Implementations"
@@ -168,6 +174,11 @@
   ]
 , 
 "references": {
+"doc://SemVer/SE": {
+  "identifier" : "doc:\/\/SemVer\/SE",
+  "title" : "Swift.Encodable",
+  "type" : "unresolvable"
+},
 "doc://SemVer/SH": {
   "identifier" : "doc:\/\/SemVer\/SH",
   "title" : "Swift.Hashable",
@@ -181,6 +192,11 @@
 "doc://SemVer/SQ": {
   "identifier" : "doc:\/\/SemVer\/SQ",
   "title" : "Swift.Equatable",
+  "type" : "unresolvable"
+},
+"doc://SemVer/Se": {
+  "identifier" : "doc:\/\/SemVer\/Se",
+  "title" : "Swift.Decodable",
   "type" : "unresolvable"
 },
 "doc://SemVer/documentation/SemVer": {
@@ -249,6 +265,114 @@
   "title" : "CustomStringConvertible Implementations",
   "type" : "topic",
   "url" : "\/documentation\/semver\/version\/customstringconvertible-implementations"
+},
+"doc://SemVer/documentation/SemVer/Version/Decodable-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/Decodable-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Decodable Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version\/decodable-implementations"
+},
+"doc://SemVer/documentation/SemVer/Version/DecodingStrategy": {
+  "abstract" : [
+    {
+      "text" : "The strategy for decoding a ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "DecodingStrategy"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/DecodingStrategy",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "DecodingStrategy"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Version.DecodingStrategy",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version\/decodingstrategy"
+},
+"doc://SemVer/documentation/SemVer/Version/Encodable-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/Encodable-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Encodable Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version\/encodable-implementations"
+},
+"doc://SemVer/documentation/SemVer/Version/EncodingStrategy": {
+  "abstract" : [
+    {
+      "text" : "The strategy for encoding a ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "EncodingStrategy"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/EncodingStrategy",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "EncodingStrategy"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Version.EncodingStrategy",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version\/encodingstrategy"
 },
 "doc://SemVer/documentation/SemVer/Version/Equatable-Implementations": {
   "abstract" : [
