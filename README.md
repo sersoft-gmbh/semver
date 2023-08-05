@@ -101,6 +101,8 @@ let finalVersion = Version(major: 1, minor: 2, patch: 3)
 prereleaseVersion < finalVersion // -> true
 ```
 
+If you need to check whether two versions are completely identical, there's the `isIdentical(to:)` method, which also checks `metadata`.
+
 ### Validity Checks
 
 `Version` performs some validity checks on its fields. This means, that no negative numbers are allowed for `major`, `minor` and `patch`. Also, the `prerelease` and `metadata` Strings must only contain alphanumeric characters plus `-` (hyphen). However, to keep working with `Version` production-safe, these rules are only checked in non-optimized builds (using `assert()`). The result of using not allowed numbers / characters in optimized builds is undetermined. While calling `versionString()` very likely won't break, it certainly won't be possible to recreate a version containing invalid numbers / characters using `init(_ description: String)`.
@@ -121,4 +123,4 @@ If you find a bug / like to see a new feature in SemVer there are a few ways of 
 
 See [LICENSE](./LICENSE) file.
 
-Copyright &copy; 2016-2021 ser.soft GmbH.
+Copyright &copy; 2016-2023 ser.soft GmbH.
