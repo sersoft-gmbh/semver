@@ -73,6 +73,20 @@ final class VersionTests: XCTestCase {
         XCTAssertNotEqual(v2, v3)
     }
 
+    func testVersionIdenticalCheck() {
+        let v1 = Version(major: 1, minor: 2, patch: 3, prerelease: "beta", metadata: "exp", "test")
+        let v2 = Version(major: 1, minor: 2, patch: 3, prerelease: "beta")
+        let v3 = Version(major: 1, minor: 2, patch: 3, prerelease: "beta", metadata: "test", "exp")
+        let v4 = Version(major: 1, minor: 2, patch: 3, prerelease: "beta", metadata: "exp2")
+
+        XCTAssertTrue(v1.isIdentical(to: v1))
+        XCTAssertTrue(v1.isIdentical(to: v1, requireIdenticalMetadataOrdering: true))
+        XCTAssertFalse(v1.isIdentical(to: v2))
+        XCTAssertTrue(v1.isIdentical(to: v3))
+        XCTAssertFalse(v1.isIdentical(to: v3, requireIdenticalMetadataOrdering: true))
+        XCTAssertFalse(v1.isIdentical(to: v4))
+    }
+
     func testVersionComparisonWithBasicVersion() {
         let v0 = Version(major: 0, patch: 1)
         let v1 = Version(major: 1, minor: 2, patch: 3)

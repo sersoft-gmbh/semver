@@ -192,6 +192,18 @@ extension Version: ExpressibleByStringLiteral {
 
 // MARK: - Comparison
 extension Version {
+    /// Returns whether this version is identical to another version (on all properties, including  ``metadata``).
+    /// - Parameters:
+    ///   - other: The version to compare to.
+    ///   - requireIdenticalMetadataOrdering: Whether the metadata of both versions need to have the same order to be considered identical.
+    /// - Returns: Whether the receiver is identical to `other`.
+    public func isIdentical(to other: Version, requireIdenticalMetadataOrdering: Bool = false) -> Bool {
+        guard self == other else { return false }
+        return requireIdenticalMetadataOrdering
+        ? metadata == other.metadata
+        : metadata.count == other.metadata.count && Set(metadata) == Set(other.metadata)
+    }
+
     public static func ==(lhs: Version, rhs: Version) -> Bool {
         (lhs.major, lhs.minor, lhs.patch, lhs.prerelease)
             ==
