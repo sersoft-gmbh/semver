@@ -529,11 +529,6 @@
                     "type" : "op"
                   },
                   {
-                    "path" : "\/documentation\/semver\/version\/_(_:_:)-96zme",
-                    "title" : "static func > (Version, Version) -> Bool",
-                    "type" : "op"
-                  },
-                  {
                     "path" : "\/documentation\/semver\/version\/_=(_:_:)-6z215",
                     "title" : "static func <= (Self, Self) -> Bool",
                     "type" : "op"
