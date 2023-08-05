@@ -135,6 +135,7 @@
       "identifiers" : [
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/hash(into:)",
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/increase(_:keepingMetadata:)",
+        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/isIdentical(to:requireIdenticalMetadataOrdering:)",
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/next(_:keepingMetadata:)",
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/versionString(formattedWith:)"
       ],
@@ -898,6 +899,86 @@
   "title" : "init(major:minor:patch:prerelease:metadata:)",
   "type" : "topic",
   "url" : "\/documentation\/semver\/version\/init(major:minor:patch:prerelease:metadata:)-66wtk"
+},
+"doc://SemVer/documentation/SemVer/Version/isIdentical(to:requireIdenticalMetadataOrdering:)": {
+  "abstract" : [
+    {
+      "text" : "Returns whether this version is identical to another version (on all properties, including  ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/metadata",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : ").",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "isIdentical"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "to"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6SemVer7VersionV",
+      "text" : "Version"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "requireIdenticalMetadataOrdering"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/isIdentical(to:requireIdenticalMetadataOrdering:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "isIdentical(to:requireIdenticalMetadataOrdering:)",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version\/isidentical(to:requireidenticalmetadataordering:)"
 },
 "doc://SemVer/documentation/SemVer/Version/major": {
   "abstract" : [

@@ -338,6 +338,11 @@
                 "type" : "method"
               },
               {
+                "path" : "\/documentation\/semver\/version\/isidentical(to:requireidenticalmetadataordering:)",
+                "title" : "func isIdentical(to: Version, requireIdenticalMetadataOrdering: Bool) -> Bool",
+                "type" : "method"
+              },
+              {
                 "path" : "\/documentation\/semver\/version\/next(_:keepingmetadata:)",
                 "title" : "func next(Version.NumericPart, keepingMetadata: Bool) -> Version",
                 "type" : "method"
