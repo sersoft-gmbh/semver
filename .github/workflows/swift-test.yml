@@ -83,7 +83,7 @@ jobs:
     steps:
       - uses: maxim-lobanov/setup-xcode@v1
         with:
-          xcode-version: ^14.1
+          xcode-version: ^14.3
       - name: Read OS Version
         uses: sersoft-gmbh/os-version-action@v2
         id: os-version
