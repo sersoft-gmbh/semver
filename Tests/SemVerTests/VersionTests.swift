@@ -103,6 +103,49 @@ final class VersionTests: XCTestCase {
         XCTAssertGreaterThan(v4, v4b2)
     }
 
+    func testVersionComparisonUsingOperators() {
+        let v123 = Version(major: 1, minor: 2, patch: 3)
+        let v124 = Version(major: 1, minor: 2, patch: 4)
+        let v123Alpha = Version(major: 1, minor: 2, patch: 3, prerelease: "alpha")
+        let v123Beta = Version(major: 1, minor: 2, patch: 3, prerelease: "beta")
+
+        XCTAssertFalse(v123 < v123)
+        XCTAssertFalse(v123Alpha < v123Alpha)
+        XCTAssertFalse(v123Beta < v123Beta)
+
+        XCTAssertFalse(v123 > v123)
+        XCTAssertFalse(v123Alpha > v123Alpha)
+        XCTAssertFalse(v123Beta > v123Beta)
+
+        XCTAssertTrue(v123Alpha < v123)
+        XCTAssertTrue(v123Alpha < v123Beta)
+        XCTAssertTrue(v123Alpha < v124)
+        XCTAssertTrue(v123Beta < v123)
+        XCTAssertTrue(v123Beta < v124)
+        XCTAssertTrue(v123 < v124)
+
+        XCTAssertFalse(v123 < v123Alpha)
+        XCTAssertFalse(v123Beta < v123Alpha)
+        XCTAssertFalse(v124 < v123Alpha)
+        XCTAssertFalse(v123 < v123Beta)
+        XCTAssertFalse(v124 < v123Beta)
+        XCTAssertFalse(v124 < v123)
+
+        XCTAssertFalse(v123Alpha > v123)
+        XCTAssertFalse(v123Alpha > v123Beta)
+        XCTAssertFalse(v123Alpha > v124)
+        XCTAssertFalse(v123Beta > v123)
+        XCTAssertFalse(v123Beta > v124)
+        XCTAssertFalse(v123 > v124)
+
+        XCTAssertTrue(v123 > v123Alpha)
+        XCTAssertTrue(v123Beta > v123Alpha)
+        XCTAssertTrue(v124 > v123Alpha)
+        XCTAssertTrue(v123 > v123Beta)
+        XCTAssertTrue(v124 > v123Beta)
+        XCTAssertTrue(v124 > v123)
+    }
+
     func testLosslessStringConvertible() {
         let v1 = Version(major: 1, minor: 2, patch: 3, prerelease: "beta", metadata: "exp", "test")
         let v2 = Version(major: 1, prerelease: "beta")
