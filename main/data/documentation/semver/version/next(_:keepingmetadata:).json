@@ -181,34 +181,6 @@
       "kind" : "declarations"
     },
     {
-      "content" : [
-        {
-          "anchor" : "return-value",
-          "level" : 2,
-          "text" : "Return Value",
-          "type" : "heading"
-        },
-        {
-          "inlineContent" : [
-            {
-              "text" : "A new version that has the specified ",
-              "type" : "text"
-            },
-            {
-              "code" : "part",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : " increased, along with the necessary other changes.",
-              "type" : "text"
-            }
-          ],
-          "type" : "paragraph"
-        }
-      ],
-      "kind" : "content"
-    },
-    {
       "kind" : "parameters",
       "parameters" : [
         {
@@ -248,6 +220,34 @@
           "name" : "keepingMetadata"
         }
       ]
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "return-value",
+          "level" : 2,
+          "text" : "Return Value",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "A new version that has the specified ",
+              "type" : "text"
+            },
+            {
+              "code" : "part",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " increased, along with the necessary other changes.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
     },
     {
       "content" : [

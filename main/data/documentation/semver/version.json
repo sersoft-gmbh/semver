@@ -153,7 +153,6 @@
       "generated" : true,
       "identifiers" : [
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/Comparable-Implementations",
-        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/CustomStringConvertible-Implementations",
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/Decodable-Implementations",
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/Encodable-Implementations",
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/Equatable-Implementations"
@@ -255,17 +254,6 @@
   "title" : "Comparable Implementations",
   "type" : "topic",
   "url" : "\/documentation\/semver\/version\/comparable-implementations"
-},
-"doc://SemVer/documentation/SemVer/Version/CustomStringConvertible-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/CustomStringConvertible-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "CustomStringConvertible Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/semver\/version\/customstringconvertible-implementations"
 },
 "doc://SemVer/documentation/SemVer/Version/Decodable-Implementations": {
   "abstract" : [
