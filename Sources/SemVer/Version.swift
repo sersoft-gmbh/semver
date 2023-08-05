@@ -201,22 +201,11 @@ extension Version {
     public static func <(lhs: Version, rhs: Version) -> Bool {
         if (lhs.major, lhs.minor, lhs.patch) < (rhs.major, rhs.minor, rhs.patch) {
             return true
-        } else if (lhs.major, lhs.minor, lhs.patch) > (rhs.major, rhs.minor, rhs.patch) {
-            return false
-        } else {
-            if lhs.prerelease.isEmpty {
-                if rhs.prerelease.isEmpty {
-                    return false
-                } else {
-                    return false
-                }
-            } else {
-                if rhs.prerelease.isEmpty {
-                    return true
-                } else {
-                    return lhs.prerelease < rhs.prerelease
-                }
-            }
         }
+        if (lhs.major, lhs.minor, lhs.patch) > (rhs.major, rhs.minor, rhs.patch) {
+            return false
+        }
+        // A version with a prerelease has a lower precedence than the same version without prerelease.
+        return !lhs.prerelease.isEmpty && (rhs.prerelease.isEmpty || lhs.prerelease < rhs.prerelease)
     }
 }
