@@ -106,24 +106,6 @@ jobs:
           esac
           echo "xcode=${DESTINATION}" >> "${GITHUB_OUTPUT}"
       - uses: actions/checkout@v3
-      # PIF ISSUES: https://github.com/apple/swift-package-manager/issues/5767
-      - uses: actions/cache@v3
-        with:
-          path: .build
-          key: ${{ runner.os }}-${{ steps.os-version.outputs.version }}-spm-${{ steps.swift-version.outputs.version }}-${{ hashFiles('**/Package.resolved') }}
-          restore-keys: |
-            ${{ runner.os }}-${{ steps.os-version.outputs.version }}-spm-${{ steps.swift-version.outputs.version }}-
-      - name: Work around PIF issues
-        env:
-          DESTINATION: ${{ steps.destination.outputs.xcode }}
-        run: |
-          swift package dump-pif > /dev/null
-          ATTEMPT=0
-          while [ -z "${SUCCESS}" ] && [ "${ATTEMPT}" -le 5 ]; do
-            xcodebuild clean -scheme "${XCODE_SCHEME}" -destination "${DESTINATION}" | grep -q "CLEAN SUCCEEDED" && SUCCESS=true
-            ATTEMPT=$((ATTEMPT + 1))
-          done
-      # END PIF ISSUES
       - uses: actions/cache@v3
         with:
           path: .derived-data
@@ -139,6 +121,8 @@ jobs:
           parallel-testing-enabled: ${{ matrix.platform != 'watchOS' }}
           enable-code-coverage: true
           derived-data-path: .derived-data
+          # Work around PIF issue: https://github.com/apple/swift-package-manager/issues/5767
+          cloned-source-packages-path: ${{ runner.temp }}/xcodebuild-source-packages
       - uses: sersoft-gmbh/swift-coverage-action@v3
         id: coverage-files
         with:
