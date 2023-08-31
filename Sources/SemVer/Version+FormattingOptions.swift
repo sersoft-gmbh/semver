@@ -6,6 +6,7 @@ extension Version {
 
         public let rawValue: RawValue
 
+        @inlinable
         public init(rawValue: RawValue) {
             self.rawValue = rawValue
         }

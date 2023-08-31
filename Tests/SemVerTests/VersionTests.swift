@@ -3,7 +3,7 @@ import XCTest
 
 final class VersionTests: XCTestCase {
     func testFullVersionString() {
-        let version = Version(major: 1, minor: 2, patch: 3, prerelease: "beta", metadata: "exp", "test")
+        let version = Version(major: 1, minor: 2, patch: 3, preReleaseIdentifiers: "beta", metadata: "exp", "test")
         XCTAssertEqual(version.versionString(), "1.2.3-beta+exp.test")
     }
 
@@ -18,17 +18,17 @@ final class VersionTests: XCTestCase {
     }
 
     func testFullVersionStringWithPrereleaseDataWithoutMetadataData() {
-        let version = Version(major: 1, minor: 2, patch: 3, prerelease: "beta-1")
+        let version = Version(major: 1, minor: 2, patch: 3, preReleaseIdentifiers: "beta-1")
         XCTAssertEqual(version.versionString(), "1.2.3-beta-1")
     }
 
     func testVersionStringExcludingPrerelease() {
-        let version = Version(major: 1, minor: 2, patch: 3, prerelease: "beta", metadata: "exp", "test")
+        let version = Version(major: 1, minor: 2, patch: 3, preReleaseIdentifiers: "beta", metadata: "exp", "test")
         XCTAssertEqual(version.versionString(formattedWith: .includeMetadata), "1.2.3+exp.test")
     }
 
     func testVersionStringExcludingMetadata() {
-        let version = Version(major: 1, minor: 2, patch: 3, prerelease: "beta", metadata: "exp", "test")
+        let version = Version(major: 1, minor: 2, patch: 3, preReleaseIdentifiers: "beta", metadata: "exp", "test")
         XCTAssertEqual(version.versionString(formattedWith: .includePrerelease), "1.2.3-beta")
     }
 
@@ -49,7 +49,7 @@ final class VersionTests: XCTestCase {
     }
 
     func testDescriptionIsEqualToFullVersionString() {
-        let version = Version(major: 1, minor: 2, patch: 3, prerelease: "beta", metadata: "exp", "test")
+        let version = Version(major: 1, minor: 2, patch: 3, preReleaseIdentifiers: "beta", metadata: "exp", "test")
         XCTAssertEqual(String(describing: version), version.versionString())
     }
 
@@ -64,9 +64,9 @@ final class VersionTests: XCTestCase {
     }
 
     func testVersionEqualityWithMetadataDifference() {
-        let v1 = Version(major: 1, minor: 2, patch: 3, prerelease: "beta", metadata: "exp", "test")
-        let v2 = Version(major: 1, minor: 2, patch: 3, prerelease: "beta")
-        let v3 = Version(major: 1, minor: 2, patch: 3, prerelease: "beta2")
+        let v1 = Version(major: 1, minor: 2, patch: 3, preReleaseIdentifiers: "beta", metadata: "exp", "test")
+        let v2 = Version(major: 1, minor: 2, patch: 3, preReleaseIdentifiers: "beta")
+        let v3 = Version(major: 1, minor: 2, patch: 3, preReleaseIdentifiers: "beta2")
 
         XCTAssertEqual(v1, v2)
         XCTAssertNotEqual(v1, v3)
@@ -74,10 +74,11 @@ final class VersionTests: XCTestCase {
     }
 
     func testVersionIdenticalCheck() {
-        let v1 = Version(major: 1, minor: 2, patch: 3, prerelease: "beta", metadata: "exp", "test")
-        let v2 = Version(major: 1, minor: 2, patch: 3, prerelease: "beta")
-        let v3 = Version(major: 1, minor: 2, patch: 3, prerelease: "beta", metadata: "test", "exp")
-        let v4 = Version(major: 1, minor: 2, patch: 3, prerelease: "beta", metadata: "exp2")
+        let v1 = Version(major: 1, minor: 2, patch: 3, preReleaseIdentifiers: "beta", metadata: "exp", "test")
+        let v2 = Version(major: 1, minor: 2, patch: 3, preReleaseIdentifiers: "beta")
+        let v3 = Version(major: 1, minor: 2, patch: 3, preReleaseIdentifiers: "beta", metadata: "test", "exp")
+        let v4 = Version(major: 1, minor: 2, patch: 3, preReleaseIdentifiers: "beta", metadata: "exp2")
+        let v5 = Version(major: 1, minor: 3)
 
         XCTAssertTrue(v1.isIdentical(to: v1))
         XCTAssertTrue(v1.isIdentical(to: v1, requireIdenticalMetadataOrdering: true))
@@ -85,6 +86,8 @@ final class VersionTests: XCTestCase {
         XCTAssertTrue(v1.isIdentical(to: v3))
         XCTAssertFalse(v1.isIdentical(to: v3, requireIdenticalMetadataOrdering: true))
         XCTAssertFalse(v1.isIdentical(to: v4))
+        XCTAssertFalse(v1.isIdentical(to: v5))
+        XCTAssertFalse(v1.isIdentical(to: v5, requireIdenticalMetadataOrdering: true))
     }
 
     func testVersionComparisonWithBasicVersion() {
@@ -92,11 +95,11 @@ final class VersionTests: XCTestCase {
         let v1 = Version(major: 1, minor: 2, patch: 3)
         let v2 = Version(major: 1, minor: 2, patch: 4)
         let v3 = Version(major: 2, minor: 0, patch: 0)
-        let v3b = Version(major: 2, minor: 0, patch: 0, prerelease: "beta")
-        let v3be = Version(major: 2, minor: 0, patch: 0, prerelease: "beta", metadata: "ext")
+        let v3b = Version(major: 2, minor: 0, patch: 0, preReleaseIdentifiers: "beta")
+        let v3be = Version(major: 2, minor: 0, patch: 0, preReleaseIdentifiers: "beta", metadata: "ext")
         let v4 = Version(major: 4)
-        let v4b1 = Version(major: 4, prerelease: "beta1")
-        let v4b2 = Version(major: 4, prerelease: "beta2")
+        let v4b1 = Version(major: 4, preReleaseIdentifiers: "beta1")
+        let v4b2 = Version(major: 4, preReleaseIdentifiers: "beta2")
 
         XCTAssertLessThan(v0, v1)
         XCTAssertLessThan(v1, v2)
@@ -120,8 +123,8 @@ final class VersionTests: XCTestCase {
     func testVersionComparisonUsingOperators() {
         let v123 = Version(major: 1, minor: 2, patch: 3)
         let v124 = Version(major: 1, minor: 2, patch: 4)
-        let v123Alpha = Version(major: 1, minor: 2, patch: 3, prerelease: "alpha")
-        let v123Beta = Version(major: 1, minor: 2, patch: 3, prerelease: "beta")
+        let v123Alpha = Version(major: 1, minor: 2, patch: 3, preReleaseIdentifiers: "alpha")
+        let v123Beta = Version(major: 1, minor: 2, patch: 3, preReleaseIdentifiers: "beta")
 
         XCTAssertFalse(v123 < v123)
         XCTAssertFalse(v123Alpha < v123Alpha)
@@ -160,9 +163,30 @@ final class VersionTests: XCTestCase {
         XCTAssertTrue(v124 > v123)
     }
 
+    func testComparisonFromSpec() {
+        // 1.0.0-alpha < 1.0.0-alpha.1 < 1.0.0-alpha.beta < 1.0.0-beta < 1.0.0-beta.2 < 1.0.0-beta.11 < 1.0.0-rc.1 < 1.0.0
+        let v1 = Version(major: 1, preReleaseIdentifiers: "alpha")
+        let v2 = Version(major: 1, preReleaseIdentifiers: "alpha", "1")
+        let v3 = Version(major: 1, preReleaseIdentifiers: "alpha", "beta")
+        let v4 = Version(major: 1, preReleaseIdentifiers: "beta")
+        let v5 = Version(major: 1, preReleaseIdentifiers: "beta", "2")
+        let v6 = Version(major: 1, preReleaseIdentifiers: "beta", "11")
+        let v7 = Version(major: 1, preReleaseIdentifiers: "rc", "1")
+        let v8 = Version(major: 1)
+
+        XCTAssertTrue(v1 < v2)
+        XCTAssertTrue(v2 < v3)
+        XCTAssertTrue(v3 < v4)
+        XCTAssertTrue(v4 < v5)
+        XCTAssertTrue(v5 < v6)
+        XCTAssertTrue(v6 < v7)
+        XCTAssertTrue(v7 < v8)
+        XCTAssertTrue(v8 > v1)
+    }
+
     func testLosslessStringConvertible() {
-        let v1 = Version(major: 1, minor: 2, patch: 3, prerelease: "beta", metadata: "exp", "test")
-        let v2 = Version(major: 1, prerelease: "beta")
+        let v1 = Version(major: 1, minor: 2, patch: 3, preReleaseIdentifiers: "beta", metadata: "exp", "test")
+        let v2 = Version(major: 1, preReleaseIdentifiers: "beta")
         let v3 = Version(major: 2, metadata: "exp", "test")
         let v4 = Version(major: 2)
         let v5 = Version(major: 2, metadata: "abc-1")
@@ -211,8 +235,8 @@ final class VersionTests: XCTestCase {
         let v1 = Version(major: 1)
         let v2 = Version(major: 1, minor: 2)
         let v3 = Version(major: 1, minor: 2, patch: 3)
-        let v4 = Version(major: 1, minor: 2, patch: 3, prerelease: "beta", metadata: "exp", "test")
-        let v5 = Version(major: 1, prerelease: "beta")
+        let v4 = Version(major: 1, minor: 2, patch: 3, preReleaseIdentifiers: "beta", metadata: "exp", "test")
+        let v5 = Version(major: 1, preReleaseIdentifiers: "beta")
         let v6 = Version(major: 1, metadata: "exp", "test")
 
         XCTAssertNotNil(v1.debugDescription, "Version(major: 1, minor: 0, patch: 0, prerelease: \"\", metadata: \"\")")
@@ -224,8 +248,8 @@ final class VersionTests: XCTestCase {
     }
 
     func testHashable() {
-        let v1 = Version(major: 1, minor: 2, patch: 3, prerelease: "beta", metadata: "exp", "test")
-        let v2 = Version(major: 1, minor: 2, patch: 3, prerelease: "beta")
+        let v1 = Version(major: 1, minor: 2, patch: 3, preReleaseIdentifiers: ["beta"], metadata: "exp", "test")
+        let v2 = Version(major: 1, minor: 2, patch: 3, preReleaseIdentifiers: ["beta"])
         let v3 = Version(major: 3)
 
         let v1Hash: Int = {
@@ -233,7 +257,7 @@ final class VersionTests: XCTestCase {
             hasher.combine(v1.major)
             hasher.combine(v1.minor)
             hasher.combine(v1.patch)
-            hasher.combine(v1.prerelease)
+            hasher.combine(v1.preReleaseIdentifiers)
             return hasher.finalize()
         }()
         let v2Hash: Int = {
@@ -241,7 +265,7 @@ final class VersionTests: XCTestCase {
             hasher.combine(v2.major)
             hasher.combine(v2.minor)
             hasher.combine(v2.patch)
-            hasher.combine(v2.prerelease)
+            hasher.combine(v2.preReleaseIdentifiers)
             return hasher.finalize()
         }()
         let v3Hash: Int = {
@@ -249,7 +273,7 @@ final class VersionTests: XCTestCase {
             hasher.combine(v3.major)
             hasher.combine(v3.minor)
             hasher.combine(v3.patch)
-            hasher.combine(v3.prerelease)
+            hasher.combine(v3.preReleaseIdentifiers)
             return hasher.finalize()
         }()
 
@@ -263,10 +287,10 @@ final class VersionTests: XCTestCase {
         version.major = 2
         version.minor = 1
         version.patch = 3
-        version.prerelease = "beta"
+        version.preReleaseIdentifiers = ["beta"]
         version.metadata = ["yea", "testing", "rocks"]
 
-        let expectedVersion = Version(major: 2, minor: 1, patch: 3, prerelease: "beta", metadata: "yea", "testing", "rocks")
+        let expectedVersion = Version(major: 2, minor: 1, patch: 3, preReleaseIdentifiers: ["beta"], metadata: "yea", "testing", "rocks")
         XCTAssertEqual(version, expectedVersion)
         XCTAssertEqual(version.versionString(formattedWith: .fullVersion),
                        expectedVersion.versionString(formattedWith: .fullVersion))

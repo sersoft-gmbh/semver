@@ -25,26 +25,22 @@ public struct Version: Sendable, Hashable, Comparable, LosslessStringConvertible
     public var patch: Int {
         willSet { assert(newValue >= 0) }
     }
-    /// The prelease part of this version. Must only contain caracters in `CharacterSet.versionSuffixAllowed`.
+    /// The prelease identifiers of this version. Must only contain characters in `CharacterSet.versionSuffixAllowed`.
     /// - SeeAlso: `CharacterSet.versionSuffixAllowed`
-    public var prerelease: String {
-        willSet { assert(CharacterSet(charactersIn: newValue).isSubset(of: .versionSuffixAllowed)) }
+    public var preReleaseIdentifiers: Array<String> {
+        willSet { assert(Self._areValidIdentifiers(newValue)) }
     }
-    /// The metadata of this version. Must only contain caracters in `CharacterSet.versionSuffixAllowed`.
+    /// The metadata of this version. Must only contain characters in `CharacterSet.versionSuffixAllowed`.
     /// - SeeAlso: `CharacterSet.versionSuffixAllowed`
     public var metadata: Array<String> {
-        willSet {
-            assert(newValue.allSatisfy { !$0.isEmpty && CharacterSet(charactersIn: $0).isSubset(of: .versionSuffixAllowed) })
-        }
+        willSet { assert(Self._areValidIdentifiers(newValue)) }
     }
-
-    private var metadataString: String { metadata.joined(separator: ".") }
 
     @inlinable
     public var description: String { versionString() }
 
     public var debugDescription: String {
-        "Version(major: \(major), minor: \(minor), patch: \(patch), prelease: \"\(prerelease)\", metadata: \"\(metadataString)\")"
+        "Version(major: \(major), minor: \(minor), patch: \(patch), prelease: \"\(_preReleaseString)\", metadata: \"\(_metadataString)\")"
     }
 
     /// Creates a new version with the given parts.
@@ -53,19 +49,21 @@ public struct Version: Sendable, Hashable, Comparable, LosslessStringConvertible
     ///   - major: The major part of this version. Must be >= 0.
     ///   - minor: The minor part of this version. Must be >= 0.
     ///   - patch: The patch part of this version. Must be >= 0.
-    ///   - prerelease: The prelease part of this version. Must only contain caracters in `CharacterSet.versionSuffixAllowed`.
-    ///   - metadata: The metadata of this version. Must only contain caracters in `CharacterSet.versionSuffixAllowed`.
-    public init(major: Int, minor: Int = 0, patch: Int = 0, prerelease: String = "", metadata: Array<String> = .init()) {
+    ///   - preReleaseIdentifiers: The prelease identifiers of this version. Must only contain characters in `CharacterSet.versionSuffixAllowed`.
+    ///   - metadata: The metadata of this version. Must only contain characters in `CharacterSet.versionSuffixAllowed`.
+    public init(major: Int, minor: Int = 0, patch: Int = 0,
+                preReleaseIdentifiers: Array<String> = .init(),
+                metadata: Array<String> = .init()) {
         assert(major >= 0)
         assert(minor >= 0)
         assert(patch >= 0)
-        assert(CharacterSet(charactersIn: prerelease).isSubset(of: .versionSuffixAllowed))
-        assert(metadata.allSatisfy { !$0.isEmpty && CharacterSet(charactersIn: $0).isSubset(of: .versionSuffixAllowed) })
+        assert(Self._areValidIdentifiers(preReleaseIdentifiers))
+        assert(Self._areValidIdentifiers(metadata))
 
         self.major = major
         self.minor = minor
         self.patch = patch
-        self.prerelease = prerelease
+        self.preReleaseIdentifiers = preReleaseIdentifiers
         self.metadata = metadata
     }
 
@@ -75,37 +73,68 @@ public struct Version: Sendable, Hashable, Comparable, LosslessStringConvertible
     ///   - major: The major part of this version. Must be >= 0.
     ///   - minor: The minor part of this version. Must be >= 0.
     ///   - patch: The patch part of this version. Must be >= 0.
-    ///   - prerelease: The prelease part of this version. Must only contain caracters in `CharacterSet.versionSuffixAllowed`.
-    ///   - metadata: The metadata of this version. Must only contain caracters in `CharacterSet.versionSuffixAllowed`.
+    ///   - preReleaseIdentifiers: The prelease identifiers of this version. Must only contain characters in `CharacterSet.versionSuffixAllowed`.
+    ///   - metadata: The metadata of this version. Must only contain characters in `CharacterSet.versionSuffixAllowed`.
     @inlinable
-    public init(major: Int, minor: Int = 0, patch: Int = 0, prerelease: String = "", metadata: String...) {
-        self.init(major: major, minor: minor, patch: patch, prerelease: prerelease, metadata: metadata)
+    public init(major: Int, minor: Int = 0, patch: Int = 0, preReleaseIdentifiers: Array<String> = .init(), metadata: String...) {
+        self.init(major: major, minor: minor, patch: patch, preReleaseIdentifiers: preReleaseIdentifiers, metadata: metadata)
+    }
+
+    /// Creates a new version with the given parts.
+    ///
+    /// - Parameters:
+    ///   - major: The major part of this version. Must be >= 0.
+    ///   - minor: The minor part of this version. Must be >= 0.
+    ///   - patch: The patch part of this version. Must be >= 0.
+    ///   - preReleaseIdentifiers: The prelease identifiers of this version. Must only contain characters in `CharacterSet.versionSuffixAllowed`.
+    ///   - metadata: The metadata of this version. Must only contain characters in `CharacterSet.versionSuffixAllowed`.
+    @inlinable
+    public init(major: Int, minor: Int = 0, patch: Int = 0, preReleaseIdentifiers: String..., metadata: Array<String> = .init()) {
+        self.init(major: major, minor: minor, patch: patch, preReleaseIdentifiers: preReleaseIdentifiers, metadata: metadata)
+    }
+
+    /// Creates a new version with the given parts.
+    ///
+    /// - Parameters:
+    ///   - major: The major part of this version. Must be >= 0.
+    ///   - minor: The minor part of this version. Must be >= 0.
+    ///   - patch: The patch part of this version. Must be >= 0.
+    ///   - preReleaseIdentifiers: The prelease identifiers of this version. Must only contain characters in `CharacterSet.versionSuffixAllowed`.
+    ///   - metadata: The metadata of this version. Must only contain characters in `CharacterSet.versionSuffixAllowed`.
+    @inlinable
+    public init(major: Int, minor: Int = 0, patch: Int = 0, preReleaseIdentifiers: String..., metadata: String...) {
+        self.init(major: major, minor: minor, patch: patch, preReleaseIdentifiers: preReleaseIdentifiers, metadata: metadata)
     }
 
 #if swift(>=5.7)
     @available(macOS 13, iOS 16, tvOS 16, watchOS 9, *)
     private init?(_modern description: String) {
         assert(!description.isEmpty)
-        let fullRegex = #/^(?'major'\d+)(?:\.(?'minor'\d+)(?:\.(?'patch'\d+))?)?(?'prelease'-[0-9A-Za-z-]+)?(?'build'\+(?:[0-9A-Za-z-]+(?:\.|$))*)?$/#
+        let fullRegex = #/^(?'major'\d+)(?:\.(?'minor'\d+)(?:\.(?'patch'\d+))?)?(?'prelease'-(?:[0-9A-Za-z-]+\.?)*)?(?'build'\+(?:[0-9A-Za-z-]+(?:\.|$))*)?$/#
         guard let fullMatch = description.wholeMatch(of: fullRegex),
+              fullMatch.output.prelease?.count != 1,
+              fullMatch.output.build?.count != 1,
+              fullMatch.output.prelease?.last != ".",
               fullMatch.output.build?.last != "."
         else { return nil }
-        let major = Int(fullMatch.output.major) ?? 0
+        let major = Int(fullMatch.output.major)!
         let minor = fullMatch.output.minor.flatMap { Int($0) } ?? 0
         let patch = fullMatch.output.patch.flatMap { Int($0) } ?? 0
-        let prerelease = fullMatch.output.prelease.map { String($0.dropFirst()) } ?? ""
-        let metadata = fullMatch.output.build?.dropFirst().split(separator: ".").map(String.init) ?? []
-        self.init(major: major, minor: minor, patch: patch, prerelease: prerelease, metadata: metadata)
+        let preReleaseIdentifiers = (fullMatch.output.prelease?.dropFirst()).map(Self._splitIdentifiers) ?? .init()
+        let metadata = (fullMatch.output.build?.dropFirst()).map(Self._splitIdentifiers) ?? .init()
+        self.init(major: major, minor: minor, patch: patch, preReleaseIdentifiers: preReleaseIdentifiers, metadata: metadata)
     }
 #endif
 
     private init?(_legacy description: String) {
         assert(!description.isEmpty)
-        guard description.range(of: #"^(?:[0-9]+\.){0,2}[0-9]+(?:-[0-9A-Za-z-]+)?(?:\+(?:[0-9A-Za-z-]+(?:\.|$))*)?$"#, options: .regularExpression) != nil
+        guard description.range(of: #"^(?:[0-9]+\.){0,2}[0-9]+(?:-(?:[0-9A-Za-z-]+\.?)*)?(?:\+(?:[0-9A-Za-z-]+(?:\.|$))*)?$"#,
+                                options: .regularExpression) != nil
         else { return nil }
 
         // This should be fine after above's regular expression
-        let idx = description.range(of: #"[0-9](\+|-)"#, options: .regularExpression).map { description.index(before: $0.upperBound) } ?? description.endIndex
+        let idx = description.range(of: #"[0-9](\+|-)"#, options: .regularExpression)
+            .map { description.index(before: $0.upperBound) } ?? description.endIndex
         var parts: Array<String> = description[..<idx].components(separatedBy: ".").reversed()
         guard (1...3).contains(parts.count),
               let major = parts.popLast().flatMap(Int.init)
@@ -113,24 +142,27 @@ public struct Version: Sendable, Hashable, Comparable, LosslessStringConvertible
         let minor = parts.popLast().flatMap(Int.init) ?? 0
         let patch = parts.popLast().flatMap(Int.init) ?? 0
 
-        let prerelease: String
-        if let searchRange = description.range(of: #"(?:^|\.)[0-9]+-[0-9A-Za-z-]+(?:\+|$)"#, options: .regularExpression),
+        let preReleaseIdentifiers: Array<String>
+        if let searchRange = description.range(of: #"(?:^|\.)[0-9]+-(?:[0-9A-Za-z-]+\.?)*(?:\+|$)"#, options: .regularExpression),
            case let substr = description[searchRange],
-           let range = substr.range(of: "[0-9]-[0-9A-Za-z-]+", options: .regularExpression) {
-            prerelease = String(substr[substr.index(range.lowerBound, offsetBy: 2)..<range.upperBound])
+           let range = substr.range(of: #"[0-9]-(?:[0-9A-Za-z-]+\.?)+"#, options: .regularExpression) {
+            let prereleaseString = substr[substr.index(range.lowerBound, offsetBy: 2)..<range.upperBound]
+            if prereleaseString.last == "." { return nil }
+            preReleaseIdentifiers = prereleaseString.components(separatedBy: ".")
         } else {
-            prerelease = ""
+            preReleaseIdentifiers = .init()
         }
 
         let metadata: Array<String>
         if let range = description.range(of: #"\+(?:[0-9A-Za-z-]+(?:\.|$))+$"#, options: .regularExpression) {
             let metadataString = description[description.index(after: range.lowerBound)..<range.upperBound]
-            metadata = metadataString.components(separatedBy: ".")
+            if metadataString.last == "." { return nil }
+            metadata = Self._splitIdentifiers(metadataString)
         } else {
             metadata = .init()
         }
 
-        self.init(major: major, minor: minor, patch: patch, prerelease: prerelease, metadata: metadata)
+        self.init(major: major, minor: minor, patch: patch, preReleaseIdentifiers: preReleaseIdentifiers, metadata: metadata)
     }
 
     public init?(_ description: String) {
@@ -150,7 +182,7 @@ public struct Version: Sendable, Hashable, Comparable, LosslessStringConvertible
         hasher.combine(major)
         hasher.combine(minor)
         hasher.combine(patch)
-        hasher.combine(prerelease)
+        hasher.combine(preReleaseIdentifiers)
         // metadata does not participate in hashing and equating
     }
 
@@ -165,11 +197,11 @@ public struct Version: Sendable, Hashable, Comparable, LosslessStringConvertible
         } else if !options.contains(.dropMinorIfZero) || minor != 0 {
             versionString += ".\(minor)"
         }
-        if options.contains(.includePrerelease) && !prerelease.isEmpty {
-            versionString += "-\(prerelease)"
+        if options.contains(.includePrerelease) && !preReleaseIdentifiers.isEmpty {
+            versionString += "-\(_preReleaseString)"
         }
         if options.contains(.includeMetadata) && !metadata.isEmpty {
-            versionString += "+\(metadataString)"
+            versionString += "+\(_metadataString)"
         }
         return versionString
     }
@@ -205,9 +237,9 @@ extension Version {
     }
 
     public static func ==(lhs: Version, rhs: Version) -> Bool {
-        (lhs.major, lhs.minor, lhs.patch, lhs.prerelease)
+        (lhs.major, lhs.minor, lhs.patch, lhs.preReleaseIdentifiers)
             ==
-        (rhs.major, rhs.minor, rhs.patch, rhs.prerelease)
+        (rhs.major, rhs.minor, rhs.patch, rhs.preReleaseIdentifiers)
     }
 
     public static func <(lhs: Version, rhs: Version) -> Bool {
@@ -218,6 +250,55 @@ extension Version {
             return false
         }
         // A version with a prerelease has a lower precedence than the same version without prerelease.
-        return !lhs.prerelease.isEmpty && (rhs.prerelease.isEmpty || lhs.prerelease < rhs.prerelease)
+        guard !lhs.preReleaseIdentifiers.isEmpty else { return false }
+        guard !rhs.preReleaseIdentifiers.isEmpty else { return true }
+
+        var (lhsPrereleaseIter, rhsPrereleaseIter) = (lhs.preReleaseIdentifiers.makeIterator(), rhs.preReleaseIdentifiers.makeIterator())
+        while let lhsPrereleaseIdentifier = lhsPrereleaseIter.next(),
+              let rhsPrereleaseIdentifier = rhsPrereleaseIter.next()
+        {
+            guard lhsPrereleaseIdentifier != rhsPrereleaseIdentifier else { continue }
+
+            let lhsNumeric = Int(lhsPrereleaseIdentifier)
+            let rhsNumeric = Int(rhsPrereleaseIdentifier)
+            // Identifiers consisting of only digits are compared numerically.
+            if let lhsNumeric, let rhsNumeric, lhsNumeric != rhsNumeric {
+                return lhsNumeric < rhsNumeric
+            }
+            // Identifiers with letters or hyphens are compared lexically in ASCII sort order.
+            if lhsNumeric == nil && rhsNumeric == nil {
+                return lhsPrereleaseIdentifier < rhsPrereleaseIdentifier
+            }
+            // Numeric identifiers always have lower precedence than non-numeric identifiers.
+            return lhsNumeric != nil && rhsNumeric == nil // The part after the `&&` is probably redundant here.
+        }
+
+        // A larger set of pre-release fields has a higher precedence than a smaller set, if all of the preceding identifiers are equal.
+        return lhs.preReleaseIdentifiers.count < rhs.preReleaseIdentifiers.count
     }
+}
+
+extension Version {
+    static var _identifierSeparator: Character { "." }
+
+    static func _areValidIdentifiers(_ identifiers: Array<String>) -> Bool {
+        identifiers.allSatisfy { !$0.isEmpty && CharacterSet(charactersIn: $0).isSubset(of: .versionSuffixAllowed) }
+    }
+
+    @usableFromInline
+    static func _joinIdentifiers(_ identifiers: Array<String>) -> String {
+        identifiers.joined(separator: String(_identifierSeparator))
+    }
+
+    @usableFromInline
+    static func _splitIdentifiers<S: StringProtocol>(_ identifier: S) -> Array<String>
+    where S.SubSequence == String.SubSequence
+    {
+        identifier.split(separator: _identifierSeparator).map(String.init)
+    }
+
+    @inlinable
+    var _preReleaseString: String { Self._joinIdentifiers(preReleaseIdentifiers) }
+    @inlinable
+    var _metadataString: String { Self._joinIdentifiers(metadata) }
 }
