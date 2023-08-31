@@ -649,7 +649,7 @@
 "doc://SemVer/documentation/SemVer/Version/FormattingOptions/includePrerelease": {
   "abstract" : [
     {
-      "text" : "Include the prerelease part of the version.",
+      "text" : "Include the pre-release part of the version.",
       "type" : "text"
     }
   ],
