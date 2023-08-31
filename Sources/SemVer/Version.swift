@@ -146,9 +146,9 @@ public struct Version: Sendable, Hashable, Comparable, LosslessStringConvertible
         if let searchRange = description.range(of: #"(?:^|\.)[0-9]+-(?:[0-9A-Za-z-]+\.?)*(?:\+|$)"#, options: .regularExpression),
            case let substr = description[searchRange],
            let range = substr.range(of: #"[0-9]-(?:[0-9A-Za-z-]+\.?)+"#, options: .regularExpression) {
-            let prereleaseString = substr[substr.index(range.lowerBound, offsetBy: 2)..<range.upperBound]
-            if prereleaseString.last == "." { return nil }
-            preReleaseIdentifiers = prereleaseString.components(separatedBy: ".")
+            let preReleaseString = substr[substr.index(range.lowerBound, offsetBy: 2)..<range.upperBound]
+            if preReleaseString.last == "." { return nil }
+            preReleaseIdentifiers = preReleaseString.components(separatedBy: ".")
         } else {
             preReleaseIdentifiers = .init()
         }
@@ -249,7 +249,7 @@ extension Version {
         if (lhs.major, lhs.minor, lhs.patch) > (rhs.major, rhs.minor, rhs.patch) {
             return false
         }
-        // A version with a prerelease has a lower precedence than the same version without prerelease.
+        // A version with a pre-release has a lower precedence than the same version without pre-release.
         guard !lhs.preReleaseIdentifiers.isEmpty else { return false }
         guard !rhs.preReleaseIdentifiers.isEmpty else { return true }
 

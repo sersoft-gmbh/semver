@@ -18,7 +18,7 @@ extension Version.FormattingOptions {
     public static let dropPatchIfZero = Version.FormattingOptions(rawValue: 1 << 0)
     /// Leave out minor part if it's zero. Requires `dropPatchIfZero`.
     public static let dropMinorIfZero = Version.FormattingOptions(rawValue: 1 << 1)
-    /// Include the prerelease part of the version.
+    /// Include the pre-release part of the version.
     public static let includePrerelease = Version.FormattingOptions(rawValue: 1 << 2)
     /// Include the metadata part of the version.
     public static let includeMetadata = Version.FormattingOptions(rawValue: 1 << 3)
