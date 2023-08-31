@@ -27,9 +27,9 @@ You can create a version like this:
 
 ```swift
 let version = Version(major: 1, minor: 2, patch: 3,
-                      prerelease: "beta",
+                      preReleaseIdentifiers: "beta", "1", // preReleaseIdentifiers could also be ["beta", "1"]
                       metadata: "exp", "test") // metadata could also be ["exp, test"]
-version.versionString() // -> "1.2.3-beta+exp.test"
+version.versionString() // -> "1.2.3-beta.1+exp.test"
 ```
 
 Of course there are simpler ways:
@@ -53,13 +53,13 @@ The following options currently exist:
 -   `.dropPatchIfZero`: If `patch` is `0`, it won't be added to the version string.
 -   `.dropMinorIfZero`: If `minor` and `patch` are both `0`, only the `major` number is added. Requires `.dropPatchIfZero`.
 -   `.dropTrailingZeros`: A convenience combination of `.dropPatchIfZero` and `.dropMinorIfZero`.
--   `.includePrerelease`: If `prerelease` is not empty, it is added to the version string.
+-   `.includePrerelease`: If `preReleaseIdentifiers` are not empty, they are added to the version string.
 -   `.includeMetadata`: If `metadata` is not empty, it is added to the version string.
 -   `.fullVersion`: A convenience combination of `.includePrerelease` and `.includeMetadata`. The default if you don't pass anything to `versionString`.
 
 ```swift
 let version = Version(major: 1, minor: 2, patch: 3,
-                      prerelease: "beta",
+                      preReleaseIdentifiers: "beta",
                       metadata: "exp", "test")
 version.versionString(formattedWith: .includePrerelease]) // -> "1.2.3-beta"
 version.versionString(formattedWith: .includeMetadata) // -> "1.2.3+exp.test"
@@ -74,7 +74,7 @@ A `Version` can also be created from a String. All Strings created by the `versi
 
 ```swift
 let version = Version(major: 1, minor: 2, patch: 3,
-                      prerelease: "beta",
+                      preReleaseIdentifiers: "beta",
                       metadata: "exp", "test")
 let str = version.versionString() // -> "1.2.3-beta+exp.test"
 let recreatedVersion = Version(str) // recreatedVersion is Optional<Version>
@@ -92,20 +92,20 @@ let versionWithoutMetadata = Version(major: 1, minor: 2, patch: 3)
 versionWithMetadata == versionWithoutMetadata // -> true
 ```
 
-Otherwise, comparing two `Version`'s basically compares their major/minor/patch numbers. A `Version` with a `prerelease` is ordered **before** a the same version without `prerelease`:
+Otherwise, comparing two `Version`'s basically compares their major/minor/patch numbers. A `Version` with `preReleaseIdentifiers` is ordered **before** a the same version without `preReleaseIdentifiers`:
 
 ```swift
-let prereleaseVersion = Version(major: 1, minor: 2, patch: 3,
-                                prerelease: "beta")
+let preReleaseVersion = Version(major: 1, minor: 2, patch: 3,
+                                preReleaseIdentifiers: "beta")
 let finalVersion = Version(major: 1, minor: 2, patch: 3)
-prereleaseVersion < finalVersion // -> true
+preReleaseVersion < finalVersion // -> true
 ```
 
 If you need to check whether two versions are completely identical, there's the `isIdentical(to:)` method, which also checks `metadata`.
 
 ### Validity Checks
 
-`Version` performs some validity checks on its fields. This means, that no negative numbers are allowed for `major`, `minor` and `patch`. Also, the `prerelease` and `metadata` Strings must only contain alphanumeric characters plus `-` (hyphen). However, to keep working with `Version` production-safe, these rules are only checked in non-optimized builds (using `assert()`). The result of using not allowed numbers / characters in optimized builds is undetermined. While calling `versionString()` very likely won't break, it certainly won't be possible to recreate a version containing invalid numbers / characters using `init(_ description: String)`.
+`Version` performs some validity checks on its fields. This means, that no negative numbers are allowed for `major`, `minor` and `patch`. Also, the `preReleaseIdentifiers` and `metadata` Strings must only contain alphanumeric characters plus `-` (hyphen). However, to keep working with `Version` production-safe, these rules are only checked in non-optimized builds (using `assert()`). The result of using not allowed numbers / characters in optimized builds is undetermined. While calling `versionString()` very likely won't break, it certainly won't be possible to recreate a version containing invalid numbers / characters using `init(_ description: String)`.
 
 ## Documentation
 
