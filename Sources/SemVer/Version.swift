@@ -262,7 +262,7 @@ extension Version {
             let lhsNumeric = Int(lhsPrereleaseIdentifier)
             let rhsNumeric = Int(rhsPrereleaseIdentifier)
             // Identifiers consisting of only digits are compared numerically.
-            if let lhsNumeric, let rhsNumeric, lhsNumeric != rhsNumeric {
+            if let lhsNumeric = lhsNumeric, let rhsNumeric = rhsNumeric, lhsNumeric != rhsNumeric {
                 return lhsNumeric < rhsNumeric
             }
             // Identifiers with letters or hyphens are compared lexically in ASCII sort order.
