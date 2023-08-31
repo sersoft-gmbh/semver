@@ -5,17 +5,6 @@
       "type" : "text"
     }
   ],
-  "deprecationSummary" : [
-    {
-      "inlineContent" : [
-        {
-          "text" : "Use init(major:minor:patch:preReleaseIdentifiers:metadata:)",
-          "type" : "text"
-        }
-      ],
-      "type" : "paragraph"
-    }
-  ],
   "hierarchy" : {
     "paths" : [
       [
@@ -26,12 +15,11 @@
   },
   "identifier" : {
     "interfaceLanguage" : "swift",
-    "url" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/init(major:minor:patch:prerelease:metadata:)-4li3d"
+    "url" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/init(major:minor:patch:preReleaseIdentifiers:metadata:)-53sf5"
   },
   "kind" : "symbol",
   "metadata" : {
-    "extendedModule" : "SemVer",
-    "externalID" : "s:6SemVer7VersionV5major5minor5patch10prerelease8metadataACSi_S2iS2Sdtcfc",
+    "externalID" : "s:6SemVer7VersionV5major5minor5patch21preReleaseIdentifiers8metadataACSi_S2iSaySSGSSdtcfc",
     "fragments" : [
       {
         "kind" : "identifier",
@@ -94,11 +82,20 @@
       },
       {
         "kind" : "externalParam",
-        "text" : "prerelease"
+        "text" : "preReleaseIdentifiers"
       },
       {
         "kind" : "text",
         "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:Sa",
+        "text" : "Array"
+      },
+      {
+        "kind" : "text",
+        "text" : "<"
       },
       {
         "kind" : "typeIdentifier",
@@ -107,7 +104,7 @@
       },
       {
         "kind" : "text",
-        "text" : ", "
+        "text" : ">, "
       },
       {
         "kind" : "externalParam",
@@ -132,13 +129,10 @@
         "name" : "SemVer"
       }
     ],
-    "platforms" : [
-
-    ],
     "role" : "symbol",
     "roleHeading" : "Initializer",
     "symbolKind" : "init",
-    "title" : "init(major:minor:patch:prerelease:metadata:)"
+    "title" : "init(major:minor:patch:preReleaseIdentifiers:metadata:)"
   },
   "primaryContentSections" : [
     {
@@ -212,11 +206,20 @@
             },
             {
               "kind" : "externalParam",
-              "text" : "prerelease"
+              "text" : "preReleaseIdentifiers"
             },
             {
               "kind" : "text",
               "text" : ": "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:Sa",
+              "text" : "Array"
+            },
+            {
+              "kind" : "text",
+              "text" : "<"
             },
             {
               "kind" : "typeIdentifier",
@@ -225,7 +228,7 @@
             },
             {
               "kind" : "text",
-              "text" : ", "
+              "text" : "> = .init(), "
             },
             {
               "kind" : "externalParam",
@@ -299,7 +302,7 @@
             {
               "inlineContent" : [
                 {
-                  "text" : "The prelease part of this version. Must only contain characters in ",
+                  "text" : "The prelease identifiers of this version. Must only contain characters in ",
                   "type" : "text"
                 },
                 {
@@ -314,14 +317,14 @@
               "type" : "paragraph"
             }
           ],
-          "name" : "prerelease"
+          "name" : "preReleaseIdentifiers"
         },
         {
           "content" : [
             {
               "inlineContent" : [
                 {
-                  "text" : "The metadata of this version. Must only chontain caracters in ",
+                  "text" : "The metadata of this version. Must only contain characters in ",
                   "type" : "text"
                 },
                 {
@@ -352,7 +355,7 @@
   "variants" : [
     {
       "paths" : [
-        "\/documentation\/semver\/version\/init(major:minor:patch:prerelease:metadata:)-4li3d"
+        "\/documentation\/semver\/version\/init(major:minor:patch:prereleaseidentifiers:metadata:)-53sf5"
       ],
       "traits" : [
         {
@@ -408,14 +411,13 @@
   "type" : "topic",
   "url" : "\/documentation\/semver\/version"
 },
-"doc://SemVer/documentation/SemVer/Version/init(major:minor:patch:prerelease:metadata:)-4li3d": {
+"doc://SemVer/documentation/SemVer/Version/init(major:minor:patch:preReleaseIdentifiers:metadata:)-53sf5": {
   "abstract" : [
     {
       "text" : "Creates a new version with the given parts.",
       "type" : "text"
     }
   ],
-  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -478,11 +480,20 @@
     },
     {
       "kind" : "externalParam",
-      "text" : "prerelease"
+      "text" : "preReleaseIdentifiers"
     },
     {
       "kind" : "text",
       "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sa",
+      "text" : "Array"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
     },
     {
       "kind" : "typeIdentifier",
@@ -491,7 +502,7 @@
     },
     {
       "kind" : "text",
-      "text" : ", "
+      "text" : ">, "
     },
     {
       "kind" : "externalParam",
@@ -511,12 +522,12 @@
       "text" : "...)"
     }
   ],
-  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/init(major:minor:patch:prerelease:metadata:)-4li3d",
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/init(major:minor:patch:preReleaseIdentifiers:metadata:)-53sf5",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "init(major:minor:patch:prerelease:metadata:)",
+  "title" : "init(major:minor:patch:preReleaseIdentifiers:metadata:)",
   "type" : "topic",
-  "url" : "\/documentation\/semver\/version\/init(major:minor:patch:prerelease:metadata:)-4li3d"
+  "url" : "\/documentation\/semver\/version\/init(major:minor:patch:prereleaseidentifiers:metadata:)-53sf5"
 }
 }
 }

@@ -1,7 +1,7 @@
 {
   "abstract" : [
     {
-      "text" : "The prelease part of this version. Must only contain caracters in ",
+      "text" : "The prelease part of this version. Must only contain characters in ",
       "type" : "text"
     },
     {
@@ -11,6 +11,17 @@
     {
       "text" : ".",
       "type" : "text"
+    }
+  ],
+  "deprecationSummary" : [
+    {
+      "inlineContent" : [
+        {
+          "text" : "Use preReleaseIdentifiers",
+          "type" : "text"
+        }
+      ],
+      "type" : "paragraph"
     }
   ],
   "hierarchy" : {
@@ -27,6 +38,7 @@
   },
   "kind" : "symbol",
   "metadata" : {
+    "extendedModule" : "SemVer",
     "externalID" : "s:6SemVer7VersionV10prereleaseSSvp",
     "fragments" : [
       {
@@ -55,6 +67,9 @@
       {
         "name" : "SemVer"
       }
+    ],
+    "platforms" : [
+
     ],
     "role" : "symbol",
     "roleHeading" : "Instance Property",
@@ -189,7 +204,7 @@
 "doc://SemVer/documentation/SemVer/Version/prerelease": {
   "abstract" : [
     {
-      "text" : "The prelease part of this version. Must only contain caracters in ",
+      "text" : "The prelease part of this version. Must only contain characters in ",
       "type" : "text"
     },
     {
@@ -201,6 +216,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",

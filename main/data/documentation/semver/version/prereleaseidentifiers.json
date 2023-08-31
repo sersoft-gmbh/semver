@@ -1,7 +1,7 @@
 {
   "abstract" : [
     {
-      "text" : "The metadata of this version. Must only contain characters in ",
+      "text" : "The prelease identifiers of this version. Must only contain characters in ",
       "type" : "text"
     },
     {
@@ -23,11 +23,11 @@
   },
   "identifier" : {
     "interfaceLanguage" : "swift",
-    "url" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/metadata"
+    "url" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/preReleaseIdentifiers"
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:6SemVer7VersionV8metadataSaySSGvp",
+    "externalID" : "s:6SemVer7VersionV21preReleaseIdentifiersSaySSGvp",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -39,7 +39,7 @@
       },
       {
         "kind" : "identifier",
-        "text" : "metadata"
+        "text" : "preReleaseIdentifiers"
       },
       {
         "kind" : "text",
@@ -72,7 +72,7 @@
     "role" : "symbol",
     "roleHeading" : "Instance Property",
     "symbolKind" : "property",
-    "title" : "metadata"
+    "title" : "preReleaseIdentifiers"
   },
   "primaryContentSections" : [
     {
@@ -95,7 +95,7 @@
             },
             {
               "kind" : "identifier",
-              "text" : "metadata"
+              "text" : "preReleaseIdentifiers"
             },
             {
               "kind" : "text",
@@ -152,7 +152,7 @@
   "variants" : [
     {
       "paths" : [
-        "\/documentation\/semver\/version\/metadata"
+        "\/documentation\/semver\/version\/prereleaseidentifiers"
       ],
       "traits" : [
         {
@@ -208,10 +208,10 @@
   "type" : "topic",
   "url" : "\/documentation\/semver\/version"
 },
-"doc://SemVer/documentation/SemVer/Version/metadata": {
+"doc://SemVer/documentation/SemVer/Version/preReleaseIdentifiers": {
   "abstract" : [
     {
-      "text" : "The metadata of this version. Must only contain characters in ",
+      "text" : "The prelease identifiers of this version. Must only contain characters in ",
       "type" : "text"
     },
     {
@@ -234,7 +234,7 @@
     },
     {
       "kind" : "identifier",
-      "text" : "metadata"
+      "text" : "preReleaseIdentifiers"
     },
     {
       "kind" : "text",
@@ -259,12 +259,12 @@
       "text" : ">"
     }
   ],
-  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/metadata",
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/preReleaseIdentifiers",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "metadata",
+  "title" : "preReleaseIdentifiers",
   "type" : "topic",
-  "url" : "\/documentation\/semver\/version\/metadata"
+  "url" : "\/documentation\/semver\/version\/prereleaseidentifiers"
 }
 }
 }

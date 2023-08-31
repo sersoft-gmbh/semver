@@ -1,7 +1,31 @@
 {
   "abstract" : [
     {
-      "text" : "Decodes the version’s components as separete keys.",
+      "text" : "Convenience accessor representing ",
+      "type" : "text"
+    },
+    {
+      "code" : ".components(preReleaseIdentifiersAsString: true, metadataAsString: false)",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ",",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "which was the default of the non-parameterized ",
+      "type" : "text"
+    },
+    {
+      "code" : "components",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
       "type" : "text"
     }
   ],
@@ -20,11 +44,19 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:6SemVer7VersionV16DecodingStrategyO10componentsyA2EmF",
+    "externalID" : "s:6SemVer7VersionV16DecodingStrategyO10componentsAEvpZ",
     "fragments" : [
       {
         "kind" : "keyword",
-        "text" : "case"
+        "text" : "static"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "keyword",
+        "text" : "var"
       },
       {
         "kind" : "text",
@@ -33,6 +65,24 @@
       {
         "kind" : "identifier",
         "text" : "components"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:6SemVer7VersionV",
+        "text" : "Version"
+      },
+      {
+        "kind" : "text",
+        "text" : "."
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:6SemVer7VersionV16DecodingStrategyO",
+        "text" : "DecodingStrategy"
       }
     ],
     "modules" : [
@@ -41,9 +91,9 @@
       }
     ],
     "role" : "symbol",
-    "roleHeading" : "Case",
-    "symbolKind" : "case",
-    "title" : "Version.DecodingStrategy.components"
+    "roleHeading" : "Type Property",
+    "symbolKind" : "property",
+    "title" : "components"
   },
   "primaryContentSections" : [
     {
@@ -58,7 +108,15 @@
           "tokens" : [
             {
               "kind" : "keyword",
-              "text" : "case"
+              "text" : "static"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "var"
             },
             {
               "kind" : "text",
@@ -67,6 +125,38 @@
             {
               "kind" : "identifier",
               "text" : "components"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:6SemVer7VersionV",
+              "text" : "Version"
+            },
+            {
+              "kind" : "text",
+              "text" : "."
+            },
+            {
+              "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/DecodingStrategy",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:6SemVer7VersionV16DecodingStrategyO",
+              "text" : "DecodingStrategy"
+            },
+            {
+              "kind" : "text",
+              "text" : " { "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "get"
+            },
+            {
+              "kind" : "text",
+              "text" : " }"
             }
           ]
         }
@@ -187,14 +277,46 @@
 "doc://SemVer/documentation/SemVer/Version/DecodingStrategy/components": {
   "abstract" : [
     {
-      "text" : "Decodes the version’s components as separete keys.",
+      "text" : "Convenience accessor representing ",
+      "type" : "text"
+    },
+    {
+      "code" : ".components(preReleaseIdentifiersAsString: true, metadataAsString: false)",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ",",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "which was the default of the non-parameterized ",
+      "type" : "text"
+    },
+    {
+      "code" : "components",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
       "type" : "text"
     }
   ],
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "case"
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "var"
     },
     {
       "kind" : "text",
@@ -203,12 +325,30 @@
     {
       "kind" : "identifier",
       "text" : "components"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6SemVer7VersionV",
+      "text" : "Version"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6SemVer7VersionV16DecodingStrategyO",
+      "text" : "DecodingStrategy"
     }
   ],
   "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/DecodingStrategy\/components",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "Version.DecodingStrategy.components",
+  "title" : "components",
   "type" : "topic",
   "url" : "\/documentation\/semver\/version\/decodingstrategy\/components"
 }

@@ -110,11 +110,17 @@
   "topicSections" : [
     {
       "identifiers" : [
-        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/DecodingStrategy\/components",
+        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/DecodingStrategy\/components(preReleaseIdentifiersAsString:metadataAsString:)",
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/DecodingStrategy\/custom(_:)",
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/DecodingStrategy\/string"
       ],
       "title" : "Enumeration Cases"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/DecodingStrategy\/components"
+      ],
+      "title" : "Type Properties"
     }
   ],
   "variants" : [
@@ -222,7 +228,85 @@
 "doc://SemVer/documentation/SemVer/Version/DecodingStrategy/components": {
   "abstract" : [
     {
-      "text" : "Decodes the version’s components as separete keys.",
+      "text" : "Convenience accessor representing ",
+      "type" : "text"
+    },
+    {
+      "code" : ".components(preReleaseIdentifiersAsString: true, metadataAsString: false)",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ",",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "which was the default of the non-parameterized ",
+      "type" : "text"
+    },
+    {
+      "code" : "components",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "components"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6SemVer7VersionV",
+      "text" : "Version"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6SemVer7VersionV16DecodingStrategyO",
+      "text" : "DecodingStrategy"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/DecodingStrategy\/components",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "components",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version\/decodingstrategy\/components"
+},
+"doc://SemVer/documentation/SemVer/Version/DecodingStrategy/components(preReleaseIdentifiersAsString:metadataAsString:)": {
+  "abstract" : [
+    {
+      "text" : "Decodes the version’s components as separate keys.",
       "type" : "text"
     }
   ],
@@ -238,14 +322,52 @@
     {
       "kind" : "identifier",
       "text" : "components"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "preReleaseIdentifiersAsString"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "metadataAsString"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
     }
   ],
-  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/DecodingStrategy\/components",
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/DecodingStrategy\/components(preReleaseIdentifiersAsString:metadataAsString:)",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "Version.DecodingStrategy.components",
+  "title" : "Version.DecodingStrategy.components(preReleaseIdentifiersAsString:metadataAsString:)",
   "type" : "topic",
-  "url" : "\/documentation\/semver\/version\/decodingstrategy\/components"
+  "url" : "\/documentation\/semver\/version\/decodingstrategy\/components(prereleaseidentifiersasstring:metadataasstring:)"
 },
 "doc://SemVer/documentation/SemVer/Version/DecodingStrategy/custom(_:)": {
   "abstract" : [

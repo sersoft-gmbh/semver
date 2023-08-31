@@ -389,7 +389,7 @@
 "doc://SemVer/documentation/SemVer/Version/metadata": {
   "abstract" : [
     {
-      "text" : "The metadata of this version. Must only contain caracters in ",
+      "text" : "The metadata of this version. Must only contain characters in ",
       "type" : "text"
     },
     {

@@ -5,6 +5,17 @@
       "type" : "text"
     }
   ],
+  "deprecationSummary" : [
+    {
+      "inlineContent" : [
+        {
+          "text" : "Use init(major:minor:patch:preReleaseIdentifiers:metadata:)",
+          "type" : "text"
+        }
+      ],
+      "type" : "paragraph"
+    }
+  ],
   "hierarchy" : {
     "paths" : [
       [
@@ -19,6 +30,7 @@
   },
   "kind" : "symbol",
   "metadata" : {
+    "extendedModule" : "SemVer",
     "externalID" : "s:6SemVer7VersionV5major5minor5patch10prerelease8metadataACSi_S2iSSSaySSGtcfc",
     "fragments" : [
       {
@@ -129,6 +141,9 @@
         "name" : "SemVer"
       }
     ],
+    "platforms" : [
+
+    ],
     "role" : "symbol",
     "roleHeading" : "Initializer",
     "symbolKind" : "init",
@@ -219,7 +234,7 @@
             },
             {
               "kind" : "text",
-              "text" : " = \"\", "
+              "text" : ", "
             },
             {
               "kind" : "externalParam",
@@ -302,7 +317,7 @@
             {
               "inlineContent" : [
                 {
-                  "text" : "The prelease part of this version. Must only contain caracters in ",
+                  "text" : "The prelease part of this version. Must only contain characters in ",
                   "type" : "text"
                 },
                 {
@@ -324,7 +339,7 @@
             {
               "inlineContent" : [
                 {
-                  "text" : "The metadata of this version. Must only contain caracters in ",
+                  "text" : "The metadata of this version. Must only contain characters in ",
                   "type" : "text"
                 },
                 {
@@ -418,6 +433,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",

@@ -275,6 +275,26 @@
                 "type" : "init"
               },
               {
+                "path" : "\/documentation\/semver\/version\/init(major:minor:patch:prereleaseidentifiers:metadata:)-53sf5",
+                "title" : "init(major: Int, minor: Int, patch: Int, preReleaseIdentifiers: Array<String>, metadata: String...)",
+                "type" : "init"
+              },
+              {
+                "path" : "\/documentation\/semver\/version\/init(major:minor:patch:prereleaseidentifiers:metadata:)-6mdzr",
+                "title" : "init(major: Int, minor: Int, patch: Int, preReleaseIdentifiers: String..., metadata: String...)",
+                "type" : "init"
+              },
+              {
+                "path" : "\/documentation\/semver\/version\/init(major:minor:patch:prereleaseidentifiers:metadata:)-9jrqd",
+                "title" : "init(major: Int, minor: Int, patch: Int, preReleaseIdentifiers: Array<String>, metadata: Array<String>)",
+                "type" : "init"
+              },
+              {
+                "path" : "\/documentation\/semver\/version\/init(major:minor:patch:prereleaseidentifiers:metadata:)-y1yn",
+                "title" : "init(major: Int, minor: Int, patch: Int, preReleaseIdentifiers: String..., metadata: Array<String>)",
+                "type" : "init"
+              },
+              {
                 "path" : "\/documentation\/semver\/version\/init(major:minor:patch:prerelease:metadata:)-4li3d",
                 "title" : "init(major: Int, minor: Int, patch: Int, prerelease: String, metadata: String...)",
                 "type" : "init"
@@ -316,6 +336,11 @@
               {
                 "path" : "\/documentation\/semver\/version\/patch",
                 "title" : "var patch: Int",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/semver\/version\/prereleaseidentifiers",
+                "title" : "var preReleaseIdentifiers: Array<String>",
                 "type" : "property"
               },
               {
@@ -363,8 +388,8 @@
                     "type" : "groupMarker"
                   },
                   {
-                    "path" : "\/documentation\/semver\/version\/decodingstrategy\/components",
-                    "title" : "case components",
+                    "path" : "\/documentation\/semver\/version\/decodingstrategy\/components(prereleaseidentifiersasstring:metadataasstring:)",
+                    "title" : "case components(preReleaseIdentifiersAsString: Bool, metadataAsString: Bool)",
                     "type" : "case"
                   },
                   {
@@ -376,6 +401,15 @@
                     "path" : "\/documentation\/semver\/version\/decodingstrategy\/string",
                     "title" : "case string",
                     "type" : "case"
+                  },
+                  {
+                    "title" : "Type Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/semver\/version\/decodingstrategy\/components",
+                    "title" : "static var components: Version.DecodingStrategy",
+                    "type" : "property"
                   }
                 ],
                 "path" : "\/documentation\/semver\/version\/decodingstrategy",
@@ -389,8 +423,8 @@
                     "type" : "groupMarker"
                   },
                   {
-                    "path" : "\/documentation\/semver\/version\/encodingstrategy\/components",
-                    "title" : "case components",
+                    "path" : "\/documentation\/semver\/version\/encodingstrategy\/components(prereleaseidentifiersasstring:metadataasstring:)",
+                    "title" : "case components(preReleaseIdentifiersAsString: Bool, metadataAsString: Bool)",
                     "type" : "case"
                   },
                   {
@@ -406,6 +440,11 @@
                   {
                     "title" : "Type Properties",
                     "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/semver\/version\/encodingstrategy\/components",
+                    "title" : "static var components: Version.EncodingStrategy",
+                    "type" : "property"
                   },
                   {
                     "path" : "\/documentation\/semver\/version\/encodingstrategy\/string",

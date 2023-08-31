@@ -114,6 +114,10 @@
     {
       "identifiers" : [
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/init(_:)",
+        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/init(major:minor:patch:preReleaseIdentifiers:metadata:)-53sf5",
+        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/init(major:minor:patch:preReleaseIdentifiers:metadata:)-6mdzr",
+        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/init(major:minor:patch:preReleaseIdentifiers:metadata:)-9jrqd",
+        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/init(major:minor:patch:preReleaseIdentifiers:metadata:)-y1yn",
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/init(major:minor:patch:prerelease:metadata:)-4li3d",
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/init(major:minor:patch:prerelease:metadata:)-66wtk"
       ],
@@ -127,6 +131,7 @@
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/metadata",
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/minor",
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/patch",
+        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/preReleaseIdentifiers",
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/prerelease"
       ],
       "title" : "Instance Properties"
@@ -661,6 +666,478 @@
   "type" : "topic",
   "url" : "\/documentation\/semver\/version\/init(_:)"
 },
+"doc://SemVer/documentation/SemVer/Version/init(major:minor:patch:preReleaseIdentifiers:metadata:)-53sf5": {
+  "abstract" : [
+    {
+      "text" : "Creates a new version with the given parts.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "major"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "minor"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "patch"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "preReleaseIdentifiers"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sa",
+      "text" : "Array"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ">, "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "metadata"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : "...)"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/init(major:minor:patch:preReleaseIdentifiers:metadata:)-53sf5",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(major:minor:patch:preReleaseIdentifiers:metadata:)",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version\/init(major:minor:patch:prereleaseidentifiers:metadata:)-53sf5"
+},
+"doc://SemVer/documentation/SemVer/Version/init(major:minor:patch:preReleaseIdentifiers:metadata:)-6mdzr": {
+  "abstract" : [
+    {
+      "text" : "Creates a new version with the given parts.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "major"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "minor"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "patch"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "preReleaseIdentifiers"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : "..., "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "metadata"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : "...)"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/init(major:minor:patch:preReleaseIdentifiers:metadata:)-6mdzr",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(major:minor:patch:preReleaseIdentifiers:metadata:)",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version\/init(major:minor:patch:prereleaseidentifiers:metadata:)-6mdzr"
+},
+"doc://SemVer/documentation/SemVer/Version/init(major:minor:patch:preReleaseIdentifiers:metadata:)-9jrqd": {
+  "abstract" : [
+    {
+      "text" : "Creates a new version with the given parts.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "major"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "minor"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "patch"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "preReleaseIdentifiers"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sa",
+      "text" : "Array"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ">, "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "metadata"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sa",
+      "text" : "Array"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ">)"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/init(major:minor:patch:preReleaseIdentifiers:metadata:)-9jrqd",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(major:minor:patch:preReleaseIdentifiers:metadata:)",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version\/init(major:minor:patch:prereleaseidentifiers:metadata:)-9jrqd"
+},
+"doc://SemVer/documentation/SemVer/Version/init(major:minor:patch:preReleaseIdentifiers:metadata:)-y1yn": {
+  "abstract" : [
+    {
+      "text" : "Creates a new version with the given parts.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "major"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "minor"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "patch"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "preReleaseIdentifiers"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : "..., "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "metadata"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sa",
+      "text" : "Array"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ">)"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/init(major:minor:patch:preReleaseIdentifiers:metadata:)-y1yn",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(major:minor:patch:preReleaseIdentifiers:metadata:)",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version\/init(major:minor:patch:prereleaseidentifiers:metadata:)-y1yn"
+},
 "doc://SemVer/documentation/SemVer/Version/init(major:minor:patch:prerelease:metadata:)-4li3d": {
   "abstract" : [
     {
@@ -668,6 +1145,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -777,6 +1255,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -1008,7 +1487,7 @@
 "doc://SemVer/documentation/SemVer/Version/metadata": {
   "abstract" : [
     {
-      "text" : "The metadata of this version. Must only contain caracters in ",
+      "text" : "The metadata of this version. Must only contain characters in ",
       "type" : "text"
     },
     {
@@ -1209,10 +1688,10 @@
   "type" : "topic",
   "url" : "\/documentation\/semver\/version\/patch"
 },
-"doc://SemVer/documentation/SemVer/Version/prerelease": {
+"doc://SemVer/documentation/SemVer/Version/preReleaseIdentifiers": {
   "abstract" : [
     {
-      "text" : "The prelease part of this version. Must only contain caracters in ",
+      "text" : "The prelease identifiers of this version. Must only contain characters in ",
       "type" : "text"
     },
     {
@@ -1224,6 +1703,65 @@
       "type" : "text"
     }
   ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "preReleaseIdentifiers"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sa",
+      "text" : "Array"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/preReleaseIdentifiers",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "preReleaseIdentifiers",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version\/prereleaseidentifiers"
+},
+"doc://SemVer/documentation/SemVer/Version/prerelease": {
+  "abstract" : [
+    {
+      "text" : "The prelease part of this version. Must only contain characters in ",
+      "type" : "text"
+    },
+    {
+      "code" : "CharacterSet.versionSuffixAllowed",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
