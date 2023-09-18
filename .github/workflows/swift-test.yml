@@ -60,7 +60,7 @@ jobs:
       - name: Build & Test
         run: swift test -v --parallel --enable-code-coverage
       - name: Generate Coverage Files
-        uses: sersoft-gmbh/swift-coverage-action@v3
+        uses: sersoft-gmbh/swift-coverage-action@v4
         id: coverage-files
       - uses: codecov/codecov-action@v3
         with:
@@ -123,7 +123,7 @@ jobs:
           derived-data-path: .derived-data
           # Work around PIF issue: https://github.com/apple/swift-package-manager/issues/5767
           cloned-source-packages-path: ${{ runner.temp }}/xcodebuild-source-packages
-      - uses: sersoft-gmbh/swift-coverage-action@v3
+      - uses: sersoft-gmbh/swift-coverage-action@v4
         id: coverage-files
         with:
           search-paths: |
