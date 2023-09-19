@@ -37,12 +37,10 @@ jobs:
 
   spm-context:
     runs-on: ubuntu-latest
+    container: swift:5.9
     outputs:
       package-dump: ${{ steps.dump-package.outputs.package-dump }}
     steps:
-      - uses: swift-actions/setup-swift@v1.24.0
-        with:
-          swift-version: '5.9'
       - uses: actions/checkout@v4
       # We don't use a cache here, because SPM doesn't resolve dependencies when dumping packages.
       - name: Dump package
@@ -58,14 +56,11 @@ jobs:
       - release-context
       - spm-context
     runs-on: ubuntu-latest
+    container: swift:5.9
     strategy:
       matrix:
         target: ${{ fromJson(needs.spm-context.outputs.package-dump).products.*.targets.* }}
     steps:
-      - uses: swift-actions/setup-swift@v1.24.0
-        id: swift-setup
-        with:
-          swift-version: '5.9'
       - name: Read OS Version
         uses: sersoft-gmbh/os-version-action@v3
         id: os-version
