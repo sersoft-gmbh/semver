@@ -23,10 +23,10 @@ extension Version.FormattingOptions {
     /// Include the metadata part of the version.
     public static let includeMetadata = Version.FormattingOptions(rawValue: 1 << 3)
 
-    /// Combination of `.includePrerelease` and `.includeMetadata`.
+    /// Combination of ``Version/FormattingOptions/includePrerelease`` and ``Version/FormattingOptions/includeMetadata``.
     @inlinable
     public static var fullVersion: Version.FormattingOptions { [.includePrerelease, .includeMetadata] }
-    /// Combination of `.dropPatchIfZero` and `.dropMinorIfZero`.
+    /// Combination of ``Version/FormattingOptions/dropPatchIfZero`` and ``Version/FormattingOptions/dropMinorIfZero``.
     @inlinable
     public static var dropTrailingZeros: Version.FormattingOptions { [.dropMinorIfZero, .dropPatchIfZero] }
 }

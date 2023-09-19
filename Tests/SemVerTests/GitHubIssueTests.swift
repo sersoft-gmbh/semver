@@ -9,6 +9,6 @@ final class GitHubIssueTests: XCTestCase {
         XCTAssertEqual(version.major, 1)
         XCTAssertEqual(version.minor, 0)
         XCTAssertEqual(version.patch, 0)
-        XCTAssertEqual(version.preReleaseIdentifiers, ["beta", "11"])
+        XCTAssertEqual(version.prerelease, ["beta", "11"])
     }
 }

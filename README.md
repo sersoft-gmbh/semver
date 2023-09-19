@@ -11,13 +11,14 @@ This repository contains a complete implementation of a `Version` struct that co
 
 Add the following dependency to your `Package.swift`:
 ```swift
-.package(url: "https://github.com/sersoft-gmbh/semver.git", from: "3.0.0"),
+.package(url: "https://github.com/sersoft-gmbh/semver.git", from: "4.0.0"),
 ```
 
 ## Compatibility
 
 -  For Swift up to version 5.2, use SemVer version 2.x.y.
--  For Swift as of version 5.3, use SemVer version 3.x.y.
+-  For Swift up to version 5.8, use SemVer version 3.x.y.
+-  For Swift as of version 5.9, use SemVer version 4.x.y.
 
 ## Usage
 
@@ -27,7 +28,7 @@ You can create a version like this:
 
 ```swift
 let version = Version(major: 1, minor: 2, patch: 3,
-                      preReleaseIdentifiers: "beta", "1", // preReleaseIdentifiers could also be ["beta", "1"]
+                      prerelease: "beta", "1", // prerelease could also be ["beta", "1"]
                       metadata: "exp", "test") // metadata could also be ["exp, test"]
 version.versionString() // -> "1.2.3-beta.1+exp.test"
 ```
@@ -53,13 +54,13 @@ The following options currently exist:
 -   `.dropPatchIfZero`: If `patch` is `0`, it won't be added to the version string.
 -   `.dropMinorIfZero`: If `minor` and `patch` are both `0`, only the `major` number is added. Requires `.dropPatchIfZero`.
 -   `.dropTrailingZeros`: A convenience combination of `.dropPatchIfZero` and `.dropMinorIfZero`.
--   `.includePrerelease`: If `preReleaseIdentifiers` are not empty, they are added to the version string.
+-   `.includePrerelease`: If `prerelease` are not empty, they are added to the version string.
 -   `.includeMetadata`: If `metadata` is not empty, it is added to the version string.
 -   `.fullVersion`: A convenience combination of `.includePrerelease` and `.includeMetadata`. The default if you don't pass anything to `versionString`.
 
 ```swift
 let version = Version(major: 1, minor: 2, patch: 3,
-                      preReleaseIdentifiers: "beta",
+                      prerelease: "beta",
                       metadata: "exp", "test")
 version.versionString(formattedWith: .includePrerelease]) // -> "1.2.3-beta"
 version.versionString(formattedWith: .includeMetadata) // -> "1.2.3+exp.test"
@@ -74,7 +75,7 @@ A `Version` can also be created from a String. All Strings created by the `versi
 
 ```swift
 let version = Version(major: 1, minor: 2, patch: 3,
-                      preReleaseIdentifiers: "beta",
+                      prerelease: "beta",
                       metadata: "exp", "test")
 let str = version.versionString() // -> "1.2.3-beta+exp.test"
 let recreatedVersion = Version(str) // recreatedVersion is Optional<Version>
@@ -92,11 +93,11 @@ let versionWithoutMetadata = Version(major: 1, minor: 2, patch: 3)
 versionWithMetadata == versionWithoutMetadata // -> true
 ```
 
-Otherwise, comparing two `Version`'s basically compares their major/minor/patch numbers. A `Version` with `preReleaseIdentifiers` is ordered **before** a the same version without `preReleaseIdentifiers`:
+Otherwise, comparing two `Version`'s basically compares their major/minor/patch numbers. A `Version` with `prerelease` identifiers is ordered **before** a the same version without `prerelease` identifiers:
 
 ```swift
 let preReleaseVersion = Version(major: 1, minor: 2, patch: 3,
-                                preReleaseIdentifiers: "beta")
+                                prerelease: "beta")
 let finalVersion = Version(major: 1, minor: 2, patch: 3)
 preReleaseVersion < finalVersion // -> true
 ```
@@ -105,7 +106,15 @@ If you need to check whether two versions are completely identical, there's the 
 
 ### Validity Checks
 
-`Version` performs some validity checks on its fields. This means, that no negative numbers are allowed for `major`, `minor` and `patch`. Also, the `preReleaseIdentifiers` and `metadata` Strings must only contain alphanumeric characters plus `-` (hyphen). However, to keep working with `Version` production-safe, these rules are only checked in non-optimized builds (using `assert()`). The result of using not allowed numbers / characters in optimized builds is undetermined. While calling `versionString()` very likely won't break, it certainly won't be possible to recreate a version containing invalid numbers / characters using `init(_ description: String)`.
+`Version` performs some validity checks on its fields. This means, that no negative numbers are allowed for `major`, `minor` and `patch`. Also, the `prerelease` and `metadata` Strings must only contain alphanumeric characters plus `-` (hyphen). However, to keep working with `Version` production-safe, these rules are only checked in non-optimized builds (using `assert()`). The result of using not allowed numbers / characters in optimized builds is undetermined. While calling `versionString()` very likely won't break, it certainly won't be possible to recreate a version containing invalid numbers / characters using `init(_ description: String)`.
+
+### Codable
+
+`Version` conforms to `Codable`! The encoding / decoding behavior can be controlled by using the `.versionEncodingStrategy` and `.versionDecodingStrategy` `CodingUserInfoKey`s. For `JSONEncoder`/`JSONDecoder` and `PropertyListEncoder`/`PropertyListDecoder`, there are the convenience properties `semverVersionEncodingStrategy`/`semverVersionDecodingStrategy` in place.
+
+### Macros
+
+If a `Version` should be constructed from a `String` that is known at compile time, the `#version` macro can be used. It will parse the `String` at compile time and generate code that initializes a version from the result. 
 
 ## Documentation
 

@@ -9,8 +9,9 @@ final class Version_AdjustmentTests: XCTestCase {
     }
 
     func testNextVersion() {
+        let prerelease: Array<Version.PrereleaseIdentifier> = ["beta", 42]
         let metadata = ["abc", "def"]
-        let version = Version(major: 1, minor: 2, patch: 3, metadata: metadata)
+        let version = Version(major: 1, minor: 2, patch: 3, prerelease: prerelease, metadata: metadata)
 
         XCTAssertEqual(version.next(.major), Version(major: 2))
         XCTAssertEqual(version.next(.minor), Version(major: 1, minor: 3))
@@ -18,6 +19,12 @@ final class Version_AdjustmentTests: XCTestCase {
         XCTAssertTrue(version.next(.major).metadata.isEmpty)
         XCTAssertTrue(version.next(.minor).metadata.isEmpty)
         XCTAssertTrue(version.next(.patch).metadata.isEmpty)
+        XCTAssertEqual(version.next(.major, keepingPrerelease: true), Version(major: 2, prerelease: prerelease))
+        XCTAssertEqual(version.next(.minor, keepingPrerelease: true), Version(major: 1, minor: 3, prerelease: prerelease))
+        XCTAssertEqual(version.next(.patch, keepingPrerelease: true), Version(major: 1, minor: 2, patch: 4, prerelease: prerelease))
+        XCTAssertTrue(version.next(.major, keepingPrerelease: true).metadata.isEmpty)
+        XCTAssertTrue(version.next(.minor, keepingPrerelease: true).metadata.isEmpty)
+        XCTAssertTrue(version.next(.patch, keepingPrerelease: true).metadata.isEmpty)
         XCTAssertEqual(version.next(.major, keepingMetadata: true), Version(major: 2))
         XCTAssertEqual(version.next(.minor, keepingMetadata: true), Version(major: 1, minor: 3))
         XCTAssertEqual(version.next(.patch, keepingMetadata: true), Version(major: 1, minor: 2, patch: 4))
@@ -27,8 +34,9 @@ final class Version_AdjustmentTests: XCTestCase {
     }
 
     func testVersionIncrease() {
+        let prerelease: Array<Version.PrereleaseIdentifier> = ["beta", 42]
         let metadata = ["abc", "def"]
-        let version = Version(major: 1, minor: 2, patch: 3, metadata: metadata)
+        let version = Version(major: 1, minor: 2, patch: 3, prerelease: prerelease, metadata: metadata)
 
         var mutatingVersion = version
         mutatingVersion.increase(.major)
@@ -42,6 +50,11 @@ final class Version_AdjustmentTests: XCTestCase {
         mutatingVersion = version
         mutatingVersion.increase(.patch)
         XCTAssertEqual(mutatingVersion, Version(major: 1, minor: 2, patch: 4))
+        XCTAssertTrue(mutatingVersion.metadata.isEmpty)
+
+        mutatingVersion = version
+        mutatingVersion.increase(.major, keepingPrerelease: true)
+        XCTAssertEqual(mutatingVersion, Version(major: 2, prerelease: prerelease))
         XCTAssertTrue(mutatingVersion.metadata.isEmpty)
 
         mutatingVersion = version

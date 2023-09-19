@@ -3,11 +3,11 @@ import Foundation
 import SemVer
 
 fileprivate extension Version.EncodingStrategy {
-    func isComponents(preReleaseIdentifiersAsString expectedPreReleaseIdentifiersAsString: Bool,
+    func isComponents(prereleaseAsString expectedPreReleaseIdentifiersAsString: Bool,
                       metadataAsString expectedMetadataAsString: Bool) -> Bool {
         switch self {
-        case .components(let preReleaseIdentifiersAsString, let metadataAsString):
-            return preReleaseIdentifiersAsString == expectedPreReleaseIdentifiersAsString && metadataAsString == expectedMetadataAsString
+        case .components(let prereleaseAsString, let metadataAsString):
+            return prereleaseAsString == expectedPreReleaseIdentifiersAsString && metadataAsString == expectedMetadataAsString
         default: return false
         }
     }
@@ -21,11 +21,11 @@ fileprivate extension Version.EncodingStrategy {
 }
 
 fileprivate extension Version.DecodingStrategy {
-    func isComponents(preReleaseIdentifiersAsString expectedPreReleaseIdentifiersAsString: Bool,
+    func isComponents(prereleaseAsString expectedPreReleaseIdentifiersAsString: Bool,
                       metadataAsString expectedMetadataAsString: Bool) -> Bool {
         switch self {
-        case .components(let preReleaseIdentifiersAsString, let metadataAsString):
-            return preReleaseIdentifiersAsString == expectedPreReleaseIdentifiersAsString && metadataAsString == expectedMetadataAsString
+        case .components(let prereleaseAsString, let metadataAsString):
+            return prereleaseAsString == expectedPreReleaseIdentifiersAsString && metadataAsString == expectedMetadataAsString
         default: return false
         }
     }
@@ -45,10 +45,10 @@ final class Version_CodableTests: XCTestCase {
         let plistEncoder = PropertyListEncoder()
         let plistDecoder = PropertyListDecoder()
 
-        XCTAssertTrue(jsonEncoder.semverVersionEncodingStrategy.isComponents(preReleaseIdentifiersAsString: true, metadataAsString: false))
-        XCTAssertTrue(jsonDecoder.semverVersionDecodingStrategy.isComponents(preReleaseIdentifiersAsString: true, metadataAsString: false))
-        XCTAssertTrue(plistEncoder.semverVersionEncodingStrategy.isComponents(preReleaseIdentifiersAsString: true, metadataAsString: false))
-        XCTAssertTrue(plistDecoder.semverVersionDecodingStrategy.isComponents(preReleaseIdentifiersAsString: true, metadataAsString: false))
+        XCTAssertTrue(jsonEncoder.semverVersionEncodingStrategy.isComponents(prereleaseAsString: true, metadataAsString: false))
+        XCTAssertTrue(jsonDecoder.semverVersionDecodingStrategy.isComponents(prereleaseAsString: true, metadataAsString: false))
+        XCTAssertTrue(plistEncoder.semverVersionEncodingStrategy.isComponents(prereleaseAsString: true, metadataAsString: false))
+        XCTAssertTrue(plistDecoder.semverVersionDecodingStrategy.isComponents(prereleaseAsString: true, metadataAsString: false))
 
         jsonEncoder.semverVersionEncodingStrategy = .string
         jsonDecoder.semverVersionDecodingStrategy = .string
@@ -66,7 +66,7 @@ final class Version_CodableTests: XCTestCase {
         let jsonEncoder = JSONEncoder()
         jsonEncoder.outputFormatting = .sortedKeys // stable comparison
 
-        let version = Version(major: 1, minor: 2, patch: 3, preReleaseIdentifiers: "beta", metadata: "exp", "test")
+        let version = Version(major: 1, minor: 2, patch: 3, prerelease: "beta", metadata: "exp", "test")
 
         let json = try jsonEncoder.encode(version)
 
@@ -86,18 +86,18 @@ final class Version_CodableTests: XCTestCase {
         XCTAssertEqual(fullVersion.major, 1)
         XCTAssertEqual(fullVersion.minor, 2)
         XCTAssertEqual(fullVersion.patch, 3)
-        XCTAssertEqual(fullVersion.preReleaseIdentifiers, ["beta"])
+        XCTAssertEqual(fullVersion.prerelease, ["beta"])
         XCTAssertEqual(fullVersion.metadata, ["exp", "test"])
 
         XCTAssertEqual(minVersion.major, 1)
         XCTAssertEqual(minVersion.minor, 0)
         XCTAssertEqual(minVersion.patch, 0)
-        XCTAssertTrue(minVersion.preReleaseIdentifiers.isEmpty)
+        XCTAssertTrue(minVersion.prerelease.isEmpty)
         XCTAssertTrue(minVersion.metadata.isEmpty)
     }
 
     func testEncodingAsComponents() throws {
-        let version = Version(major: 1, minor: 2, patch: 3, preReleaseIdentifiers: "beta", metadata: "exp", "test")
+        let version = Version(major: 1, minor: 2, patch: 3, prerelease: "beta", metadata: "exp", "test")
 
         let jsonEncoder = JSONEncoder()
         jsonEncoder.outputFormatting = .sortedKeys // stable comparison
@@ -105,16 +105,16 @@ final class Version_CodableTests: XCTestCase {
         jsonEncoder.semverVersionEncodingStrategy = .components
         let json1 = try jsonEncoder.encode(version)
 
-        jsonEncoder.semverVersionEncodingStrategy = .components(preReleaseIdentifiersAsString: false, metadataAsString: false)
+        jsonEncoder.semverVersionEncodingStrategy = .components(prereleaseAsString: false, metadataAsString: false)
         let json2 = try jsonEncoder.encode(version)
 
-        jsonEncoder.semverVersionEncodingStrategy = .components(preReleaseIdentifiersAsString: false, metadataAsString: true)
+        jsonEncoder.semverVersionEncodingStrategy = .components(prereleaseAsString: false, metadataAsString: true)
         let json3 = try jsonEncoder.encode(version)
 
-        jsonEncoder.semverVersionEncodingStrategy = .components(preReleaseIdentifiersAsString: true, metadataAsString: true)
+        jsonEncoder.semverVersionEncodingStrategy = .components(prereleaseAsString: true, metadataAsString: true)
         let json4 = try jsonEncoder.encode(version)
 
-        jsonEncoder.semverVersionEncodingStrategy = .components(preReleaseIdentifiersAsString: true, metadataAsString: false)
+        jsonEncoder.semverVersionEncodingStrategy = .components(prereleaseAsString: true, metadataAsString: false)
         let json5 = try jsonEncoder.encode(version)
 
         XCTAssertEqual(String(decoding: json1, as: UTF8.self),
@@ -142,19 +142,19 @@ final class Version_CodableTests: XCTestCase {
         XCTAssertEqual(fullVersion.major, 1)
         XCTAssertEqual(fullVersion.minor, 2)
         XCTAssertEqual(fullVersion.patch, 3)
-        XCTAssertEqual(fullVersion.preReleaseIdentifiers, ["beta"])
+        XCTAssertEqual(fullVersion.prerelease, ["beta"])
         XCTAssertEqual(fullVersion.metadata, ["exp", "test"])
 
         XCTAssertEqual(minVersion.major, 1)
         XCTAssertEqual(minVersion.minor, 0)
         XCTAssertEqual(minVersion.patch, 0)
-        XCTAssertTrue(minVersion.preReleaseIdentifiers.isEmpty)
+        XCTAssertTrue(minVersion.prerelease.isEmpty)
         XCTAssertTrue(minVersion.metadata.isEmpty)
     }
 
     func testDecodingAsComponentsWithNonStrings() throws {
         let jsonDecoder = JSONDecoder()
-        jsonDecoder.semverVersionDecodingStrategy = .components(preReleaseIdentifiersAsString: false, metadataAsString: false)
+        jsonDecoder.semverVersionDecodingStrategy = .components(prereleaseAsString: false, metadataAsString: false)
 
         let fullJson = Data(#"{"major":1,"minor":2,"patch":3,"prerelease":["beta"],"metadata":["exp","test"]}"#.utf8)
         let minJson = Data(#"{"major":1}"#.utf8)
@@ -165,19 +165,19 @@ final class Version_CodableTests: XCTestCase {
         XCTAssertEqual(fullVersion.major, 1)
         XCTAssertEqual(fullVersion.minor, 2)
         XCTAssertEqual(fullVersion.patch, 3)
-        XCTAssertEqual(fullVersion.preReleaseIdentifiers, ["beta"])
+        XCTAssertEqual(fullVersion.prerelease, ["beta"])
         XCTAssertEqual(fullVersion.metadata, ["exp", "test"])
 
         XCTAssertEqual(minVersion.major, 1)
         XCTAssertEqual(minVersion.minor, 0)
         XCTAssertEqual(minVersion.patch, 0)
-        XCTAssertTrue(minVersion.preReleaseIdentifiers.isEmpty)
+        XCTAssertTrue(minVersion.prerelease.isEmpty)
         XCTAssertTrue(minVersion.metadata.isEmpty)
     }
 
     func testDecodingAsComponentsWithAllStrings() throws {
         let jsonDecoder = JSONDecoder()
-        jsonDecoder.semverVersionDecodingStrategy = .components(preReleaseIdentifiersAsString: true, metadataAsString: true)
+        jsonDecoder.semverVersionDecodingStrategy = .components(prereleaseAsString: true, metadataAsString: true)
 
         let fullJson = Data(#"{"major":1,"minor":2,"patch":3,"prerelease":"beta","metadata":"exp.test"}"#.utf8)
         let minJson = Data(#"{"major":1}"#.utf8)
@@ -188,13 +188,13 @@ final class Version_CodableTests: XCTestCase {
         XCTAssertEqual(fullVersion.major, 1)
         XCTAssertEqual(fullVersion.minor, 2)
         XCTAssertEqual(fullVersion.patch, 3)
-        XCTAssertEqual(fullVersion.preReleaseIdentifiers, ["beta"])
+        XCTAssertEqual(fullVersion.prerelease, ["beta"])
         XCTAssertEqual(fullVersion.metadata, ["exp", "test"])
 
         XCTAssertEqual(minVersion.major, 1)
         XCTAssertEqual(minVersion.minor, 0)
         XCTAssertEqual(minVersion.patch, 0)
-        XCTAssertTrue(minVersion.preReleaseIdentifiers.isEmpty)
+        XCTAssertTrue(minVersion.prerelease.isEmpty)
         XCTAssertTrue(minVersion.metadata.isEmpty)
     }
 
@@ -203,7 +203,7 @@ final class Version_CodableTests: XCTestCase {
         jsonEncoder.outputFormatting = .sortedKeys // stable comparison
         jsonEncoder.semverVersionEncodingStrategy = .string(.fullVersion)
 
-        let version = Version(major: 1, minor: 2, patch: 3, preReleaseIdentifiers: "beta", metadata: "exp", "test")
+        let version = Version(major: 1, minor: 2, patch: 3, prerelease: "beta", metadata: "exp", "test")
 
         let json = try jsonEncoder.encode(["version": version])
 
@@ -223,7 +223,7 @@ final class Version_CodableTests: XCTestCase {
         XCTAssertEqual(version.major, 1)
         XCTAssertEqual(version.minor, 2)
         XCTAssertEqual(version.patch, 3)
-        XCTAssertEqual(version.preReleaseIdentifiers, ["beta"])
+        XCTAssertEqual(version.prerelease, ["beta"])
         XCTAssertEqual(version.metadata, ["exp", "test"])
 
         XCTAssertThrowsError(try jsonDecoder.decode(Dictionary<String, Version>.self, from: invalidJSON))
@@ -234,10 +234,10 @@ final class Version_CodableTests: XCTestCase {
         jsonEncoder.outputFormatting = .sortedKeys // stable comparison
         jsonEncoder.semverVersionEncodingStrategy = .custom {
             var container = $1.singleValueContainer()
-            try container.encode("\($0.major)-\($0.minor)-\($0.patch)-\($0.preReleaseIdentifiers.joined(separator: "&"))-\($0.metadata.joined(separator: "#"))")
+            try container.encode("\($0.major)-\($0.minor)-\($0.patch)-\($0.prerelease.lazy.map(\.string).joined(separator: "&"))-\($0.metadata.joined(separator: "#"))")
         }
 
-        let version = Version(major: 1, minor: 2, patch: 3, preReleaseIdentifiers: "beta", metadata: "exp", "test")
+        let version = Version(major: 1, minor: 2, patch: 3, prerelease: "beta", metadata: "exp", "test")
 
         let json = try jsonEncoder.encode(["version": version])
 
@@ -258,7 +258,7 @@ final class Version_CodableTests: XCTestCase {
         XCTAssertEqual(version.major, 2)
         XCTAssertEqual(version.minor, 0)
         XCTAssertEqual(version.patch, 0)
-        XCTAssertTrue(version.preReleaseIdentifiers.isEmpty)
+        XCTAssertTrue(version.prerelease.isEmpty)
         XCTAssertTrue(version.metadata.isEmpty)
     }
 
@@ -268,6 +268,7 @@ final class Version_CodableTests: XCTestCase {
         let invalidJSON3 = Data(#"{"major":1,"minor":2,"patch":-3,"prerelease":"beta","metadata":["exp","test"]}"#.utf8)
         let invalidJSON4 = Data(#"{"major":1,"minor":2,"patch":3,"prerelease":"bet@","metadata":["exp","test"]}"#.utf8)
         let invalidJSON5 = Data(#"{"major":1,"minor":2,"patch":3,"prerelease":"beta","metadata":["exp","t%st"]}"#.utf8)
+        let invalidJSON6 = Data(#"{"major":1,"minor":2,"patch":3,"prerelease":["bet@"],"metadata":["exp","test"]}"#.utf8)
         let jsonDecoder = JSONDecoder()
 
         XCTAssertThrowsError(try jsonDecoder.decode(Version.self, from: invalidJSON1)) {
@@ -292,13 +293,20 @@ final class Version_CodableTests: XCTestCase {
             XCTAssertTrue($0 is DecodingError)
             guard case DecodingError.dataCorrupted(let context) = $0
             else { XCTFail("Invalid error: \($0)"); return }
-            XCTAssertEqual(context.debugDescription, #"Invalid pre-release: ["bet@"]"#)
+            XCTAssertEqual(context.debugDescription, #"Invalid prerelease: ["bet@"]"#)
         }
         XCTAssertThrowsError(try jsonDecoder.decode(Version.self, from: invalidJSON5)) {
             XCTAssertTrue($0 is DecodingError)
             guard case DecodingError.dataCorrupted(let context) = $0
             else { XCTFail("Invalid error: \($0)"); return }
             XCTAssertEqual(context.debugDescription, #"Invalid metadata: ["exp", "t%st"]"#)
+        }
+        jsonDecoder.semverVersionDecodingStrategy = .components(prereleaseAsString: false, metadataAsString: false)
+        XCTAssertThrowsError(try jsonDecoder.decode(Version.self, from: invalidJSON6)) {
+            XCTAssertTrue($0 is DecodingError)
+            guard case DecodingError.dataCorrupted(let context) = $0
+            else { XCTFail("Invalid error: \($0)"); return }
+            XCTAssertEqual(context.debugDescription, #"Invalid prerelease identifier: "bet@""#)
         }
     }
 }

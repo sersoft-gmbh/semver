@@ -24,14 +24,18 @@ extension Version {
     ///
     /// - Parameters:
     ///   - part: The numeric part to increase.
-    ///   - keepingMetadata: Whether or not the metadata should be kept. Defaults to `false`.
+    ///   - keepingPrerelease: Whether or not the ``Version/prerelease`` should be kept. Defaults to `false`.
+    ///   - keepingMetadata: Whether or not the ``Version/metadata`` should be kept. Defaults to `false`.
     /// - Returns: A new version that has the specified `part` increased, along with the necessary other changes.
-    public func next(_ part: NumericPart, keepingMetadata: Bool = false) -> Version {
-        let newMetadata = keepingMetadata ? metadata : []
+    public func next(_ part: NumericPart, 
+                     keepingPrerelease: Bool = false,
+                     keepingMetadata: Bool = false) -> Version {
+        let newPrerelease = keepingPrerelease ? prerelease : .init()
+        let newMetadata = keepingMetadata ? metadata : .init()
         switch part {
-        case .major: return Version(major: major + 1, minor: 0, patch: 0, metadata: newMetadata)
-        case .minor: return Version(major: major, minor: minor + 1, patch: 0, metadata: newMetadata)
-        case .patch: return Version(major: major, minor: minor, patch: patch + 1, metadata: newMetadata)
+        case .major: return Version(major: major + 1, minor: 0, patch: 0, prerelease: newPrerelease, metadata: newMetadata)
+        case .minor: return Version(major: major, minor: minor + 1, patch: 0, prerelease: newPrerelease, metadata: newMetadata)
+        case .patch: return Version(major: major, minor: minor, patch: patch + 1, prerelease: newPrerelease, metadata: newMetadata)
         }
     }
 
@@ -42,8 +46,13 @@ extension Version {
     ///
     /// - Parameters:
     ///   - part: The numeric part to increase.
-    ///   - keepingMetadata: Whether or not the metadata should be kept. Defaults to `false`.
-    public mutating func increase(_ part: NumericPart, keepingMetadata: Bool = false) {
+    ///   - keepingPrerelease: Whether or not the ``Version/prerelease`` should be kept. Defaults to `false`.
+    ///   - keepingMetadata: Whether or not the ``Version/metadata`` should be kept. Defaults to `false`.
+    public mutating func increase(
+        _ part: NumericPart,
+        keepingPrerelease: Bool = false,
+        keepingMetadata: Bool = false
+    ) {
         switch part {
         case .major:
             major += 1
@@ -53,6 +62,9 @@ extension Version {
             patch = 0
         case .patch:
             patch += 1
+        }
+        if !keepingPrerelease {
+            prerelease.removeAll()
         }
         if !keepingMetadata {
             metadata.removeAll()

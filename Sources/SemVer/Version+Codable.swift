@@ -1,9 +1,9 @@
 import Foundation
 
 extension CodingUserInfoKey {
-    /// The key used to configure an `Encoder` with the strategy that should be used for encoding a ``Version``.
+    /// The key used to configure an ``Swift/Encoder`` with the strategy that should be used for encoding a ``Version``.
     public static let versionEncodingStrategy = CodingUserInfoKey(rawValue: "de.sersoft.semver.version.encoding-strategy")!
-    /// The key used to configure an `Decoder` with the strategy that should be used for decoding a ``Version``.
+    /// The key used to configure an ``Swift/Decoder`` with the strategy that should be used for decoding a ``Version``.
     public static let versionDecodingStrategy = CodingUserInfoKey(rawValue: "de.sersoft.semver.version.decoding-strategy")!
 }
 
@@ -23,24 +23,18 @@ extension Version {
     /// The strategy for encoding a ``Version``.
     public enum EncodingStrategy: Sendable {
         /// Encodes the version's components as separate keys.
-        /// - `preReleaseIdentifiersAsString` controls whether the `preReleaseIdenrtifiers` are encoded as list or string.
-        /// - `metadataAsString` controls whether `metadata` is encoded as list or string.
-        case components(preReleaseIdentifiersAsString: Bool, metadataAsString: Bool)
+        /// - `prereleaseAsString` controls whether the ``Version/prerelease`` are encoded as list or string.
+        /// - `metadataAsString` controls whether ``Version/metadata`` is encoded as list or string.
+        case components(prereleaseAsString: Bool, metadataAsString: Bool)
         /// Encodes a version string using the given format.
         case string(Version.FormattingOptions)
-#if swift(>=5.7)
         /// Uses the given closure for encoding a version.
         @preconcurrency
         case custom(@Sendable (Version, any Encoder) throws -> ())
-#else
-        /// Uses the given closure for encoding a version.
-        @preconcurrency
-        case custom(@Sendable (Version, Encoder) throws -> ())
-#endif
 
-        /// Convenience accessor representing `.components(preReleaseIdentifiersAsString: true, metadataAsString: false)`,
+        /// Convenience accessor representing `.components(prereleaseAsString: true, metadataAsString: false)`,
         /// which was the default of the non-parameterized `components`.
-        public static var components: Self { .components(preReleaseIdentifiersAsString: true, metadataAsString: false) }
+        public static var components: Self { .components(prereleaseAsString: true, metadataAsString: false) }
 
         /// Convenience accessor representing `.string(.fullVersion)`.
         public static var string: Self { .string(.fullVersion) }
@@ -52,24 +46,18 @@ extension Version {
     /// The strategy for decoding a ``Version``.
     public enum DecodingStrategy: Sendable {
         /// Decodes the version's components as separate keys.
-        /// - `preReleaseIdentifiersAsString` controls whether the `preReleaseIdenrtifiers` are decoded as list or string.
-        /// - `metadataAsString` controls whether `metadata` is decode as list or string.
-        case components(preReleaseIdentifiersAsString: Bool, metadataAsString: Bool)
+        /// - `prereleaseAsString` controls whether the ``Version/prerelease`` are decoded as list or string.
+        /// - `metadataAsString` controls whether ``Version/metadata`` is decode as list or string.
+        case components(prereleaseAsString: Bool, metadataAsString: Bool)
         /// Decodes a version from a string.
         case string
-#if swift(>=5.7)
         /// Uses the given closure for decoding a version.
         @preconcurrency
         case custom(@Sendable (any Decoder) throws -> Version)
-#else
-        /// Uses the given closure for decoding a version.
-        @preconcurrency
-        case custom(@Sendable (Decoder) throws -> Version)
-#endif
 
-        /// Convenience accessor representing `.components(preReleaseIdentifiersAsString: true, metadataAsString: false)`,
+        /// Convenience accessor representing `.components(prereleaseAsString: true, metadataAsString: false)`,
         /// which was the default of the non-parameterized `components`.
-        public static var components: Self { .components(preReleaseIdentifiersAsString: true, metadataAsString: false) }
+        public static var components: Self { .components(prereleaseAsString: true, metadataAsString: false) }
 
         @usableFromInline
         static var _default: Self { .components }
@@ -84,15 +72,15 @@ extension Version: Encodable {
     @usableFromInline
     internal func encode(to encoder: any Encoder, using strategy: EncodingStrategy) throws {
         switch strategy {
-        case .components(let preReleaseIdentifiersAsString, let metadataAsString):
+        case .components(let prereleaseAsString, let metadataAsString):
             var container = encoder.container(keyedBy: CodingKeys.self)
             try container.encode(major, forKey: .major)
             try container.encode(minor, forKey: .minor)
             try container.encode(patch, forKey: .patch)
-            if preReleaseIdentifiersAsString {
-                try container.encode(_preReleaseString, forKey: .prerelease)
+            if prereleaseAsString {
+                try container.encode(_prereleaseString, forKey: .prerelease)
             } else {
-                try container.encode(preReleaseIdentifiers, forKey: .prerelease)
+                try container.encode(prerelease, forKey: .prerelease)
             }
             if metadataAsString {
                 try container.encode(_metadataString, forKey: .metadata)
@@ -121,7 +109,7 @@ extension Version: Decodable {
     @usableFromInline
     internal init(from decoder: any Decoder, using strategy: DecodingStrategy) throws {
         switch strategy {
-        case .components(let preReleaseIdentifiersAsString, let metadataAsString):
+        case .components(let prereleaseAsString, let metadataAsString):
             let container = try decoder.container(keyedBy: CodingKeys.self)
 
             let major = try container.decode(Int.self, forKey: .major)
@@ -134,14 +122,18 @@ extension Version: Decodable {
             guard patch.map({ $0 >= 0 }) != false
             else { throw DecodingError.dataCorruptedError(forKey: .patch, in: container, debugDescription: "Invalid patch version component: \(patch!)") }
 
-            let preReleaseIdentifiers: Array<String>?
-            if preReleaseIdentifiersAsString {
-                preReleaseIdentifiers = try container.decodeIfPresent(String.self, forKey: .prerelease).map(Self._splitIdentifiers)
+            let prerelease: Array<PrereleaseIdentifier>?
+            if prereleaseAsString {
+                if let prereleaseIdentifiers = try container.decodeIfPresent(String.self, forKey: .prerelease).map(Self._splitIdentifiers) {
+                    guard Self._areValidIdentifiers(prereleaseIdentifiers) 
+                    else { throw DecodingError.dataCorruptedError(forKey: .prerelease, in: container, debugDescription: "Invalid prerelease: \(prereleaseIdentifiers)") }
+                    prerelease = prereleaseIdentifiers.map(PrereleaseIdentifier.string)
+                } else {
+                    prerelease = nil
+                }
             } else {
-                preReleaseIdentifiers = try container.decodeIfPresent(Array<String>.self, forKey: .prerelease)
+                prerelease = try container.decodeIfPresent(Array<PrereleaseIdentifier>.self, forKey: .prerelease)
             }
-            guard preReleaseIdentifiers.map(Self._areValidIdentifiers) != false
-            else { throw DecodingError.dataCorruptedError(forKey: .patch, in: container, debugDescription: "Invalid pre-release: \(preReleaseIdentifiers!)") }
 
             let metadata: Array<String>?
             if metadataAsString {
@@ -156,7 +148,7 @@ extension Version: Decodable {
                 major: major,
                 minor: minor ?? 0,
                 patch: patch ?? 0,
-                preReleaseIdentifiers: preReleaseIdentifiers ?? .init(),
+                prerelease: prerelease ?? .init(),
                 metadata: metadata ?? .init()
             )
         case .string:
