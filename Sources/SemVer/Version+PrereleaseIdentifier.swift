@@ -1,10 +1,5 @@
-#if swift(>=5.9)
 @_spi(SemVerValidation)
 package import SemVerParsing
-#else
-@_spi(SemVerValidation)
-@_implementationOnly import SemVerParsing
-#endif
 
 extension Version {
     /// Represents a prerelease identifier of a version.
@@ -18,8 +13,8 @@ extension Version {
 
         public var debugDescription: String {
             switch _storage {
-            case .number(let number): return "number(\(number))"
-            case .text(let text): return "text(\(text))"
+            case .number(let number): "number(\(number))"
+            case .text(let text): "text(\(text))"
             }
         }
 
@@ -27,17 +22,18 @@ extension Version {
         /// Numbers will be converted to strings.
         public var string: String {
             switch _storage {
-            case .number(let number): return String(number)
-            case .text(let text): return text
+            case .number(let number): String(number)
+            case .text(let text): text
             }
         }
 
         /// The number representation of this identifier.
         /// Returns `nil` if the receiver represents a text identifier.
         public var number: Int? {
-            guard case .number(let number) = _storage
-            else { return nil }
-            return number
+            switch _storage {
+            case .number(let number): number
+            case .text(_): nil
+            }
         }
 
         init(_storage: _Storage) {
@@ -94,12 +90,12 @@ extension Version {
         public static func <(lhs: Self, rhs: Self) -> Bool {
             switch (lhs._storage, rhs._storage) {
                 // Identifiers consisting of only digits are compared numerically.
-            case (.number(let lhsNumber), .number(let rhsNumber)): return lhsNumber < rhsNumber
+            case (.number(let lhsNumber), .number(let rhsNumber)): lhsNumber < rhsNumber
                 // Identifiers with letters or hyphens are compared lexically in ASCII sort order.
-            case (.text(let lhsText), .text(let rhsText)): return lhsText < rhsText
+            case (.text(let lhsText), .text(let rhsText)): lhsText < rhsText
                 // Numeric identifiers always have lower precedence than non-numeric identifiers.
-            case (.number(_), .text(_)): return true
-            case (.text(_), .number(_)): return false
+            case (.number(_), .text(_)): true
+            case (.text(_), .number(_)): false
             }
         }
     }

@@ -10,9 +10,9 @@ extension Version {
 
         public var description: String {
             switch self {
-            case .major: return "major"
-            case .minor: return "minor"
-            case .patch: return "patch"
+            case .major: "major"
+            case .minor: "minor"
+            case .patch: "patch"
             }
         }
     }

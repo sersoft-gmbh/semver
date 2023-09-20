@@ -1,11 +1,6 @@
 import struct Foundation.CharacterSet
-#if swift(>=5.9)
 @_spi(SemVerValidation)
 package import SemVerParsing
-#else
-@_spi(SemVerValidation)
-@_implementationOnly import SemVerParsing
-#endif
 
 extension CharacterSet {
     /// Contains the allowed characters for a ``Version`` suffix (``Version/prerelease`` and ``Version/metadata``)
@@ -13,11 +8,9 @@ extension CharacterSet {
     public static let versionSuffixAllowed: CharacterSet = VersionParser.versionSuffixAllowedCharacterSet
 }
 
-#if swift(>=5.9)
 /// Parses a string to a ``Version`` at compile time.
 @freestanding(expression)
 public macro version(_ string: StaticString) -> Version = #externalMacro(module: "SemVerMacros", type: "VersionMacro")
-#endif
 
 /// A Version struct that implements the rules of semantic versioning.
 /// - SeeAlso: https://semver.org

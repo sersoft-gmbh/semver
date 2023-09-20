@@ -16,9 +16,12 @@ Add the following dependency to your `Package.swift`:
 
 ## Compatibility
 
--  For Swift up to version 5.2, use SemVer version 2.x.y.
--  For Swift up to version 5.8, use SemVer version 3.x.y.
--  For Swift as of version 5.9, use SemVer version 4.x.y.
+| Swift              | SemVer Package |
+|====================|================|
+| <  5.3.0           | 1.x.y - 2.x.y  |
+| >= 5.3.0, < 5.9.0  | 3.x.y          |
+| >= 5.9.0           | 4.x.y          |
+
 
 ## Usage
 
@@ -114,7 +117,17 @@ If you need to check whether two versions are completely identical, there's the 
 
 ### Macros
 
-If a `Version` should be constructed from a `String` that is known at compile time, the `#version` macro can be used. It will parse the `String` at compile time and generate code that initializes a version from the result. 
+If a `Version` should be constructed from a `String` that is known at compile time, the `#version` macro can be used. It will parse the `String` at compile time and generate code that initializes a `Version` from the result:
+
+```swift
+let version = #version("1.2.3")
+```
+ 
+results in
+ 
+```swift
+let version = Version(major: 1, minor: 2, patch: 3, prerelase: [], metadata: [])
+```
 
 ## Documentation
 
