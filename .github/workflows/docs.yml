@@ -64,13 +64,16 @@ jobs:
       - name: Read OS Version
         uses: sersoft-gmbh/os-version-action@v3
         id: os-version
+      - name: Read Swift Version
+        uses: sersoft-gmbh/swift-version-action@v3
+        id: swift-version
       - uses: actions/checkout@v4
       - uses: actions/cache@v3
         with:
           path: .build
-          key: ${{ runner.os }}-${{ steps.os-version.outputs.version }}-spm-${{ steps.swift-setup.outputs.version }}-${{ hashFiles('**/Package.resolved') }}
+          key: ${{ runner.os }}-${{ steps.os-version.outputs.version }}-spm-${{ steps.swift-version.outputs.version }}-${{ hashFiles('**/Package.resolved') }}
           restore-keys: |
-            ${{ runner.os }}-${{ steps.os-version.outputs.version }}-spm-${{ steps.swift-setup.outputs.version }}-
+            ${{ runner.os }}-${{ steps.os-version.outputs.version }}-spm-${{ steps.swift-version.outputs.version }}-
       - uses: sersoft-gmbh/swifty-docs-action@v3
         env:
           ENABLE_DOCC_SUPPORT: '1'
