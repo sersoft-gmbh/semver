@@ -94,6 +94,11 @@ jobs:
         with:
           name: ${{ matrix.target }}-docs
           path: ${{ matrix.target }}-docs.tar
+      - name: Fix permissions
+        run: |
+          chmod -v -R +rX .build Package.resolved | while read -r LINE; do
+            echo "::warning title=Invalid file permissions automatically fixed::${LINE}"
+          done
 
   publish-docs:
     needs:
