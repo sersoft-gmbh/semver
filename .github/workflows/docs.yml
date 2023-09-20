@@ -8,6 +8,10 @@ on:
   push:
     branches: [ main ]
 
+concurrency:
+  group: ${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   generate-and-publish-docs:
     uses: sersoft-gmbh/oss-common-actions/.github/workflows/swift-generate-docs.yml@main
