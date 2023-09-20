@@ -20,7 +20,7 @@ where T1: Equatable, T2: Equatable, T3: Equatable, T4: Equatable, T5: Equatable
 }
 
 #if !canImport(Darwin)
-protocol XCTActivity: NSObjectProtocol {
+public protocol XCTActivity: NSObjectProtocol {
     var name: String { get }
 }
 
