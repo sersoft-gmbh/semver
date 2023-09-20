@@ -31,7 +31,7 @@ You can create a version like this:
 
 ```swift
 let version = Version(major: 1, minor: 2, patch: 3,
-                      prerelease: "beta", "1", // prerelease could also be ["beta", "1"]
+                      prerelease: "beta", 1, // prerelease could also be ["beta", 1]
                       metadata: "exp", "test") // metadata could also be ["exp, test"]
 version.versionString() // -> "1.2.3-beta.1+exp.test"
 ```
@@ -48,6 +48,8 @@ minorRelease.versionString() // -> "2.1.0"
 let patchRelease = Version(major: 3, minor: 2, patch: 1)
 patchRelease.versionString() // -> "3.2.1"
 ```
+
+There is also a [Swift macro](#macros) for statically creating versions.
 
 ### Version Strings
 
