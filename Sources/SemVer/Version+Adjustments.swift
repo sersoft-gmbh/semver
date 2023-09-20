@@ -29,7 +29,7 @@ extension Version {
     /// - Returns: A new version that has the specified `part` increased, along with the necessary other changes.
     public func next(_ part: NumericPart, 
                      keepingPrerelease: Bool = false,
-                     keepingMetadata: Bool = false) -> Version {
+                     keepingMetadata: Bool = false) -> Self {
         let newPrerelease = keepingPrerelease ? prerelease : .init()
         let newMetadata = keepingMetadata ? metadata : .init()
         switch part {

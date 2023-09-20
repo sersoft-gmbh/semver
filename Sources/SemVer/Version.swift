@@ -174,13 +174,13 @@ extension Version {
         : metadata.count == other.metadata.count && Set(metadata) == Set(other.metadata)
     }
 
-    public static func ==(lhs: Version, rhs: Version) -> Bool {
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
         (lhs.major, lhs.minor, lhs.patch, lhs.prerelease)
             ==
         (rhs.major, rhs.minor, rhs.patch, rhs.prerelease)
     }
 
-    public static func <(lhs: Version, rhs: Version) -> Bool {
+    public static func <(lhs: Self, rhs: Self) -> Bool {
         if (lhs.major, lhs.minor, lhs.patch) < (rhs.major, rhs.minor, rhs.patch) {
             return true
         }
