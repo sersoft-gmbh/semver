@@ -284,8 +284,9 @@
       "type" : "text"
     },
     {
-      "code" : "Foudation\/CharacterSet\/versionSuffixAllowed",
-      "type" : "codeVoice"
+      "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Foundation\/CharacterSet\/versionSuffixAllowed",
+      "isActive" : true,
+      "type" : "reference"
     },
     {
       "text" : ".",

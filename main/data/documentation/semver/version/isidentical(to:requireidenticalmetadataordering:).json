@@ -272,6 +272,86 @@
   "type" : "topic",
   "url" : "\/documentation\/semver"
 },
+"doc://SemVer/documentation/SemVer/Foundation/CharacterSet/versionSuffixAllowed": {
+  "abstract" : [
+    {
+      "text" : "Contains the allowed characters for a ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " suffix (",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/prerelease",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " and ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/metadata",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : ")",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "Allowed are alphanumerics and hyphen.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "versionSuffixAllowed"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10Foundation12CharacterSetV",
+      "text" : "CharacterSet"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Foundation\/CharacterSet\/versionSuffixAllowed",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "versionSuffixAllowed",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/foundation\/characterset\/versionsuffixallowed"
+},
 "doc://SemVer/documentation/SemVer/Version": {
   "abstract" : [
     {
@@ -393,8 +473,9 @@
       "type" : "text"
     },
     {
-      "code" : "Foudation\/CharacterSet\/versionSuffixAllowed",
-      "type" : "codeVoice"
+      "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Foundation\/CharacterSet\/versionSuffixAllowed",
+      "isActive" : true,
+      "type" : "reference"
     },
     {
       "text" : ".",
