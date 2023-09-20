@@ -11,7 +11,7 @@ This repository contains a complete implementation of a `Version` struct that co
 
 Add the following dependency to your `Package.swift`:
 ```swift
-.package(url: "https://github.com/sersoft-gmbh/semver.git", from: "4.0.0"),
+.package(url: "https://github.com/sersoft-gmbh/semver", from: "4.0.0"),
 ```
 
 ## Compatibility
@@ -49,7 +49,7 @@ let patchRelease = Version(major: 3, minor: 2, patch: 1)
 patchRelease.versionString() // -> "3.2.1"
 ```
 
-There is also a [Swift macro](#macros) for statically creating versions.
+And there is also a Swift [macro](#macros) for statically creating versions.
 
 ### Version Strings
 
@@ -133,7 +133,7 @@ let version = Version(major: 1, minor: 2, patch: 3, prerelase: [], metadata: [])
 
 ## Documentation
 
-The API is documented using header doc. If you prefer to view the documentation as a webpage, there is an [online version](https://sersoft-gmbh.github.io/SemVer) available for you.
+The API is documented using header doc. If you prefer to view the documentation as a webpage, there is an [online version](https://sersoft-gmbh.github.io/semver) available for you.
 
 ## Contributing
 

@@ -53,8 +53,8 @@ extension Version {
 
         /// Creates a new identifier from a given string.
         /// This will also attempt to parse numbers (e.g. `"1"` will behave like `1`).
-        /// - Parameter string: The string to parse. Must only contain characters in ``Foudation/CharacterSet/versionSuffixAllowed``
-        /// - SeeAlso: ``Foudation/CharacterSet/versionSuffixAllowed``
+        /// - Parameter string: The string to parse. Must only contain characters in ``Foundation/CharacterSet/versionSuffixAllowed``
+        /// - SeeAlso: ``Foundation/CharacterSet/versionSuffixAllowed``
         public init(_ string: String) {
             assert(Version._isValidIdentifier(string))
             self.init(_storage: Int(string).map { .number($0) } ?? .text(string))
@@ -62,7 +62,7 @@ extension Version {
 
         /// Creates a new identifier from a given string.
         /// This will **not** attempt to parse numbers!
-        /// - Parameter string: The string to parse. Must only contain characters in ``Foudation/CharacterSet/versionSuffixAllowed``
+        /// - Parameter string: The string to parse. Must only contain characters in ``Foundation/CharacterSet/versionSuffixAllowed``
         /// - Precondition: The `string` cannot be represented as a number (`Int(string) == nil`)!
         public init(unchecked string: some StringProtocol) {
             assert(Version._isValidIdentifier(string))
@@ -80,7 +80,7 @@ extension Version {
 
         /// Creates a new identifier from a given string.
         /// This will also attempt to parse numbers (e.g. `"1"` will behave like `1`).
-        /// - Parameter string: The string to parse. Must only contain characters in ``Foudation/CharacterSet/versionSuffixAllowed``
+        /// - Parameter string: The string to parse. Must only contain characters in ``Foundation/CharacterSet/versionSuffixAllowed``
         /// - Returns: A new prerelease identifier.
         @inlinable
         public static func string(_ string: some StringProtocol) -> Self {

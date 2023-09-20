@@ -13,7 +13,7 @@ extension CharacterSet {
 public macro version(_ string: StaticString) -> Version = #externalMacro(module: "SemVerMacros", type: "VersionMacro")
 
 /// A Version struct that implements the rules of semantic versioning.
-/// - SeeAlso: https://semver.org
+/// - SeeAlso: [SemVer Specification](https://semver.org)
 public struct Version: Sendable, Hashable, Comparable, LosslessStringConvertible, CustomDebugStringConvertible {
     /// The major part of this version. Must be >= 0.
     public var major: Int {
@@ -29,8 +29,8 @@ public struct Version: Sendable, Hashable, Comparable, LosslessStringConvertible
     }
     /// The prelease identifiers of this version.
     public var prerelease: Array<PrereleaseIdentifier>
-    /// The metadata of this version. Must only contain characters in ``Foudation/CharacterSet/versionSuffixAllowed``.
-    /// - SeeAlso: ``Foudation/CharacterSet/versionSuffixAllowed``
+    /// The metadata of this version. Must only contain characters in ``Foundation/CharacterSet/versionSuffixAllowed``.
+    /// - SeeAlso: ``Foundation/CharacterSet/versionSuffixAllowed``
     public var metadata: Array<String> {
         willSet { assert(Self._areValidIdentifiers(newValue)) }
     }
@@ -48,7 +48,7 @@ public struct Version: Sendable, Hashable, Comparable, LosslessStringConvertible
     ///   - minor: The minor part of this version. Must be >= 0.
     ///   - patch: The patch part of this version. Must be >= 0.
     ///   - prerelease: The prelease identifiers of this version.
-    ///   - metadata: The metadata of this version. Must only contain characters in ``Foudation/CharacterSet/versionSuffixAllowed``.
+    ///   - metadata: The metadata of this version. Must only contain characters in ``Foundation/CharacterSet/versionSuffixAllowed``.
     public init(major: Int, minor: Int = 0, patch: Int = 0,
                 prerelease: Array<PrereleaseIdentifier> = .init(),
                 metadata: Array<String> = .init()) {
@@ -70,7 +70,7 @@ public struct Version: Sendable, Hashable, Comparable, LosslessStringConvertible
     ///   - minor: The minor part of this version. Must be >= 0.
     ///   - patch: The patch part of this version. Must be >= 0.
     ///   - prerelease: The prelease identifiers of this version.
-    ///   - metadata: The metadata of this version. Must only contain characters in ``Foudation/CharacterSet/versionSuffixAllowed``.
+    ///   - metadata: The metadata of this version. Must only contain characters in ``Foundation/CharacterSet/versionSuffixAllowed``.
     @inlinable
     public init(major: Int, minor: Int = 0, patch: Int = 0, prerelease: Array<PrereleaseIdentifier> = .init(), metadata: String...) {
         self.init(major: major, minor: minor, patch: patch, prerelease: prerelease, metadata: metadata)
@@ -82,7 +82,7 @@ public struct Version: Sendable, Hashable, Comparable, LosslessStringConvertible
     ///   - minor: The minor part of this version. Must be >= 0.
     ///   - patch: The patch part of this version. Must be >= 0.
     ///   - prerelease: The prelease identifiers of this version.
-    ///   - metadata: The metadata of this version. Must only contain characters in ``Foudation/CharacterSet/versionSuffixAllowed``.
+    ///   - metadata: The metadata of this version. Must only contain characters in ``Foundation/CharacterSet/versionSuffixAllowed``.
     @inlinable
     public init(major: Int, minor: Int = 0, patch: Int = 0, prerelease: PrereleaseIdentifier..., metadata: Array<String> = .init()) {
         self.init(major: major, minor: minor, patch: patch, prerelease: prerelease, metadata: metadata)
@@ -94,7 +94,7 @@ public struct Version: Sendable, Hashable, Comparable, LosslessStringConvertible
     ///   - minor: The minor part of this version. Must be >= 0.
     ///   - patch: The patch part of this version. Must be >= 0.
     ///   - prerelease: The prelease identifiers of this version.
-    ///   - metadata: The metadata of this version. Must only contain characters in ``Foudation/CharacterSet/versionSuffixAllowed``.
+    ///   - metadata: The metadata of this version. Must only contain characters in ``Foundation/CharacterSet/versionSuffixAllowed``.
     @inlinable
     public init(major: Int, minor: Int = 0, patch: Int = 0, prerelease: PrereleaseIdentifier..., metadata: String...) {
         self.init(major: major, minor: minor, patch: patch, prerelease: prerelease, metadata: metadata)

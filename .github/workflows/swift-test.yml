@@ -15,7 +15,7 @@ jobs:
         xcode-version: [ '^15.0' ]
         include:
           - os: ubuntu-22.04
-            swift-version: 5.9
+            swift-version: '5.9'
             xcode-version: ''
 
     runs-on: ${{ matrix.os }}

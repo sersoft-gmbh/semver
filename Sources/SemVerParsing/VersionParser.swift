@@ -13,14 +13,6 @@ package enum VersionParser: Sendable {
         metadata: Array<String>
     )
 
-    /// Contains the allowed characters for a ``Version`` suffix (``Version/prerelease`` and ``Version/metadata``)
-    /// Allowed are alphanumerics and hyphen.
-    package static let versionSuffixAllowedCharacterSet: CharacterSet = {
-        var validCharset = CharacterSet.alphanumerics
-        validCharset.insert("-")
-        return validCharset
-    }()
-
     private static func _parsePrereleaseIdentifiers<S>(_ identifiers: some Sequence<S>) -> some Sequence<VersionPrereleaseIdentifier>
     where S: StringProtocol, S.SubSequence == Substring
     {
@@ -35,7 +27,8 @@ package enum VersionParser: Sendable {
     }
 
     @available(macOS 13, iOS 16, tvOS 16, watchOS 9, macCatalyst 16, *)
-    private static func _parseModern<S>(_ string: S) -> VersionComponents?
+    @usableFromInline
+    static func _parseModern<S>(_ string: S) -> VersionComponents?
     where S: StringProtocol, S.SubSequence == Substring
     {
         assert(!string.isEmpty)
@@ -44,9 +37,9 @@ package enum VersionParser: Sendable {
               fullMatch.output.prelease?.count != 1,
               fullMatch.output.build?.count != 1,
               fullMatch.output.prelease?.last != ".",
-              fullMatch.output.build?.last != "."
+              fullMatch.output.build?.last != ".",
+              let major = Int(fullMatch.output.major)
         else { return nil }
-        let major = Int(fullMatch.output.major)!
         let minor = fullMatch.output.minor.flatMap { Int($0) } ?? 0
         let patch = fullMatch.output.patch.flatMap { Int($0) } ?? 0
         let prerelease = (fullMatch.output.prelease?.dropFirst()).map(_parsePrereleaseIdentifiers) ?? .init()
@@ -54,7 +47,8 @@ package enum VersionParser: Sendable {
         return (major: major, minor: minor, patch: patch, prerelease: prerelease, metadata: metadata)
     }
 
-    private static func _parseLegacy<S>(_ string: S) -> VersionComponents?
+    @usableFromInline
+    static func _parseLegacy<S>(_ string: S) -> VersionComponents?
     where S: StringProtocol, S.SubSequence == Substring
     {
         assert(!string.isEmpty)
@@ -95,6 +89,7 @@ package enum VersionParser: Sendable {
         return (major: major, minor: minor, patch: patch, prerelease: prerelease, metadata: metadata)
     }
 
+    @inlinable
     package static func parseString<S>(_ string: S) -> VersionComponents?
     where S: StringProtocol, S.SubSequence == Substring
     {
@@ -109,8 +104,15 @@ package enum VersionParser: Sendable {
 
 @_spi(SemVerValidation)
 extension VersionParser {
-    static var _identifierSeparator: Character { "." }
+    private static var _identifierSeparator: Character { "." }
 
+    package static let versionSuffixAllowedCharacterSet: CharacterSet = {
+        var validCharset = CharacterSet.alphanumerics
+        validCharset.insert("-")
+        return validCharset
+    }()
+
+    @inlinable
     package static func _isValidIdentifier(_ identifier: some StringProtocol) -> Bool {
         !identifier.isEmpty && CharacterSet(charactersIn: String(identifier)).isSubset(of: versionSuffixAllowedCharacterSet)
     }
