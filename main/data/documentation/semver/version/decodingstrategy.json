@@ -110,7 +110,7 @@
   "topicSections" : [
     {
       "identifiers" : [
-        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/DecodingStrategy\/components(preReleaseIdentifiersAsString:metadataAsString:)",
+        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/DecodingStrategy\/components(prereleaseAsString:metadataAsString:)",
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/DecodingStrategy\/custom(_:)",
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/DecodingStrategy\/string"
       ],
@@ -232,7 +232,7 @@
       "type" : "text"
     },
     {
-      "code" : ".components(preReleaseIdentifiersAsString: true, metadataAsString: false)",
+      "code" : ".components(prereleaseAsString: true, metadataAsString: false)",
       "type" : "codeVoice"
     },
     {
@@ -303,7 +303,7 @@
   "type" : "topic",
   "url" : "\/documentation\/semver\/version\/decodingstrategy\/components"
 },
-"doc://SemVer/documentation/SemVer/Version/DecodingStrategy/components(preReleaseIdentifiersAsString:metadataAsString:)": {
+"doc://SemVer/documentation/SemVer/Version/DecodingStrategy/components(prereleaseAsString:metadataAsString:)": {
   "abstract" : [
     {
       "text" : "Decodes the version’s components as separate keys.",
@@ -329,7 +329,7 @@
     },
     {
       "kind" : "externalParam",
-      "text" : "preReleaseIdentifiersAsString"
+      "text" : "prereleaseAsString"
     },
     {
       "kind" : "text",
@@ -362,12 +362,12 @@
       "text" : ")"
     }
   ],
-  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/DecodingStrategy\/components(preReleaseIdentifiersAsString:metadataAsString:)",
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/DecodingStrategy\/components(prereleaseAsString:metadataAsString:)",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "Version.DecodingStrategy.components(preReleaseIdentifiersAsString:metadataAsString:)",
+  "title" : "Version.DecodingStrategy.components(prereleaseAsString:metadataAsString:)",
   "type" : "topic",
-  "url" : "\/documentation\/semver\/version\/decodingstrategy\/components(prereleaseidentifiersasstring:metadataasstring:)"
+  "url" : "\/documentation\/semver\/version\/decodingstrategy\/components(prereleaseasstring:metadataasstring:)"
 },
 "doc://SemVer/documentation/SemVer/Version/DecodingStrategy/custom(_:)": {
   "abstract" : [

@@ -124,7 +124,10 @@
     ],
     "modules" : [
       {
-        "name" : "SemVer"
+        "name" : "SemVer",
+        "relatedModules" : [
+          "Swift"
+        ]
       }
     ],
     "role" : "symbol",

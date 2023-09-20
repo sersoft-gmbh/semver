@@ -5,16 +5,18 @@
       "type" : "text"
     },
     {
-      "code" : ".includePrerelease",
-      "type" : "codeVoice"
+      "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions\/includePrerelease",
+      "isActive" : true,
+      "type" : "reference"
     },
     {
       "text" : " and ",
       "type" : "text"
     },
     {
-      "code" : ".includeMetadata",
-      "type" : "codeVoice"
+      "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions\/includeMetadata",
+      "isActive" : true,
+      "type" : "reference"
     },
     {
       "text" : ".",
@@ -265,16 +267,18 @@
       "type" : "text"
     },
     {
-      "code" : ".includePrerelease",
-      "type" : "codeVoice"
+      "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions\/includePrerelease",
+      "isActive" : true,
+      "type" : "reference"
     },
     {
       "text" : " and ",
       "type" : "text"
     },
     {
-      "code" : ".includeMetadata",
-      "type" : "codeVoice"
+      "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions\/includeMetadata",
+      "isActive" : true,
+      "type" : "reference"
     },
     {
       "text" : ".",
@@ -327,6 +331,114 @@
   "title" : "fullVersion",
   "type" : "topic",
   "url" : "\/documentation\/semver\/version\/formattingoptions\/fullversion"
+},
+"doc://SemVer/documentation/SemVer/Version/FormattingOptions/includeMetadata": {
+  "abstract" : [
+    {
+      "text" : "Include the metadata part of the version.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "includeMetadata"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6SemVer7VersionV",
+      "text" : "Version"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6SemVer7VersionV17FormattingOptionsV",
+      "text" : "FormattingOptions"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions\/includeMetadata",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "includeMetadata",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version\/formattingoptions\/includemetadata"
+},
+"doc://SemVer/documentation/SemVer/Version/FormattingOptions/includePrerelease": {
+  "abstract" : [
+    {
+      "text" : "Include the pre-release part of the version.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "includePrerelease"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6SemVer7VersionV",
+      "text" : "Version"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6SemVer7VersionV17FormattingOptionsV",
+      "text" : "FormattingOptions"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions\/includePrerelease",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "includePrerelease",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version\/formattingoptions\/includeprerelease"
 }
 }
 }

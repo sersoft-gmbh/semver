@@ -1,0 +1,340 @@
+{
+  "abstract" : [
+    {
+      "text" : "Creates a new identifier from a given string.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "This will also attempt to parse numbers (e.g. ",
+      "type" : "text"
+    },
+    {
+      "code" : "\"1\"",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " will behave like ",
+      "type" : "text"
+    },
+    {
+      "code" : "1",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ").",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/SemVer\/documentation\/SemVer",
+        "doc:\/\/SemVer\/documentation\/SemVer\/Version",
+        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/init(_:)-11sof"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:6SemVer7VersionV20PrereleaseIdentifierVyAESScfc",
+    "fragments" : [
+      {
+        "kind" : "identifier",
+        "text" : "init"
+      },
+      {
+        "kind" : "text",
+        "text" : "("
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:SS",
+        "text" : "String"
+      },
+      {
+        "kind" : "text",
+        "text" : ")"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "SemVer"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Initializer",
+    "symbolKind" : "init",
+    "title" : "init(_:)"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "Linux"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "init"
+            },
+            {
+              "kind" : "text",
+              "text" : "("
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "_"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "internalParam",
+              "text" : "string"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:SS",
+              "text" : "String"
+            },
+            {
+              "kind" : "text",
+              "text" : ")"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "kind" : "parameters",
+      "parameters" : [
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "The string to parse. Must only contain characters in ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "Foudation\/CharacterSet\/versionSuffixAllowed",
+                  "type" : "codeVoice"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "string"
+        }
+      ]
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "",
+                  "type" : "text"
+                },
+                {
+                  "code" : "Foudation\/CharacterSet\/versionSuffixAllowed",
+                  "type" : "codeVoice"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "See Also",
+          "style" : "note",
+          "type" : "aside"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/semver\/version\/prereleaseidentifier\/init(_:)-11sof"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://SemVer/documentation/SemVer": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "SemVer",
+  "type" : "topic",
+  "url" : "\/documentation\/semver"
+},
+"doc://SemVer/documentation/SemVer/Version": {
+  "abstract" : [
+    {
+      "text" : "A Version struct that implements the rules of semantic versioning.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Version"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Version"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Version",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version"
+},
+"doc://SemVer/documentation/SemVer/Version/PrereleaseIdentifier": {
+  "abstract" : [
+    {
+      "text" : "Represents a prerelease identifier of a version.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "PrereleaseIdentifier"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "PrereleaseIdentifier"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Version.PrereleaseIdentifier",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version\/prereleaseidentifier"
+},
+"doc://SemVer/documentation/SemVer/Version/PrereleaseIdentifier/init(_:)-11sof": {
+  "abstract" : [
+    {
+      "text" : "Creates a new identifier from a given string.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "This will also attempt to parse numbers (e.g. ",
+      "type" : "text"
+    },
+    {
+      "code" : "\"1\"",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " will behave like ",
+      "type" : "text"
+    },
+    {
+      "code" : "1",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ").",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/init(_:)-11sof",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version\/prereleaseidentifier\/init(_:)-11sof"
+}
+}
+}

@@ -1,0 +1,305 @@
+{
+  "abstract" : [
+    {
+      "text" : "The key used to configure an ",
+      "type" : "text"
+    },
+    {
+      "code" : "Swift\/Encoder",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " with the strategy that should be used for encoding a ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/SemVer\/documentation\/SemVer",
+        "doc:\/\/SemVer\/documentation\/SemVer\/Swift",
+        "doc:\/\/SemVer\/documentation\/SemVer\/Swift\/CodingUserInfoKey"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/SemVer\/documentation\/SemVer\/Swift\/CodingUserInfoKey\/versionEncodingStrategy"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "extendedModule" : "Swift",
+    "externalID" : "s:s17CodingUserInfoKeyV6SemVerE23versionEncodingStrategyABvpZ",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "static"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "keyword",
+        "text" : "let"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "versionEncodingStrategy"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:s17CodingUserInfoKeyV",
+        "text" : "CodingUserInfoKey"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "SemVer",
+        "relatedModules" : [
+          "Swift"
+        ]
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Type Property",
+    "symbolKind" : "property",
+    "title" : "versionEncodingStrategy"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "Linux"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "static"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "let"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "versionEncodingStrategy"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:s17CodingUserInfoKeyV",
+              "text" : "CodingUserInfoKey"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/semver\/swift\/codinguserinfokey\/versionencodingstrategy"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://SemVer/documentation/SemVer": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "SemVer",
+  "type" : "topic",
+  "url" : "\/documentation\/semver"
+},
+"doc://SemVer/documentation/SemVer/Swift": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Swift",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Swift",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/swift"
+},
+"doc://SemVer/documentation/SemVer/Swift/CodingUserInfoKey": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "extension"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "preciseIdentifier" : "s:s17CodingUserInfoKeyV",
+      "text" : "CodingUserInfoKey"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Swift\/CodingUserInfoKey",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "CodingUserInfoKey"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "CodingUserInfoKey",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/swift\/codinguserinfokey"
+},
+"doc://SemVer/documentation/SemVer/Swift/CodingUserInfoKey/versionEncodingStrategy": {
+  "abstract" : [
+    {
+      "text" : "The key used to configure an ",
+      "type" : "text"
+    },
+    {
+      "code" : "Swift\/Encoder",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " with the strategy that should be used for encoding a ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "versionEncodingStrategy"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s17CodingUserInfoKeyV",
+      "text" : "CodingUserInfoKey"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Swift\/CodingUserInfoKey\/versionEncodingStrategy",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "versionEncodingStrategy",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/swift\/codinguserinfokey\/versionencodingstrategy"
+},
+"doc://SemVer/documentation/SemVer/Version": {
+  "abstract" : [
+    {
+      "text" : "A Version struct that implements the rules of semantic versioning.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Version"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Version"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Version",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version"
+}
+}
+}

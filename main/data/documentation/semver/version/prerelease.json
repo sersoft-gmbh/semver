@@ -1,27 +1,8 @@
 {
   "abstract" : [
     {
-      "text" : "The prelease part of this version. Must only contain characters in ",
+      "text" : "The prelease identifiers of this version.",
       "type" : "text"
-    },
-    {
-      "code" : "CharacterSet.versionSuffixAllowed",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
-      "type" : "text"
-    }
-  ],
-  "deprecationSummary" : [
-    {
-      "inlineContent" : [
-        {
-          "text" : "Use preReleaseIdentifiers",
-          "type" : "text"
-        }
-      ],
-      "type" : "paragraph"
     }
   ],
   "hierarchy" : {
@@ -38,8 +19,7 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "extendedModule" : "SemVer",
-    "externalID" : "s:6SemVer7VersionV10prereleaseSSvp",
+    "externalID" : "s:6SemVer7VersionV10prereleaseSayAC20PrereleaseIdentifierVGvp",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -59,17 +39,36 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:SS",
-        "text" : "String"
+        "preciseIdentifier" : "s:Sa",
+        "text" : "Array"
+      },
+      {
+        "kind" : "text",
+        "text" : "<"
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:6SemVer7VersionV",
+        "text" : "Version"
+      },
+      {
+        "kind" : "text",
+        "text" : "."
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:6SemVer7VersionV20PrereleaseIdentifierV",
+        "text" : "PrereleaseIdentifier"
+      },
+      {
+        "kind" : "text",
+        "text" : ">"
       }
     ],
     "modules" : [
       {
         "name" : "SemVer"
       }
-    ],
-    "platforms" : [
-
     ],
     "role" : "symbol",
     "roleHeading" : "Instance Property",
@@ -105,28 +104,32 @@
             },
             {
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:SS",
-              "text" : "String"
+              "preciseIdentifier" : "s:Sa",
+              "text" : "Array"
             },
             {
               "kind" : "text",
-              "text" : " { "
+              "text" : "<"
             },
             {
-              "kind" : "keyword",
-              "text" : "get"
-            },
-            {
-              "kind" : "text",
-              "text" : " "
-            },
-            {
-              "kind" : "keyword",
-              "text" : "set"
+              "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:6SemVer7VersionV",
+              "text" : "Version"
             },
             {
               "kind" : "text",
-              "text" : " }"
+              "text" : "."
+            },
+            {
+              "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:6SemVer7VersionV20PrereleaseIdentifierV",
+              "text" : "PrereleaseIdentifier"
+            },
+            {
+              "kind" : "text",
+              "text" : ">"
             }
           ]
         }
@@ -201,22 +204,47 @@
   "type" : "topic",
   "url" : "\/documentation\/semver\/version"
 },
-"doc://SemVer/documentation/SemVer/Version/prerelease": {
+"doc://SemVer/documentation/SemVer/Version/PrereleaseIdentifier": {
   "abstract" : [
     {
-      "text" : "The prelease part of this version. Must only contain characters in ",
-      "type" : "text"
-    },
-    {
-      "code" : "CharacterSet.versionSuffixAllowed",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : "Represents a prerelease identifier of a version.",
       "type" : "text"
     }
   ],
-  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "PrereleaseIdentifier"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "PrereleaseIdentifier"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Version.PrereleaseIdentifier",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version\/prereleaseidentifier"
+},
+"doc://SemVer/documentation/SemVer/Version/prerelease": {
+  "abstract" : [
+    {
+      "text" : "The prelease identifiers of this version.",
+      "type" : "text"
+    }
+  ],
   "fragments" : [
     {
       "kind" : "keyword",
@@ -236,8 +264,30 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:SS",
-      "text" : "String"
+      "preciseIdentifier" : "s:Sa",
+      "text" : "Array"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6SemVer7VersionV",
+      "text" : "Version"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6SemVer7VersionV20PrereleaseIdentifierV",
+      "text" : "PrereleaseIdentifier"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
     }
   ],
   "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/prerelease",

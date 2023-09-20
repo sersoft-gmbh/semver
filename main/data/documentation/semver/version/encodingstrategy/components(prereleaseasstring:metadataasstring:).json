@@ -1,0 +1,515 @@
+{
+  "abstract" : [
+    {
+      "text" : "Encodes the version’s components as separate keys.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/SemVer\/documentation\/SemVer",
+        "doc:\/\/SemVer\/documentation\/SemVer\/Version",
+        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/EncodingStrategy"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/EncodingStrategy\/components(prereleaseAsString:metadataAsString:)"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:6SemVer7VersionV16EncodingStrategyO10componentsyAESb_SbtcAEmF",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "case"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "components"
+      },
+      {
+        "kind" : "text",
+        "text" : "("
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "prereleaseAsString"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:Sb",
+        "text" : "Bool"
+      },
+      {
+        "kind" : "text",
+        "text" : ", "
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "metadataAsString"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:Sb",
+        "text" : "Bool"
+      },
+      {
+        "kind" : "text",
+        "text" : ")"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "SemVer"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Case",
+    "symbolKind" : "case",
+    "title" : "Version.EncodingStrategy.components(prereleaseAsString:metadataAsString:)"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "Linux"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "case"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "components"
+            },
+            {
+              "kind" : "text",
+              "text" : "("
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "prereleaseAsString"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:Sb",
+              "text" : "Bool"
+            },
+            {
+              "kind" : "text",
+              "text" : ", "
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "metadataAsString"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:Sb",
+              "text" : "Bool"
+            },
+            {
+              "kind" : "text",
+              "text" : ")"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "prereleaseAsString",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " controls whether the ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/prerelease",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : " are encoded as list or string.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "metadataAsString",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " controls whether ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/metadata",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : " is encoded as list or string.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/semver\/version\/encodingstrategy\/components(prereleaseasstring:metadataasstring:)"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://SemVer/documentation/SemVer": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "SemVer",
+  "type" : "topic",
+  "url" : "\/documentation\/semver"
+},
+"doc://SemVer/documentation/SemVer/Version": {
+  "abstract" : [
+    {
+      "text" : "A Version struct that implements the rules of semantic versioning.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Version"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Version"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Version",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version"
+},
+"doc://SemVer/documentation/SemVer/Version/EncodingStrategy": {
+  "abstract" : [
+    {
+      "text" : "The strategy for encoding a ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "EncodingStrategy"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/EncodingStrategy",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "EncodingStrategy"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Version.EncodingStrategy",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version\/encodingstrategy"
+},
+"doc://SemVer/documentation/SemVer/Version/EncodingStrategy/components(prereleaseAsString:metadataAsString:)": {
+  "abstract" : [
+    {
+      "text" : "Encodes the version’s components as separate keys.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "components"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "prereleaseAsString"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "metadataAsString"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/EncodingStrategy\/components(prereleaseAsString:metadataAsString:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "Version.EncodingStrategy.components(prereleaseAsString:metadataAsString:)",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version\/encodingstrategy\/components(prereleaseasstring:metadataasstring:)"
+},
+"doc://SemVer/documentation/SemVer/Version/metadata": {
+  "abstract" : [
+    {
+      "text" : "The metadata of this version. Must only contain characters in ",
+      "type" : "text"
+    },
+    {
+      "code" : "Foudation\/CharacterSet\/versionSuffixAllowed",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "metadata"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sa",
+      "text" : "Array"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/metadata",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "metadata",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version\/metadata"
+},
+"doc://SemVer/documentation/SemVer/Version/prerelease": {
+  "abstract" : [
+    {
+      "text" : "The prelease identifiers of this version.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "prerelease"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sa",
+      "text" : "Array"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6SemVer7VersionV",
+      "text" : "Version"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6SemVer7VersionV20PrereleaseIdentifierV",
+      "text" : "PrereleaseIdentifier"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/prerelease",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "prerelease",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version\/prerelease"
+}
+}
+}

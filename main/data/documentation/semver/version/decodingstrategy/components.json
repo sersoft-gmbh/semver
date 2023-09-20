@@ -5,7 +5,7 @@
       "type" : "text"
     },
     {
-      "code" : ".components(preReleaseIdentifiersAsString: true, metadataAsString: false)",
+      "code" : ".components(prereleaseAsString: true, metadataAsString: false)",
       "type" : "codeVoice"
     },
     {
@@ -281,7 +281,7 @@
       "type" : "text"
     },
     {
-      "code" : ".components(preReleaseIdentifiersAsString: true, metadataAsString: false)",
+      "code" : ".components(prereleaseAsString: true, metadataAsString: false)",
       "type" : "codeVoice"
     },
     {

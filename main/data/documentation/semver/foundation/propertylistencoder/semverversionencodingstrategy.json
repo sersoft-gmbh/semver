@@ -1,0 +1,357 @@
+{
+  "abstract" : [
+    {
+      "text" : "The strategy to use for encoding a ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/SemVer\/documentation\/SemVer",
+        "doc:\/\/SemVer\/documentation\/SemVer\/Foundation",
+        "doc:\/\/SemVer\/documentation\/SemVer\/Foundation\/PropertyListEncoder"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/SemVer\/documentation\/SemVer\/Foundation\/PropertyListEncoder\/semverVersionEncodingStrategy"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "extendedModule" : "Foundation",
+    "externalID" : "s:10Foundation19PropertyListEncoderC6SemVerE29semverVersionEncodingStrategyAD0H0V0iJ0Ovp",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "var"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "semverVersionEncodingStrategy"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:6SemVer7VersionV",
+        "text" : "Version"
+      },
+      {
+        "kind" : "text",
+        "text" : "."
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:6SemVer7VersionV16EncodingStrategyO",
+        "text" : "EncodingStrategy"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "SemVer",
+        "relatedModules" : [
+          "Foundation"
+        ]
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Instance Property",
+    "symbolKind" : "property",
+    "title" : "semverVersionEncodingStrategy"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "Linux"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "var"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "semverVersionEncodingStrategy"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:6SemVer7VersionV",
+              "text" : "Version"
+            },
+            {
+              "kind" : "text",
+              "text" : "."
+            },
+            {
+              "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/EncodingStrategy",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:6SemVer7VersionV16EncodingStrategyO",
+              "text" : "EncodingStrategy"
+            },
+            {
+              "kind" : "text",
+              "text" : " { "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "get"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "set"
+            },
+            {
+              "kind" : "text",
+              "text" : " }"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/semver\/foundation\/propertylistencoder\/semverversionencodingstrategy"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://SemVer/documentation/SemVer": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "SemVer",
+  "type" : "topic",
+  "url" : "\/documentation\/semver"
+},
+"doc://SemVer/documentation/SemVer/Foundation": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Foundation",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Foundation",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/foundation"
+},
+"doc://SemVer/documentation/SemVer/Foundation/PropertyListEncoder": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "extension"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "preciseIdentifier" : "s:10Foundation19PropertyListEncoderC",
+      "text" : "PropertyListEncoder"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Foundation\/PropertyListEncoder",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "PropertyListEncoder"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "PropertyListEncoder",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/foundation\/propertylistencoder"
+},
+"doc://SemVer/documentation/SemVer/Foundation/PropertyListEncoder/semverVersionEncodingStrategy": {
+  "abstract" : [
+    {
+      "text" : "The strategy to use for encoding a ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "semverVersionEncodingStrategy"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6SemVer7VersionV",
+      "text" : "Version"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6SemVer7VersionV16EncodingStrategyO",
+      "text" : "EncodingStrategy"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Foundation\/PropertyListEncoder\/semverVersionEncodingStrategy",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "semverVersionEncodingStrategy",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/foundation\/propertylistencoder\/semverversionencodingstrategy"
+},
+"doc://SemVer/documentation/SemVer/Version": {
+  "abstract" : [
+    {
+      "text" : "A Version struct that implements the rules of semantic versioning.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Version"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Version"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Version",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version"
+},
+"doc://SemVer/documentation/SemVer/Version/EncodingStrategy": {
+  "abstract" : [
+    {
+      "text" : "The strategy for encoding a ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "EncodingStrategy"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/EncodingStrategy",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "EncodingStrategy"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Version.EncodingStrategy",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version\/encodingstrategy"
+}
+}
+}

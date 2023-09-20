@@ -5,7 +5,7 @@
       "type" : "text"
     },
     {
-      "code" : "CharacterSet.versionSuffixAllowed",
+      "code" : "Foudation\/CharacterSet\/versionSuffixAllowed",
       "type" : "codeVoice"
     },
     {
@@ -139,6 +139,37 @@
         }
       ],
       "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "",
+                  "type" : "text"
+                },
+                {
+                  "code" : "Foudation\/CharacterSet\/versionSuffixAllowed",
+                  "type" : "codeVoice"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "See Also",
+          "style" : "note",
+          "type" : "aside"
+        }
+      ],
+      "kind" : "content"
     }
   ],
   "schemaVersion" : {
@@ -215,7 +246,7 @@
       "type" : "text"
     },
     {
-      "code" : "CharacterSet.versionSuffixAllowed",
+      "code" : "Foudation\/CharacterSet\/versionSuffixAllowed",
       "type" : "codeVoice"
     },
     {

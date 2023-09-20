@@ -393,7 +393,7 @@
       "type" : "text"
     },
     {
-      "code" : "CharacterSet.versionSuffixAllowed",
+      "code" : "Foudation\/CharacterSet\/versionSuffixAllowed",
       "type" : "codeVoice"
     },
     {

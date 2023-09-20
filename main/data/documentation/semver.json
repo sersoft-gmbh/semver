@@ -37,6 +37,19 @@
         "doc:\/\/SemVer\/documentation\/SemVer\/Version"
       ],
       "title" : "Structures"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/SemVer\/documentation\/SemVer\/version(_:)"
+      ],
+      "title" : "Macros"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/SemVer\/documentation\/SemVer\/Foundation",
+        "doc:\/\/SemVer\/documentation\/SemVer\/Swift"
+      ],
+      "title" : "Extended Modules"
     }
   ],
   "variants" : [
@@ -63,6 +76,28 @@
   "title" : "SemVer",
   "type" : "topic",
   "url" : "\/documentation\/semver"
+},
+"doc://SemVer/documentation/SemVer/Foundation": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Foundation",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Foundation",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/foundation"
+},
+"doc://SemVer/documentation/SemVer/Swift": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Swift",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Swift",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/swift"
 },
 "doc://SemVer/documentation/SemVer/Version": {
   "abstract" : [
@@ -97,6 +132,61 @@
   "title" : "Version",
   "type" : "topic",
   "url" : "\/documentation\/semver\/version"
+},
+"doc://SemVer/documentation/SemVer/version(_:)": {
+  "abstract" : [
+    {
+      "text" : "Parses a string to a ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " at compile time.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "macro"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "version"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s12StaticStringV",
+      "text" : "StaticString"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6SemVer7VersionV",
+      "text" : "Version"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/version(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "version(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version(_:)"
 }
 }
 }

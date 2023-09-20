@@ -459,16 +459,18 @@
       "type" : "text"
     },
     {
-      "code" : ".dropPatchIfZero",
-      "type" : "codeVoice"
+      "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions\/dropPatchIfZero",
+      "isActive" : true,
+      "type" : "reference"
     },
     {
       "text" : " and ",
       "type" : "text"
     },
     {
-      "code" : ".dropMinorIfZero",
-      "type" : "codeVoice"
+      "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions\/dropMinorIfZero",
+      "isActive" : true,
+      "type" : "reference"
     },
     {
       "text" : ".",
@@ -529,16 +531,18 @@
       "type" : "text"
     },
     {
-      "code" : ".includePrerelease",
-      "type" : "codeVoice"
+      "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions\/includePrerelease",
+      "isActive" : true,
+      "type" : "reference"
     },
     {
       "text" : " and ",
       "type" : "text"
     },
     {
-      "code" : ".includeMetadata",
-      "type" : "codeVoice"
+      "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions\/includeMetadata",
+      "isActive" : true,
+      "type" : "reference"
     },
     {
       "text" : ".",
