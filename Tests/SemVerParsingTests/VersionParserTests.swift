@@ -19,6 +19,29 @@ where T1: Equatable, T2: Equatable, T3: Equatable, T4: Equatable, T5: Equatable
     XCTAssertEqual(lhsComps?.4, rhsComps?.4, message(), file: file, line: line)
 }
 
+#if !canImport(Darwin)
+protocol XCTActivity: NSObjectProtocol {
+    var name: String { get }
+}
+
+open class XCTContext: NSObject {
+    private final class _Activity: NSObject, XCTActivity {
+        let name: String
+
+        init(name: String) {
+            self.name = name
+        }
+    }
+
+    public class func runActivity<Result>(
+        named name: String,
+        block: (any XCTActivity) throws -> Result
+    ) rethrows -> Result {
+        try block(_Activity(name: name))
+    }
+}
+#endif
+
 final class VersionParserTests: XCTestCase {
     private typealias TestHandlerContext = (parser: (String) -> VersionParser.VersionComponents?, messagePrefix: String)
     private func performTests(with testHandler: (TestHandlerContext) throws -> ()) rethrows {
