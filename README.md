@@ -16,11 +16,11 @@ Add the following dependency to your `Package.swift`:
 
 ## Compatibility
 
-| Swift              | SemVer Package |
-|====================|================|
-| <  5.3.0           | 1.x.y - 2.x.y  |
-| >= 5.3.0, < 5.9.0  | 3.x.y          |
-| >= 5.9.0           | 4.x.y          |
+| **Swift**          | **SemVer Package**  |
+|--------------------|---------------------|
+| <  5.3.0           | 1.x.y - 2.x.y       |
+| >= 5.3.0, < 5.9.0  | 3.x.y               |
+| >= 5.9.0           | 4.x.y               |
 
 
 ## Usage
