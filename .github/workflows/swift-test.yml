@@ -33,13 +33,13 @@ jobs:
     needs: swift-version
     strategy:
       matrix:
-        swift-version-offset: [ 0 ]
         platform:
           - macOS
           - iOS
           - iPadOS
           - tvOS
           - watchOS
+        swift-version-offset: [ 0 ]
     uses: sersoft-gmbh/oss-common-actions/.github/workflows/swift-test-xcode.yml@main
     with:
       xcode-scheme: semver
