@@ -18,8 +18,8 @@ jobs:
   analyze:
     uses: sersoft-gmbh/oss-common-actions/.github/workflows/swift-codeql.yml@main
     with:
-      os: macOS
+      os: ubuntu
       swift-version: 5.9
-      use-xcodebuild: true
-      xcode-scheme: semver
-      xcode-platform: macOS
+      # use-xcodebuild: true
+      # xcode-scheme: semver
+      # xcode-platform: macOS
