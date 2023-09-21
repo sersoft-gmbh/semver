@@ -1,0 +1,954 @@
+{
+  "abstract" : [
+    {
+      "text" : "Represents a prerelease identifier of a version.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/SemVer\/documentation\/SemVer",
+        "doc:\/\/SemVer\/documentation\/SemVer\/Version"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "extendedModule" : "SemVer",
+    "externalID" : "s:6SemVer7VersionV20PrereleaseIdentifierV",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "struct"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "PrereleaseIdentifier"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "SemVer"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "PrereleaseIdentifier"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Structure",
+    "symbolKind" : "struct",
+    "title" : "Version.PrereleaseIdentifier"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "Linux"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "struct"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "PrereleaseIdentifier"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/SemVer\/SL",
+        "doc:\/\/SemVer\/s28CustomDebugStringConvertibleP",
+        "doc:\/\/SemVer\/s23CustomStringConvertibleP",
+        "doc:\/\/SemVer\/Se",
+        "doc:\/\/SemVer\/SE",
+        "doc:\/\/SemVer\/SQ",
+        "doc:\/\/SemVer\/s43ExpressibleByExtendedGraphemeClusterLiteralP",
+        "doc:\/\/SemVer\/s27ExpressibleByIntegerLiteralP",
+        "doc:\/\/SemVer\/s26ExpressibleByStringLiteralP",
+        "doc:\/\/SemVer\/s33ExpressibleByUnicodeScalarLiteralP",
+        "doc:\/\/SemVer\/SH",
+        "doc:\/\/SemVer\/s8SendableP"
+      ],
+      "kind" : "relationships",
+      "title" : "Conforms To",
+      "type" : "conformsTo"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/_(_:_:)-5r1ns"
+      ],
+      "title" : "Operators"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/init(_:)-11sof",
+        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/init(_:)-2qkfa",
+        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/init(unchecked:)"
+      ],
+      "title" : "Initializers"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/debugDescription",
+        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/description",
+        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/number",
+        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/string"
+      ],
+      "title" : "Instance Properties"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/number(_:)",
+        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/string(_:)"
+      ],
+      "title" : "Type Methods"
+    },
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/Comparable-Implementations",
+        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/Decodable-Implementations",
+        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/Encodable-Implementations",
+        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/Equatable-Implementations",
+        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/ExpressibleByExtendedGraphemeClusterLiteral-Implementations",
+        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/ExpressibleByIntegerLiteral-Implementations",
+        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/ExpressibleByStringLiteral-Implementations",
+        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/ExpressibleByUnicodeScalarLiteral-Implementations"
+      ],
+      "title" : "Default Implementations"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/semver\/version\/prereleaseidentifier"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://SemVer/SE": {
+  "identifier" : "doc:\/\/SemVer\/SE",
+  "title" : "Swift.Encodable",
+  "type" : "unresolvable"
+},
+"doc://SemVer/SH": {
+  "identifier" : "doc:\/\/SemVer\/SH",
+  "title" : "Swift.Hashable",
+  "type" : "unresolvable"
+},
+"doc://SemVer/SL": {
+  "identifier" : "doc:\/\/SemVer\/SL",
+  "title" : "Swift.Comparable",
+  "type" : "unresolvable"
+},
+"doc://SemVer/SQ": {
+  "identifier" : "doc:\/\/SemVer\/SQ",
+  "title" : "Swift.Equatable",
+  "type" : "unresolvable"
+},
+"doc://SemVer/Se": {
+  "identifier" : "doc:\/\/SemVer\/Se",
+  "title" : "Swift.Decodable",
+  "type" : "unresolvable"
+},
+"doc://SemVer/documentation/SemVer": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "SemVer",
+  "type" : "topic",
+  "url" : "\/documentation\/semver"
+},
+"doc://SemVer/documentation/SemVer/Version": {
+  "abstract" : [
+    {
+      "text" : "A Version struct that implements the rules of semantic versioning.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Version"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Version"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Version",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version"
+},
+"doc://SemVer/documentation/SemVer/Version/PrereleaseIdentifier": {
+  "abstract" : [
+    {
+      "text" : "Represents a prerelease identifier of a version.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "PrereleaseIdentifier"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "PrereleaseIdentifier"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Version.PrereleaseIdentifier",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version\/prereleaseidentifier"
+},
+"doc://SemVer/documentation/SemVer/Version/PrereleaseIdentifier/Comparable-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/Comparable-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Comparable Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version\/prereleaseidentifier\/comparable-implementations"
+},
+"doc://SemVer/documentation/SemVer/Version/PrereleaseIdentifier/Decodable-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/Decodable-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Decodable Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version\/prereleaseidentifier\/decodable-implementations"
+},
+"doc://SemVer/documentation/SemVer/Version/PrereleaseIdentifier/Encodable-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/Encodable-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Encodable Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version\/prereleaseidentifier\/encodable-implementations"
+},
+"doc://SemVer/documentation/SemVer/Version/PrereleaseIdentifier/Equatable-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/Equatable-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Equatable Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version\/prereleaseidentifier\/equatable-implementations"
+},
+"doc://SemVer/documentation/SemVer/Version/PrereleaseIdentifier/ExpressibleByExtendedGraphemeClusterLiteral-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/ExpressibleByExtendedGraphemeClusterLiteral-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "ExpressibleByExtendedGraphemeClusterLiteral Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version\/prereleaseidentifier\/expressiblebyextendedgraphemeclusterliteral-implementations"
+},
+"doc://SemVer/documentation/SemVer/Version/PrereleaseIdentifier/ExpressibleByIntegerLiteral-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/ExpressibleByIntegerLiteral-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "ExpressibleByIntegerLiteral Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version\/prereleaseidentifier\/expressiblebyintegerliteral-implementations"
+},
+"doc://SemVer/documentation/SemVer/Version/PrereleaseIdentifier/ExpressibleByStringLiteral-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/ExpressibleByStringLiteral-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "ExpressibleByStringLiteral Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version\/prereleaseidentifier\/expressiblebystringliteral-implementations"
+},
+"doc://SemVer/documentation/SemVer/Version/PrereleaseIdentifier/ExpressibleByUnicodeScalarLiteral-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/ExpressibleByUnicodeScalarLiteral-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "ExpressibleByUnicodeScalarLiteral Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version\/prereleaseidentifier\/expressiblebyunicodescalarliteral-implementations"
+},
+"doc://SemVer/documentation/SemVer/Version/PrereleaseIdentifier/_(_:_:)-5r1ns": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "<"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6SemVer7VersionV",
+      "text" : "Version"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6SemVer7VersionV20PrereleaseIdentifierV",
+      "text" : "PrereleaseIdentifier"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6SemVer7VersionV",
+      "text" : "Version"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6SemVer7VersionV20PrereleaseIdentifierV",
+      "text" : "PrereleaseIdentifier"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/_(_:_:)-5r1ns",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "<(_:_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version\/prereleaseidentifier\/_(_:_:)-5r1ns"
+},
+"doc://SemVer/documentation/SemVer/Version/PrereleaseIdentifier/debugDescription": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "debugDescription"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/debugDescription",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "debugDescription",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version\/prereleaseidentifier\/debugdescription"
+},
+"doc://SemVer/documentation/SemVer/Version/PrereleaseIdentifier/description": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "description"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/description",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "description",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version\/prereleaseidentifier\/description"
+},
+"doc://SemVer/documentation/SemVer/Version/PrereleaseIdentifier/init(_:)-11sof": {
+  "abstract" : [
+    {
+      "text" : "Creates a new identifier from a given string.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "This will also attempt to parse numbers (e.g. ",
+      "type" : "text"
+    },
+    {
+      "code" : "\"1\"",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " will behave like ",
+      "type" : "text"
+    },
+    {
+      "code" : "1",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ").",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/init(_:)-11sof",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version\/prereleaseidentifier\/init(_:)-11sof"
+},
+"doc://SemVer/documentation/SemVer/Version/PrereleaseIdentifier/init(_:)-2qkfa": {
+  "abstract" : [
+    {
+      "text" : "Creates a new identifier from a given number.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/init(_:)-2qkfa",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version\/prereleaseidentifier\/init(_:)-2qkfa"
+},
+"doc://SemVer/documentation/SemVer/Version/PrereleaseIdentifier/init(unchecked:)": {
+  "abstract" : [
+    {
+      "text" : "Creates a new identifier from a given string.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "This will ",
+      "type" : "text"
+    },
+    {
+      "inlineContent" : [
+        {
+          "text" : "not",
+          "type" : "text"
+        }
+      ],
+      "type" : "strong"
+    },
+    {
+      "text" : " attempt to parse numbers!",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "unchecked"
+    },
+    {
+      "kind" : "text",
+      "text" : ": some "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sy",
+      "text" : "StringProtocol"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/init(unchecked:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(unchecked:)",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version\/prereleaseidentifier\/init(unchecked:)"
+},
+"doc://SemVer/documentation/SemVer/Version/PrereleaseIdentifier/number": {
+  "abstract" : [
+    {
+      "text" : "The number representation of this identifier.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "Returns ",
+      "type" : "text"
+    },
+    {
+      "code" : "nil",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " if the receiver represents a text identifier.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "number"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/number",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "number",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version\/prereleaseidentifier\/number"
+},
+"doc://SemVer/documentation/SemVer/Version/PrereleaseIdentifier/number(_:)": {
+  "abstract" : [
+    {
+      "text" : "Creates a new identifier from a given number.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "number"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6SemVer7VersionV",
+      "text" : "Version"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6SemVer7VersionV20PrereleaseIdentifierV",
+      "text" : "PrereleaseIdentifier"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/number(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "number(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version\/prereleaseidentifier\/number(_:)"
+},
+"doc://SemVer/documentation/SemVer/Version/PrereleaseIdentifier/string": {
+  "abstract" : [
+    {
+      "text" : "The string representation of this identifier.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "Numbers will be converted to strings.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "string"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/string",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "string",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version\/prereleaseidentifier\/string"
+},
+"doc://SemVer/documentation/SemVer/Version/PrereleaseIdentifier/string(_:)": {
+  "abstract" : [
+    {
+      "text" : "Creates a new identifier from a given string.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "This will also attempt to parse numbers (e.g. ",
+      "type" : "text"
+    },
+    {
+      "code" : "\"1\"",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " will behave like ",
+      "type" : "text"
+    },
+    {
+      "code" : "1",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ").",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "string"
+    },
+    {
+      "kind" : "text",
+      "text" : "(some "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sy",
+      "text" : "StringProtocol"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6SemVer7VersionV",
+      "text" : "Version"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6SemVer7VersionV20PrereleaseIdentifierV",
+      "text" : "PrereleaseIdentifier"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/string(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "string(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version\/prereleaseidentifier\/string(_:)"
+},
+"doc://SemVer/s23CustomStringConvertibleP": {
+  "identifier" : "doc:\/\/SemVer\/s23CustomStringConvertibleP",
+  "title" : "Swift.CustomStringConvertible",
+  "type" : "unresolvable"
+},
+"doc://SemVer/s26ExpressibleByStringLiteralP": {
+  "identifier" : "doc:\/\/SemVer\/s26ExpressibleByStringLiteralP",
+  "title" : "Swift.ExpressibleByStringLiteral",
+  "type" : "unresolvable"
+},
+"doc://SemVer/s27ExpressibleByIntegerLiteralP": {
+  "identifier" : "doc:\/\/SemVer\/s27ExpressibleByIntegerLiteralP",
+  "title" : "Swift.ExpressibleByIntegerLiteral",
+  "type" : "unresolvable"
+},
+"doc://SemVer/s28CustomDebugStringConvertibleP": {
+  "identifier" : "doc:\/\/SemVer\/s28CustomDebugStringConvertibleP",
+  "title" : "Swift.CustomDebugStringConvertible",
+  "type" : "unresolvable"
+},
+"doc://SemVer/s33ExpressibleByUnicodeScalarLiteralP": {
+  "identifier" : "doc:\/\/SemVer\/s33ExpressibleByUnicodeScalarLiteralP",
+  "title" : "Swift.ExpressibleByUnicodeScalarLiteral",
+  "type" : "unresolvable"
+},
+"doc://SemVer/s43ExpressibleByExtendedGraphemeClusterLiteralP": {
+  "identifier" : "doc:\/\/SemVer\/s43ExpressibleByExtendedGraphemeClusterLiteralP",
+  "title" : "Swift.ExpressibleByExtendedGraphemeClusterLiteral",
+  "type" : "unresolvable"
+},
+"doc://SemVer/s8SendableP": {
+  "identifier" : "doc:\/\/SemVer\/s8SendableP",
+  "title" : "Swift.Sendable",
+  "type" : "unresolvable"
+}
+}
+}
