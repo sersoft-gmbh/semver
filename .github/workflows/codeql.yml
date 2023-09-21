@@ -20,3 +20,6 @@ jobs:
     with:
       os: macOS
       swift-version: 5.9
+      use-xcodebuild: true
+      xcode-scheme: semver
+      xcode-platform: macOS
