@@ -7,119 +7,45 @@ on:
     branches: [ main ]
 
 jobs:
+  swift-version:
+    outputs:
+      max-supported-swift-version: '5.9'
+    runs-on: ubuntu-latest
+    steps: []
+
   test-spm:
+    needs: swift-version
     strategy:
       matrix:
-        os: [ macos-13 ]
-        swift-version: [ '' ]
-        xcode-version: [ '15.0-beta' ]
-        include:
-          - os: ubuntu-22.04
-            swift-version: '5.9'
-            xcode-version: ''
-
-    runs-on: ${{ matrix.os }}
-
-    steps:
-      - if: ${{ runner.os == 'macOS' }}
-        uses: maxim-lobanov/setup-xcode@v1
-        with:
-          xcode-version: ${{ matrix.xcode-version }}
-      - name: Install Swift
-        if: ${{ runner.os == 'Linux' }}
-        uses: sersoft-gmbh/swifty-linux-action@v3
-        with:
-          release-version: ${{ matrix.swift-version }}
-          platform: ${{ matrix.os }}
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Read OS Version
-        uses: sersoft-gmbh/os-version-action@v3
-        id: os-version
-      - name: Read Swift Version
-        uses: sersoft-gmbh/swift-version-action@v3
-        id: swift-version
-      - uses: actions/checkout@v4
-      - uses: actions/cache@v3
-        with:
-          path: .build
-          key: ${{ runner.os }}-${{ steps.os-version.outputs.version }}-spm-${{ steps.swift-version.outputs.version }}-${{ hashFiles('**/Package.resolved') }}
-          restore-keys: |
-            ${{ runner.os }}-${{ steps.os-version.outputs.version }}-spm-${{ steps.swift-version.outputs.version }}-
-      - name: Build & Test
-        run: swift test -v --parallel --enable-code-coverage
-      - name: Generate Coverage Files
-        uses: sersoft-gmbh/swift-coverage-action@v4
-        id: coverage-files
-      - uses: codecov/codecov-action@v3
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          files: ${{ join(fromJSON(steps.coverage-files.outputs.files), ',') }}
-          fail_ci_if_error: true
+        os: [ macOS, ubuntu ]
+        swift-version-offset: [ 0 ]
+    uses: sersoft-gmbh/oss-common-actions/.github/workflows/swift-test-spm.yml@main
+    with:
+      os: ${{ matrix.os }}
+      max-swift-version: ${{ needs.swift-version.outputs.max-supported-swift-version }}
+      swift-version-offset: ${{ matrix.swift-version-offset }}
+      fail-if-codecov-fails: true
+    secrets:
+      CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
   test-xcode:
-    runs-on: macos-13
+    needs: swift-version
     strategy:
       matrix:
+        swift-version-offset: [ 0 ]
         platform:
           - macOS
           - iOS
           - iPadOS
           - tvOS
           - watchOS
-    env:
-      XCODE_SCHEME: semver
-    steps:
-      - uses: maxim-lobanov/setup-xcode@v1
-        with:
-          xcode-version: 15.0-beta
-      - name: Read OS Version
-        uses: sersoft-gmbh/os-version-action@v3
-        id: os-version
-      - name: Read Swift Version
-        uses: sersoft-gmbh/swift-version-action@v3
-        id: swift-version
-      - name: Select destination
-        id: destination
-        env:
-          PLATFORM: ${{ matrix.platform }}
-        run: |
-          DESTINATION=''
-          case "${PLATFORM}" in
-            'macOS')   DESTINATION='platform=macOS';;
-            'iOS')     DESTINATION='platform=iOS Simulator,OS=latest,name=iPhone 15 Pro';;
-            'iPadOS')  DESTINATION='platform=iOS Simulator,OS=latest,name=iPad Pro (11-inch) (4th generation)';;
-            'tvOS')    DESTINATION='platform=tvOS Simulator,OS=latest,name=Apple TV 4K (3rd generation)';;
-            'watchOS') DESTINATION='platform=watchOS Simulator,OS=latest,name=Apple Watch Series 9 (45mm)';;
-            *) echo "::error title=Unknown platform!::Unknown platform: ${PLATFORM}" && exit 1;;
-          esac
-          echo "xcode=${DESTINATION}" >> "${GITHUB_OUTPUT}"
-      - uses: actions/checkout@v4
-      - uses: actions/cache@v3
-        with:
-          path: .derived-data
-          key: ${{ runner.os }}-${{ steps.os-version.outputs.version }}-xcode-${{ steps.swift-version.outputs.version }}-${{ matrix.platform }}-${{ hashFiles('**/Package.resolved') }}
-          restore-keys: |
-            ${{ runner.os }}-${{ steps.os-version.outputs.version }}-xcode-${{ steps.swift-version.outputs.version }}-${{ matrix.platform }}-
-      - uses: sersoft-gmbh/xcodebuild-action@v3
-        with:
-          spm-package: './'
-          scheme: ${{ env.XCODE_SCHEME }}
-          destination: ${{ steps.destination.outputs.xcode }}
-          action: test
-          parallel-testing-enabled: ${{ matrix.platform != 'watchOS' }}
-          enable-code-coverage: true
-          derived-data-path: .derived-data
-          # Work around PIF issue: https://github.com/apple/swift-package-manager/issues/5767
-          cloned-source-packages-path: ${{ runner.temp }}/xcodebuild-source-packages
-      - uses: sersoft-gmbh/swift-coverage-action@v4
-        id: coverage-files
-        with:
-          search-paths: |
-            ./.build
-            ./.derived-data
-            $HOME/Library/Developer/Xcode/DerivedData
-      - uses: codecov/codecov-action@v3
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          files: ${{ join(fromJSON(steps.coverage-files.outputs.files), ',') }}
-          fail_ci_if_error: true
+    uses: sersoft-gmbh/oss-common-actions/.github/workflows/swift-test-xcode.yml@main
+    with:
+      xcode-scheme: semver
+      max-swift-version: ${{ needs.swift-version.outputs.max-supported-swift-version }}
+      swift-version-offset: ${{ matrix.swift-version-offset }}
+      platform: ${{ matrix.platform }}
+      platform-version: latest
+      fail-if-codecov-fails: true
+    secrets:
+      CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}

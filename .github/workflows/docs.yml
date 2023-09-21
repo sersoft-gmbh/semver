@@ -14,10 +14,10 @@ concurrency:
 
 jobs:
   generate-and-publish-docs:
-    uses: sersoft-gmbh/oss-common-actions/.github/workflows/swift-generate-docs.yml@main
+    uses: sersoft-gmbh/oss-common-actions/.github/workflows/swift-generate-and-publish-docs.yml@main
     with:
       os: ubuntu
-      swift-version: 5.9
+      swift-version: '5.9'
       organisation: ${{ github.repository_owner }}
       repository: ${{ github.event.repository.name }}
       pages-branch: gh-pages
