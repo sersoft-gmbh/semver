@@ -20,3 +20,4 @@ jobs:
       swift-version: 5.9
       organisation: ${{ github.repository_owner }}
       repository: ${{ github.event.repository.name }}
+      pages-branch: gh-pages
