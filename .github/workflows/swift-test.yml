@@ -11,7 +11,8 @@ jobs:
     outputs:
       max-supported-swift-version: '5.9'
     runs-on: ubuntu-latest
-    steps: []
+    steps:
+      - run: exit 0
 
   test-spm:
     needs: swift-version
