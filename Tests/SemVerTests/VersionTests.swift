@@ -308,6 +308,11 @@ final class VersionTests: XCTestCase {
         XCTAssertNil(Version("🥴"))
     }
 
+    func testMacro() {
+        let macroVersion = #version("1.2.3-alpha.1.-2+exp.test")
+        XCTAssertEqual(macroVersion, Version(major: 1, minor: 2, patch: 3, prerelease: "alpha", 1, -2, metadata: ["exp", "test"]))
+    }
+
     /*
      func testStringLiteralConversion() {
      XCTAssertEqual("1.2.3", Version(major: 1, minor: 2, patch: 3))
