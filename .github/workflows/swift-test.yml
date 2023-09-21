@@ -6,13 +6,16 @@ on:
   pull_request:
     branches: [ main ]
 
+permissions:
+  contents: read
+
 jobs:
   variables:
     outputs:
       max-supported-swift-version: '5.9'
       xcode-scheme: semver
       xcode-platform-version: latest
-      fail-if-codecov-fails: true
+      fail-if-codecov-fails: 'true'
     runs-on: ubuntu-latest
     steps:
       - run: exit 0
