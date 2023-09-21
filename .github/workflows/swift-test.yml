@@ -7,15 +7,18 @@ on:
     branches: [ main ]
 
 jobs:
-  swift-version:
+  variables:
     outputs:
       max-supported-swift-version: '5.9'
+      xcode-scheme: semver
+      xcode-platform-version: latest
+      fail-if-codecov-fails: true
     runs-on: ubuntu-latest
     steps:
       - run: exit 0
 
   test-spm:
-    needs: swift-version
+    needs: variables
     strategy:
       matrix:
         os: [ macOS, ubuntu ]
@@ -23,14 +26,14 @@ jobs:
     uses: sersoft-gmbh/oss-common-actions/.github/workflows/swift-test-spm.yml@main
     with:
       os: ${{ matrix.os }}
-      max-swift-version: ${{ needs.swift-version.outputs.max-supported-swift-version }}
+      max-swift-version: ${{ needs.variables.outputs.max-supported-swift-version }}
       swift-version-offset: ${{ matrix.swift-version-offset }}
-      fail-if-codecov-fails: true
+      fail-if-codecov-fails: ${{ needs.variables.outputs.fail-if-codecov-fails }}
     secrets:
       CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
   test-xcode:
-    needs: swift-version
+    needs: variables
     strategy:
       matrix:
         platform:
@@ -42,11 +45,11 @@ jobs:
         swift-version-offset: [ 0 ]
     uses: sersoft-gmbh/oss-common-actions/.github/workflows/swift-test-xcode.yml@main
     with:
-      xcode-scheme: semver
-      max-swift-version: ${{ needs.swift-version.outputs.max-supported-swift-version }}
+      xcode-scheme: ${{ needs.variables.outputs.xcode-scheme }}
+      max-swift-version: ${{ needs.variables.outputs.max-supported-swift-version }}
       swift-version-offset: ${{ matrix.swift-version-offset }}
       platform: ${{ matrix.platform }}
-      platform-version: latest
-      fail-if-codecov-fails: true
+      platform-version: ${{ needs.variables.outputs.xcode-platform-version }}
+      fail-if-codecov-fails: ${{ needs.variables.outputs.fail-if-codecov-fails }}
     secrets:
       CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
