@@ -31,7 +31,7 @@ jobs:
       os: ${{ matrix.os }}
       max-swift-version: ${{ needs.variables.outputs.max-supported-swift-version }}
       swift-version-offset: ${{ matrix.swift-version-offset }}
-      fail-if-codecov-fails: '${{ needs.variables.outputs.fail-if-codecov-fails }}'
+      fail-if-codecov-fails: ${{ fromJson(needs.variables.outputs.fail-if-codecov-fails) }}
     secrets:
       CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
@@ -53,6 +53,6 @@ jobs:
       swift-version-offset: ${{ matrix.swift-version-offset }}
       platform: ${{ matrix.platform }}
       platform-version: ${{ needs.variables.outputs.xcode-platform-version }}
-      fail-if-codecov-fails: '${{ needs.variables.outputs.fail-if-codecov-fails }}'
+      fail-if-codecov-fails: ${{ fromJson(needs.variables.outputs.fail-if-codecov-fails) }}
     secrets:
       CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
