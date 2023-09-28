@@ -8,6 +8,6 @@
 
 # Project & Source files
 *.swift         @ffried
-/Package*.swift      @ffried
+/Package*.swift @ffried
 /Sources/*      @ffried
 /Tests/*        @ffried
