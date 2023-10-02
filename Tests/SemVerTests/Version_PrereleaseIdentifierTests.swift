@@ -1,4 +1,5 @@
 import XCTest
+import SemVerParsing
 @testable import SemVer
 
 final class Version_PrereleaseIdentifierTests: XCTestCase {

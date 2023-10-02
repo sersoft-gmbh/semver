@@ -1,5 +1,6 @@
 @_spi(SemVerValidation)
-package import SemVerParsing
+@_implementationOnly 
+import SemVerParsing
 
 extension Version {
     /// Represents a prerelease identifier of a version.
