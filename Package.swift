@@ -60,7 +60,10 @@ let package = Package(
             swiftSettings: swiftSettings),
         .testTarget(
             name: "SemVerTests",
-            dependencies: ["SemVer"],
+            dependencies: [
+                "SemVerParsing",
+                "SemVer",
+            ],
             swiftSettings: swiftSettings),
         .testTarget(
             name: "SemVerMacrosTests",
