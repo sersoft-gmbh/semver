@@ -1,5 +1,6 @@
-import SwiftSyntaxMacros
+#if canImport(SwiftCompilerPlugin)
 import SwiftCompilerPlugin
+import SwiftSyntaxMacros
 
 @main
 struct SemVerMacrosPlugin: CompilerPlugin {
@@ -7,3 +8,4 @@ struct SemVerMacrosPlugin: CompilerPlugin {
         VersionMacro.self,
     ]
 }
+#endif

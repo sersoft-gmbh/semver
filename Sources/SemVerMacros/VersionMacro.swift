@@ -37,12 +37,12 @@ public enum VersionMacro: ExpressionMacro {
               let string = stringLiteralExpr.representedLiteralValue
         else {
             throw DiagnosticsError(diagnostics: [
-                Diagnostic(node: arg.expression, message: .notAStringLiteral)
+                Diagnostic(node: arg.expression, message: .notAStringLiteral),
             ])
         }
         guard let components = VersionParser.parseString(string) else {
             throw DiagnosticsError(diagnostics: [
-                Diagnostic(node: arg.expression, message: .notAValidVersion(string))
+                Diagnostic(node: arg.expression, message: .notAValidVersion(string)),
             ])
         }
         return """
