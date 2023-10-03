@@ -1,5 +1,4 @@
 import SwiftSyntax
-import SwiftSyntaxBuilder
 import SwiftSyntaxMacros
 import SwiftDiagnostics
 package import SemVerParsing

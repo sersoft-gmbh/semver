@@ -35,12 +35,13 @@ let package = Package(
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
         // Targets can depend on other targets in this package, and on products in packages which this package depends on.
-        .target(name: "SemVerParsing"),
+        .target(
+            name: "SemVerParsing",
+            swiftSettings: swiftSettings),
         .macro(
             name: "SemVerMacros",
             dependencies: [
                 .product(name: "SwiftSyntax", package: "swift-syntax"),
-                .product(name: "SwiftSyntaxBuilder", package: "swift-syntax"),
                 .product(name: "SwiftSyntaxMacros", package: "swift-syntax"),
                 .product(name: "SwiftDiagnostics", package: "swift-syntax"),
                 .product(name: "SwiftCompilerPlugin", package: "swift-syntax"),
@@ -70,7 +71,7 @@ let package = Package(
             dependencies: [
                 .product(name: "SwiftSyntaxMacros", package: "swift-syntax"),
                 .product(name: "SwiftSyntaxMacrosTestSupport", package: "swift-syntax"),
-                "SemVerParsing", // somehow needed...
+                "SemVerParsing", // Xcode fails otherwise...
                 "SemVerMacros",
             ],
             swiftSettings: swiftSettings),
