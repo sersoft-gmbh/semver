@@ -1,5 +1,5 @@
 import XCTest
-@testable import SemVerMacros
+@testable import SemVerMacrosPlugin
 
 final class SemVerMacrosPluginTests: XCTestCase {
     func testProvidedMacros() {

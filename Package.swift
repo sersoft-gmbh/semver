@@ -27,6 +27,9 @@ let package = Package(
         .library(
             name: "SemVer",
             targets: ["SemVer"]),
+        .library(
+            name: "SemVerMacros",
+            targets: ["SemVerMacros"]),
     ],
     dependencies: [
         .package(url: "https://github.com/apple/swift-docc-plugin", from: "1.0.0"),
@@ -39,7 +42,7 @@ let package = Package(
             name: "SemVerParsing",
             swiftSettings: swiftSettings),
         .macro(
-            name: "SemVerMacros",
+            name: "SemVerMacrosPlugin",
             dependencies: [
                 .product(name: "SwiftSyntax", package: "swift-syntax"),
                 .product(name: "SwiftSyntaxMacros", package: "swift-syntax"),
@@ -50,9 +53,13 @@ let package = Package(
             swiftSettings: swiftSettings),
         .target(
             name: "SemVer",
+            dependencies: ["SemVerParsing"],
+            swiftSettings: swiftSettings),
+        .target(
+            name: "SemVerMacros",
             dependencies: [
-                "SemVerParsing",
-                "SemVerMacros",
+                "SemVer",
+                "SemVerMacrosPlugin",
             ],
             swiftSettings: swiftSettings),
         .testTarget(
@@ -64,15 +71,16 @@ let package = Package(
             dependencies: [
                 "SemVerParsing",
                 "SemVer",
+                "SemVerMacros",
             ],
             swiftSettings: swiftSettings),
         .testTarget(
-            name: "SemVerMacrosTests",
+            name: "SemVerMacrosPluginTests",
             dependencies: [
                 .product(name: "SwiftSyntaxMacros", package: "swift-syntax"),
                 .product(name: "SwiftSyntaxMacrosTestSupport", package: "swift-syntax"),
                 "SemVerParsing", // Xcode fails otherwise...
-                "SemVerMacros",
+                "SemVerMacrosPlugin",
             ],
             swiftSettings: swiftSettings),
     ]

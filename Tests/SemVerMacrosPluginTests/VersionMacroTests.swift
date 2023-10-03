@@ -1,7 +1,7 @@
 import XCTest
 import SwiftSyntaxMacros
 import SwiftSyntaxMacrosTestSupport
-import SemVerMacros
+import SemVerMacrosPlugin
 
 final class VersionMacroTests: XCTestCase {
     let testMacros: Dictionary<String, any Macro.Type> = [

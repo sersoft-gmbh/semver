@@ -9,10 +9,6 @@ extension CharacterSet {
     public static let versionSuffixAllowed: CharacterSet = VersionParser.versionSuffixAllowedCharacterSet
 }
 
-/// Parses a string to a ``Version`` at compile time.
-@freestanding(expression)
-public macro version(_ string: StaticString) -> Version = #externalMacro(module: "SemVerMacros", type: "VersionMacro")
-
 /// A Version struct that implements the rules of semantic versioning.
 /// - SeeAlso: [SemVer Specification](https://semver.org)
 public struct Version: Sendable, Hashable, Comparable, LosslessStringConvertible, CustomDebugStringConvertible {

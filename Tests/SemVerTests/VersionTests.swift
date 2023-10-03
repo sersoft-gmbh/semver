@@ -1,5 +1,6 @@
 import XCTest
 @testable import SemVer
+import SemVerMacros
 
 final class VersionTests: XCTestCase {
     func testFullVersionString() {

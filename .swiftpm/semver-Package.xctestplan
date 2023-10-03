@@ -1,0 +1,41 @@
+{
+  "configurations" : [
+    {
+      "id" : "521585A0-673C-406A-9653-8336680437FC",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "SemVerMacrosPluginTests",
+        "name" : "SemVerMacrosPluginTests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "SemVerParsingTests",
+        "name" : "SemVerParsingTests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "SemVerTests",
+        "name" : "SemVerTests"
+      }
+    }
+  ],
+  "version" : 1
+}

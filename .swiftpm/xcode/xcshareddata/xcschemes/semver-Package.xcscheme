@@ -23,14 +23,28 @@
          <BuildActionEntry
             buildForTesting = "YES"
             buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "SemVerMacros"
+               BuildableName = "SemVerMacros"
+               BlueprintName = "SemVerMacros"
+               ReferencedContainer = "container:">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
             buildForProfiling = "NO"
             buildForArchiving = "NO"
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "SemVerMacrosTests"
-               BuildableName = "SemVerMacrosTests"
-               BlueprintName = "SemVerMacrosTests"
+               BlueprintIdentifier = "SemVerMacrosPluginTests"
+               BuildableName = "SemVerMacrosPluginTests"
+               BlueprintName = "SemVerMacrosPluginTests"
                ReferencedContainer = "container:">
             </BuildableReference>
          </BuildActionEntry>
@@ -71,7 +85,7 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <TestPlans>
          <TestPlanReference
-            reference = "container:.swiftpm/semver.xctestplan"
+            reference = "container:.swiftpm/semver-Package.xctestplan"
             default = "YES">
          </TestPlanReference>
       </TestPlans>
@@ -81,15 +95,14 @@
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "SemVerMacrosTests"
-               BuildableName = "SemVerMacrosTests"
-               BlueprintName = "SemVerMacrosTests"
+               BlueprintIdentifier = "SemVerMacrosPluginTests"
+               BuildableName = "SemVerMacrosPluginTests"
+               BlueprintName = "SemVerMacrosPluginTests"
                ReferencedContainer = "container:">
             </BuildableReference>
          </TestableReference>
          <TestableReference
-            skipped = "NO"
-            parallelizable = "YES">
+            skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "SemVerParsingTests"
@@ -99,8 +112,7 @@
             </BuildableReference>
          </TestableReference>
          <TestableReference
-            skipped = "NO"
-            parallelizable = "YES">
+            skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "SemVerTests"
