@@ -315,9 +315,9 @@ final class VersionTests: XCTestCase {
 
     /*
      func testStringLiteralConversion() {
-     XCTAssertEqual("1.2.3", Version(major: 1, minor: 2, patch: 3))
-     XCTAssertEqual("1.2.3-rc1+exp-1.test", Version(major: 1, minor: 2, patch: 3, prerelease: "rc1", metadata: "exp-1", "test"))
-     XCTAssertEqual("1.2.3+exp-1.test", Version(major: 1, minor: 2, patch: 3, metadata: "exp-1", "test"))
+         XCTAssertEqual("1.2.3", Version(major: 1, minor: 2, patch: 3))
+         XCTAssertEqual("1.2.3-rc1+exp-1.test", Version(major: 1, minor: 2, patch: 3, prerelease: "rc1", metadata: "exp-1", "test"))
+         XCTAssertEqual("1.2.3+exp-1.test", Version(major: 1, minor: 2, patch: 3, metadata: "exp-1", "test"))
      }
      */
 }

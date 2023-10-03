@@ -1,5 +1,5 @@
 import XCTest
-@testable import SemVer
+import SemVer
 
 final class GitHubIssueTests: XCTestCase {
     func testGH107() throws {

@@ -71,7 +71,7 @@ package enum VersionParser: Sendable {
            case let substr = string[searchRange],
            let range = substr.range(of: #"[0-9]-(?:[0-9A-Za-z-]+\.?)+"#, options: .regularExpression) {
             let prereleaseString = substr[substr.index(range.lowerBound, offsetBy: 2)..<range.upperBound]
-            if prereleaseString.last == "." { return nil }
+            guard prereleaseString.last != "." else { return nil }
             prerelease = _parsePrereleaseIdentifiers(prereleaseString)
         } else {
             prerelease = .init()
@@ -80,7 +80,7 @@ package enum VersionParser: Sendable {
         let metadata: Array<String>
         if let range = string.range(of: #"\+(?:[0-9A-Za-z-]+(?:\.|$))+$"#, options: .regularExpression) {
             let metadataString = string[string.index(after: range.lowerBound)..<range.upperBound]
-            if metadataString.last == "." { return nil }
+            guard metadataString.last != "." else { return nil }
             metadata = _splitIdentifiers(metadataString)
         } else {
             metadata = .init()

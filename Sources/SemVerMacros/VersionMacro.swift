@@ -13,6 +13,7 @@ fileprivate extension DiagnosticMessage where Self == VersionMacro.DiagnosticMes
     }
 }
 
+@frozen
 public enum VersionMacro: ExpressionMacro {
     struct DiagnosticMessage: SwiftDiagnostics.DiagnosticMessage {
         let diagnosticID: MessageID
