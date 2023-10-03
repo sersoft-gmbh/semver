@@ -11,7 +11,7 @@ This repository contains a complete implementation of a `Version` struct that co
 
 Add the following dependency to your `Package.swift`:
 ```swift
-.package(url: "https://github.com/sersoft-gmbh/semver", from: "4.0.0"),
+.package(url: "https://github.com/sersoft-gmbh/semver", from: "5.0.0"),
 ```
 
 ## Compatibility
@@ -20,7 +20,7 @@ Add the following dependency to your `Package.swift`:
 |--------------------|---------------------|
 | <  5.3.0           | 1.x.y - 2.x.y       |
 | >= 5.3.0, < 5.9.0  | 3.x.y               |
-| >= 5.9.0           | 4.x.y               |
+| >= 5.9.0           | 5.x.y               |
 
 
 ## Usage
@@ -119,6 +119,7 @@ If you need to check whether two versions are completely identical, there's the 
 
 ### Macros
 
+This package also provides a `SemVerMacros` product. It's a separate product, so that SwiftSyntax won't be compiled for users of SemVer if no macro is actually needed.
 If a `Version` should be constructed from a `String` that is known at compile time, the `#version` macro can be used. It will parse the `String` at compile time and generate code that initializes a `Version` from the result:
 
 ```swift
@@ -146,5 +147,3 @@ If you find a bug / like to see a new feature in SemVer there are a few ways of 
 ## License & Copyright
 
 See [LICENSE](./LICENSE) file.
-
-Copyright &copy; 2016-2023 ser.soft GmbH.
