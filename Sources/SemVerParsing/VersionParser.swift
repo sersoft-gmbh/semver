@@ -1,13 +1,13 @@
-import struct Foundation.CharacterSet
+import Foundation
 
 @frozen
-package enum VersionParser: Sendable {
-    package enum VersionPrereleaseIdentifier: Sendable, Hashable {
+public enum VersionParser: Sendable {
+    public enum VersionPrereleaseIdentifier: Sendable, Hashable {
         case number(Int)
         case text(String)
     }
 
-    package typealias VersionComponents = (
+    public typealias VersionComponents = (
         major: Int, minor: Int, patch: Int,
         prerelease: Array<VersionPrereleaseIdentifier>,
         metadata: Array<String>
@@ -90,7 +90,7 @@ package enum VersionParser: Sendable {
     }
 
     @inlinable
-    package static func parseString<S>(_ string: S) -> VersionComponents?
+    public static func parseString<S>(_ string: S) -> VersionComponents?
     where S: StringProtocol, S.SubSequence == Substring
     {
         guard !string.isEmpty else { return nil }
@@ -102,26 +102,26 @@ package enum VersionParser: Sendable {
     }
 }
 
-@_spi(SemVerValidation)
+//@_spi(SemVerValidation)
 extension VersionParser {
     private static var _identifierSeparator: Character { "." }
 
-    package static let versionSuffixAllowedCharacterSet: CharacterSet = {
+    public static let versionSuffixAllowedCharacterSet: CharacterSet = {
         var validCharset = CharacterSet.alphanumerics
         validCharset.insert("-")
         return validCharset
     }()
 
     @inlinable
-    package static func _isValidIdentifier(_ identifier: some StringProtocol) -> Bool {
+    public static func _isValidIdentifier(_ identifier: some StringProtocol) -> Bool {
         !identifier.isEmpty && CharacterSet(charactersIn: String(identifier)).isSubset(of: versionSuffixAllowedCharacterSet)
     }
 
-    package static func _joinIdentifiers(_ identifiers: some Sequence<String>) -> String {
+    public static func _joinIdentifiers(_ identifiers: some Sequence<String>) -> String {
         identifiers.joined(separator: String(_identifierSeparator))
     }
 
-    package static func _splitIdentifiers<S>(_ identifier: S) -> Array<String>
+    public static func _splitIdentifiers<S>(_ identifier: S) -> Array<String>
     where S: StringProtocol, S.SubSequence == Substring
     {
         identifier.split(separator: _identifierSeparator).map(String.init)

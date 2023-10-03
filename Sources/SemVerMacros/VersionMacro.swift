@@ -1,7 +1,8 @@
 import SwiftSyntax
 import SwiftSyntaxMacros
 import SwiftDiagnostics
-package import SemVerParsing
+//package 
+import SemVerParsing
 
 fileprivate extension DiagnosticMessage where Self == VersionMacro.DiagnosticMessage {
     static var notAStringLiteral: Self {

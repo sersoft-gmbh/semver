@@ -9,7 +9,7 @@ let swiftSettings: Array<SwiftSetting> = [
     .enableUpcomingFeature("ExistentialAny"),
     .enableUpcomingFeature("BareSlashRegexLiterals"),
     .enableUpcomingFeature("DisableOutwardActorInference"),
-    .enableExperimentalFeature("AccessLevelOnImport"),
+//    .enableExperimentalFeature("AccessLevelOnImport"),
 //    .enableExperimentalFeature("VariadicGenerics"),
 //    .unsafeFlags(["-warn-concurrency"], .when(configuration: .debug)),
 ]

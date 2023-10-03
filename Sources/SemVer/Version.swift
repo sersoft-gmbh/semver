@@ -1,6 +1,7 @@
 import struct Foundation.CharacterSet
-@_spi(SemVerValidation)
-package import SemVerParsing
+//@_spi(SemVerValidation)
+//package 
+import SemVerParsing
 
 extension CharacterSet {
     /// Contains the allowed characters for a ``Version`` suffix (``Version/prerelease`` and ``Version/metadata``)
