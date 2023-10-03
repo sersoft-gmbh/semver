@@ -873,15 +873,6 @@
             "type" : "struct"
           },
           {
-            "title" : "Macros",
-            "type" : "groupMarker"
-          },
-          {
-            "path" : "\/documentation\/semver\/version(_:)",
-            "title" : "macro version(StaticString) -> Version",
-            "type" : "macro"
-          },
-          {
             "title" : "Extended Modules",
             "type" : "groupMarker"
           },

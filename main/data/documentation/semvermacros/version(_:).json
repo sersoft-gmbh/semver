@@ -5,9 +5,8 @@
       "type" : "text"
     },
     {
-      "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version",
-      "isActive" : true,
-      "type" : "reference"
+      "code" : "Version",
+      "type" : "codeVoice"
     },
     {
       "text" : " at compile time.",
@@ -17,17 +16,17 @@
   "hierarchy" : {
     "paths" : [
       [
-        "doc:\/\/SemVer\/documentation\/SemVer"
+        "doc:\/\/SemVerMacros\/documentation\/SemVerMacros"
       ]
     ]
   },
   "identifier" : {
     "interfaceLanguage" : "swift",
-    "url" : "doc:\/\/SemVer\/documentation\/SemVer\/version(_:)"
+    "url" : "doc:\/\/SemVerMacros\/documentation\/SemVerMacros\/version(_:)"
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:6SemVer7versionyAA7VersionVs12StaticStringVcfm",
+    "externalID" : "s:12SemVerMacros7versiony0aB07VersionVs12StaticStringVcfm",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -62,7 +61,7 @@
     ],
     "modules" : [
       {
-        "name" : "SemVer"
+        "name" : "SemVerMacros"
       }
     ],
     "role" : "symbol",
@@ -131,7 +130,6 @@
               "text" : ") -> "
             },
             {
-              "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version",
               "kind" : "typeIdentifier",
               "preciseIdentifier" : "s:6SemVer7VersionV",
               "text" : "Version"
@@ -153,7 +151,7 @@
   "variants" : [
     {
       "paths" : [
-        "\/documentation\/semver\/version(_:)"
+        "\/documentation\/semvermacros\/version(_:)"
       ],
       "traits" : [
         {
@@ -164,61 +162,26 @@
   ]
 , 
 "references": {
-"doc://SemVer/documentation/SemVer": {
+"doc://SemVerMacros/documentation/SemVerMacros": {
   "abstract" : [
 
   ],
-  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer",
+  "identifier" : "doc:\/\/SemVerMacros\/documentation\/SemVerMacros",
   "kind" : "symbol",
   "role" : "collection",
-  "title" : "SemVer",
+  "title" : "SemVerMacros",
   "type" : "topic",
-  "url" : "\/documentation\/semver"
+  "url" : "\/documentation\/semvermacros"
 },
-"doc://SemVer/documentation/SemVer/Version": {
-  "abstract" : [
-    {
-      "text" : "A Version struct that implements the rules of semantic versioning.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "struct"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "Version"
-    }
-  ],
-  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "Version"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "Version",
-  "type" : "topic",
-  "url" : "\/documentation\/semver\/version"
-},
-"doc://SemVer/documentation/SemVer/version(_:)": {
+"doc://SemVerMacros/documentation/SemVerMacros/version(_:)": {
   "abstract" : [
     {
       "text" : "Parses a string to a ",
       "type" : "text"
     },
     {
-      "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version",
-      "isActive" : true,
-      "type" : "reference"
+      "code" : "Version",
+      "type" : "codeVoice"
     },
     {
       "text" : " at compile time.",
@@ -257,12 +220,12 @@
       "text" : "Version"
     }
   ],
-  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/version(_:)",
+  "identifier" : "doc:\/\/SemVerMacros\/documentation\/SemVerMacros\/version(_:)",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : "version(_:)",
   "type" : "topic",
-  "url" : "\/documentation\/semver\/version(_:)"
+  "url" : "\/documentation\/semvermacros\/version(_:)"
 }
 }
 }
