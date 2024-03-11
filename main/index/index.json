@@ -396,7 +396,7 @@
                       },
                       {
                         "path" : "\/documentation\/semver\/version\/prereleaseidentifier\/init(from:)",
-                        "title" : "init(from: Decoder) throws",
+                        "title" : "init(from: any Decoder) throws",
                         "type" : "init"
                       }
                     ],
@@ -412,7 +412,7 @@
                       },
                       {
                         "path" : "\/documentation\/semver\/version\/prereleaseidentifier\/encode(to:)",
-                        "title" : "func encode(to: Encoder) throws",
+                        "title" : "func encode(to: any Encoder) throws",
                         "type" : "method"
                       }
                     ],
@@ -637,7 +637,7 @@
                   },
                   {
                     "path" : "\/documentation\/semver\/version\/decodingstrategy\/custom(_:)",
-                    "title" : "case custom((Decoder) throws -> Version)",
+                    "title" : "case custom((any Decoder) throws -> Version)",
                     "type" : "case"
                   },
                   {
@@ -672,7 +672,7 @@
                   },
                   {
                     "path" : "\/documentation\/semver\/version\/encodingstrategy\/custom(_:)",
-                    "title" : "case custom((Version, Encoder) throws -> ())",
+                    "title" : "case custom((Version, any Encoder) throws -> ())",
                     "type" : "case"
                   },
                   {
@@ -822,7 +822,7 @@
                   },
                   {
                     "path" : "\/documentation\/semver\/version\/init(from:)",
-                    "title" : "init(from: Decoder) throws",
+                    "title" : "init(from: any Decoder) throws",
                     "type" : "init"
                   }
                 ],
@@ -838,7 +838,7 @@
                   },
                   {
                     "path" : "\/documentation\/semver\/version\/encode(to:)",
-                    "title" : "func encode(to: Encoder) throws",
+                    "title" : "func encode(to: any Encoder) throws",
                     "type" : "method"
                   }
                 ],
