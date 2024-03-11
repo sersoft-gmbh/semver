@@ -31,8 +31,13 @@ public enum VersionMacro: ExpressionMacro {
 
     public static func expansion(of node: some FreestandingMacroExpansionSyntax,
                                  in context: some MacroExpansionContext) throws -> ExprSyntax {
+#if swift(>=5.10)
+        assert(node.macroName.text == name)
+        guard let arg = node.arguments.first else { fatalError("Missing argument!") }
+#else
         assert(node.macro.text == name)
         guard let arg = node.argumentList.first else { fatalError("Missing argument!") }
+#endif
         guard let stringLiteralExpr = arg.expression.as(StringLiteralExprSyntax.self),
               let string = stringLiteralExpr.representedLiteralValue
         else {

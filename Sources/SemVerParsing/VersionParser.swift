@@ -28,7 +28,7 @@ package enum VersionParser: Sendable {
 
     @available(macOS 13, iOS 16, tvOS 16, watchOS 9, macCatalyst 16, *)
     @usableFromInline
-    static func _parseModern<S>(_ string: S) -> VersionComponents?
+    internal static func _parseModern<S>(_ string: S) -> VersionComponents?
     where S: StringProtocol, S.SubSequence == Substring
     {
         assert(!string.isEmpty)
@@ -48,7 +48,7 @@ package enum VersionParser: Sendable {
     }
 
     @usableFromInline
-    static func _parseLegacy<S>(_ string: S) -> VersionComponents?
+    internal static func _parseLegacy<S>(_ string: S) -> VersionComponents?
     where S: StringProtocol, S.SubSequence == Substring
     {
         assert(!string.isEmpty)
