@@ -107,7 +107,7 @@ extension VersionParser {
     private static var _identifierSeparator: Character { "." }
 
     // Dance necessary because CharacterSet doesn't conform to Sendable in scf...
-#if !canImport(Darwin) && swift(>=5.10)
+#if !canImport(Darwin) && hasFeature(StrictConcurrency) && hasFeature(GlobalConcurrency)
     package static nonisolated(unsafe) let versionSuffixAllowedCharacterSet: CharacterSet = {
         var validCharset = CharacterSet.alphanumerics
         validCharset.insert("-")
