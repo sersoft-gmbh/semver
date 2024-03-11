@@ -1,9 +1,9 @@
 import XCTest
 @testable import SemVerMacrosPlugin
 
-final class SemVerMacrosPluginTests: XCTestCase {
+final class SemVerMacrosCompilerPluginTests: XCTestCase {
     func testProvidedMacros() {
-        let macros = SemVerMacrosPlugin().providingMacros
+        let macros = SemVerMacrosCompilerPlugin().providingMacros
         XCTAssertEqual(macros.count, 1)
         XCTAssertTrue(macros.contains { $0 == VersionMacro.self })
     }

@@ -3,7 +3,7 @@ import SwiftCompilerPlugin
 import SwiftSyntaxMacros
 
 @main
-struct SemVerMacrosPlugin: CompilerPlugin {
+struct SemVerMacrosCompilerPlugin: CompilerPlugin {
     let providingMacros: Array<any Macro.Type> = [
         VersionMacro.self,
     ]

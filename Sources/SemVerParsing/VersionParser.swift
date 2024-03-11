@@ -106,6 +106,7 @@ package enum VersionParser: Sendable {
 extension VersionParser {
     private static var _identifierSeparator: Character { "." }
 
+    @preconcurrency
     package static let versionSuffixAllowedCharacterSet: CharacterSet = {
         var validCharset = CharacterSet.alphanumerics
         validCharset.insert("-")
