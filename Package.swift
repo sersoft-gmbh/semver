@@ -9,8 +9,11 @@ let swiftSettings: Array<SwiftSetting> = [
     .enableUpcomingFeature("ExistentialAny"),
     .enableUpcomingFeature("BareSlashRegexLiterals"),
     .enableUpcomingFeature("DisableOutwardActorInference"),
+    .enableUpcomingFeature("IsolatedDefaultValues"),
+    .enableUpcomingFeature("DeprecateApplicationMain"),
     .enableExperimentalFeature("AccessLevelOnImport"),
-    .enableExperimentalFeature("StrictConcurrency")
+    .enableExperimentalFeature("StrictConcurrency"),
+    .enableExperimentalFeature("GlobalConcurrency"),
 //    .enableExperimentalFeature("VariadicGenerics"),
 ]
 

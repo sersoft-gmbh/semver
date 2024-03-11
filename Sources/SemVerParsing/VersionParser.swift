@@ -106,12 +106,20 @@ package enum VersionParser: Sendable {
 extension VersionParser {
     private static var _identifierSeparator: Character { "." }
 
-    @preconcurrency
+    // Dance necessary because CharacterSet doesn't conform to Sendable in scf...
+#if !canImport(Darwin) && swift(>=5.10)
+    package static nonisolated(unsafe) let versionSuffixAllowedCharacterSet: CharacterSet = {
+        var validCharset = CharacterSet.alphanumerics
+        validCharset.insert("-")
+        return validCharset
+    }()
+#else
     package static let versionSuffixAllowedCharacterSet: CharacterSet = {
         var validCharset = CharacterSet.alphanumerics
         validCharset.insert("-")
         return validCharset
     }()
+#endif
 
     @inlinable
     package static func _isValidIdentifier(_ identifier: some StringProtocol) -> Bool {
