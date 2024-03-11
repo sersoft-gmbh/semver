@@ -47,7 +47,7 @@ open class XCTContext: NSObject {
 final class VersionParserTests: XCTestCase {
     private typealias TestHandlerContext = (parser: (String) -> VersionParser.VersionComponents?, messagePrefix: String)
     @MainActor
-    private func performTests(with testHandler: @MainActor (TestHandlerContext) throws -> ()) rethrows {
+    private static func performTests(with testHandler: @Sendable @MainActor (TestHandlerContext) throws -> ()) rethrows {
         try XCTContext.runActivity(named: "Legacy Parsing") {
             try testHandler(({
                 guard !$0.isEmpty else { return nil }
@@ -67,9 +67,8 @@ final class VersionParserTests: XCTestCase {
         }
     }
 
-    @MainActor
-    func testValidStrings() {
-        performTests { context in
+    func testValidStrings() async {
+        await Self.performTests { context in
             let v1 = context.parser("1.2.3-beta+exp.test")
             let v2 = context.parser("1-beta")
             let v3 = context.parser("2+exp.test")
@@ -102,9 +101,8 @@ final class VersionParserTests: XCTestCase {
         }
     }
 
-    @MainActor
-    func testInvalidStrings() {
-        performTests { context in
+    func testInvalidStrings() async {
+        await Self.performTests { context in
             XCTAssertNil(context.parser(""), context.messagePrefix)
             XCTAssertNil(context.parser("🥴"), context.messagePrefix)
             XCTAssertNil(context.parser("ABC"), context.messagePrefix)
