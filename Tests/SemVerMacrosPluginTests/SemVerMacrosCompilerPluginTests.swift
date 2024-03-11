@@ -1,3 +1,4 @@
+#if canImport(SemVerMacrosPlugin)
 import XCTest
 @testable import SemVerMacrosPlugin
 
@@ -8,3 +9,4 @@ final class SemVerMacrosCompilerPluginTests: XCTestCase {
         XCTAssertTrue(macros.contains { $0 == VersionMacro.self })
     }
 }
+#endif

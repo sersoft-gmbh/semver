@@ -1,3 +1,4 @@
+#if canImport(SemVerMacrosPlugin)
 import XCTest
 import SwiftSyntaxMacros
 import SwiftSyntaxMacrosTestSupport
@@ -59,3 +60,4 @@ final class VersionMacroTests: XCTestCase {
                              macros: testMacros)
     }
 }
+#endif
