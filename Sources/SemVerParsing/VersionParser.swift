@@ -107,7 +107,8 @@ extension VersionParser {
     private static var _identifierSeparator: Character { "." }
 
     // Dance necessary because CharacterSet doesn't conform to Sendable in scf...
-#if !canImport(Darwin) && hasFeature(StrictConcurrency) && hasFeature(GlobalConcurrency)
+    // Compiler check is needed because `hasFeature` doesn't prevent the compiler from trying to parse the code.
+#if !canImport(Darwin) && compiler(>=5.10) && hasFeature(StrictConcurrency) && hasFeature(GlobalConcurrency)
     package static nonisolated(unsafe) let versionSuffixAllowedCharacterSet: CharacterSet = {
         var validCharset = CharacterSet.alphanumerics
         validCharset.insert("-")

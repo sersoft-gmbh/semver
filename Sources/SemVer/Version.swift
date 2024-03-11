@@ -4,7 +4,8 @@ package import SemVerParsing
 
 extension CharacterSet {
     // Dance necessary because CharacterSet doesn't conform to Sendable in scf...
-#if !canImport(Darwin) && hasFeature(StrictConcurrency) && hasFeature(GlobalConcurrency)
+    // Compiler check is needed because `hasFeature` doesn't prevent the compiler from trying to parse the code.
+#if !canImport(Darwin) && compiler(>=5.10) && hasFeature(StrictConcurrency) && hasFeature(GlobalConcurrency)
     /// Contains the allowed characters for a ``Version`` suffix (``Version/prerelease`` and ``Version/metadata``)
     /// Allowed are alphanumerics and hyphen.
     public static nonisolated(unsafe) let versionSuffixAllowed: CharacterSet = VersionParser.versionSuffixAllowedCharacterSet
