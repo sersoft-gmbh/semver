@@ -1,6 +1,6 @@
 import struct Foundation.CharacterSet
 @_spi(SemVerValidation)
-package import SemVerParsing
+internal import SemVerParsing
 
 extension CharacterSet {
     // Dance necessary because CharacterSet doesn't conform to Sendable in scf...
