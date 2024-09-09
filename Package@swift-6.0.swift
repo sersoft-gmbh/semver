@@ -1,16 +1,13 @@
-// swift-tools-version:5.9
+// swift-tools-version:6.0
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
 import CompilerPluginSupport
 
 let swiftSettings: Array<SwiftSetting> = [
-    .enableUpcomingFeature("ConciseMagicFile"),
     .enableUpcomingFeature("ExistentialAny"),
-    .enableUpcomingFeature("BareSlashRegexLiterals"),
-    .enableUpcomingFeature("DisableOutwardActorInference"),
     .enableExperimentalFeature("AccessLevelOnImport"),
-    .enableExperimentalFeature("StrictConcurrency"),
+    .enableExperimentalFeature("GlobalConcurrency"),
 //    .enableExperimentalFeature("VariadicGenerics"),
 ]
 
@@ -22,6 +19,7 @@ let package = Package(
         .tvOS(.v13),
         .watchOS(.v6),
         .macCatalyst(.v13),
+        .visionOS(.v1),
     ],
     products: [
         .library(
@@ -33,7 +31,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/swiftlang/swift-docc-plugin", from: "1.0.0"),
-        .package(url: "https://github.com/swiftlang/swift-syntax", from: "509.0.0"),
+        .package(url: "https://github.com/swiftlang/swift-syntax", "509.0.0"..<"601.0.0-prerelease"),
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.

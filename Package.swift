@@ -14,7 +14,6 @@ let swiftSettings: Array<SwiftSetting> = [
     .enableExperimentalFeature("AccessLevelOnImport"),
     .enableExperimentalFeature("StrictConcurrency"),
     .enableExperimentalFeature("GlobalConcurrency"),
-//    .enableExperimentalFeature("VariadicGenerics"),
 ]
 
 let package = Package(
@@ -36,8 +35,8 @@ let package = Package(
             targets: ["SemVerMacros"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/apple/swift-docc-plugin", from: "1.0.0"),
-        .package(url: "https://github.com/apple/swift-syntax", from: "510.0.1"),
+        .package(url: "https://github.com/swiftlang/swift-docc-plugin", from: "1.0.0"),
+        .package(url: "https://github.com/swiftlang/swift-syntax",  from: "510.0.1"),
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.

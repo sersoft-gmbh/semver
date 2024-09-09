@@ -21,7 +21,6 @@ final class VersionTests: XCTestCase {
     func testFullVersionStringWithPrereleaseDataWithoutMetadataData() {
         let version = Version(major: 1, minor: 2, patch: 3, prerelease: "beta-1")
         XCTAssertEqual(version.versionString(), "1.2.3-beta-1")
-        XCTAssertEqual(version.versionString(), "1.2.3-beta.1")
     }
 
     func testVersionStringExcludingPrerelease() {
