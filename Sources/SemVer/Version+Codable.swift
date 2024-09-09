@@ -1,4 +1,4 @@
-import Foundation
+public import Foundation
 
 extension CodingUserInfoKey {
     /// The key used to configure an ``Swift/Encoder`` with the strategy that should be used for encoding a ``Version``.
@@ -40,7 +40,7 @@ extension Version {
         public static var string: Self { .string(.fullVersion) }
 
         @usableFromInline
-        static var _default: Self { .components }
+        internal static var _default: Self { .components }
     }
 
     /// The strategy for decoding a ``Version``.
@@ -60,7 +60,7 @@ extension Version {
         public static var components: Self { .components(prereleaseAsString: true, metadataAsString: false) }
 
         @usableFromInline
-        static var _default: Self { .components }
+        internal static var _default: Self { .components }
     }
 }
 

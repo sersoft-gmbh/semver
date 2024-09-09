@@ -1,11 +1,11 @@
-import struct Foundation.CharacterSet
+public import struct Foundation.CharacterSet
 @_spi(SemVerValidation)
-package import SemVerParsing
+internal import SemVerParsing
 
 extension CharacterSet {
-    // Dance necessary because CharacterSet doesn't conform to Sendable in scf...
+    // Dance necessary because CharacterSet doesn't conform to Sendable in scf until Swift 6...
     // Compiler check is needed because `hasFeature` doesn't prevent the compiler from trying to parse the code.
-#if !canImport(Darwin) && compiler(>=5.10) && hasFeature(StrictConcurrency) && hasFeature(GlobalConcurrency)
+#if !canImport(Darwin) && compiler(>=5.10) && swift(<6.0) && hasFeature(StrictConcurrency) && hasFeature(GlobalConcurrency)
     /// Contains the allowed characters for a ``Version`` suffix (``Version/prerelease`` and ``Version/metadata``)
     /// Allowed are alphanumerics and hyphen.
     public static nonisolated(unsafe) let versionSuffixAllowed: CharacterSet = VersionParser.versionSuffixAllowedCharacterSet
@@ -189,7 +189,7 @@ extension Version {
         guard !rhs.prerelease.isEmpty else { return true }
 
         // Skip all identifiers that are equal, then compare the first non-equal (if any).
-        if let (lhsIdent, rhsIdent) = zip(lhs.prerelease, rhs.prerelease).drop(while: { $0 == $1 }).first(where: { _ in true }) {
+        if let (lhsIdent, rhsIdent) = zip(lhs.prerelease, rhs.prerelease).first(where: { $0 != $1 }) {
             return lhsIdent < rhsIdent
         }
 
@@ -200,23 +200,23 @@ extension Version {
 
 extension Version {
     @usableFromInline
-    static func _isValidIdentifier(_ identifiers: some StringProtocol) -> Bool {
+    internal static func _isValidIdentifier(_ identifiers: some StringProtocol) -> Bool {
         VersionParser._isValidIdentifier(identifiers)
     }
 
     @inlinable
-    static func _areValidIdentifiers(_ identifiers: some Sequence<some StringProtocol>) -> Bool {
+    internal static func _areValidIdentifiers(_ identifiers: some Sequence<some StringProtocol>) -> Bool {
         identifiers.allSatisfy(_isValidIdentifier)
     }
 
-    static func _splitIdentifiers<S>(_ identifier: S) -> Array<String>
+    internal static func _splitIdentifiers<S>(_ identifier: S) -> Array<String>
     where S: StringProtocol, S.SubSequence == Substring
     {
         VersionParser._splitIdentifiers(identifier)
     }
 
     @usableFromInline
-    var _prereleaseString: String { VersionParser._joinIdentifiers(prerelease.lazy.map(\.string)) }
+    internal var _prereleaseString: String { VersionParser._joinIdentifiers(prerelease.lazy.map(\.string)) }
     @usableFromInline
-    var _metadataString: String { VersionParser._joinIdentifiers(metadata) }
+    internal var _metadataString: String { VersionParser._joinIdentifiers(metadata) }
 }
