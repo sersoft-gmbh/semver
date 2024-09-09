@@ -1,4 +1,4 @@
-@_exported import SemVer
+@_exported public import SemVer
 
 /// Parses a string to a ``Version`` at compile time.
 @freestanding(expression)

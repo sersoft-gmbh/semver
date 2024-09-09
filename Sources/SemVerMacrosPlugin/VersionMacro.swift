@@ -1,7 +1,7 @@
-import SwiftSyntax
-import SwiftSyntaxMacros
-import SwiftDiagnostics
-package import SemVerParsing
+public import SwiftSyntax
+public import SwiftSyntaxMacros
+internal import SwiftDiagnostics
+internal import SemVerParsing
 
 fileprivate extension DiagnosticMessage where Self == VersionMacro.DiagnosticMessage {
     static var notAStringLiteral: Self {
@@ -15,7 +15,7 @@ fileprivate extension DiagnosticMessage where Self == VersionMacro.DiagnosticMes
 
 @frozen
 public enum VersionMacro: ExpressionMacro {
-    struct DiagnosticMessage: SwiftDiagnostics.DiagnosticMessage {
+    internal struct DiagnosticMessage: SwiftDiagnostics.DiagnosticMessage {
         let diagnosticID: MessageID
         let severity: DiagnosticSeverity
         let message: String
@@ -27,7 +27,7 @@ public enum VersionMacro: ExpressionMacro {
         }
     }
 
-    static let name = "version"
+    internal static let name = "version"
 
     public static func expansion(of node: some FreestandingMacroExpansionSyntax,
                                  in context: some MacroExpansionContext) throws -> ExprSyntax {

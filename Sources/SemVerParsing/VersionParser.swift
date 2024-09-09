@@ -1,4 +1,4 @@
-import struct Foundation.CharacterSet
+package import struct Foundation.CharacterSet
 
 @frozen
 package enum VersionParser: Sendable {
@@ -94,7 +94,7 @@ package enum VersionParser: Sendable {
     where S: StringProtocol, S.SubSequence == Substring
     {
         guard !string.isEmpty else { return nil }
-        if #available(macOS 13, iOS 16, tvOS 16, watchOS 9, macCatalyst 16, *) {
+        if #available(macOS 13, iOS 16, tvOS 16, watchOS 9, macCatalyst 16, visionOS 1, *) {
             return _parseModern(string)
         } else {
             return _parseLegacy(string)
@@ -108,7 +108,7 @@ extension VersionParser {
 
     // Dance necessary because CharacterSet doesn't conform to Sendable in scf...
     // Compiler check is needed because `hasFeature` doesn't prevent the compiler from trying to parse the code.
-#if !canImport(Darwin) && compiler(>=5.10) && hasFeature(StrictConcurrency) && hasFeature(GlobalConcurrency)
+#if !canImport(Darwin) && compiler(>=5.10) && swift(<6.0) && hasFeature(StrictConcurrency) && hasFeature(GlobalConcurrency)
     package static nonisolated(unsafe) let versionSuffixAllowedCharacterSet: CharacterSet = {
         var validCharset = CharacterSet.alphanumerics
         validCharset.insert("-")

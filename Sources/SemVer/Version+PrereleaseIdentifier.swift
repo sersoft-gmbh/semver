@@ -1,12 +1,12 @@
 @_spi(SemVerValidation)
-package import SemVerParsing
+internal import SemVerParsing
 
 extension Version {
     /// Represents a prerelease identifier of a version.
     public struct PrereleaseIdentifier: Sendable, Hashable, Comparable, CustomStringConvertible, CustomDebugStringConvertible {
-        typealias _Storage = VersionParser.VersionPrereleaseIdentifier
+        internal typealias _Storage = VersionParser.VersionPrereleaseIdentifier
 
-        var _storage: _Storage
+        internal var _storage: _Storage
 
         @inlinable
         public var description: String { string }
@@ -36,7 +36,7 @@ extension Version {
             }
         }
 
-        init(_storage: _Storage) {
+        internal init(_storage: _Storage) {
             assert({
                 guard case .text(let text) = _storage
                 else { return true }
