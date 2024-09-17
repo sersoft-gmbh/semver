@@ -8,7 +8,6 @@ let swiftSettings: Array<SwiftSetting> = [
     .swiftLanguageMode(.v6),
     .enableUpcomingFeature("ExistentialAny"),
     .enableUpcomingFeature("InternalImportsByDefault"),
-    .enableExperimentalFeature("AccessLevelOnImport"),
     .enableExperimentalFeature("GlobalConcurrency"),
 ]
 
@@ -32,8 +31,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/swiftlang/swift-docc-plugin", from: "1.0.0"),
-        // FIXME: Use released version...
-        .package(url: "https://github.com/swiftlang/swift-syntax", from: "600.0.0-prerelease"),
+        .package(url: "https://github.com/swiftlang/swift-syntax", from: "600.0.0"),
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
