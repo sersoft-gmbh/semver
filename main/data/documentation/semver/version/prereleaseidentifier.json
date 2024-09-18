@@ -46,6 +46,10 @@
         "text" : "PrereleaseIdentifier"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "Version+PrereleaseIdentifier.swift",
+      "url" : "https:\/\/github.com\/sersoft-gmbh\/semver\/Sources\/SemVer\/Version+PrereleaseIdentifier.swift#L6"
+    },
     "role" : "symbol",
     "roleHeading" : "Structure",
     "symbolKind" : "struct",
@@ -84,6 +88,7 @@
     {
       "identifiers" : [
         "doc:\/\/SemVer\/SL",
+        "doc:\/\/SemVer\/s8CopyableP",
         "doc:\/\/SemVer\/s28CustomDebugStringConvertibleP",
         "doc:\/\/SemVer\/s23CustomStringConvertibleP",
         "doc:\/\/SemVer\/Se",
@@ -111,12 +116,16 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Operators",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/_(_:_:)-5r1ns"
       ],
       "title" : "Operators"
     },
     {
+      "anchor" : "Initializers",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/init(_:)-11sof",
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/init(_:)-2qkfa",
@@ -125,6 +134,8 @@
       "title" : "Initializers"
     },
     {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/debugDescription",
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/description",
@@ -134,6 +145,8 @@
       "title" : "Instance Properties"
     },
     {
+      "anchor" : "Type-Methods",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/number(_:)",
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/string(_:)"
@@ -141,6 +154,7 @@
       "title" : "Type Methods"
     },
     {
+      "anchor" : "Default-Implementations",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/Comparable-Implementations",
@@ -943,6 +957,11 @@
 "doc://SemVer/s43ExpressibleByExtendedGraphemeClusterLiteralP": {
   "identifier" : "doc:\/\/SemVer\/s43ExpressibleByExtendedGraphemeClusterLiteralP",
   "title" : "Swift.ExpressibleByExtendedGraphemeClusterLiteral",
+  "type" : "unresolvable"
+},
+"doc://SemVer/s8CopyableP": {
+  "identifier" : "doc:\/\/SemVer\/s8CopyableP",
+  "title" : "Swift.Copyable",
   "type" : "unresolvable"
 },
 "doc://SemVer/s8SendableP": {

@@ -46,6 +46,10 @@
         "text" : "FormattingOptions"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "Version+FormattingOptions.swift",
+      "url" : "https:\/\/github.com\/sersoft-gmbh\/semver\/Sources\/SemVer\/Version+FormattingOptions.swift#L4"
+    },
     "role" : "symbol",
     "roleHeading" : "Structure",
     "symbolKind" : "struct",
@@ -91,6 +95,7 @@
   "relationshipsSections" : [
     {
       "identifiers" : [
+        "doc:\/\/SemVer\/s15BitwiseCopyableP",
         "doc:\/\/SemVer\/SQ",
         "doc:\/\/SemVer\/s25ExpressibleByArrayLiteralP",
         "doc:\/\/SemVer\/SH",
@@ -114,24 +119,32 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Initializers",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions\/init(rawValue:)"
       ],
       "title" : "Initializers"
     },
     {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions\/rawValue-swift.property"
       ],
       "title" : "Instance Properties"
     },
     {
+      "anchor" : "Type-Aliases",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions\/RawValue-swift.typealias"
       ],
       "title" : "Type Aliases"
     },
     {
+      "anchor" : "Type-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions\/dropMinorIfZero",
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions\/dropPatchIfZero",
@@ -143,6 +156,7 @@
       "title" : "Type Properties"
     },
     {
+      "anchor" : "Default-Implementations",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions\/Equatable-Implementations",
@@ -815,6 +829,11 @@
 "doc://SemVer/s10SetAlgebraP": {
   "identifier" : "doc:\/\/SemVer\/s10SetAlgebraP",
   "title" : "Swift.SetAlgebra",
+  "type" : "unresolvable"
+},
+"doc://SemVer/s15BitwiseCopyableP": {
+  "identifier" : "doc:\/\/SemVer\/s15BitwiseCopyableP",
+  "title" : "Swift.BitwiseCopyable",
   "type" : "unresolvable"
 },
 "doc://SemVer/s25ExpressibleByArrayLiteralP": {

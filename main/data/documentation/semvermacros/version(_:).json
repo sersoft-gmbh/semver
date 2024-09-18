@@ -64,6 +64,10 @@
         "name" : "SemVerMacros"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "VersionMacro.swift",
+      "url" : "https:\/\/github.com\/sersoft-gmbh\/semver\/Sources\/SemVerMacros\/VersionMacro.swift#L5"
+    },
     "role" : "symbol",
     "roleHeading" : "Macro",
     "symbolKind" : "macro",

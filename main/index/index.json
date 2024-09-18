@@ -1,4 +1,7 @@
 {
+  "includedArchiveIdentifiers" : [
+    "SemVer"
+  ],
   "interfaceLanguages" : {
     "swift" : [
       {
@@ -879,74 +882,6 @@
           {
             "children" : [
               {
-                "title" : "Extended Classes",
-                "type" : "groupMarker"
-              },
-              {
-                "children" : [
-                  {
-                    "title" : "Instance Properties",
-                    "type" : "groupMarker"
-                  },
-                  {
-                    "path" : "\/documentation\/semver\/foundation\/jsondecoder\/semverversiondecodingstrategy",
-                    "title" : "var semverVersionDecodingStrategy: Version.DecodingStrategy",
-                    "type" : "property"
-                  }
-                ],
-                "path" : "\/documentation\/semver\/foundation\/jsondecoder",
-                "title" : "JSONDecoder",
-                "type" : "extension"
-              },
-              {
-                "children" : [
-                  {
-                    "title" : "Instance Properties",
-                    "type" : "groupMarker"
-                  },
-                  {
-                    "path" : "\/documentation\/semver\/foundation\/jsonencoder\/semverversionencodingstrategy",
-                    "title" : "var semverVersionEncodingStrategy: Version.EncodingStrategy",
-                    "type" : "property"
-                  }
-                ],
-                "path" : "\/documentation\/semver\/foundation\/jsonencoder",
-                "title" : "JSONEncoder",
-                "type" : "extension"
-              },
-              {
-                "children" : [
-                  {
-                    "title" : "Instance Properties",
-                    "type" : "groupMarker"
-                  },
-                  {
-                    "path" : "\/documentation\/semver\/foundation\/propertylistdecoder\/semverversiondecodingstrategy",
-                    "title" : "var semverVersionDecodingStrategy: Version.DecodingStrategy",
-                    "type" : "property"
-                  }
-                ],
-                "path" : "\/documentation\/semver\/foundation\/propertylistdecoder",
-                "title" : "PropertyListDecoder",
-                "type" : "extension"
-              },
-              {
-                "children" : [
-                  {
-                    "title" : "Instance Properties",
-                    "type" : "groupMarker"
-                  },
-                  {
-                    "path" : "\/documentation\/semver\/foundation\/propertylistencoder\/semverversionencodingstrategy",
-                    "title" : "var semverVersionEncodingStrategy: Version.EncodingStrategy",
-                    "type" : "property"
-                  }
-                ],
-                "path" : "\/documentation\/semver\/foundation\/propertylistencoder",
-                "title" : "PropertyListEncoder",
-                "type" : "extension"
-              },
-              {
                 "title" : "Extended Structures",
                 "type" : "groupMarker"
               },
@@ -969,6 +904,81 @@
             ],
             "path" : "\/documentation\/semver\/foundation",
             "title" : "Foundation",
+            "type" : "extension"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Extended Classes",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/semver\/foundationessentials\/jsondecoder\/semverversiondecodingstrategy",
+                    "title" : "var semverVersionDecodingStrategy: Version.DecodingStrategy",
+                    "type" : "property"
+                  }
+                ],
+                "path" : "\/documentation\/semver\/foundationessentials\/jsondecoder",
+                "title" : "JSONDecoder",
+                "type" : "extension"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/semver\/foundationessentials\/jsonencoder\/semverversionencodingstrategy",
+                    "title" : "var semverVersionEncodingStrategy: Version.EncodingStrategy",
+                    "type" : "property"
+                  }
+                ],
+                "path" : "\/documentation\/semver\/foundationessentials\/jsonencoder",
+                "title" : "JSONEncoder",
+                "type" : "extension"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/semver\/foundationessentials\/propertylistdecoder\/semverversiondecodingstrategy",
+                    "title" : "var semverVersionDecodingStrategy: Version.DecodingStrategy",
+                    "type" : "property"
+                  }
+                ],
+                "path" : "\/documentation\/semver\/foundationessentials\/propertylistdecoder",
+                "title" : "PropertyListDecoder",
+                "type" : "extension"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/semver\/foundationessentials\/propertylistencoder\/semverversionencodingstrategy",
+                    "title" : "var semverVersionEncodingStrategy: Version.EncodingStrategy",
+                    "type" : "property"
+                  }
+                ],
+                "path" : "\/documentation\/semver\/foundationessentials\/propertylistencoder",
+                "title" : "PropertyListEncoder",
+                "type" : "extension"
+              }
+            ],
+            "path" : "\/documentation\/semver\/foundationessentials",
+            "title" : "FoundationEssentials",
             "type" : "extension"
           },
           {
@@ -1013,6 +1023,6 @@
   "schemaVersion" : {
     "major" : 0,
     "minor" : 1,
-    "patch" : 1
+    "patch" : 2
   }
 }

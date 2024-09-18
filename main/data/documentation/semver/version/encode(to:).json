@@ -60,6 +60,10 @@
         "name" : "SemVer"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "Version+Codable.swift",
+      "url" : "https:\/\/github.com\/sersoft-gmbh\/semver\/Sources\/SemVer\/Version+Codable.swift#L99"
+    },
     "role" : "symbol",
     "roleHeading" : "Instance Method",
     "symbolKind" : "method",

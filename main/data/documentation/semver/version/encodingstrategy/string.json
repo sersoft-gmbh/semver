@@ -74,6 +74,10 @@
         "name" : "SemVer"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "Version+Codable.swift",
+      "url" : "https:\/\/github.com\/sersoft-gmbh\/semver\/Sources\/SemVer\/Version+Codable.swift#L40"
+    },
     "role" : "symbol",
     "roleHeading" : "Type Property",
     "symbolKind" : "property",

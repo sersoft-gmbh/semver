@@ -57,6 +57,10 @@
         "name" : "SemVer"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "Version+PrereleaseIdentifier.swift",
+      "url" : "https:\/\/github.com\/sersoft-gmbh\/semver\/Sources\/SemVer\/Version+PrereleaseIdentifier.swift#L23"
+    },
     "role" : "symbol",
     "roleHeading" : "Instance Property",
     "symbolKind" : "property",

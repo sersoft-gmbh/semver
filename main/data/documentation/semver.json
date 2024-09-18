@@ -33,14 +33,19 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Structures",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SemVer\/documentation\/SemVer\/Version"
       ],
       "title" : "Structures"
     },
     {
+      "anchor" : "Extended-Modules",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SemVer\/documentation\/SemVer\/Foundation",
+        "doc:\/\/SemVer\/documentation\/SemVer\/FoundationEssentials",
         "doc:\/\/SemVer\/documentation\/SemVer\/Swift"
       ],
       "title" : "Extended Modules"
@@ -81,6 +86,17 @@
   "title" : "Foundation",
   "type" : "topic",
   "url" : "\/documentation\/semver\/foundation"
+},
+"doc://SemVer/documentation/SemVer/FoundationEssentials": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/FoundationEssentials",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "FoundationEssentials",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/foundationessentials"
 },
 "doc://SemVer/documentation/SemVer/Swift": {
   "abstract" : [

@@ -12,7 +12,7 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:m:s:e:s:10Foundation11JSONDecoderC6SemVerE29semverVersionDecodingStrategyAD0F0V0gH0Ovp",
+    "externalID" : "s:m:s:e:s:10Foundation12CharacterSetV6SemVerE20versionSuffixAllowedACvpZ",
     "modules" : [
       {
         "name" : "SemVer"
@@ -33,15 +33,8 @@
   ],
   "topicSections" : [
     {
-      "identifiers" : [
-        "doc:\/\/SemVer\/documentation\/SemVer\/Foundation\/JSONDecoder",
-        "doc:\/\/SemVer\/documentation\/SemVer\/Foundation\/JSONEncoder",
-        "doc:\/\/SemVer\/documentation\/SemVer\/Foundation\/PropertyListDecoder",
-        "doc:\/\/SemVer\/documentation\/SemVer\/Foundation\/PropertyListEncoder"
-      ],
-      "title" : "Extended Classes"
-    },
-    {
+      "anchor" : "Extended-Structures",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SemVer\/documentation\/SemVer\/Foundation\/CharacterSet"
       ],
@@ -115,134 +108,6 @@
   "title" : "CharacterSet",
   "type" : "topic",
   "url" : "\/documentation\/semver\/foundation\/characterset"
-},
-"doc://SemVer/documentation/SemVer/Foundation/JSONDecoder": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "extension"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "preciseIdentifier" : "s:10Foundation11JSONDecoderC",
-      "text" : "JSONDecoder"
-    }
-  ],
-  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Foundation\/JSONDecoder",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "JSONDecoder"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "JSONDecoder",
-  "type" : "topic",
-  "url" : "\/documentation\/semver\/foundation\/jsondecoder"
-},
-"doc://SemVer/documentation/SemVer/Foundation/JSONEncoder": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "extension"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "preciseIdentifier" : "s:10Foundation11JSONEncoderC",
-      "text" : "JSONEncoder"
-    }
-  ],
-  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Foundation\/JSONEncoder",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "JSONEncoder"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "JSONEncoder",
-  "type" : "topic",
-  "url" : "\/documentation\/semver\/foundation\/jsonencoder"
-},
-"doc://SemVer/documentation/SemVer/Foundation/PropertyListDecoder": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "extension"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "preciseIdentifier" : "s:10Foundation19PropertyListDecoderC",
-      "text" : "PropertyListDecoder"
-    }
-  ],
-  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Foundation\/PropertyListDecoder",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "PropertyListDecoder"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "PropertyListDecoder",
-  "type" : "topic",
-  "url" : "\/documentation\/semver\/foundation\/propertylistdecoder"
-},
-"doc://SemVer/documentation/SemVer/Foundation/PropertyListEncoder": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "extension"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "preciseIdentifier" : "s:10Foundation19PropertyListEncoderC",
-      "text" : "PropertyListEncoder"
-    }
-  ],
-  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Foundation\/PropertyListEncoder",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "PropertyListEncoder"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "PropertyListEncoder",
-  "type" : "topic",
-  "url" : "\/documentation\/semver\/foundation\/propertylistencoder"
 }
 }
 }

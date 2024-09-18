@@ -69,6 +69,10 @@
         "name" : "SemVer"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "Version+PrereleaseIdentifier.swift",
+      "url" : "https:\/\/github.com\/sersoft-gmbh\/semver\/Sources\/SemVer\/Version+PrereleaseIdentifier.swift#L58"
+    },
     "role" : "symbol",
     "roleHeading" : "Initializer",
     "symbolKind" : "init",

@@ -44,6 +44,10 @@
         "text" : "Version"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "Version.swift",
+      "url" : "https:\/\/github.com\/sersoft-gmbh\/semver\/Sources\/SemVer\/Version.swift#L21"
+    },
     "role" : "symbol",
     "roleHeading" : "Structure",
     "symbolKind" : "struct",
@@ -114,6 +118,7 @@
     {
       "identifiers" : [
         "doc:\/\/SemVer\/SL",
+        "doc:\/\/SemVer\/s8CopyableP",
         "doc:\/\/SemVer\/s28CustomDebugStringConvertibleP",
         "doc:\/\/SemVer\/s23CustomStringConvertibleP",
         "doc:\/\/SemVer\/Se",
@@ -138,6 +143,8 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Structures",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions",
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier"
@@ -145,6 +152,8 @@
       "title" : "Structures"
     },
     {
+      "anchor" : "Initializers",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/init(_:)",
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/init(major:minor:patch:prerelease:metadata:)-3lz2i",
@@ -155,6 +164,8 @@
       "title" : "Initializers"
     },
     {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/debugDescription",
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/description",
@@ -167,6 +178,8 @@
       "title" : "Instance Properties"
     },
     {
+      "anchor" : "Instance-Methods",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/hash(into:)",
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/increase(_:keepingPrerelease:keepingMetadata:)",
@@ -177,6 +190,8 @@
       "title" : "Instance Methods"
     },
     {
+      "anchor" : "Enumerations",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/DecodingStrategy",
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/EncodingStrategy",
@@ -185,6 +200,7 @@
       "title" : "Enumerations"
     },
     {
+      "anchor" : "Default-Implementations",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/Comparable-Implementations",
@@ -1809,6 +1825,11 @@
 "doc://SemVer/s28CustomDebugStringConvertibleP": {
   "identifier" : "doc:\/\/SemVer\/s28CustomDebugStringConvertibleP",
   "title" : "Swift.CustomDebugStringConvertible",
+  "type" : "unresolvable"
+},
+"doc://SemVer/s8CopyableP": {
+  "identifier" : "doc:\/\/SemVer\/s8CopyableP",
+  "title" : "Swift.Copyable",
   "type" : "unresolvable"
 },
 "doc://SemVer/s8SendableP": {

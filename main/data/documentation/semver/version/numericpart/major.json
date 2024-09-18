@@ -40,6 +40,10 @@
         "name" : "SemVer"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "Version+Adjustments.swift",
+      "url" : "https:\/\/github.com\/sersoft-gmbh\/semver\/Sources\/SemVer\/Version+Adjustments.swift#L5"
+    },
     "role" : "symbol",
     "roleHeading" : "Case",
     "symbolKind" : "case",

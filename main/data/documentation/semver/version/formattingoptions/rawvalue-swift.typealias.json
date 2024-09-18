@@ -40,6 +40,10 @@
         "text" : "RawValue"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "Version+FormattingOptions.swift",
+      "url" : "https:\/\/github.com\/sersoft-gmbh\/semver\/Sources\/SemVer\/Version+FormattingOptions.swift#L5"
+    },
     "role" : "symbol",
     "roleHeading" : "Type Alias",
     "symbolKind" : "typealias",

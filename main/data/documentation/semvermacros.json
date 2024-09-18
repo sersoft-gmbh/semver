@@ -33,6 +33,8 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Macros",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SemVerMacros\/documentation\/SemVerMacros\/version(_:)"
       ],

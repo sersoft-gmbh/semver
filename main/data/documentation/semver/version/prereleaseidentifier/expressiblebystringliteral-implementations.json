@@ -33,6 +33,7 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Initializers",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/init(stringLiteral:)"
@@ -40,6 +41,7 @@
       "title" : "Initializers"
     },
     {
+      "anchor" : "Type-Aliases",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/StringLiteralType"

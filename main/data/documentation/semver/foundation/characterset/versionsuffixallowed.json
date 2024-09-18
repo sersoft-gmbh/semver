@@ -96,6 +96,10 @@
         ]
       }
     ],
+    "remoteSource" : {
+      "fileName" : "Version.swift",
+      "url" : "https:\/\/github.com\/sersoft-gmbh\/semver\/Sources\/SemVer\/Version.swift#L15"
+    },
     "role" : "symbol",
     "roleHeading" : "Type Property",
     "symbolKind" : "property",
@@ -112,14 +116,6 @@
             "Linux"
           ],
           "tokens" : [
-            {
-              "kind" : "attribute",
-              "text" : "nonisolated"
-            },
-            {
-              "kind" : "text",
-              "text" : "(unsafe) "
-            },
             {
               "kind" : "keyword",
               "text" : "static"
