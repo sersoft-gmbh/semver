@@ -20,11 +20,11 @@ where T1: Equatable, T2: Equatable, T3: Equatable, T4: Equatable, T5: Equatable
 }
 
 #if !canImport(Darwin)
-public protocol XCTActivity: NSObjectProtocol {
+protocol XCTActivity: NSObjectProtocol {
     var name: String { get }
 }
 
-open class XCTContext: NSObject {
+class XCTContext: NSObject {
     private final class _Activity: NSObject, XCTActivity {
         let name: String
 
@@ -35,7 +35,7 @@ open class XCTContext: NSObject {
 
     @MainActor
     @preconcurrency
-    public class func runActivity<Result>(
+    class func runActivity<Result>(
         named name: String,
         block: @MainActor (any XCTActivity) throws -> Result
     ) rethrows -> Result {
