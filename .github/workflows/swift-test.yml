@@ -12,7 +12,7 @@ permissions:
 jobs:
   variables:
     outputs:
-      max-supported-swift-version: '5.10' # TODO: Use 6.0 once available
+      max-supported-swift-version: '6.0'
       xcode-scheme: semver-Package
       xcode-platform-version: latest
       fail-if-codecov-fails: 'true'
@@ -25,7 +25,7 @@ jobs:
     strategy:
       matrix:
         os: [ macOS, ubuntu ]
-        swift-version-offset: [ 0, 1 ] # TODO: [ 0, 1, 2 ]
+        swift-version-offset: [ 0, 1, 2 ]
     uses: sersoft-gmbh/oss-common-actions/.github/workflows/swift-test-spm.yml@main
     with:
       os: ${{ matrix.os }}
@@ -45,13 +45,12 @@ jobs:
           - iPadOS
           - tvOS
           - watchOS
-        swift-version-offset: [ 0, 1 ] # TODO: [ 0, 1, 2 ]
+        swift-version-offset: [ 0, 1, 2 ]
         include:
           - platform: visionOS
             swift-version-offset: 0
-          # TODO:
-          # - platform: visionOS
-          #   swift-version-offset: 1
+          - platform: visionOS
+            swift-version-offset: 1
     uses: sersoft-gmbh/oss-common-actions/.github/workflows/swift-test-xcode.yml@main
     with:
       xcode-scheme: ${{ needs.variables.outputs.xcode-scheme }}
