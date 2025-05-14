@@ -10,8 +10,7 @@
       [
         "doc:\/\/SemVer\/documentation\/SemVer",
         "doc:\/\/SemVer\/documentation\/SemVer\/Version",
-        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions",
-        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions\/Equatable-Implementations"
+        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions"
       ]
     ]
   },
@@ -464,17 +463,6 @@
   "title" : "!=(_:_:)",
   "type" : "topic",
   "url" : "\/documentation\/semver\/version\/formattingoptions\/!=(_:_:)"
-},
-"doc://SemVer/documentation/SemVer/Version/FormattingOptions/Equatable-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions\/Equatable-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Equatable Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/semver\/version\/formattingoptions\/equatable-implementations"
 }
 }
 }

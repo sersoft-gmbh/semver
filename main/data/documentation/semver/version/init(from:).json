@@ -3,8 +3,7 @@
     "paths" : [
       [
         "doc:\/\/SemVer\/documentation\/SemVer",
-        "doc:\/\/SemVer\/documentation\/SemVer\/Version",
-        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/Decodable-Implementations"
+        "doc:\/\/SemVer\/documentation\/SemVer\/Version"
       ]
     ]
   },
@@ -181,17 +180,6 @@
   "title" : "Version",
   "type" : "topic",
   "url" : "\/documentation\/semver\/version"
-},
-"doc://SemVer/documentation/SemVer/Version/Decodable-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/Decodable-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Decodable Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/semver\/version\/decodable-implementations"
 },
 "doc://SemVer/documentation/SemVer/Version/init(from:)": {
   "abstract" : [

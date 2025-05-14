@@ -10,8 +10,7 @@
       [
         "doc:\/\/SemVer\/documentation\/SemVer",
         "doc:\/\/SemVer\/documentation\/SemVer\/Version",
-        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/NumericPart",
-        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/NumericPart\/Equatable-Implementations"
+        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/NumericPart"
       ]
     ]
   },
@@ -464,17 +463,6 @@
   "title" : "!=(_:_:)",
   "type" : "topic",
   "url" : "\/documentation\/semver\/version\/numericpart\/!=(_:_:)"
-},
-"doc://SemVer/documentation/SemVer/Version/NumericPart/Equatable-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/NumericPart\/Equatable-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Equatable Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/semver\/version\/numericpart\/equatable-implementations"
 }
 }
 }

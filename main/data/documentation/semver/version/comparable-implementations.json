@@ -40,8 +40,8 @@
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/...(_:_:)",
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/.._(_:)",
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/.._(_:_:)",
+        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/_(_:_:)",
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/_(_:_:)-53xj6",
-        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/_(_:_:)-6aloy",
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/_=(_:_:)-6z215",
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/_=(_:_:)-7km7s"
       ],
@@ -476,6 +476,70 @@
   "type" : "topic",
   "url" : "\/documentation\/semver\/version\/'.._(_:_:)"
 },
+"doc://SemVer/documentation/SemVer/Version/_(_:_:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "<"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6SemVer7VersionV",
+      "text" : "Version"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6SemVer7VersionV",
+      "text" : "Version"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/_(_:_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "<(_:_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version\/_(_:_:)"
+},
 "doc://SemVer/documentation/SemVer/Version/_(_:_:)-53xj6": {
   "abstract" : [
     {
@@ -548,70 +612,6 @@
   "title" : ">(_:_:)",
   "type" : "topic",
   "url" : "\/documentation\/semver\/version\/_(_:_:)-53xj6"
-},
-"doc://SemVer/documentation/SemVer/Version/_(_:_:)-6aloy": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "static"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "<"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:6SemVer7VersionV",
-      "text" : "Version"
-    },
-    {
-      "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:6SemVer7VersionV",
-      "text" : "Version"
-    },
-    {
-      "kind" : "text",
-      "text" : ") -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:Sb",
-      "text" : "Bool"
-    }
-  ],
-  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/_(_:_:)-6aloy",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "<(_:_:)",
-  "type" : "topic",
-  "url" : "\/documentation\/semver\/version\/_(_:_:)-6aloy"
 },
 "doc://SemVer/documentation/SemVer/Version/_=(_:_:)-6z215": {
   "abstract" : [

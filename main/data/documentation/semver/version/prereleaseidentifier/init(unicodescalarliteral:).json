@@ -4,8 +4,7 @@
       [
         "doc:\/\/SemVer\/documentation\/SemVer",
         "doc:\/\/SemVer\/documentation\/SemVer\/Version",
-        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier",
-        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/ExpressibleByUnicodeScalarLiteral-Implementations"
+        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier"
       ]
     ]
   },
@@ -255,17 +254,6 @@
   "title" : "Version.PrereleaseIdentifier",
   "type" : "topic",
   "url" : "\/documentation\/semver\/version\/prereleaseidentifier"
-},
-"doc://SemVer/documentation/SemVer/Version/PrereleaseIdentifier/ExpressibleByUnicodeScalarLiteral-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/ExpressibleByUnicodeScalarLiteral-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "ExpressibleByUnicodeScalarLiteral Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/semver\/version\/prereleaseidentifier\/expressiblebyunicodescalarliteral-implementations"
 },
 "doc://SemVer/documentation/SemVer/Version/PrereleaseIdentifier/init(unicodeScalarLiteral:)": {
   "abstract" : [

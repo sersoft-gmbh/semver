@@ -3,18 +3,18 @@
     "paths" : [
       [
         "doc:\/\/SemVer\/documentation\/SemVer",
-        "doc:\/\/SemVer\/documentation\/SemVer\/Version",
-        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier"
+        "doc:\/\/SemVer\/documentation\/SemVer\/Version"
       ]
     ]
   },
   "identifier" : {
     "interfaceLanguage" : "swift",
-    "url" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/_(_:_:)-5r1ns"
+    "url" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/_(_:_:)"
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:6SemVer7VersionV20PrereleaseIdentifierV1loiySbAE_AEtFZ",
+    "extendedModule" : "SemVer",
+    "externalID" : "s:6SemVer7VersionV1loiySbAC_ACtFZ",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -51,30 +51,12 @@
       },
       {
         "kind" : "text",
-        "text" : "."
-      },
-      {
-        "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:6SemVer7VersionV20PrereleaseIdentifierV",
-        "text" : "PrereleaseIdentifier"
-      },
-      {
-        "kind" : "text",
         "text" : ", "
       },
       {
         "kind" : "typeIdentifier",
         "preciseIdentifier" : "s:6SemVer7VersionV",
         "text" : "Version"
-      },
-      {
-        "kind" : "text",
-        "text" : "."
-      },
-      {
-        "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:6SemVer7VersionV20PrereleaseIdentifierV",
-        "text" : "PrereleaseIdentifier"
       },
       {
         "kind" : "text",
@@ -92,8 +74,8 @@
       }
     ],
     "remoteSource" : {
-      "fileName" : "Version+PrereleaseIdentifier.swift",
-      "url" : "https:\/\/github.com\/sersoft-gmbh\/semver\/Sources\/SemVer\/Version+PrereleaseIdentifier.swift#L90"
+      "fileName" : "Version.swift",
+      "url" : "https:\/\/github.com\/sersoft-gmbh\/semver\/Sources\/SemVer\/Version.swift#L180"
     },
     "role" : "symbol",
     "roleHeading" : "Operator",
@@ -155,16 +137,6 @@
             },
             {
               "kind" : "text",
-              "text" : "."
-            },
-            {
-              "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:6SemVer7VersionV20PrereleaseIdentifierV",
-              "text" : "PrereleaseIdentifier"
-            },
-            {
-              "kind" : "text",
               "text" : ", "
             },
             {
@@ -180,16 +152,6 @@
               "kind" : "typeIdentifier",
               "preciseIdentifier" : "s:6SemVer7VersionV",
               "text" : "Version"
-            },
-            {
-              "kind" : "text",
-              "text" : "."
-            },
-            {
-              "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:6SemVer7VersionV20PrereleaseIdentifierV",
-              "text" : "PrereleaseIdentifier"
             },
             {
               "kind" : "text",
@@ -217,7 +179,7 @@
   "variants" : [
     {
       "paths" : [
-        "\/documentation\/semver\/version\/prereleaseidentifier\/_(_:_:)-5r1ns"
+        "\/documentation\/semver\/version\/_(_:_:)"
       ],
       "traits" : [
         {
@@ -273,41 +235,7 @@
   "type" : "topic",
   "url" : "\/documentation\/semver\/version"
 },
-"doc://SemVer/documentation/SemVer/Version/PrereleaseIdentifier": {
-  "abstract" : [
-    {
-      "text" : "Represents a prerelease identifier of a version.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "struct"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "PrereleaseIdentifier"
-    }
-  ],
-  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "PrereleaseIdentifier"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "Version.PrereleaseIdentifier",
-  "type" : "topic",
-  "url" : "\/documentation\/semver\/version\/prereleaseidentifier"
-},
-"doc://SemVer/documentation/SemVer/Version/PrereleaseIdentifier/_(_:_:)-5r1ns": {
+"doc://SemVer/documentation/SemVer/Version/_(_:_:)": {
   "abstract" : [
 
   ],
@@ -347,30 +275,12 @@
     },
     {
       "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:6SemVer7VersionV20PrereleaseIdentifierV",
-      "text" : "PrereleaseIdentifier"
-    },
-    {
-      "kind" : "text",
       "text" : ", "
     },
     {
       "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:6SemVer7VersionV",
       "text" : "Version"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:6SemVer7VersionV20PrereleaseIdentifierV",
-      "text" : "PrereleaseIdentifier"
     },
     {
       "kind" : "text",
@@ -382,12 +292,12 @@
       "text" : "Bool"
     }
   ],
-  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/_(_:_:)-5r1ns",
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/_(_:_:)",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : "<(_:_:)",
   "type" : "topic",
-  "url" : "\/documentation\/semver\/version\/prereleaseidentifier\/_(_:_:)-5r1ns"
+  "url" : "\/documentation\/semver\/version\/_(_:_:)"
 }
 }
 }

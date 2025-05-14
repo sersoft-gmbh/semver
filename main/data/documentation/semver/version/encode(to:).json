@@ -3,8 +3,7 @@
     "paths" : [
       [
         "doc:\/\/SemVer\/documentation\/SemVer",
-        "doc:\/\/SemVer\/documentation\/SemVer\/Version",
-        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/Encodable-Implementations"
+        "doc:\/\/SemVer\/documentation\/SemVer\/Version"
       ]
     ]
   },
@@ -197,17 +196,6 @@
   "title" : "Version",
   "type" : "topic",
   "url" : "\/documentation\/semver\/version"
-},
-"doc://SemVer/documentation/SemVer/Version/Encodable-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/Encodable-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Encodable Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/semver\/version\/encodable-implementations"
 },
 "doc://SemVer/documentation/SemVer/Version/encode(to:)": {
   "abstract" : [

@@ -4,8 +4,7 @@
       [
         "doc:\/\/SemVer\/documentation\/SemVer",
         "doc:\/\/SemVer\/documentation\/SemVer\/Version",
-        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions",
-        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions\/RawRepresentable-Implementations"
+        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions"
       ]
     ]
   },
@@ -287,17 +286,6 @@
   "title" : "Version.FormattingOptions",
   "type" : "topic",
   "url" : "\/documentation\/semver\/version\/formattingoptions"
-},
-"doc://SemVer/documentation/SemVer/Version/FormattingOptions/RawRepresentable-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions\/RawRepresentable-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "RawRepresentable Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/semver\/version\/formattingoptions\/rawrepresentable-implementations"
 },
 "doc://SemVer/documentation/SemVer/Version/FormattingOptions/hash(into:)": {
   "abstract" : [

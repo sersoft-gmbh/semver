@@ -275,7 +275,7 @@
                     "type" : "groupMarker"
                   },
                   {
-                    "path" : "\/documentation\/semver\/version\/prereleaseidentifier\/_(_:_:)-5r1ns",
+                    "path" : "\/documentation\/semver\/version\/prereleaseidentifier\/_(_:_:)",
                     "title" : "static func < (Version.PrereleaseIdentifier, Version.PrereleaseIdentifier) -> Bool",
                     "type" : "op"
                   },
@@ -446,8 +446,8 @@
                         "type" : "groupMarker"
                       },
                       {
-                        "path" : "\/documentation\/semver\/version\/prereleaseidentifier\/init(extendedgraphemeclusterliteral:)",
-                        "title" : "init(extendedGraphemeClusterLiteral: Self.StringLiteralType)",
+                        "path" : "\/documentation\/semver\/version\/prereleaseidentifier\/init(unicodescalarliteral:)",
+                        "title" : "init(unicodeScalarLiteral: Self.ExtendedGraphemeClusterLiteralType)",
                         "type" : "init"
                       }
                     ],
@@ -487,6 +487,11 @@
                         "type" : "groupMarker"
                       },
                       {
+                        "path" : "\/documentation\/semver\/version\/prereleaseidentifier\/init(extendedgraphemeclusterliteral:)",
+                        "title" : "init(extendedGraphemeClusterLiteral: Self.StringLiteralType)",
+                        "type" : "init"
+                      },
+                      {
                         "path" : "\/documentation\/semver\/version\/prereleaseidentifier\/init(stringliteral:)",
                         "title" : "init(stringLiteral: Version.PrereleaseIdentifier.StringLiteralType)",
                         "type" : "init"
@@ -503,22 +508,6 @@
                     ],
                     "path" : "\/documentation\/semver\/version\/prereleaseidentifier\/expressiblebystringliteral-implementations",
                     "title" : "ExpressibleByStringLiteral Implementations",
-                    "type" : "symbol"
-                  },
-                  {
-                    "children" : [
-                      {
-                        "title" : "Initializers",
-                        "type" : "groupMarker"
-                      },
-                      {
-                        "path" : "\/documentation\/semver\/version\/prereleaseidentifier\/init(unicodescalarliteral:)",
-                        "title" : "init(unicodeScalarLiteral: Self.ExtendedGraphemeClusterLiteralType)",
-                        "type" : "init"
-                      }
-                    ],
-                    "path" : "\/documentation\/semver\/version\/prereleaseidentifier\/expressiblebyunicodescalarliteral-implementations",
-                    "title" : "ExpressibleByUnicodeScalarLiteral Implementations",
                     "type" : "symbol"
                   }
                 ],
@@ -793,13 +782,13 @@
                     "type" : "op"
                   },
                   {
-                    "path" : "\/documentation\/semver\/version\/_(_:_:)-53xj6",
-                    "title" : "static func > (Self, Self) -> Bool",
+                    "path" : "\/documentation\/semver\/version\/_(_:_:)",
+                    "title" : "static func < (Version, Version) -> Bool",
                     "type" : "op"
                   },
                   {
-                    "path" : "\/documentation\/semver\/version\/_(_:_:)-6aloy",
-                    "title" : "static func < (Version, Version) -> Bool",
+                    "path" : "\/documentation\/semver\/version\/_(_:_:)-53xj6",
+                    "title" : "static func > (Self, Self) -> Bool",
                     "type" : "op"
                   },
                   {

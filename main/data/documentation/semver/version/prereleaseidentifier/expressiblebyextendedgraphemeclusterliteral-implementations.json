@@ -36,7 +36,7 @@
       "anchor" : "Initializers",
       "generated" : true,
       "identifiers" : [
-        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/init(extendedGraphemeClusterLiteral:)"
+        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/init(unicodeScalarLiteral:)"
       ],
       "title" : "Initializers"
     }
@@ -134,7 +134,7 @@
   "type" : "topic",
   "url" : "\/documentation\/semver\/version\/prereleaseidentifier"
 },
-"doc://SemVer/documentation/SemVer/Version/PrereleaseIdentifier/init(extendedGraphemeClusterLiteral:)": {
+"doc://SemVer/documentation/SemVer/Version/PrereleaseIdentifier/init(unicodeScalarLiteral:)": {
   "abstract" : [
 
   ],
@@ -161,7 +161,7 @@
         "type" : "text"
       },
       {
-        "code" : "Self.StringLiteralType",
+        "code" : "Self.UnicodeScalarLiteralType",
         "type" : "codeVoice"
       },
       {
@@ -181,7 +181,7 @@
     },
     {
       "kind" : "externalParam",
-      "text" : "extendedGraphemeClusterLiteral"
+      "text" : "unicodeScalarLiteral"
     },
     {
       "kind" : "text",
@@ -197,20 +197,20 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:s26ExpressibleByStringLiteralP0cD4TypeQa",
-      "text" : "StringLiteralType"
+      "preciseIdentifier" : "s:s43ExpressibleByExtendedGraphemeClusterLiteralP0cdeF4TypeQa",
+      "text" : "ExtendedGraphemeClusterLiteralType"
     },
     {
       "kind" : "text",
       "text" : ")"
     }
   ],
-  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/init(extendedGraphemeClusterLiteral:)",
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/init(unicodeScalarLiteral:)",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "init(extendedGraphemeClusterLiteral:)",
+  "title" : "init(unicodeScalarLiteral:)",
   "type" : "topic",
-  "url" : "\/documentation\/semver\/version\/prereleaseidentifier\/init(extendedgraphemeclusterliteral:)"
+  "url" : "\/documentation\/semver\/version\/prereleaseidentifier\/init(unicodescalarliteral:)"
 }
 }
 }

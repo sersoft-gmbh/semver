@@ -10,8 +10,7 @@
       [
         "doc:\/\/SemVer\/documentation\/SemVer",
         "doc:\/\/SemVer\/documentation\/SemVer\/Version",
-        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions",
-        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions\/OptionSet-Implementations"
+        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions"
       ]
     ]
   },
@@ -550,17 +549,6 @@
   "title" : "Version.FormattingOptions",
   "type" : "topic",
   "url" : "\/documentation\/semver\/version\/formattingoptions"
-},
-"doc://SemVer/documentation/SemVer/Version/FormattingOptions/OptionSet-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions\/OptionSet-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "OptionSet Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/semver\/version\/formattingoptions\/optionset-implementations"
 },
 "doc://SemVer/documentation/SemVer/Version/FormattingOptions/insert(_:)": {
   "abstract" : [

@@ -10,8 +10,7 @@
       [
         "doc:\/\/SemVer\/documentation\/SemVer",
         "doc:\/\/SemVer\/documentation\/SemVer\/Version",
-        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions",
-        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions\/SetAlgebra-Implementations"
+        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions"
       ]
     ]
   },
@@ -352,17 +351,6 @@
   "title" : "Version.FormattingOptions",
   "type" : "topic",
   "url" : "\/documentation\/semver\/version\/formattingoptions"
-},
-"doc://SemVer/documentation/SemVer/Version/FormattingOptions/SetAlgebra-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions\/SetAlgebra-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "SetAlgebra Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/semver\/version\/formattingoptions\/setalgebra-implementations"
 },
 "doc://SemVer/documentation/SemVer/Version/FormattingOptions/init(arrayLiteral:)": {
   "abstract" : [

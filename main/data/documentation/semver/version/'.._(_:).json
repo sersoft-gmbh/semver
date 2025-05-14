@@ -9,8 +9,7 @@
     "paths" : [
       [
         "doc:\/\/SemVer\/documentation\/SemVer",
-        "doc:\/\/SemVer\/documentation\/SemVer\/Version",
-        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/Comparable-Implementations"
+        "doc:\/\/SemVer\/documentation\/SemVer\/Version"
       ]
     ]
   },
@@ -467,17 +466,6 @@
   "title" : "..<(_:)",
   "type" : "topic",
   "url" : "\/documentation\/semver\/version\/'.._(_:)"
-},
-"doc://SemVer/documentation/SemVer/Version/Comparable-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/Comparable-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Comparable Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/semver\/version\/comparable-implementations"
 }
 }
 }

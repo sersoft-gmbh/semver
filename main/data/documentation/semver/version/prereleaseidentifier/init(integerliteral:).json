@@ -4,8 +4,7 @@
       [
         "doc:\/\/SemVer\/documentation\/SemVer",
         "doc:\/\/SemVer\/documentation\/SemVer\/Version",
-        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier",
-        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/ExpressibleByIntegerLiteral-Implementations"
+        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier"
       ]
     ]
   },
@@ -247,17 +246,6 @@
   "title" : "Version.PrereleaseIdentifier",
   "type" : "topic",
   "url" : "\/documentation\/semver\/version\/prereleaseidentifier"
-},
-"doc://SemVer/documentation/SemVer/Version/PrereleaseIdentifier/ExpressibleByIntegerLiteral-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/ExpressibleByIntegerLiteral-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "ExpressibleByIntegerLiteral Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/semver\/version\/prereleaseidentifier\/expressiblebyintegerliteral-implementations"
 },
 "doc://SemVer/documentation/SemVer/Version/PrereleaseIdentifier/IntegerLiteralType": {
   "abstract" : [
