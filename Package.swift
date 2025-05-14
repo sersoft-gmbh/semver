@@ -8,7 +8,6 @@ let swiftSettings: Array<SwiftSetting> = [
     .swiftLanguageMode(.v6),
     .enableUpcomingFeature("ExistentialAny"),
     .enableUpcomingFeature("InternalImportsByDefault"),
-    .enableExperimentalFeature("GlobalConcurrency"),
 ]
 
 let package = Package(
