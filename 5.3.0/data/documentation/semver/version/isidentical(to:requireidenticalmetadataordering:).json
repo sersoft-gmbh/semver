@@ -94,7 +94,7 @@
     ],
     "remoteSource" : {
       "fileName" : "Version.swift",
-      "url" : "https:\/\/github.com\/sersoft-gmbh\/semver\/Sources\/SemVer\/Version.swift#L167"
+      "url" : "https:\/\/github.com\/sersoft-gmbh\/semver\/blob\/refs\/tags\/5.3.0\/Sources\/SemVer\/Version.swift#L167"
     },
     "role" : "symbol",
     "roleHeading" : "Instance Method",

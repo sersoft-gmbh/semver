@@ -61,7 +61,7 @@
     ],
     "remoteSource" : {
       "fileName" : "Version+Codable.swift",
-      "url" : "https:\/\/github.com\/sersoft-gmbh\/semver\/Sources\/SemVer\/Version+Codable.swift#L99"
+      "url" : "https:\/\/github.com\/sersoft-gmbh\/semver\/blob\/refs\/tags\/5.3.0\/Sources\/SemVer\/Version+Codable.swift#L99"
     },
     "role" : "symbol",
     "roleHeading" : "Instance Method",
