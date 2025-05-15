@@ -1,0 +1,212 @@
+{
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/SemVer\/documentation\/SemVer"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/SemVer\/documentation\/SemVer\/FoundationEssentials"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:m:s:e:s:20FoundationEssentials11JSONDecoderC6SemVerE29semverVersionDecodingStrategyAD0G0V0hI0Ovp",
+    "modules" : [
+      {
+        "name" : "SemVer"
+      }
+    ],
+    "role" : "collection",
+    "roleHeading" : "Extended Module",
+    "symbolKind" : "extension",
+    "title" : "FoundationEssentials"
+  },
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "anchor" : "Extended-Classes",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/SemVer\/documentation\/SemVer\/FoundationEssentials\/JSONDecoder",
+        "doc:\/\/SemVer\/documentation\/SemVer\/FoundationEssentials\/JSONEncoder",
+        "doc:\/\/SemVer\/documentation\/SemVer\/FoundationEssentials\/PropertyListDecoder",
+        "doc:\/\/SemVer\/documentation\/SemVer\/FoundationEssentials\/PropertyListEncoder"
+      ],
+      "title" : "Extended Classes"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/semver\/foundationessentials"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://SemVer/documentation/SemVer": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "SemVer",
+  "type" : "topic",
+  "url" : "\/documentation\/semver"
+},
+"doc://SemVer/documentation/SemVer/FoundationEssentials": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/FoundationEssentials",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "FoundationEssentials",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/foundationessentials"
+},
+"doc://SemVer/documentation/SemVer/FoundationEssentials/JSONDecoder": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "extension"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "preciseIdentifier" : "s:20FoundationEssentials11JSONDecoderC",
+      "text" : "JSONDecoder"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/FoundationEssentials\/JSONDecoder",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "JSONDecoder"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "JSONDecoder",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/foundationessentials\/jsondecoder"
+},
+"doc://SemVer/documentation/SemVer/FoundationEssentials/JSONEncoder": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "extension"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "preciseIdentifier" : "s:20FoundationEssentials11JSONEncoderC",
+      "text" : "JSONEncoder"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/FoundationEssentials\/JSONEncoder",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "JSONEncoder"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "JSONEncoder",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/foundationessentials\/jsonencoder"
+},
+"doc://SemVer/documentation/SemVer/FoundationEssentials/PropertyListDecoder": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "extension"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "preciseIdentifier" : "s:20FoundationEssentials19PropertyListDecoderC",
+      "text" : "PropertyListDecoder"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/FoundationEssentials\/PropertyListDecoder",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "PropertyListDecoder"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "PropertyListDecoder",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/foundationessentials\/propertylistdecoder"
+},
+"doc://SemVer/documentation/SemVer/FoundationEssentials/PropertyListEncoder": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "extension"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "preciseIdentifier" : "s:20FoundationEssentials19PropertyListEncoderC",
+      "text" : "PropertyListEncoder"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/FoundationEssentials\/PropertyListEncoder",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "PropertyListEncoder"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "PropertyListEncoder",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/foundationessentials\/propertylistencoder"
+}
+}
+}
