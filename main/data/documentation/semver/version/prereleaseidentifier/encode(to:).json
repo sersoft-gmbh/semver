@@ -62,7 +62,7 @@
     ],
     "remoteSource" : {
       "fileName" : "Version+PrereleaseIdentifier.swift",
-      "url" : "https:\/\/github.com\/sersoft-gmbh\/semver\/Sources\/SemVer\/Version+PrereleaseIdentifier.swift#L131"
+      "url" : "https:\/\/github.com\/sersoft-gmbh\/semver\/blob\/refs\/heads\/main\/Sources\/SemVer\/Version+PrereleaseIdentifier.swift#L131"
     },
     "role" : "symbol",
     "roleHeading" : "Instance Method",

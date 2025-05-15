@@ -87,7 +87,7 @@
     ],
     "remoteSource" : {
       "fileName" : "Version+FormattingOptions.swift",
-      "url" : "https:\/\/github.com\/sersoft-gmbh\/semver\/Sources\/SemVer\/Version+FormattingOptions.swift#L28"
+      "url" : "https:\/\/github.com\/sersoft-gmbh\/semver\/blob\/refs\/heads\/main\/Sources\/SemVer\/Version+FormattingOptions.swift#L28"
     },
     "role" : "symbol",
     "roleHeading" : "Type Property",

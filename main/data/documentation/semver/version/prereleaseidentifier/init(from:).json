@@ -54,7 +54,7 @@
     ],
     "remoteSource" : {
       "fileName" : "Version+PrereleaseIdentifier.swift",
-      "url" : "https:\/\/github.com\/sersoft-gmbh\/semver\/Sources\/SemVer\/Version+PrereleaseIdentifier.swift#L123"
+      "url" : "https:\/\/github.com\/sersoft-gmbh\/semver\/blob\/refs\/heads\/main\/Sources\/SemVer\/Version+PrereleaseIdentifier.swift#L123"
     },
     "role" : "symbol",
     "roleHeading" : "Initializer",

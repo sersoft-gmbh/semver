@@ -75,7 +75,7 @@
     ],
     "remoteSource" : {
       "fileName" : "Version.swift",
-      "url" : "https:\/\/github.com\/sersoft-gmbh\/semver\/Sources\/SemVer\/Version.swift#L180"
+      "url" : "https:\/\/github.com\/sersoft-gmbh\/semver\/blob\/refs\/heads\/main\/Sources\/SemVer\/Version.swift#L180"
     },
     "role" : "symbol",
     "roleHeading" : "Operator",

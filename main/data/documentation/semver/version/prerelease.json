@@ -72,7 +72,7 @@
     ],
     "remoteSource" : {
       "fileName" : "Version.swift",
-      "url" : "https:\/\/github.com\/sersoft-gmbh\/semver\/Sources\/SemVer\/Version.swift#L35"
+      "url" : "https:\/\/github.com\/sersoft-gmbh\/semver\/blob\/refs\/heads\/main\/Sources\/SemVer\/Version.swift#L35"
     },
     "role" : "symbol",
     "roleHeading" : "Instance Property",

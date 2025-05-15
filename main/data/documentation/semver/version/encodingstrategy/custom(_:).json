@@ -72,7 +72,7 @@
     ],
     "remoteSource" : {
       "fileName" : "Version+Codable.swift",
-      "url" : "https:\/\/github.com\/sersoft-gmbh\/semver\/Sources\/SemVer\/Version+Codable.swift#L33"
+      "url" : "https:\/\/github.com\/sersoft-gmbh\/semver\/blob\/refs\/heads\/main\/Sources\/SemVer\/Version+Codable.swift#L33"
     },
     "role" : "symbol",
     "roleHeading" : "Case",
