@@ -46,7 +46,7 @@
     ],
     "remoteSource" : {
       "fileName" : "Version.swift",
-      "url" : "https:\/\/github.com\/sersoft-gmbh\/semver\/blob\/refs\/heads\/main\/Sources\/SemVer\/Version.swift#L21"
+      "url" : "https:\/\/github.com\/sersoft-gmbh\/semver\/blob\/refs\/heads\/main\/Sources\/SemVer\/Version.swift#L13"
     },
     "role" : "symbol",
     "roleHeading" : "Structure",
@@ -126,7 +126,8 @@
         "doc:\/\/SemVer\/SQ",
         "doc:\/\/SemVer\/SH",
         "doc:\/\/SemVer\/s25LosslessStringConvertibleP",
-        "doc:\/\/SemVer\/s8SendableP"
+        "doc:\/\/SemVer\/s8SendableP",
+        "doc:\/\/SemVer\/s16SendableMetatypeP"
       ],
       "kind" : "relationships",
       "title" : "Conforms To",
@@ -252,7 +253,27 @@
 },
 "doc://SemVer/documentation/SemVer": {
   "abstract" : [
-
+    {
+      "text" : "A complete implementation of a ",
+      "type" : "text"
+    },
+    {
+      "code" : "Version",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " struct that conforms to the rules of semantic versioning which are described at ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "https:\/\/semver.org",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
   ],
   "identifier" : "doc:\/\/SemVer\/documentation\/SemVer",
   "kind" : "symbol",
@@ -1812,6 +1833,11 @@
   "type" : "topic",
   "url" : "\/documentation\/semver\/version\/versionstring(formattedwith:)"
 },
+"doc://SemVer/s16SendableMetatypeP": {
+  "identifier" : "doc:\/\/SemVer\/s16SendableMetatypeP",
+  "title" : "Swift.SendableMetatype",
+  "type" : "unresolvable"
+},
 "doc://SemVer/s23CustomStringConvertibleP": {
   "identifier" : "doc:\/\/SemVer\/s23CustomStringConvertibleP",
   "title" : "Swift.CustomStringConvertible",
@@ -1839,10 +1865,10 @@
 },
 "https://semver.org": {
   "identifier" : "https:\/\/semver.org",
-  "title" : "SemVer Specification",
+  "title" : "semver.org",
   "titleInlineContent" : [
     {
-      "text" : "SemVer Specification",
+      "text" : "semver.org",
       "type" : "text"
     }
   ],

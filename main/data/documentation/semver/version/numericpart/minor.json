@@ -102,7 +102,27 @@
 "references": {
 "doc://SemVer/documentation/SemVer": {
   "abstract" : [
-
+    {
+      "text" : "A complete implementation of a ",
+      "type" : "text"
+    },
+    {
+      "code" : "Version",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " struct that conforms to the rules of semantic versioning which are described at ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "https:\/\/semver.org",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
   ],
   "identifier" : "doc:\/\/SemVer\/documentation\/SemVer",
   "kind" : "symbol",
@@ -206,6 +226,18 @@
   "title" : "Version.NumericPart.minor",
   "type" : "topic",
   "url" : "\/documentation\/semver\/version\/numericpart\/minor"
+},
+"https://semver.org": {
+  "identifier" : "https:\/\/semver.org",
+  "title" : "semver.org",
+  "titleInlineContent" : [
+    {
+      "text" : "semver.org",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/semver.org"
 }
 }
 }

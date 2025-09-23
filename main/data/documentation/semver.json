@@ -1,4 +1,27 @@
 {
+  "abstract" : [
+    {
+      "text" : "A complete implementation of a ",
+      "type" : "text"
+    },
+    {
+      "code" : "Version",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " struct that conforms to the rules of semantic versioning which are described at ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "https:\/\/semver.org",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
   "hierarchy" : {
     "paths" : [
       [
@@ -23,6 +46,1077 @@
     "symbolKind" : "module",
     "title" : "SemVer"
   },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "Installation",
+          "level" : 2,
+          "text" : "Installation",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Add the following dependency to your ",
+              "type" : "text"
+            },
+            {
+              "code" : "Package.swift",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ":",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            ".package(url: \"https:\/\/github.com\/sersoft-gmbh\/semver\", from: \"5.0.0\"),"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "anchor" : "Compatibility",
+          "level" : 2,
+          "text" : "Compatibility",
+          "type" : "heading"
+        },
+        {
+          "header" : "row",
+          "rows" : [
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Swift",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "SemVer Package",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "<  5.3.0",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "1.x.y - 2.x.y",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : ">= 5.3.0, < 5.9.0",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "3.x.y",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : ">= 5.9.0",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "5.x.y",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ]
+          ],
+          "type" : "table"
+        },
+        {
+          "anchor" : "Usage",
+          "level" : 2,
+          "text" : "Usage",
+          "type" : "heading"
+        },
+        {
+          "anchor" : "Creating-Versions",
+          "level" : 3,
+          "text" : "Creating Versions",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "You can create a version like this:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "let version = Version(major: 1, minor: 2, patch: 3,",
+            "                      prerelease: \"beta\", 1, \/\/ prerelease could also be [\"beta\", 1]",
+            "                      metadata: \"exp\", \"test\") \/\/ metadata could also be [\"exp, test\"]",
+            "version.versionString() \/\/ -> \"1.2.3-beta.1+exp.test\""
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Of course there are simpler ways:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "let initialRelease = Version(major: 1)",
+            "initialRelease.versionString() \/\/ -> \"1.0.0\"",
+            "",
+            "let minorRelease = Version(major: 2, minor: 1)",
+            "minorRelease.versionString() \/\/ -> \"2.1.0\"",
+            "",
+            "let patchRelease = Version(major: 3, minor: 2, patch: 1)",
+            "patchRelease.versionString() \/\/ -> \"3.2.1\""
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "And there is also a Swift ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "#macros",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " for statically creating versions.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Version-Strings",
+          "level" : 3,
+          "text" : "Version Strings",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "As seen in above’s examples, there’s a func to return a string represenation of a ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ". The ",
+              "type" : "text"
+            },
+            {
+              "code" : "versionString(formattedWith options: FormattingOptions = default)",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " function allows to retrieve a formatted string using the options passed. By default the full version is returned.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "The following options currently exist:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions\/dropPatchIfZero",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : ": If ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/patch",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : " is ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "0",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ", it won’t be added to the version string.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions\/dropMinorIfZero",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : ": If ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/minor",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : " and ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/patch",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : " are both ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "0",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ", only the ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "major",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " number is added. Requires ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions\/dropPatchIfZero",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : ".",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions\/dropTrailingZeros",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : ": A convenience combination of ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions\/dropMinorIfZero",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : " and ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions\/dropPatchIfZero",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : ".",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions\/includePrerelease",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : ": If ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/prerelease",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : " is not empty, it is added to the version string.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions\/includeMetadata",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : ": If ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/metadata",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : " is not empty, it is added to the version string.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions\/fullVersion",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : ": A convenience combination of ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions\/includePrerelease",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : " and ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions\/includeMetadata",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : ". The default if you don’t pass any options to ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/versionString(formattedWith:)",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : ".",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "code" : [
+            "let version = Version(major: 1, minor: 2, patch: 3,",
+            "                      prerelease: \"beta\",",
+            "                      metadata: \"exp\", \"test\")",
+            "version.versionString(formattedWith: .includePrerelease]) \/\/ -> \"1.2.3-beta\"",
+            "version.versionString(formattedWith: .includeMetadata) \/\/ -> \"1.2.3+exp.test\"",
+            "version.versionString(formattedWith: []) \/\/ -> \"1.2.3\"",
+            "",
+            "let version2 = Version(major: 2)",
+            "version2.versionString(formattedWith: .dropPatchIfZero) \/\/ -> \"2.0\"",
+            "version2.versionString(formattedWith: .dropTrailingZeros) \/\/ -> \"2\""
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "A ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " can also be created from a String. All Strings created by ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/versionString(formattedWith:)",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " should result in the same ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " they were created from:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "let version = Version(major: 1, minor: 2, patch: 3,",
+            "                      prerelease: \"beta\",",
+            "                      metadata: \"exp\", \"test\")",
+            "let str = version.versionString() \/\/ -> \"1.2.3-beta+exp.test\"",
+            "let recreatedVersion = Version(str) \/\/ recreatedVersion is Optional<Version>",
+            "recreatedVersion == version \/\/ -> true"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "anchor" : "Comparing-Versions",
+          "level" : 3,
+          "text" : "Comparing Versions",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "A ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " can also be compared to other versions. This also follows the rules of semantic versioning. This means that ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/metadata",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " has no effect on comparing at all. This also means that a version with and without metadata are ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "treated as equal",
+                  "type" : "text"
+                }
+              ],
+              "type" : "strong"
+            },
+            {
+              "text" : ":",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "let versionWithMetadata = Version(major: 1, minor: 2, patch: 3,",
+            "                                  metadata: \"exp\", \"test\")",
+            "let versionWithoutMetadata = Version(major: 1, minor: 2, patch: 3)",
+            "versionWithMetadata == versionWithoutMetadata \/\/ -> true"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Otherwise, comparing two ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : "’s basically compares their major\/minor\/patch numbers. A ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " with ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/prerelease",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " identifiers is ordered ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "before",
+                  "type" : "text"
+                }
+              ],
+              "type" : "strong"
+            },
+            {
+              "text" : " a the same version without ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/prerelease",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " identifiers:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "let preReleaseVersion = Version(major: 1, minor: 2, patch: 3,",
+            "                                prerelease: \"beta\")",
+            "let finalVersion = Version(major: 1, minor: 2, patch: 3)",
+            "preReleaseVersion < finalVersion \/\/ -> true"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If you need to check whether two versions are completely identical, there’s the ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/isIdentical(to:requireIdenticalMetadataOrdering:)",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " method, which also checks ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/metadata",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Validity-Checks",
+          "level" : 3,
+          "text" : "Validity Checks",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " performs some validity checks on its fields. This means, that no negative numbers are allowed for ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/major",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ", ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/minor",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " and ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/patch",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ". Also, the ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/prerelease",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " and ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/metadata",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " Strings must only contain alphanumeric characters plus ",
+              "type" : "text"
+            },
+            {
+              "code" : "-",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " (hyphen). However, to keep working with ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " production-safe, these rules are only checked in non-optimized builds (using ",
+              "type" : "text"
+            },
+            {
+              "code" : "assert()",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : "). The result of using not allowed numbers \/ characters in optimized builds is undetermined. While calling ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/versionString(formattedWith:)",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " very likely won’t break, it certainly won’t be possible to recreate a version containing invalid numbers \/ characters using ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/init(_:)",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Codable",
+          "level" : 3,
+          "text" : "Codable",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " conforms to ",
+              "type" : "text"
+            },
+            {
+              "code" : "Codable",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : "! The encoding \/ decoding behavior can be controlled by using ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Swift\/CodingUserInfoKey\/versionEncodingStrategy",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " and ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Swift\/CodingUserInfoKey\/versionDecodingStrategy",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ". For ",
+              "type" : "text"
+            },
+            {
+              "code" : "JSONEncoder",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : "\/",
+              "type" : "text"
+            },
+            {
+              "code" : "JSONDecoder",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " and ",
+              "type" : "text"
+            },
+            {
+              "code" : "PropertyListEncoder",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : "\/",
+              "type" : "text"
+            },
+            {
+              "code" : "PropertyListDecoder",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", there are the convenience properties ",
+              "type" : "text"
+            },
+            {
+              "code" : "semverVersionEncodingStrategy",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : "\/",
+              "type" : "text"
+            },
+            {
+              "code" : "semverVersionDecodingStrategy",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " in place:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "Foundation\/JSONEncoder\/semverVersionEncodingStrategy",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "Foundation\/JSONDecoder\/semverVersionDecodingStrategy",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "Foundation\/PropertyListEncoder\/semverVersionEncodingStrategy",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "Foundation\/PropertyListDecoder\/semverVersionDecodingStrategy",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "anchor" : "Macros",
+          "level" : 3,
+          "text" : "Macros",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This package also provides a ",
+              "type" : "text"
+            },
+            {
+              "code" : "SemVerMacros",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " product. It’s a separate product, so that SwiftSyntax won’t be compiled for users of SemVer if no macro is actually needed.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "If a ",
+              "type" : "text"
+            },
+            {
+              "code" : "Version",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " should be constructed from a ",
+              "type" : "text"
+            },
+            {
+              "code" : "String",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " that is known at compile time, the ",
+              "type" : "text"
+            },
+            {
+              "code" : "#version",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " macro can be used. It will parse the ",
+              "type" : "text"
+            },
+            {
+              "code" : "String",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " at compile time and generate code that initializes a ",
+              "type" : "text"
+            },
+            {
+              "code" : "Version",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " from the result:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "let version = #version(\"1.2.3\")"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "results in",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "let version = Version(major: 1, minor: 2, patch: 3, prerelase: [], metadata: [])"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
   "schemaVersion" : {
     "major" : 0,
     "minor" : 3,
@@ -65,9 +1159,41 @@
   ]
 , 
 "references": {
+"#macros": {
+  "identifier" : "#macros",
+  "title" : "macro",
+  "titleInlineContent" : [
+    {
+      "text" : "macro",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "#macros"
+},
 "doc://SemVer/documentation/SemVer": {
   "abstract" : [
-
+    {
+      "text" : "A complete implementation of a ",
+      "type" : "text"
+    },
+    {
+      "code" : "Version",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " struct that conforms to the rules of semantic versioning which are described at ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "https:\/\/semver.org",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
   ],
   "identifier" : "doc:\/\/SemVer\/documentation\/SemVer",
   "kind" : "symbol",
@@ -86,6 +1212,86 @@
   "title" : "Foundation",
   "type" : "topic",
   "url" : "\/documentation\/semver\/foundation"
+},
+"doc://SemVer/documentation/SemVer/Foundation/CharacterSet/versionSuffixAllowed": {
+  "abstract" : [
+    {
+      "text" : "Contains the allowed characters for a ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " suffix (",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/prerelease",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " and ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/metadata",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : ")",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "Allowed are alphanumerics and hyphen.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "versionSuffixAllowed"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10Foundation12CharacterSetV",
+      "text" : "CharacterSet"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Foundation\/CharacterSet\/versionSuffixAllowed",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "versionSuffixAllowed",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/foundation\/characterset\/versionsuffixallowed"
 },
 "doc://SemVer/documentation/SemVer/FoundationEssentials": {
   "abstract" : [
@@ -108,6 +1314,130 @@
   "title" : "Swift",
   "type" : "topic",
   "url" : "\/documentation\/semver\/swift"
+},
+"doc://SemVer/documentation/SemVer/Swift/CodingUserInfoKey/versionDecodingStrategy": {
+  "abstract" : [
+    {
+      "text" : "The key used to configure an ",
+      "type" : "text"
+    },
+    {
+      "code" : "Swift\/Decoder",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " with the strategy that should be used for decoding a ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "versionDecodingStrategy"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s17CodingUserInfoKeyV",
+      "text" : "CodingUserInfoKey"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Swift\/CodingUserInfoKey\/versionDecodingStrategy",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "versionDecodingStrategy",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/swift\/codinguserinfokey\/versiondecodingstrategy"
+},
+"doc://SemVer/documentation/SemVer/Swift/CodingUserInfoKey/versionEncodingStrategy": {
+  "abstract" : [
+    {
+      "text" : "The key used to configure an ",
+      "type" : "text"
+    },
+    {
+      "code" : "Swift\/Encoder",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " with the strategy that should be used for encoding a ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "versionEncodingStrategy"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s17CodingUserInfoKeyV",
+      "text" : "CodingUserInfoKey"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Swift\/CodingUserInfoKey\/versionEncodingStrategy",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "versionEncodingStrategy",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/swift\/codinguserinfokey\/versionencodingstrategy"
 },
 "doc://SemVer/documentation/SemVer/Version": {
   "abstract" : [
@@ -142,6 +1472,788 @@
   "title" : "Version",
   "type" : "topic",
   "url" : "\/documentation\/semver\/version"
+},
+"doc://SemVer/documentation/SemVer/Version/FormattingOptions/dropMinorIfZero": {
+  "abstract" : [
+    {
+      "text" : "Leave out minor part if it’s zero. Requires ",
+      "type" : "text"
+    },
+    {
+      "code" : "dropPatchIfZero",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "dropMinorIfZero"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6SemVer7VersionV",
+      "text" : "Version"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6SemVer7VersionV17FormattingOptionsV",
+      "text" : "FormattingOptions"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions\/dropMinorIfZero",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "dropMinorIfZero",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version\/formattingoptions\/dropminorifzero"
+},
+"doc://SemVer/documentation/SemVer/Version/FormattingOptions/dropPatchIfZero": {
+  "abstract" : [
+    {
+      "text" : "Leave out patch part if it’s zero.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "dropPatchIfZero"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6SemVer7VersionV",
+      "text" : "Version"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6SemVer7VersionV17FormattingOptionsV",
+      "text" : "FormattingOptions"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions\/dropPatchIfZero",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "dropPatchIfZero",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version\/formattingoptions\/droppatchifzero"
+},
+"doc://SemVer/documentation/SemVer/Version/FormattingOptions/dropTrailingZeros": {
+  "abstract" : [
+    {
+      "text" : "Combination of ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions\/dropPatchIfZero",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " and ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions\/dropMinorIfZero",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "dropTrailingZeros"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6SemVer7VersionV",
+      "text" : "Version"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6SemVer7VersionV17FormattingOptionsV",
+      "text" : "FormattingOptions"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions\/dropTrailingZeros",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "dropTrailingZeros",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version\/formattingoptions\/droptrailingzeros"
+},
+"doc://SemVer/documentation/SemVer/Version/FormattingOptions/fullVersion": {
+  "abstract" : [
+    {
+      "text" : "Combination of ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions\/includePrerelease",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " and ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions\/includeMetadata",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "fullVersion"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6SemVer7VersionV",
+      "text" : "Version"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6SemVer7VersionV17FormattingOptionsV",
+      "text" : "FormattingOptions"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions\/fullVersion",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "fullVersion",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version\/formattingoptions\/fullversion"
+},
+"doc://SemVer/documentation/SemVer/Version/FormattingOptions/includeMetadata": {
+  "abstract" : [
+    {
+      "text" : "Include the metadata part of the version.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "includeMetadata"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6SemVer7VersionV",
+      "text" : "Version"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6SemVer7VersionV17FormattingOptionsV",
+      "text" : "FormattingOptions"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions\/includeMetadata",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "includeMetadata",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version\/formattingoptions\/includemetadata"
+},
+"doc://SemVer/documentation/SemVer/Version/FormattingOptions/includePrerelease": {
+  "abstract" : [
+    {
+      "text" : "Include the pre-release part of the version.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "includePrerelease"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6SemVer7VersionV",
+      "text" : "Version"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6SemVer7VersionV17FormattingOptionsV",
+      "text" : "FormattingOptions"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/FormattingOptions\/includePrerelease",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "includePrerelease",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version\/formattingoptions\/includeprerelease"
+},
+"doc://SemVer/documentation/SemVer/Version/init(_:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "?("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/init(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version\/init(_:)"
+},
+"doc://SemVer/documentation/SemVer/Version/isIdentical(to:requireIdenticalMetadataOrdering:)": {
+  "abstract" : [
+    {
+      "text" : "Returns whether this version is identical to another version (on all properties, including  ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/metadata",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : ").",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "isIdentical"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "to"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6SemVer7VersionV",
+      "text" : "Version"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "requireIdenticalMetadataOrdering"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/isIdentical(to:requireIdenticalMetadataOrdering:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "isIdentical(to:requireIdenticalMetadataOrdering:)",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version\/isidentical(to:requireidenticalmetadataordering:)"
+},
+"doc://SemVer/documentation/SemVer/Version/major": {
+  "abstract" : [
+    {
+      "text" : "The major part of this version. Must be >= 0.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "major"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/major",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "major",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version\/major"
+},
+"doc://SemVer/documentation/SemVer/Version/metadata": {
+  "abstract" : [
+    {
+      "text" : "The metadata of this version. Must only contain characters in ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Foundation\/CharacterSet\/versionSuffixAllowed",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "metadata"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sa",
+      "text" : "Array"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/metadata",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "metadata",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version\/metadata"
+},
+"doc://SemVer/documentation/SemVer/Version/minor": {
+  "abstract" : [
+    {
+      "text" : "The minor part of this version. Must be >= 0.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "minor"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/minor",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "minor",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version\/minor"
+},
+"doc://SemVer/documentation/SemVer/Version/patch": {
+  "abstract" : [
+    {
+      "text" : "The patch part of this version. Must be >= 0.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "patch"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/patch",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "patch",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version\/patch"
+},
+"doc://SemVer/documentation/SemVer/Version/prerelease": {
+  "abstract" : [
+    {
+      "text" : "The prelease identifiers of this version.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "prerelease"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sa",
+      "text" : "Array"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6SemVer7VersionV",
+      "text" : "Version"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6SemVer7VersionV20PrereleaseIdentifierV",
+      "text" : "PrereleaseIdentifier"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/prerelease",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "prerelease",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version\/prerelease"
+},
+"doc://SemVer/documentation/SemVer/Version/versionString(formattedWith:)": {
+  "abstract" : [
+    {
+      "text" : "Creates a version string using the given options.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "versionString"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "formattedWith"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6SemVer7VersionV",
+      "text" : "Version"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6SemVer7VersionV17FormattingOptionsV",
+      "text" : "FormattingOptions"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/versionString(formattedWith:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "versionString(formattedWith:)",
+  "type" : "topic",
+  "url" : "\/documentation\/semver\/version\/versionstring(formattedwith:)"
+},
+"https://semver.org": {
+  "identifier" : "https:\/\/semver.org",
+  "title" : "semver.org",
+  "titleInlineContent" : [
+    {
+      "text" : "semver.org",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/semver.org"
 }
 }
 }

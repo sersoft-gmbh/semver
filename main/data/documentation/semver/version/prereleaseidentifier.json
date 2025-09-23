@@ -99,7 +99,8 @@
         "doc:\/\/SemVer\/s26ExpressibleByStringLiteralP",
         "doc:\/\/SemVer\/s33ExpressibleByUnicodeScalarLiteralP",
         "doc:\/\/SemVer\/SH",
-        "doc:\/\/SemVer\/s8SendableP"
+        "doc:\/\/SemVer\/s8SendableP",
+        "doc:\/\/SemVer\/s16SendableMetatypeP"
       ],
       "kind" : "relationships",
       "title" : "Conforms To",
@@ -209,7 +210,27 @@
 },
 "doc://SemVer/documentation/SemVer": {
   "abstract" : [
-
+    {
+      "text" : "A complete implementation of a ",
+      "type" : "text"
+    },
+    {
+      "code" : "Version",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " struct that conforms to the rules of semantic versioning which are described at ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "https:\/\/semver.org",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
   ],
   "identifier" : "doc:\/\/SemVer\/documentation\/SemVer",
   "kind" : "symbol",
@@ -933,6 +954,11 @@
   "type" : "topic",
   "url" : "\/documentation\/semver\/version\/prereleaseidentifier\/string(_:)"
 },
+"doc://SemVer/s16SendableMetatypeP": {
+  "identifier" : "doc:\/\/SemVer\/s16SendableMetatypeP",
+  "title" : "Swift.SendableMetatype",
+  "type" : "unresolvable"
+},
 "doc://SemVer/s23CustomStringConvertibleP": {
   "identifier" : "doc:\/\/SemVer\/s23CustomStringConvertibleP",
   "title" : "Swift.CustomStringConvertible",
@@ -972,6 +998,18 @@
   "identifier" : "doc:\/\/SemVer\/s8SendableP",
   "title" : "Swift.Sendable",
   "type" : "unresolvable"
+},
+"https://semver.org": {
+  "identifier" : "https:\/\/semver.org",
+  "title" : "semver.org",
+  "titleInlineContent" : [
+    {
+      "text" : "semver.org",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/semver.org"
 }
 }
 }

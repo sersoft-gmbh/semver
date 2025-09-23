@@ -168,7 +168,10 @@
 "references": {
 "doc://SemVerMacros/documentation/SemVerMacros": {
   "abstract" : [
-
+    {
+      "text" : "Compile-time version string parsing.",
+      "type" : "text"
+    }
   ],
   "identifier" : "doc:\/\/SemVerMacros\/documentation\/SemVerMacros",
   "kind" : "symbol",

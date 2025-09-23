@@ -40,7 +40,7 @@
     ],
     "remoteSource" : {
       "fileName" : "Version.swift",
-      "url" : "https:\/\/github.com\/sersoft-gmbh\/semver\/blob\/refs\/heads\/main\/Sources\/SemVer\/Version.swift#L107"
+      "url" : "https:\/\/github.com\/sersoft-gmbh\/semver\/blob\/refs\/heads\/main\/Sources\/SemVer\/Version.swift#L99"
     },
     "role" : "symbol",
     "roleHeading" : "Initializer",
@@ -121,7 +121,27 @@
 "references": {
 "doc://SemVer/documentation/SemVer": {
   "abstract" : [
-
+    {
+      "text" : "A complete implementation of a ",
+      "type" : "text"
+    },
+    {
+      "code" : "Version",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " struct that conforms to the rules of semantic versioning which are described at ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "https:\/\/semver.org",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
   ],
   "identifier" : "doc:\/\/SemVer\/documentation\/SemVer",
   "kind" : "symbol",
@@ -193,6 +213,18 @@
   "title" : "init(_:)",
   "type" : "topic",
   "url" : "\/documentation\/semver\/version\/init(_:)"
+},
+"https://semver.org": {
+  "identifier" : "https:\/\/semver.org",
+  "title" : "semver.org",
+  "titleInlineContent" : [
+    {
+      "text" : "semver.org",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/semver.org"
 }
 }
 }
