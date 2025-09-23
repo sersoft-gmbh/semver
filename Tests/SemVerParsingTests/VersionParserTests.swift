@@ -25,7 +25,7 @@ struct VersionParserTests {
         "\(UInt.max)": nil,
     ]
 #if compiler(>=6.1)
-    private static var testArgs: some Collection<(String, VersionParser.VersionComponents?)> {
+    private static var testArgs: some Collection<(String, VersionParser.VersionComponents?)> & Sendable {
         inputsToResults.lazy.map { ($0.key, $0.value) }
     }
 #else
