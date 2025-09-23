@@ -24,8 +24,17 @@ struct VersionParserTests {
         "1.2.3+exp.": nil,
         "\(UInt.max)": nil,
     ]
+#if compiler(>=6.1)
+    private static var testArgs: some Collection<(String, VersionParser.VersionComponents?)> {
+        inputsToResults.lazy.map { ($0.key, $0.value) }
+    }
+#else
+    private static var testArgs: Array<(String, VersionParser.VersionComponents?)> {
+        inputsToResults.map { ($0.key, $0.value) }
+    }
+#endif
 
-    @Test(arguments: inputsToResults.map { ($0.key, $0.value) })
+    @Test(arguments: testArgs)
     func legacyParsing(input: String, output: VersionParser.VersionComponents?) throws {
         if let output {
             #expect(try #require(VersionParser._parseLegacy(input)) == output)
@@ -34,7 +43,7 @@ struct VersionParserTests {
         }
     }
 
-    @Test(arguments: inputsToResults.map { ($0.key, $0.value) })
+    @Test(arguments: testArgs)
     @available(macOS 13, iOS 16, tvOS 16, watchOS 9, macCatalyst 16, *)
     func modernParsing(input: String, output: VersionParser.VersionComponents?) throws {
         if let output {
@@ -45,7 +54,7 @@ struct VersionParserTests {
     }
 
     // The automatic parser also accepts empty strings, returning nil
-    @Test(arguments: inputsToResults.map { ($0.key, $0.value) } + CollectionOfOne(("", nil)))
+    @Test(arguments: Array(testArgs) + CollectionOfOne(("", nil)))
     func automaticParsing(input: String, output: VersionParser.VersionComponents?) throws {
         if let output {
             #expect(try #require(VersionParser.parseString(input)) == output)
