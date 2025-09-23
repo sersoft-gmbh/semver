@@ -283,6 +283,8 @@ extension VersionTests {
             #expect(version.metadata.isEmpty)
         }
 
+        // FIXME: This doesn't compile on Swift 6.0 for some reason
+#if compiler(>=6.0)
         @Test
         func invalidDecoding() throws {
             let invalidJSON1 = Data(#"{"major":-1,"minor":2,"patch":3,"prerelease":"beta","metadata":["exp","test"]}"#.utf8)
@@ -363,5 +365,6 @@ extension VersionTests {
                 }
             }
         }
+#endif
     }
 }
