@@ -3,17 +3,9 @@ public import struct Foundation.CharacterSet
 internal import SemVerParsing
 
 extension CharacterSet {
-    // Dance necessary because CharacterSet doesn't conform to Sendable in scf until Swift 6...
-    // Compiler check is needed because `hasFeature` doesn't prevent the compiler from trying to parse the code.
-#if !canImport(Darwin) && compiler(>=5.10) && swift(<6.0) && hasFeature(StrictConcurrency) && hasFeature(GlobalConcurrency)
-    /// Contains the allowed characters for a ``Version`` suffix (``Version/prerelease`` and ``Version/metadata``)
-    /// Allowed are alphanumerics and hyphen.
-    public static nonisolated(unsafe) let versionSuffixAllowed: CharacterSet = VersionParser.versionSuffixAllowedCharacterSet
-#else
     /// Contains the allowed characters for a ``Version`` suffix (``Version/prerelease`` and ``Version/metadata``)
     /// Allowed are alphanumerics and hyphen.
     public static let versionSuffixAllowed: CharacterSet = VersionParser.versionSuffixAllowedCharacterSet
-#endif
 }
 
 /// A Version struct that implements the rules of semantic versioning.
@@ -43,7 +35,7 @@ public struct Version: Sendable, Hashable, Comparable, LosslessStringConvertible
     public var description: String { versionString() }
 
     public var debugDescription: String {
-        "Version(major: \(major), minor: \(minor), patch: \(patch), prelease: \"\(_prereleaseString)\", metadata: \"\(_metadataString)\")"
+        "Version(major: \(major), minor: \(minor), patch: \(patch), prerelease: \"\(_prereleaseString)\", metadata: \"\(_metadataString)\")"
     }
 
     /// Creates a new version with the given parts.
@@ -206,7 +198,7 @@ extension Version {
 
     @inlinable
     internal static func _areValidIdentifiers(_ identifiers: some Sequence<some StringProtocol>) -> Bool {
-        identifiers.allSatisfy(_isValidIdentifier)
+        identifiers.allSatisfy { _isValidIdentifier($0) }
     }
 
     internal static func _splitIdentifiers<S>(_ identifier: S) -> Array<String>

@@ -1,12 +1,14 @@
 #if canImport(SemVerMacrosPlugin)
-import XCTest
+import Testing
 @testable import SemVerMacrosPlugin
 
-final class SemVerMacrosCompilerPluginTests: XCTestCase {
-    func testProvidedMacros() {
+@Suite
+struct SemVerMacrosCompilerPluginTests {
+    @Test
+    func providedMacros() {
         let macros = SemVerMacrosCompilerPlugin().providingMacros
-        XCTAssertEqual(macros.count, 1)
-        XCTAssertTrue(macros.contains { $0 == VersionMacro.self })
+        #expect(macros.count == 1)
+        #expect(macros.contains { $0 == VersionMacro.self })
     }
 }
 #endif

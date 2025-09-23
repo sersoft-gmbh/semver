@@ -1,14 +1,14 @@
-import XCTest
+import Testing
 import SemVer
 
-final class GitHubIssueTests: XCTestCase {
-    func testGH107() throws {
-        let _version = Version("1.0.0-beta.11")
-        XCTAssertNotNil(_version)
-        let version = try XCTUnwrap(_version)
-        XCTAssertEqual(version.major, 1)
-        XCTAssertEqual(version.minor, 0)
-        XCTAssertEqual(version.patch, 0)
-        XCTAssertEqual(version.prerelease, ["beta", "11"])
+@Suite
+struct GitHubIssueTests {
+    @Test(.bug("https://github.com/sersoft-gmbh/semver/issues/107", id: 107))
+    func gh107() throws {
+        let version = try #require(Version("1.0.0-beta.11"))
+        #expect(version.major == 1)
+        #expect(version.minor == 0)
+        #expect(version.patch == 0)
+        #expect(version.prerelease == ["beta", "11"])
     }
 }

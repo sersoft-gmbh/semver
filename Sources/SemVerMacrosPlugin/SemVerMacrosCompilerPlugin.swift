@@ -1,11 +1,6 @@
 #if canImport(SwiftCompilerPlugin)
-#if swift(<6.0)
-public import SwiftCompilerPlugin
-public import SwiftSyntaxMacros
-#else
 import SwiftCompilerPlugin
 import SwiftSyntaxMacros
-#endif
 
 @main
 struct SemVerMacrosCompilerPlugin: CompilerPlugin {

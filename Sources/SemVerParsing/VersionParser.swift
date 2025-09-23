@@ -16,7 +16,7 @@ package enum VersionParser: Sendable {
     private static func _parsePrereleaseIdentifiers<S>(_ identifiers: some Sequence<S>) -> some Sequence<VersionPrereleaseIdentifier>
     where S: StringProtocol, S.SubSequence == Substring
     {
-        assert(identifiers.allSatisfy(_isValidIdentifier))
+        assert(identifiers.allSatisfy { _isValidIdentifier($0) })
         return identifiers.lazy.map { Int($0).map { .number($0) } ?? .text(String($0)) }
     }
 
@@ -106,21 +106,11 @@ package enum VersionParser: Sendable {
 extension VersionParser {
     private static var _identifierSeparator: Character { "." }
 
-    // Dance necessary because CharacterSet doesn't conform to Sendable in scf...
-    // Compiler check is needed because `hasFeature` doesn't prevent the compiler from trying to parse the code.
-#if !canImport(Darwin) && compiler(>=5.10) && swift(<6.0) && hasFeature(StrictConcurrency) && hasFeature(GlobalConcurrency)
-    package static nonisolated(unsafe) let versionSuffixAllowedCharacterSet: CharacterSet = {
-        var validCharset = CharacterSet.alphanumerics
-        validCharset.insert("-")
-        return validCharset
-    }()
-#else
     package static let versionSuffixAllowedCharacterSet: CharacterSet = {
         var validCharset = CharacterSet.alphanumerics
         validCharset.insert("-")
         return validCharset
     }()
-#endif
 
     @inlinable
     package static func _isValidIdentifier(_ identifier: some StringProtocol) -> Bool {
