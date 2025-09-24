@@ -249,21 +249,16 @@ struct VersionTests {
         #expect(v8.metadata == v8FromString?.metadata)
     }
 
-    @Test
-    func customDebugStringRepresentable() {
-        let v1 = Version(major: 1)
-        let v2 = Version(major: 1, minor: 2)
-        let v3 = Version(major: 1, minor: 2, patch: 3)
-        let v4 = Version(major: 1, minor: 2, patch: 3, prerelease: "beta", metadata: "exp", "test")
-        let v5 = Version(major: 1, prerelease: "beta")
-        let v6 = Version(major: 1, metadata: "exp", "test")
-
-        #expect(v1.debugDescription == #"Version(major: 1, minor: 0, patch: 0, prerelease: "", metadata: "")"#)
-        #expect(v2.debugDescription == #"Version(major: 1, minor: 2, patch: 0, prerelease: "", metadata: "")"#)
-        #expect(v3.debugDescription == #"Version(major: 1, minor: 2, patch: 3, prerelease: "", metadata: "")"#)
-        #expect(v4.debugDescription == #"Version(major: 1, minor: 2, patch: 3, prerelease: "beta", metadata: "exp.test")"#)
-        #expect(v5.debugDescription == #"Version(major: 1, minor: 0, patch: 0, prerelease: "beta", metadata: "")"#)
-        #expect(v6.debugDescription == #"Version(major: 1, minor: 0, patch: 0, prerelease: "", metadata: "exp.test")"#)
+    @Test(arguments: [
+        (version: Version(major: 1), expectedDebugDescription: #"Version(major: 1, minor: 0, patch: 0, prerelease: "", metadata: "")"#),
+        (version: Version(major: 1, minor: 2), expectedDebugDescription: #"Version(major: 1, minor: 2, patch: 0, prerelease: "", metadata: "")"#),
+        (version: Version(major: 1, minor: 2, patch: 3), expectedDebugDescription: #"Version(major: 1, minor: 2, patch: 3, prerelease: "", metadata: "")"#),
+        (version: Version(major: 1, minor: 2, patch: 3, prerelease: "beta", metadata: "exp", "test"), expectedDebugDescription: #"Version(major: 1, minor: 2, patch: 3, prerelease: "beta", metadata: "exp.test")"#),
+        (version: Version(major: 1, prerelease: "beta"), expectedDebugDescription: #"Version(major: 1, minor: 0, patch: 0, prerelease: "beta", metadata: "")"#),
+        (version: Version(major: 1, metadata: "exp", "test"), expectedDebugDescription: #"Version(major: 1, minor: 0, patch: 0, prerelease: "", metadata: "exp.test")"#),
+    ])
+    func customDebugStringRepresentable(version: Version, expectedDebugDescription: String) {
+        #expect(version.debugDescription == expectedDebugDescription)
     }
 
     @Test
@@ -316,13 +311,9 @@ struct VersionTests {
         #expect(version.versionString(formattedWith: .fullVersion) == expectedVersion.versionString(formattedWith: .fullVersion))
     }
 
-    @Test
-    func invalidStrings() {
-        #expect(Version("") == nil)
-        #expect(Version("1.2.3.4") == nil)
-        #expect(Version("ABC") == nil)
-        #expect(Version("-1.2.0") == nil)
-        #expect(Version("🥴") == nil)
+    @Test(arguments: ["", "1.2.3.4", "ABC", "-1.2.0", "🥴"])
+    func invalidStrings(string: String) {
+        #expect(Version(string) == nil)
     }
 
     @Test

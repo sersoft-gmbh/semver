@@ -102,43 +102,20 @@ extension VersionTests {
             #expect(minVersion.metadata.isEmpty)
         }
 
-        @Test
-        func encodingAsComponents() throws {
+        @Test(arguments: [
+            (strategy: Version.EncodingStrategy.components, expectedJson: #"{"major":1,"metadata":["exp","test"],"minor":2,"patch":3,"prerelease":"beta"}"#),
+            (strategy: Version.EncodingStrategy.components(prereleaseAsString: false, metadataAsString: false), expectedJson: #"{"major":1,"metadata":["exp","test"],"minor":2,"patch":3,"prerelease":["beta"]}"#),
+            (strategy: Version.EncodingStrategy.components(prereleaseAsString: false, metadataAsString: true), expectedJson: #"{"major":1,"metadata":"exp.test","minor":2,"patch":3,"prerelease":["beta"]}"#),
+            (strategy: Version.EncodingStrategy.components(prereleaseAsString: true, metadataAsString: true), expectedJson: #"{"major":1,"metadata":"exp.test","minor":2,"patch":3,"prerelease":"beta"}"#),
+            (strategy: Version.EncodingStrategy.components(prereleaseAsString: true, metadataAsString: false), expectedJson: #"{"major":1,"metadata":["exp","test"],"minor":2,"patch":3,"prerelease":"beta"}"#),
+        ])
+        func encodingAsComponents(strategy: Version.EncodingStrategy, expectedJson: String) throws {
             let version = Version(major: 1, minor: 2, patch: 3, prerelease: "beta", metadata: "exp", "test")
-
             let jsonEncoder = JSONEncoder()
             jsonEncoder.outputFormatting = .sortedKeys // stable comparison
-
-            jsonEncoder.semverVersionEncodingStrategy = .components
-            let json1 = try jsonEncoder.encode(version)
-
-            jsonEncoder.semverVersionEncodingStrategy = .components(prereleaseAsString: false, metadataAsString: false)
-            let json2 = try jsonEncoder.encode(version)
-
-            jsonEncoder.semverVersionEncodingStrategy = .components(prereleaseAsString: false, metadataAsString: true)
-            let json3 = try jsonEncoder.encode(version)
-
-            jsonEncoder.semverVersionEncodingStrategy = .components(prereleaseAsString: true, metadataAsString: true)
-            let json4 = try jsonEncoder.encode(version)
-
-            jsonEncoder.semverVersionEncodingStrategy = .components(prereleaseAsString: true, metadataAsString: false)
-            let json5 = try jsonEncoder.encode(version)
-
-            #expect(String(decoding: json1, as: UTF8.self)
-                    ==
-                    #"{"major":1,"metadata":["exp","test"],"minor":2,"patch":3,"prerelease":"beta"}"#)
-            #expect(String(decoding: json2, as: UTF8.self)
-                    ==
-                    #"{"major":1,"metadata":["exp","test"],"minor":2,"patch":3,"prerelease":["beta"]}"#)
-            #expect(String(decoding: json3, as: UTF8.self)
-                    ==
-                    #"{"major":1,"metadata":"exp.test","minor":2,"patch":3,"prerelease":["beta"]}"#)
-            #expect(String(decoding: json4, as: UTF8.self)
-                    ==
-                    #"{"major":1,"metadata":"exp.test","minor":2,"patch":3,"prerelease":"beta"}"#)
-            #expect(String(decoding: json5, as: UTF8.self)
-                    ==
-                    #"{"major":1,"metadata":["exp","test"],"minor":2,"patch":3,"prerelease":"beta"}"#)
+            jsonEncoder.semverVersionEncodingStrategy = strategy
+            let json = try jsonEncoder.encode(version)
+            #expect(String(decoding: json, as: UTF8.self) == expectedJson)
         }
 
         @Test
@@ -283,88 +260,32 @@ extension VersionTests {
             #expect(version.metadata.isEmpty)
         }
 
-        // FIXME: This doesn't compile on Swift 6.0 for some reason
-#if compiler(>=6.1)
-        @Test
-        func invalidDecoding() throws {
-            let invalidJSON1 = Data(#"{"major":-1,"minor":2,"patch":3,"prerelease":"beta","metadata":["exp","test"]}"#.utf8)
-            let invalidJSON2 = Data(#"{"major":1,"minor":-2,"patch":3,"prerelease":"beta","metadata":["exp","test"]}"#.utf8)
-            let invalidJSON3 = Data(#"{"major":1,"minor":2,"patch":-3,"prerelease":"beta","metadata":["exp","test"]}"#.utf8)
-            let invalidJSON4 = Data(#"{"major":1,"minor":2,"patch":3,"prerelease":"bet@","metadata":["exp","test"]}"#.utf8)
-            let invalidJSON5 = Data(#"{"major":1,"minor":2,"patch":3,"prerelease":"beta","metadata":["exp","t%st"]}"#.utf8)
-            let invalidJSON6 = Data(#"{"major":1,"minor":2,"patch":3,"prerelease":["bet@"],"metadata":["exp","test"]}"#.utf8)
+        @Test(arguments: [
+            (json: #"{"major":-1,"minor":2,"patch":3,"prerelease":"beta","metadata":["exp","test"]}"#, expectedDebugDescription: "Invalid major version component: -1", decodingStrategy: nil),
+            (json: #"{"major":1,"minor":-2,"patch":3,"prerelease":"beta","metadata":["exp","test"]}"#, expectedDebugDescription: "Invalid minor version component: -2", decodingStrategy: nil),
+            (json: #"{"major":1,"minor":2,"patch":-3,"prerelease":"beta","metadata":["exp","test"]}"#, expectedDebugDescription: "Invalid patch version component: -3", decodingStrategy: nil),
+            (json: #"{"major":1,"minor":2,"patch":3,"prerelease":"bet@","metadata":["exp","test"]}"#, expectedDebugDescription: #"Invalid prerelease: ["bet@"]"#, decodingStrategy: nil),
+            (json: #"{"major":1,"minor":2,"patch":3,"prerelease":"beta","metadata":["exp","t%st"]}"#, expectedDebugDescription: #"Invalid metadata: ["exp", "t%st"]"#, decodingStrategy: nil),
+            (
+                json: #"{"major":1,"minor":2,"patch":3,"prerelease":["bet@"],"metadata":["exp","test"]}"#,
+                expectedDebugDescription: #"Invalid prerelease identifier: "bet@""#,
+                decodingStrategy: Version.DecodingStrategy.components(prereleaseAsString: false, metadataAsString: false)
+            ),
+        ])
+        func invalidDecoding(json: String, expectedDebugDescription: String, decodingStrategy: Version.DecodingStrategy?) throws {
             let jsonDecoder = JSONDecoder()
+            if let decodingStrategy {
+                jsonDecoder.semverVersionDecodingStrategy = decodingStrategy
+            }
 
             // TODO: Once we drop support for Swift 6.0, we can re-work these to use the returned error from `#expect(throws:)`
 
-            #expect(throws: DecodingError.self) {
-                do {
-                    _ = try jsonDecoder.decode(Version.self, from: invalidJSON1)
-                } catch DecodingError.dataCorrupted(let context) {
-                    #expect(context.debugDescription == "Invalid major version component: -1")
-                    throw DecodingError.dataCorrupted(context)
-                } catch let decodingError as DecodingError {
-                    Issue.record("Invalid error: \(decodingError)")
-                    throw decodingError
-                }
-            }
-            #expect(throws: DecodingError.self) {
-                do {
-                    _ = try jsonDecoder.decode(Version.self, from: invalidJSON2)
-                } catch DecodingError.dataCorrupted(let context) {
-                    #expect(context.debugDescription == "Invalid minor version component: -2")
-                    throw DecodingError.dataCorrupted(context)
-                } catch let decodingError as DecodingError {
-                    Issue.record("Invalid error: \(decodingError)")
-                    throw decodingError
-                }
-            }
-            #expect(throws: DecodingError.self) {
-                do {
-                    _ = try jsonDecoder.decode(Version.self, from: invalidJSON3)
-                } catch DecodingError.dataCorrupted(let context) {
-                    #expect(context.debugDescription == "Invalid patch version component: -3")
-                    throw DecodingError.dataCorrupted(context)
-                } catch let decodingError as DecodingError {
-                    Issue.record("Invalid error: \(decodingError)")
-                    throw decodingError
-                }
-            }
-            #expect(throws: DecodingError.self) {
-                do {
-                    _ = try jsonDecoder.decode(Version.self, from: invalidJSON4)
-                } catch DecodingError.dataCorrupted(let context) {
-                    #expect(context.debugDescription == #"Invalid prerelease: ["bet@"]"#)
-                    throw DecodingError.dataCorrupted(context)
-                } catch let decodingError as DecodingError {
-                    Issue.record("Invalid error: \(decodingError)")
-                    throw decodingError
-                }
-            }
-            #expect(throws: DecodingError.self) {
-                do {
-                    _ = try jsonDecoder.decode(Version.self, from: invalidJSON5)
-                } catch DecodingError.dataCorrupted(let context) {
-                    #expect(context.debugDescription == #"Invalid metadata: ["exp", "t%st"]"#)
-                    throw DecodingError.dataCorrupted(context)
-                } catch let decodingError as DecodingError {
-                    Issue.record("Invalid error: \(decodingError)")
-                    throw decodingError
-                }
-            }
-            jsonDecoder.semverVersionDecodingStrategy = .components(prereleaseAsString: false, metadataAsString: false)
-            #expect(throws: DecodingError.self) {
-                do {
-                    _ = try jsonDecoder.decode(Version.self, from: invalidJSON6)
-                } catch DecodingError.dataCorrupted(let context) {
-                    #expect(context.debugDescription == #"Invalid prerelease identifier: "bet@""#)
-                    throw DecodingError.dataCorrupted(context)
-                } catch let decodingError as DecodingError {
-                    Issue.record("Invalid error: \(decodingError)")
-                    throw decodingError
-                }
-            }
+            #expect( performing: { try jsonDecoder.decode(Version.self, from: Data(json.utf8)) },
+                throws: {
+                    guard case DecodingError.dataCorrupted(let context) = $0 else { return false }
+                    #expect(context.debugDescription == expectedDebugDescription)
+                    return true
+                })
         }
-#endif
     }
 }
