@@ -249,8 +249,8 @@ extension VersionTests {
                 return .init(major: major)
             }
 
-            let json = Data(#"{"version":2}"#.utf8)
-            let versionDict = try jsonDecoder.decode(Dictionary<String, Version>.self, from: json)
+            let versionDict = try jsonDecoder.decode(Dictionary<String, Version>.self,
+                                                     from: Data(#"{"version":2}"#.utf8))
             let version = try #require(versionDict["version"])
 
             #expect(version.major == 2)
@@ -278,14 +278,21 @@ extension VersionTests {
                 jsonDecoder.semverVersionDecodingStrategy = decodingStrategy
             }
 
-            // TODO: Once we drop support for Swift 6.0, we can re-work these to use the returned error from `#expect(throws:)`
-
-            #expect( performing: { try jsonDecoder.decode(Version.self, from: Data(json.utf8)) },
-                throws: {
-                    guard case DecodingError.dataCorrupted(let context) = $0 else { return false }
-                    #expect(context.debugDescription == expectedDebugDescription)
-                    return true
-                })
+#if compiler(>=6.1)
+            #expect(performing: { try jsonDecoder.decode(Version.self, from: Data(json.utf8)) },
+                                throws: {
+                guard case DecodingError.dataCorrupted(let context) = $0 else { return false }
+                #expect(context.debugDescription == expectedDebugDescription)
+                return true
+            })
+#else // The above would theoretically work on Swift 6.0 as well, but the compiler fails to compile it...
+            do {
+                _ = try jsonDecoder.decode(Version.self, from: Data(json.utf8))
+                Issue.record("Expected error being thrown!")
+            } catch DecodingError.dataCorrupted(let context) {
+                #expect(context.debugDescription == expectedDebugDescription)
+            }
+#endif
         }
     }
 }
