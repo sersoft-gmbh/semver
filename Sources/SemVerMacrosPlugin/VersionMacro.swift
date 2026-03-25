@@ -6,8 +6,8 @@ internal import SwiftDiagnostics
 internal import SemVerParsing
 
 fileprivate extension DiagnosticMessage where Self == VersionMacro.DiagnosticMessage {
-    static var notAStringLiteral: Self {
-        .init(severity: .error, message: "#\(VersionMacro.name) requires a literal string (without any interpolations)!")
+    static func notAStringLiteral(macroName: String) -> Self {
+        .init(severity: .error, message: "#\(macroName) requires a literal string (without any interpolations)!")
     }
 
     static func notAValidVersion(_ string: String) -> Self {
@@ -29,17 +29,14 @@ public enum VersionMacro: ExpressionMacro {
         }
     }
 
-    internal static let name = "version"
-
     public static func expansion(of node: some FreestandingMacroExpansionSyntax,
                                  in context: some MacroExpansionContext) throws -> ExprSyntax {
-        assert(node.macroName.text == name)
         guard let arg = node.arguments.first else { fatalError("Missing argument!") }
         guard let stringLiteralExpr = arg.expression.as(StringLiteralExprSyntax.self),
               let string = stringLiteralExpr.representedLiteralValue
         else {
             throw DiagnosticsError(diagnostics: [
-                Diagnostic(node: arg.expression, message: .notAStringLiteral),
+                Diagnostic(node: arg.expression, message: .notAStringLiteral(macroName: node.macroName.text))
             ])
         }
         guard let components = VersionParser.parseString(string) else {
