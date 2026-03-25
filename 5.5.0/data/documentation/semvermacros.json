@@ -1,0 +1,227 @@
+{
+  "abstract" : [
+    {
+      "text" : "Compile-time version string parsing.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/SemVerMacros\/documentation\/SemVerMacros"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "SemVerMacros",
+    "modules" : [
+      {
+        "name" : "SemVerMacros"
+      }
+    ],
+    "role" : "collection",
+    "roleHeading" : "Framework",
+    "symbolKind" : "module",
+    "title" : "SemVerMacros"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "Macros",
+          "level" : 3,
+          "text" : "Macros",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If a ",
+              "type" : "text"
+            },
+            {
+              "code" : "Version",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " should be constructed from a ",
+              "type" : "text"
+            },
+            {
+              "code" : "String",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " that is known at compile time, the ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/SemVerMacros\/documentation\/SemVerMacros\/version(_:)",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " macro can be used.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "It will parse the ",
+              "type" : "text"
+            },
+            {
+              "code" : "String",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " at compile time and generate code that initializes a ",
+              "type" : "text"
+            },
+            {
+              "code" : "Version",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " from the result:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "let version = #version(\"1.2.3\")"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "expands to",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "let version = SemVer.Version(major: 1, minor: 2, patch: 3, prerelase: [], metadata: [])"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "anchor" : "Macros",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/SemVerMacros\/documentation\/SemVerMacros\/version(_:)"
+      ],
+      "title" : "Macros"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/semvermacros"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://SemVerMacros/documentation/SemVerMacros": {
+  "abstract" : [
+    {
+      "text" : "Compile-time version string parsing.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVerMacros\/documentation\/SemVerMacros",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "SemVerMacros",
+  "type" : "topic",
+  "url" : "\/documentation\/semvermacros"
+},
+"doc://SemVerMacros/documentation/SemVerMacros/version(_:)": {
+  "abstract" : [
+    {
+      "text" : "Parses a string to a ",
+      "type" : "text"
+    },
+    {
+      "code" : "Version",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " at compile time.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "macro"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "version"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s12StaticStringV",
+      "text" : "StaticString"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6SemVer7VersionV",
+      "text" : "Version"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVerMacros\/documentation\/SemVerMacros\/version(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "version(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/semvermacros\/version(_:)"
+}
+}
+}
