@@ -498,7 +498,18 @@
 },
 "doc://SemVer/documentation/SemVer/Version/_(_:_:)": {
   "abstract" : [
-
+    {
+      "text" : "Returns a Boolean value indicating whether the value of the first",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "argument is less than that of the second argument.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {

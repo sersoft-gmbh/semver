@@ -1,4 +1,10 @@
 {
+  "abstract" : [
+    {
+      "text" : "Returns a Boolean value indicating whether two values are equal.",
+      "type" : "text"
+    }
+  ],
   "hierarchy" : {
     "paths" : [
       [
@@ -166,6 +172,103 @@
         }
       ],
       "kind" : "declarations"
+    },
+    {
+      "kind" : "parameters",
+      "parameters" : [
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "A value to compare.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "lhs"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Another value to compare.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "rhs"
+        }
+      ]
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Equality is the inverse of inequality. For any values ",
+              "type" : "text"
+            },
+            {
+              "code" : "a",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " and ",
+              "type" : "text"
+            },
+            {
+              "code" : "b",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ",",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "code" : "a == b",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " implies that ",
+              "type" : "text"
+            },
+            {
+              "code" : "a != b",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " is ",
+              "type" : "text"
+            },
+            {
+              "code" : "false",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
     }
   ],
   "schemaVersion" : {
@@ -257,7 +360,10 @@
 },
 "doc://SemVer/documentation/SemVer/Version/==(_:_:)": {
   "abstract" : [
-
+    {
+      "text" : "Returns a Boolean value indicating whether two values are equal.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {

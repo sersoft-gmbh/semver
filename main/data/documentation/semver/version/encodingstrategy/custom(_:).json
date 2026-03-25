@@ -112,7 +112,15 @@
             },
             {
               "kind" : "text",
-              "text" : "(("
+              "text" : "("
+            },
+            {
+              "kind" : "attribute",
+              "text" : "@Sendable"
+            },
+            {
+              "kind" : "text",
+              "text" : " ("
             },
             {
               "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version",

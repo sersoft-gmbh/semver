@@ -270,7 +270,10 @@
 },
 "doc://SemVer/documentation/SemVer/Version/NumericPart/description": {
   "abstract" : [
-
+    {
+      "text" : "A textual representation of this instance.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {

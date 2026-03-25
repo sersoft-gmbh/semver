@@ -124,6 +124,7 @@
         "doc:\/\/SemVer\/Se",
         "doc:\/\/SemVer\/SE",
         "doc:\/\/SemVer\/SQ",
+        "doc:\/\/SemVer\/s9EscapableP",
         "doc:\/\/SemVer\/SH",
         "doc:\/\/SemVer\/s25LosslessStringConvertibleP",
         "doc:\/\/SemVer\/s8SendableP",
@@ -630,7 +631,10 @@
 },
 "doc://SemVer/documentation/SemVer/Version/debugDescription": {
   "abstract" : [
-
+    {
+      "text" : "A textual representation of this instance, suitable for debugging.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -664,7 +668,10 @@
 },
 "doc://SemVer/documentation/SemVer/Version/description": {
   "abstract" : [
-
+    {
+      "text" : "A textual representation of this instance.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -698,7 +705,18 @@
 },
 "doc://SemVer/documentation/SemVer/Version/hash(into:)": {
   "abstract" : [
-
+    {
+      "text" : "Hashes the essential components of this value by feeding them into the",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "given hasher.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -836,7 +854,18 @@
 },
 "doc://SemVer/documentation/SemVer/Version/init(_:)": {
   "abstract" : [
-
+    {
+      "text" : "Instantiates an instance of the conforming type from a string",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "representation.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -1861,6 +1890,11 @@
 "doc://SemVer/s8SendableP": {
   "identifier" : "doc:\/\/SemVer\/s8SendableP",
   "title" : "Swift.Sendable",
+  "type" : "unresolvable"
+},
+"doc://SemVer/s9EscapableP": {
+  "identifier" : "doc:\/\/SemVer\/s9EscapableP",
+  "title" : "Swift.Escapable",
   "type" : "unresolvable"
 },
 "https://semver.org": {

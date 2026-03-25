@@ -331,7 +331,18 @@
 },
 "doc://SemVer/documentation/SemVer/Version/FormattingOptions/RawValue-swift.typealias": {
   "abstract" : [
-
+    {
+      "text" : "The raw type that can be used to represent all values of the conforming",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "type.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -741,7 +752,10 @@
 },
 "doc://SemVer/documentation/SemVer/Version/FormattingOptions/init(rawValue:)": {
   "abstract" : [
-
+    {
+      "text" : "Creates a new option set from the given raw value.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -797,7 +811,10 @@
 },
 "doc://SemVer/documentation/SemVer/Version/FormattingOptions/rawValue-swift.property": {
   "abstract" : [
-
+    {
+      "text" : "The corresponding value of the raw type.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {

@@ -187,7 +187,10 @@
 },
 "doc://SemVer/documentation/SemVer/Version/==(_:_:)": {
   "abstract" : [
-
+    {
+      "text" : "Returns a Boolean value indicating whether two values are equal.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {

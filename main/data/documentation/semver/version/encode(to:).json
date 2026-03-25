@@ -1,4 +1,10 @@
 {
+  "abstract" : [
+    {
+      "text" : "Encodes this value into the given encoder.",
+      "type" : "text"
+    }
+  ],
   "hierarchy" : {
     "paths" : [
       [
@@ -128,6 +134,78 @@
         }
       ],
       "kind" : "declarations"
+    },
+    {
+      "kind" : "parameters",
+      "parameters" : [
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "The encoder to write data to.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "encoder"
+        }
+      ]
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If the value fails to encode anything, ",
+              "type" : "text"
+            },
+            {
+              "code" : "encoder",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " will encode an empty",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "keyed container in its place.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This function throws an error if any values are invalid for the given",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "encoder’s format.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
     }
   ],
   "schemaVersion" : {
@@ -219,7 +297,10 @@
 },
 "doc://SemVer/documentation/SemVer/Version/encode(to:)": {
   "abstract" : [
-
+    {
+      "text" : "Encodes this value into the given encoder.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {

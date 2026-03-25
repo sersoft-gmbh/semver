@@ -1,4 +1,10 @@
 {
+  "abstract" : [
+    {
+      "text" : "A type that represents an integer literal.",
+      "type" : "text"
+    }
+  ],
   "hierarchy" : {
     "paths" : [
       [
@@ -86,6 +92,42 @@
         }
       ],
       "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The standard library integer and floating-point types are all valid types",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "for ",
+              "type" : "text"
+            },
+            {
+              "code" : "IntegerLiteralType",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
     }
   ],
   "schemaVersion" : {
@@ -211,7 +253,10 @@
 },
 "doc://SemVer/documentation/SemVer/Version/PrereleaseIdentifier/IntegerLiteralType": {
   "abstract" : [
-
+    {
+      "text" : "A type that represents an integer literal.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {

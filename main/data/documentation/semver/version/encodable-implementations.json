@@ -121,7 +121,10 @@
 },
 "doc://SemVer/documentation/SemVer/Version/encode(to:)": {
   "abstract" : [
-
+    {
+      "text" : "Encodes this value into the given encoder.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {

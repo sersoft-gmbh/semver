@@ -1,4 +1,18 @@
 {
+  "abstract" : [
+    {
+      "text" : "Instantiates an instance of the conforming type from a string",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "representation.",
+      "type" : "text"
+    }
+  ],
   "hierarchy" : {
     "paths" : [
       [
@@ -186,7 +200,18 @@
 },
 "doc://SemVer/documentation/SemVer/Version/init(_:)": {
   "abstract" : [
-
+    {
+      "text" : "Instantiates an instance of the conforming type from a string",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "representation.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {

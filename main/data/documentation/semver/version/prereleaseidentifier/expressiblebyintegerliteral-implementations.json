@@ -164,7 +164,10 @@
 },
 "doc://SemVer/documentation/SemVer/Version/PrereleaseIdentifier/IntegerLiteralType": {
   "abstract" : [
-
+    {
+      "text" : "A type that represents an integer literal.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -195,7 +198,10 @@
 },
 "doc://SemVer/documentation/SemVer/Version/PrereleaseIdentifier/init(integerLiteral:)": {
   "abstract" : [
-
+    {
+      "text" : "Creates an instance initialized to the specified integer value.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {

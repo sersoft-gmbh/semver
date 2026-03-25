@@ -156,7 +156,10 @@
 },
 "doc://SemVer/documentation/SemVer/Version/PrereleaseIdentifier/encode(to:)": {
   "abstract" : [
-
+    {
+      "text" : "Encodes this value into the given encoder.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
