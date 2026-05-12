@@ -1,6 +1,6 @@
 {
-  "bundleDisplayName" : "SemVerMacros",
-  "bundleID" : "SemVerMacros",
+  "bundleDisplayName" : "SemVer",
+  "bundleID" : "SemVer",
   "schemaVersion" : {
     "major" : 0,
     "minor" : 1,
