@@ -51,8 +51,8 @@ public enum VersionMacro: ExpressionMacro {
             patch: \(literal: components.patch),
             prerelease: \(ArrayExprSyntax(expressions: components.prerelease.map {
                 switch $0 {
-                case .number(let number): return "SemVer.Version.PrereleaseIdentifier(\(literal: number))"
-                case .text(let text): return "SemVer.Version.PrereleaseIdentifier(unchecked: \(literal: text))"
+                case .number(let number): "SemVer.Version.PrereleaseIdentifier(\(literal: number))"
+                case .text(let text): "SemVer.Version.PrereleaseIdentifier(unchecked: \(literal: text))"
                 }
             })),
             metadata: \(literal: components.metadata)

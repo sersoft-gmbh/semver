@@ -12,7 +12,7 @@ permissions:
 jobs:
   variables:
     outputs:
-      max-supported-swift-version: "6.3"
+      max-supported-swift-version: "6.4"
       xcode-scheme: semver-Package
       xcode-platform-version: latest
       fail-if-codecov-fails: "true"
@@ -46,7 +46,7 @@ jobs:
           - tvOS
           - watchOS
           - visionOS
-        swift-version-offset: [0, 2, 3] # Swift 6.2 has an issue with the pre-built SwiftSyntax stuff...
+        swift-version-offset: [0, 1, 3] # Swift 6.2 has an issue with the pre-built SwiftSyntax stuff in xcode...
     uses: sersoft-gmbh/oss-common-actions/.github/workflows/swift-test-xcode.yml@main
     with:
       xcode-scheme: ${{ needs.variables.outputs.xcode-scheme }}
