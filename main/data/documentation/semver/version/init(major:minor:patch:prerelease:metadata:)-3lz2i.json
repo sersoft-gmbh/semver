@@ -99,15 +99,6 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:6SemVer7VersionV",
-        "text" : "Version"
-      },
-      {
-        "kind" : "text",
-        "text" : "."
-      },
-      {
-        "kind" : "typeIdentifier",
         "preciseIdentifier" : "s:6SemVer7VersionV20PrereleaseIdentifierV",
         "text" : "PrereleaseIdentifier"
       },
@@ -242,16 +233,6 @@
             {
               "kind" : "text",
               "text" : "<"
-            },
-            {
-              "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:6SemVer7VersionV",
-              "text" : "Version"
-            },
-            {
-              "kind" : "text",
-              "text" : "."
             },
             {
               "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier",
@@ -666,15 +647,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:6SemVer7VersionV",
-      "text" : "Version"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:6SemVer7VersionV20PrereleaseIdentifierV",
       "text" : "PrereleaseIdentifier"
     },
@@ -807,15 +779,6 @@
     {
       "kind" : "text",
       "text" : "<"
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:6SemVer7VersionV",
-      "text" : "Version"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",

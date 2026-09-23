@@ -1,0 +1,308 @@
+{
+  "abstract" : [
+    {
+      "text" : "The prelease identifiers of this version.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/SemVerMacros\/documentation\/SemVerMacros",
+        "doc:\/\/SemVerMacros\/documentation\/SemVerMacros\/Version"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/SemVerMacros\/documentation\/SemVerMacros\/Version\/prerelease"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:6SemVer7VersionV10prereleaseSayAC20PrereleaseIdentifierVGvp",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "var"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "prerelease"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:Sa",
+        "text" : "Array"
+      },
+      {
+        "kind" : "text",
+        "text" : "<"
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:6SemVer7VersionV",
+        "text" : "Version"
+      },
+      {
+        "kind" : "text",
+        "text" : "."
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:6SemVer7VersionV20PrereleaseIdentifierV",
+        "text" : "PrereleaseIdentifier"
+      },
+      {
+        "kind" : "text",
+        "text" : ">"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "SemVerMacros"
+      }
+    ],
+    "remoteSource" : {
+      "fileName" : "Version.swift",
+      "url" : "https:\/\/github.com\/sersoft-gmbh\/semver\/blob\/refs\/heads\/main\/Sources\/SemVer\/Version.swift#L27"
+    },
+    "role" : "symbol",
+    "roleHeading" : "Instance Property",
+    "symbolKind" : "property",
+    "title" : "prerelease"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "Linux"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "var"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "prerelease"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:Sa",
+              "text" : "Array"
+            },
+            {
+              "kind" : "text",
+              "text" : "<"
+            },
+            {
+              "identifier" : "doc:\/\/SemVerMacros\/documentation\/SemVerMacros\/Version",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:6SemVer7VersionV",
+              "text" : "Version"
+            },
+            {
+              "kind" : "text",
+              "text" : "."
+            },
+            {
+              "identifier" : "doc:\/\/SemVerMacros\/documentation\/SemVerMacros\/Version\/PrereleaseIdentifier",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:6SemVer7VersionV20PrereleaseIdentifierV",
+              "text" : "PrereleaseIdentifier"
+            },
+            {
+              "kind" : "text",
+              "text" : ">"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/semvermacros\/version\/prerelease"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://SemVerMacros/documentation/SemVerMacros": {
+  "abstract" : [
+    {
+      "text" : "Compile-time version string parsing.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVerMacros\/documentation\/SemVerMacros",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "SemVerMacros",
+  "type" : "topic",
+  "url" : "\/documentation\/semvermacros"
+},
+"doc://SemVerMacros/documentation/SemVerMacros/Version": {
+  "abstract" : [
+    {
+      "text" : "A Version struct that implements the rules of semantic versioning.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Version"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVerMacros\/documentation\/SemVerMacros\/Version",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Version"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Version",
+  "type" : "topic",
+  "url" : "\/documentation\/semvermacros\/version"
+},
+"doc://SemVerMacros/documentation/SemVerMacros/Version/PrereleaseIdentifier": {
+  "abstract" : [
+    {
+      "text" : "Represents a prerelease identifier of a version.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "PrereleaseIdentifier"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVerMacros\/documentation\/SemVerMacros\/Version\/PrereleaseIdentifier",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "PrereleaseIdentifier"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Version.PrereleaseIdentifier",
+  "type" : "topic",
+  "url" : "\/documentation\/semvermacros\/version\/prereleaseidentifier"
+},
+"doc://SemVerMacros/documentation/SemVerMacros/Version/prerelease": {
+  "abstract" : [
+    {
+      "text" : "The prelease identifiers of this version.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "prerelease"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sa",
+      "text" : "Array"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6SemVer7VersionV",
+      "text" : "Version"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6SemVer7VersionV20PrereleaseIdentifierV",
+      "text" : "PrereleaseIdentifier"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVerMacros\/documentation\/SemVerMacros\/Version\/prerelease",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "prerelease",
+  "type" : "topic",
+  "url" : "\/documentation\/semvermacros\/version\/prerelease"
+}
+}
+}

@@ -387,18 +387,7 @@
 },
 "doc://SemVer/documentation/SemVer/Version/PrereleaseIdentifier/_(_:_:)": {
   "abstract" : [
-    {
-      "text" : "Returns a Boolean value indicating whether the value of the first",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "argument is less than that of the second argument.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -427,39 +416,11 @@
     },
     {
       "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:6SemVer7VersionV",
-      "text" : "Version"
+      "text" : "(`Self`"
     },
     {
       "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:6SemVer7VersionV20PrereleaseIdentifierV",
-      "text" : "PrereleaseIdentifier"
-    },
-    {
-      "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:6SemVer7VersionV",
-      "text" : "Version"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:6SemVer7VersionV20PrereleaseIdentifierV",
-      "text" : "PrereleaseIdentifier"
+      "text" : ", `Self`"
     },
     {
       "kind" : "text",
@@ -480,10 +441,7 @@
 },
 "doc://SemVer/documentation/SemVer/Version/PrereleaseIdentifier/debugDescription": {
   "abstract" : [
-    {
-      "text" : "A textual representation of this instance, suitable for debugging.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -517,10 +475,7 @@
 },
 "doc://SemVer/documentation/SemVer/Version/PrereleaseIdentifier/description": {
   "abstract" : [
-    {
-      "text" : "A textual representation of this instance.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {

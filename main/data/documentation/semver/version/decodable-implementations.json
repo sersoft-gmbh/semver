@@ -121,10 +121,7 @@
 },
 "doc://SemVer/documentation/SemVer/Version/init(from:)": {
   "abstract" : [
-    {
-      "text" : "Creates a new instance by decoding from the given decoder.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -141,7 +138,15 @@
     },
     {
       "kind" : "text",
-      "text" : ": any "
+      "text" : ": "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",

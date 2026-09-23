@@ -308,21 +308,7 @@
     },
     {
       "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:6SemVer7VersionV",
-      "text" : "Version"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:6SemVer7VersionV16DecodingStrategyO",
-      "text" : "DecodingStrategy"
+      "text" : ": `Self`"
     }
   ],
   "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/DecodingStrategy\/components",
@@ -420,7 +406,23 @@
     },
     {
       "kind" : "text",
-      "text" : "((any "
+      "text" : "("
+    },
+    {
+      "kind" : "attribute",
+      "text" : "@Sendable"
+    },
+    {
+      "kind" : "text",
+      "text" : " ("
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",

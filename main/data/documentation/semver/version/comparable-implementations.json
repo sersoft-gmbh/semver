@@ -41,9 +41,9 @@
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/.._(_:)",
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/.._(_:_:)",
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/_(_:_:)",
-        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/_(_:_:)-53xj6",
-        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/_=(_:_:)-6z215",
-        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/_=(_:_:)-7km7s"
+        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/_(_:_:)-15u2r",
+        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/_=(_:_:)-4acpo",
+        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/_=(_:_:)-4qe98"
       ],
       "title" : "Operators"
     }
@@ -498,18 +498,7 @@
 },
 "doc://SemVer/documentation/SemVer/Version/_(_:_:)": {
   "abstract" : [
-    {
-      "text" : "Returns a Boolean value indicating whether the value of the first",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "argument is less than that of the second argument.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -538,21 +527,11 @@
     },
     {
       "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:6SemVer7VersionV",
-      "text" : "Version"
+      "text" : "(`Self`"
     },
     {
       "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:6SemVer7VersionV",
-      "text" : "Version"
+      "text" : ", `Self`"
     },
     {
       "kind" : "text",
@@ -571,7 +550,7 @@
   "type" : "topic",
   "url" : "\/documentation\/semver\/version\/_(_:_:)"
 },
-"doc://SemVer/documentation/SemVer/Version/_(_:_:)-53xj6": {
+"doc://SemVer/documentation/SemVer/Version/_(_:_:)-15u2r": {
   "abstract" : [
     {
       "text" : "Returns a Boolean value indicating whether the value of the first argument",
@@ -616,12 +595,28 @@
       "text" : "("
     },
     {
+      "kind" : "keyword",
+      "text" : "borrowing"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
       "kind" : "typeIdentifier",
       "text" : "Self"
     },
     {
       "kind" : "text",
       "text" : ", "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "borrowing"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -637,14 +632,14 @@
       "text" : "Bool"
     }
   ],
-  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/_(_:_:)-53xj6",
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/_(_:_:)-15u2r",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : ">(_:_:)",
   "type" : "topic",
-  "url" : "\/documentation\/semver\/version\/_(_:_:)-53xj6"
+  "url" : "\/documentation\/semver\/version\/_(_:_:)-15u2r"
 },
-"doc://SemVer/documentation/SemVer/Version/_=(_:_:)-6z215": {
+"doc://SemVer/documentation/SemVer/Version/_=(_:_:)-4acpo": {
   "abstract" : [
     {
       "text" : "Returns a Boolean value indicating whether the value of the first argument",
@@ -689,12 +684,28 @@
       "text" : "("
     },
     {
+      "kind" : "keyword",
+      "text" : "borrowing"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
       "kind" : "typeIdentifier",
       "text" : "Self"
     },
     {
       "kind" : "text",
       "text" : ", "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "borrowing"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -710,14 +721,14 @@
       "text" : "Bool"
     }
   ],
-  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/_=(_:_:)-6z215",
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/_=(_:_:)-4acpo",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : "<=(_:_:)",
   "type" : "topic",
-  "url" : "\/documentation\/semver\/version\/_=(_:_:)-6z215"
+  "url" : "\/documentation\/semver\/version\/_=(_:_:)-4acpo"
 },
-"doc://SemVer/documentation/SemVer/Version/_=(_:_:)-7km7s": {
+"doc://SemVer/documentation/SemVer/Version/_=(_:_:)-4qe98": {
   "abstract" : [
     {
       "text" : "Returns a Boolean value indicating whether the value of the first argument",
@@ -762,12 +773,28 @@
       "text" : "("
     },
     {
+      "kind" : "keyword",
+      "text" : "borrowing"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
       "kind" : "typeIdentifier",
       "text" : "Self"
     },
     {
       "kind" : "text",
       "text" : ", "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "borrowing"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -783,12 +810,12 @@
       "text" : "Bool"
     }
   ],
-  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/_=(_:_:)-7km7s",
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/_=(_:_:)-4qe98",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : ">=(_:_:)",
   "type" : "topic",
-  "url" : "\/documentation\/semver\/version\/_=(_:_:)-7km7s"
+  "url" : "\/documentation\/semver\/version\/_=(_:_:)-4qe98"
 },
 "https://semver.org": {
   "identifier" : "https:\/\/semver.org",

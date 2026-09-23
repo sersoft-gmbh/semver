@@ -1,0 +1,330 @@
+{
+  "abstract" : [
+    {
+      "text" : "Uses the given closure for decoding a version.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/SemVerMacros\/documentation\/SemVerMacros",
+        "doc:\/\/SemVerMacros\/documentation\/SemVerMacros\/Version",
+        "doc:\/\/SemVerMacros\/documentation\/SemVerMacros\/Version\/DecodingStrategy"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/SemVerMacros\/documentation\/SemVerMacros\/Version\/DecodingStrategy\/custom(_:)"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:6SemVer7VersionV16DecodingStrategyO6customyAeCs7Decoder_pKccAEmF",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "case"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "custom"
+      },
+      {
+        "kind" : "text",
+        "text" : "((any "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:s7DecoderP",
+        "text" : "Decoder"
+      },
+      {
+        "kind" : "text",
+        "text" : ") "
+      },
+      {
+        "kind" : "keyword",
+        "text" : "throws"
+      },
+      {
+        "kind" : "text",
+        "text" : " -> "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:6SemVer7VersionV",
+        "text" : "Version"
+      },
+      {
+        "kind" : "text",
+        "text" : ")"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "SemVerMacros"
+      }
+    ],
+    "remoteSource" : {
+      "fileName" : "Version+Codable.swift",
+      "url" : "https:\/\/github.com\/sersoft-gmbh\/semver\/blob\/refs\/heads\/main\/Sources\/SemVer\/Version+Codable.swift#L56"
+    },
+    "role" : "symbol",
+    "roleHeading" : "Case",
+    "symbolKind" : "case",
+    "title" : "Version.DecodingStrategy.custom(_:)"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "Linux"
+          ],
+          "tokens" : [
+            {
+              "kind" : "attribute",
+              "text" : "@preconcurrency"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "case"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "custom"
+            },
+            {
+              "kind" : "text",
+              "text" : "("
+            },
+            {
+              "kind" : "attribute",
+              "text" : "@Sendable"
+            },
+            {
+              "kind" : "text",
+              "text" : " (any "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:s7DecoderP",
+              "text" : "Decoder"
+            },
+            {
+              "kind" : "text",
+              "text" : ") "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "throws"
+            },
+            {
+              "kind" : "text",
+              "text" : " -> "
+            },
+            {
+              "identifier" : "doc:\/\/SemVerMacros\/documentation\/SemVerMacros\/Version",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:6SemVer7VersionV",
+              "text" : "Version"
+            },
+            {
+              "kind" : "text",
+              "text" : ")"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/semvermacros\/version\/decodingstrategy\/custom(_:)"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://SemVerMacros/documentation/SemVerMacros": {
+  "abstract" : [
+    {
+      "text" : "Compile-time version string parsing.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVerMacros\/documentation\/SemVerMacros",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "SemVerMacros",
+  "type" : "topic",
+  "url" : "\/documentation\/semvermacros"
+},
+"doc://SemVerMacros/documentation/SemVerMacros/Version": {
+  "abstract" : [
+    {
+      "text" : "A Version struct that implements the rules of semantic versioning.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Version"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVerMacros\/documentation\/SemVerMacros\/Version",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Version"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Version",
+  "type" : "topic",
+  "url" : "\/documentation\/semvermacros\/version"
+},
+"doc://SemVerMacros/documentation/SemVerMacros/Version/DecodingStrategy": {
+  "abstract" : [
+    {
+      "text" : "The strategy for decoding a ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/SemVerMacros\/documentation\/SemVerMacros\/Version",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "DecodingStrategy"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVerMacros\/documentation\/SemVerMacros\/Version\/DecodingStrategy",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "DecodingStrategy"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Version.DecodingStrategy",
+  "type" : "topic",
+  "url" : "\/documentation\/semvermacros\/version\/decodingstrategy"
+},
+"doc://SemVerMacros/documentation/SemVerMacros/Version/DecodingStrategy/custom(_:)": {
+  "abstract" : [
+    {
+      "text" : "Uses the given closure for decoding a version.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "custom"
+    },
+    {
+      "kind" : "text",
+      "text" : "((any "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s7DecoderP",
+      "text" : "Decoder"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6SemVer7VersionV",
+      "text" : "Version"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVerMacros\/documentation\/SemVerMacros\/Version\/DecodingStrategy\/custom(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "Version.DecodingStrategy.custom(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/semvermacros\/version\/decodingstrategy\/custom(_:)"
+}
+}
+}

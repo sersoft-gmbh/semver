@@ -631,10 +631,7 @@
 },
 "doc://SemVer/documentation/SemVer/Version/debugDescription": {
   "abstract" : [
-    {
-      "text" : "A textual representation of this instance, suitable for debugging.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -668,10 +665,7 @@
 },
 "doc://SemVer/documentation/SemVer/Version/description": {
   "abstract" : [
-    {
-      "text" : "A textual representation of this instance.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -705,18 +699,7 @@
 },
 "doc://SemVer/documentation/SemVer/Version/hash(into:)": {
   "abstract" : [
-    {
-      "text" : "Hashes the essential components of this value by feeding them into the",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "given hasher.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -794,15 +777,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:6SemVer7VersionV",
-      "text" : "Version"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:6SemVer7VersionV11NumericPartO",
       "text" : "NumericPart"
     },
@@ -854,18 +828,7 @@
 },
 "doc://SemVer/documentation/SemVer/Version/init(_:)": {
   "abstract" : [
-    {
-      "text" : "Instantiates an instance of the conforming type from a string",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "representation.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -976,15 +939,6 @@
     {
       "kind" : "text",
       "text" : "<"
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:6SemVer7VersionV",
-      "text" : "Version"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",
@@ -1106,15 +1060,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:6SemVer7VersionV",
-      "text" : "Version"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:6SemVer7VersionV20PrereleaseIdentifierV",
       "text" : "PrereleaseIdentifier"
     },
@@ -1233,15 +1178,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:6SemVer7VersionV",
-      "text" : "Version"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:6SemVer7VersionV20PrereleaseIdentifierV",
       "text" : "PrereleaseIdentifier"
     },
@@ -1348,15 +1284,6 @@
     {
       "kind" : "text",
       "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:6SemVer7VersionV",
-      "text" : "Version"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",
@@ -1640,15 +1567,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:6SemVer7VersionV",
-      "text" : "Version"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:6SemVer7VersionV11NumericPartO",
       "text" : "NumericPart"
     },
@@ -1775,15 +1693,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:6SemVer7VersionV",
-      "text" : "Version"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:6SemVer7VersionV20PrereleaseIdentifierV",
       "text" : "PrereleaseIdentifier"
     },
@@ -1830,15 +1739,6 @@
     {
       "kind" : "text",
       "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:6SemVer7VersionV",
-      "text" : "Version"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",

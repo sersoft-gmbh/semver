@@ -1,18 +1,4 @@
 {
-  "abstract" : [
-    {
-      "text" : "Returns a Boolean value indicating whether the value of the first",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "argument is less than that of the second argument.",
-      "type" : "text"
-    }
-  ],
   "hierarchy" : {
     "paths" : [
       [
@@ -56,39 +42,11 @@
       },
       {
         "kind" : "text",
-        "text" : "("
-      },
-      {
-        "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:6SemVer7VersionV",
-        "text" : "Version"
+        "text" : "(`Self`"
       },
       {
         "kind" : "text",
-        "text" : "."
-      },
-      {
-        "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:6SemVer7VersionV20PrereleaseIdentifierV",
-        "text" : "PrereleaseIdentifier"
-      },
-      {
-        "kind" : "text",
-        "text" : ", "
-      },
-      {
-        "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:6SemVer7VersionV",
-        "text" : "Version"
-      },
-      {
-        "kind" : "text",
-        "text" : "."
-      },
-      {
-        "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:6SemVer7VersionV20PrereleaseIdentifierV",
-        "text" : "PrereleaseIdentifier"
+        "text" : ", `Self`"
       },
       {
         "kind" : "text",
@@ -159,23 +117,7 @@
             },
             {
               "kind" : "text",
-              "text" : ": "
-            },
-            {
-              "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:6SemVer7VersionV",
-              "text" : "Version"
-            },
-            {
-              "kind" : "text",
-              "text" : "."
-            },
-            {
-              "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:6SemVer7VersionV20PrereleaseIdentifierV",
-              "text" : "PrereleaseIdentifier"
+              "text" : ": `Self`"
             },
             {
               "kind" : "text",
@@ -187,23 +129,7 @@
             },
             {
               "kind" : "text",
-              "text" : ": "
-            },
-            {
-              "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:6SemVer7VersionV",
-              "text" : "Version"
-            },
-            {
-              "kind" : "text",
-              "text" : "."
-            },
-            {
-              "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:6SemVer7VersionV20PrereleaseIdentifierV",
-              "text" : "PrereleaseIdentifier"
+              "text" : ": `Self`"
             },
             {
               "kind" : "text",
@@ -218,91 +144,6 @@
         }
       ],
       "kind" : "declarations"
-    },
-    {
-      "kind" : "parameters",
-      "parameters" : [
-        {
-          "content" : [
-            {
-              "inlineContent" : [
-                {
-                  "text" : "A value to compare.",
-                  "type" : "text"
-                }
-              ],
-              "type" : "paragraph"
-            }
-          ],
-          "name" : "lhs"
-        },
-        {
-          "content" : [
-            {
-              "inlineContent" : [
-                {
-                  "text" : "Another value to compare.",
-                  "type" : "text"
-                }
-              ],
-              "type" : "paragraph"
-            }
-          ],
-          "name" : "rhs"
-        }
-      ]
-    },
-    {
-      "content" : [
-        {
-          "anchor" : "discussion",
-          "level" : 2,
-          "text" : "Discussion",
-          "type" : "heading"
-        },
-        {
-          "inlineContent" : [
-            {
-              "text" : "This function is the only requirement of the ",
-              "type" : "text"
-            },
-            {
-              "code" : "Comparable",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : " protocol. The",
-              "type" : "text"
-            },
-            {
-              "text" : " ",
-              "type" : "text"
-            },
-            {
-              "text" : "remainder of the relational operator functions are implemented by the",
-              "type" : "text"
-            },
-            {
-              "text" : " ",
-              "type" : "text"
-            },
-            {
-              "text" : "standard library for any type that conforms to ",
-              "type" : "text"
-            },
-            {
-              "code" : "Comparable",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : ".",
-              "type" : "text"
-            }
-          ],
-          "type" : "paragraph"
-        }
-      ],
-      "kind" : "content"
     }
   ],
   "schemaVersion" : {
@@ -428,18 +269,7 @@
 },
 "doc://SemVer/documentation/SemVer/Version/PrereleaseIdentifier/_(_:_:)": {
   "abstract" : [
-    {
-      "text" : "Returns a Boolean value indicating whether the value of the first",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "argument is less than that of the second argument.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -468,39 +298,11 @@
     },
     {
       "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:6SemVer7VersionV",
-      "text" : "Version"
+      "text" : "(`Self`"
     },
     {
       "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:6SemVer7VersionV20PrereleaseIdentifierV",
-      "text" : "PrereleaseIdentifier"
-    },
-    {
-      "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:6SemVer7VersionV",
-      "text" : "Version"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:6SemVer7VersionV20PrereleaseIdentifierV",
-      "text" : "PrereleaseIdentifier"
+      "text" : ", `Self`"
     },
     {
       "kind" : "text",

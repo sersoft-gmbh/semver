@@ -40,15 +40,6 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:6SemVer7VersionV",
-        "text" : "Version"
-      },
-      {
-        "kind" : "text",
-        "text" : "."
-      },
-      {
-        "kind" : "typeIdentifier",
         "preciseIdentifier" : "s:6SemVer7VersionV11NumericPartO",
         "text" : "NumericPart"
       },
@@ -155,16 +146,6 @@
             {
               "kind" : "text",
               "text" : ": "
-            },
-            {
-              "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:6SemVer7VersionV",
-              "text" : "Version"
-            },
-            {
-              "kind" : "text",
-              "text" : "."
             },
             {
               "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/NumericPart",
@@ -579,15 +560,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:6SemVer7VersionV",
-      "text" : "Version"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:6SemVer7VersionV11NumericPartO",
       "text" : "NumericPart"
     },
@@ -728,15 +700,6 @@
     {
       "kind" : "text",
       "text" : "<"
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:6SemVer7VersionV",
-      "text" : "Version"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",

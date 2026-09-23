@@ -1,0 +1,215 @@
+{
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/SemVerMacros\/documentation\/SemVerMacros"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/SemVerMacros\/documentation\/SemVerMacros\/FoundationEssentials"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:m:s:e:s:20FoundationEssentials11JSONDecoderC6SemVerE29semverVersionDecodingStrategyAD0G0V0hI0Ovp",
+    "modules" : [
+      {
+        "name" : "SemVerMacros"
+      }
+    ],
+    "role" : "collection",
+    "roleHeading" : "Extended Module",
+    "symbolKind" : "extension",
+    "title" : "FoundationEssentials"
+  },
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "anchor" : "Extended-Classes",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/SemVerMacros\/documentation\/SemVerMacros\/FoundationEssentials\/JSONDecoder",
+        "doc:\/\/SemVerMacros\/documentation\/SemVerMacros\/FoundationEssentials\/JSONEncoder",
+        "doc:\/\/SemVerMacros\/documentation\/SemVerMacros\/FoundationEssentials\/PropertyListDecoder",
+        "doc:\/\/SemVerMacros\/documentation\/SemVerMacros\/FoundationEssentials\/PropertyListEncoder"
+      ],
+      "title" : "Extended Classes"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/semvermacros\/foundationessentials"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://SemVerMacros/documentation/SemVerMacros": {
+  "abstract" : [
+    {
+      "text" : "Compile-time version string parsing.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVerMacros\/documentation\/SemVerMacros",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "SemVerMacros",
+  "type" : "topic",
+  "url" : "\/documentation\/semvermacros"
+},
+"doc://SemVerMacros/documentation/SemVerMacros/FoundationEssentials": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/SemVerMacros\/documentation\/SemVerMacros\/FoundationEssentials",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "FoundationEssentials",
+  "type" : "topic",
+  "url" : "\/documentation\/semvermacros\/foundationessentials"
+},
+"doc://SemVerMacros/documentation/SemVerMacros/FoundationEssentials/JSONDecoder": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "extension"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "preciseIdentifier" : "s:20FoundationEssentials11JSONDecoderC",
+      "text" : "JSONDecoder"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVerMacros\/documentation\/SemVerMacros\/FoundationEssentials\/JSONDecoder",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "JSONDecoder"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "JSONDecoder",
+  "type" : "topic",
+  "url" : "\/documentation\/semvermacros\/foundationessentials\/jsondecoder"
+},
+"doc://SemVerMacros/documentation/SemVerMacros/FoundationEssentials/JSONEncoder": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "extension"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "preciseIdentifier" : "s:20FoundationEssentials11JSONEncoderC",
+      "text" : "JSONEncoder"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVerMacros\/documentation\/SemVerMacros\/FoundationEssentials\/JSONEncoder",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "JSONEncoder"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "JSONEncoder",
+  "type" : "topic",
+  "url" : "\/documentation\/semvermacros\/foundationessentials\/jsonencoder"
+},
+"doc://SemVerMacros/documentation/SemVerMacros/FoundationEssentials/PropertyListDecoder": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "extension"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "preciseIdentifier" : "s:20FoundationEssentials19PropertyListDecoderC",
+      "text" : "PropertyListDecoder"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVerMacros\/documentation\/SemVerMacros\/FoundationEssentials\/PropertyListDecoder",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "PropertyListDecoder"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "PropertyListDecoder",
+  "type" : "topic",
+  "url" : "\/documentation\/semvermacros\/foundationessentials\/propertylistdecoder"
+},
+"doc://SemVerMacros/documentation/SemVerMacros/FoundationEssentials/PropertyListEncoder": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "extension"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "preciseIdentifier" : "s:20FoundationEssentials19PropertyListEncoderC",
+      "text" : "PropertyListEncoder"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVerMacros\/documentation\/SemVerMacros\/FoundationEssentials\/PropertyListEncoder",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "PropertyListEncoder"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "PropertyListEncoder",
+  "type" : "topic",
+  "url" : "\/documentation\/semvermacros\/foundationessentials\/propertylistencoder"
+}
+}
+}

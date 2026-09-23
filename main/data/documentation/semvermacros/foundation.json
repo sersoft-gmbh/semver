@@ -1,0 +1,116 @@
+{
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/SemVerMacros\/documentation\/SemVerMacros"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/SemVerMacros\/documentation\/SemVerMacros\/Foundation"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:m:s:e:s:10Foundation12CharacterSetV6SemVerE20versionSuffixAllowedACvpZ",
+    "modules" : [
+      {
+        "name" : "SemVerMacros"
+      }
+    ],
+    "role" : "collection",
+    "roleHeading" : "Extended Module",
+    "symbolKind" : "extension",
+    "title" : "Foundation"
+  },
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "anchor" : "Extended-Structures",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/SemVerMacros\/documentation\/SemVerMacros\/Foundation\/CharacterSet"
+      ],
+      "title" : "Extended Structures"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/semvermacros\/foundation"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://SemVerMacros/documentation/SemVerMacros": {
+  "abstract" : [
+    {
+      "text" : "Compile-time version string parsing.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVerMacros\/documentation\/SemVerMacros",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "SemVerMacros",
+  "type" : "topic",
+  "url" : "\/documentation\/semvermacros"
+},
+"doc://SemVerMacros/documentation/SemVerMacros/Foundation": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/SemVerMacros\/documentation\/SemVerMacros\/Foundation",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Foundation",
+  "type" : "topic",
+  "url" : "\/documentation\/semvermacros\/foundation"
+},
+"doc://SemVerMacros/documentation/SemVerMacros/Foundation/CharacterSet": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "extension"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "preciseIdentifier" : "s:10Foundation12CharacterSetV",
+      "text" : "CharacterSet"
+    }
+  ],
+  "identifier" : "doc:\/\/SemVerMacros\/documentation\/SemVerMacros\/Foundation\/CharacterSet",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "CharacterSet"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "CharacterSet",
+  "type" : "topic",
+  "url" : "\/documentation\/semvermacros\/foundation\/characterset"
+}
+}
+}

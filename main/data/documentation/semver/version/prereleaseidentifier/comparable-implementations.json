@@ -41,9 +41,9 @@
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/...(_:_:)",
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/.._(_:)",
         "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/.._(_:_:)",
-        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/_(_:_:)-6vxld",
-        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/_=(_:_:)-1aisw",
-        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/_=(_:_:)-41obm"
+        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/_(_:_:)-4o8mm",
+        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/_=(_:_:)-4lu2w",
+        "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/_=(_:_:)-79qwz"
       ],
       "title" : "Operators"
     }
@@ -530,7 +530,7 @@
   "type" : "topic",
   "url" : "\/documentation\/semver\/version\/prereleaseidentifier\/'.._(_:_:)"
 },
-"doc://SemVer/documentation/SemVer/Version/PrereleaseIdentifier/_(_:_:)-6vxld": {
+"doc://SemVer/documentation/SemVer/Version/PrereleaseIdentifier/_(_:_:)-4o8mm": {
   "abstract" : [
     {
       "text" : "Returns a Boolean value indicating whether the value of the first argument",
@@ -575,12 +575,28 @@
       "text" : "("
     },
     {
+      "kind" : "keyword",
+      "text" : "borrowing"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
       "kind" : "typeIdentifier",
       "text" : "Self"
     },
     {
       "kind" : "text",
       "text" : ", "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "borrowing"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -596,14 +612,14 @@
       "text" : "Bool"
     }
   ],
-  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/_(_:_:)-6vxld",
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/_(_:_:)-4o8mm",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : ">(_:_:)",
   "type" : "topic",
-  "url" : "\/documentation\/semver\/version\/prereleaseidentifier\/_(_:_:)-6vxld"
+  "url" : "\/documentation\/semver\/version\/prereleaseidentifier\/_(_:_:)-4o8mm"
 },
-"doc://SemVer/documentation/SemVer/Version/PrereleaseIdentifier/_=(_:_:)-1aisw": {
+"doc://SemVer/documentation/SemVer/Version/PrereleaseIdentifier/_=(_:_:)-4lu2w": {
   "abstract" : [
     {
       "text" : "Returns a Boolean value indicating whether the value of the first argument",
@@ -648,12 +664,28 @@
       "text" : "("
     },
     {
+      "kind" : "keyword",
+      "text" : "borrowing"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
       "kind" : "typeIdentifier",
       "text" : "Self"
     },
     {
       "kind" : "text",
       "text" : ", "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "borrowing"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -669,14 +701,14 @@
       "text" : "Bool"
     }
   ],
-  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/_=(_:_:)-1aisw",
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/_=(_:_:)-4lu2w",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : ">=(_:_:)",
   "type" : "topic",
-  "url" : "\/documentation\/semver\/version\/prereleaseidentifier\/_=(_:_:)-1aisw"
+  "url" : "\/documentation\/semver\/version\/prereleaseidentifier\/_=(_:_:)-4lu2w"
 },
-"doc://SemVer/documentation/SemVer/Version/PrereleaseIdentifier/_=(_:_:)-41obm": {
+"doc://SemVer/documentation/SemVer/Version/PrereleaseIdentifier/_=(_:_:)-79qwz": {
   "abstract" : [
     {
       "text" : "Returns a Boolean value indicating whether the value of the first argument",
@@ -721,12 +753,28 @@
       "text" : "("
     },
     {
+      "kind" : "keyword",
+      "text" : "borrowing"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
       "kind" : "typeIdentifier",
       "text" : "Self"
     },
     {
       "kind" : "text",
       "text" : ", "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "borrowing"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -742,12 +790,12 @@
       "text" : "Bool"
     }
   ],
-  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/_=(_:_:)-41obm",
+  "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/_=(_:_:)-79qwz",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : "<=(_:_:)",
   "type" : "topic",
-  "url" : "\/documentation\/semver\/version\/prereleaseidentifier\/_=(_:_:)-41obm"
+  "url" : "\/documentation\/semver\/version\/prereleaseidentifier\/_=(_:_:)-79qwz"
 },
 "https://semver.org": {
   "identifier" : "https:\/\/semver.org",

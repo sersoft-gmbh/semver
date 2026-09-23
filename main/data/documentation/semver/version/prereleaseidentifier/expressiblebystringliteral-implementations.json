@@ -165,10 +165,7 @@
 },
 "doc://SemVer/documentation/SemVer/Version/PrereleaseIdentifier/StringLiteralType": {
   "abstract" : [
-    {
-      "text" : "A type that represents a string literal.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -277,10 +274,7 @@
 },
 "doc://SemVer/documentation/SemVer/Version/PrereleaseIdentifier/init(stringLiteral:)": {
   "abstract" : [
-    {
-      "text" : "Creates an instance initialized to the given string value.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -298,24 +292,6 @@
     {
       "kind" : "text",
       "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:6SemVer7VersionV",
-      "text" : "Version"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:6SemVer7VersionV20PrereleaseIdentifierV",
-      "text" : "PrereleaseIdentifier"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",

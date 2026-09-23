@@ -1,10 +1,4 @@
 {
-  "abstract" : [
-    {
-      "text" : "Creates an instance initialized to the specified integer value.",
-      "type" : "text"
-    }
-  ],
   "hierarchy" : {
     "paths" : [
       [
@@ -38,24 +32,6 @@
       {
         "kind" : "text",
         "text" : ": "
-      },
-      {
-        "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:6SemVer7VersionV",
-        "text" : "Version"
-      },
-      {
-        "kind" : "text",
-        "text" : "."
-      },
-      {
-        "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:6SemVer7VersionV20PrereleaseIdentifierV",
-        "text" : "PrereleaseIdentifier"
-      },
-      {
-        "kind" : "text",
-        "text" : "."
       },
       {
         "kind" : "typeIdentifier",
@@ -117,26 +93,6 @@
               "text" : ": "
             },
             {
-              "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:6SemVer7VersionV",
-              "text" : "Version"
-            },
-            {
-              "kind" : "text",
-              "text" : "."
-            },
-            {
-              "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:6SemVer7VersionV20PrereleaseIdentifierV",
-              "text" : "PrereleaseIdentifier"
-            },
-            {
-              "kind" : "text",
-              "text" : "."
-            },
-            {
               "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/PrereleaseIdentifier\/IntegerLiteralType",
               "kind" : "typeIdentifier",
               "preciseIdentifier" : "s:6SemVer7VersionV20PrereleaseIdentifierV18IntegerLiteralTypea",
@@ -150,85 +106,6 @@
         }
       ],
       "kind" : "declarations"
-    },
-    {
-      "kind" : "parameters",
-      "parameters" : [
-        {
-          "content" : [
-            {
-              "inlineContent" : [
-                {
-                  "text" : "The value to create.",
-                  "type" : "text"
-                }
-              ],
-              "type" : "paragraph"
-            }
-          ],
-          "name" : "value"
-        }
-      ]
-    },
-    {
-      "content" : [
-        {
-          "anchor" : "discussion",
-          "level" : 2,
-          "text" : "Discussion",
-          "type" : "heading"
-        },
-        {
-          "inlineContent" : [
-            {
-              "text" : "Do not call this initializer directly. Instead, initialize a variable or",
-              "type" : "text"
-            },
-            {
-              "text" : " ",
-              "type" : "text"
-            },
-            {
-              "text" : "constant using an integer literal. For example:",
-              "type" : "text"
-            }
-          ],
-          "type" : "paragraph"
-        },
-        {
-          "code" : [
-            "let x = 23"
-          ],
-          "syntax" : null,
-          "type" : "codeListing"
-        },
-        {
-          "inlineContent" : [
-            {
-              "text" : "In this example, the assignment to the ",
-              "type" : "text"
-            },
-            {
-              "code" : "x",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : " constant calls this integer",
-              "type" : "text"
-            },
-            {
-              "text" : " ",
-              "type" : "text"
-            },
-            {
-              "text" : "literal initializer behind the scenes.",
-              "type" : "text"
-            }
-          ],
-          "type" : "paragraph"
-        }
-      ],
-      "kind" : "content"
     }
   ],
   "schemaVersion" : {
@@ -354,10 +231,7 @@
 },
 "doc://SemVer/documentation/SemVer/Version/PrereleaseIdentifier/IntegerLiteralType": {
   "abstract" : [
-    {
-      "text" : "A type that represents an integer literal.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -388,10 +262,7 @@
 },
 "doc://SemVer/documentation/SemVer/Version/PrereleaseIdentifier/init(integerLiteral:)": {
   "abstract" : [
-    {
-      "text" : "Creates an instance initialized to the specified integer value.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -409,24 +280,6 @@
     {
       "kind" : "text",
       "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:6SemVer7VersionV",
-      "text" : "Version"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:6SemVer7VersionV20PrereleaseIdentifierV",
-      "text" : "PrereleaseIdentifier"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",

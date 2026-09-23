@@ -121,10 +121,7 @@
 },
 "doc://SemVer/documentation/SemVer/Version/encode(to:)": {
   "abstract" : [
-    {
-      "text" : "Encodes this value into the given encoder.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -149,7 +146,15 @@
     },
     {
       "kind" : "text",
-      "text" : ": any "
+      "text" : ": "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",

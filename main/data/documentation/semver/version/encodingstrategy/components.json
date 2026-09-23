@@ -68,21 +68,7 @@
       },
       {
         "kind" : "text",
-        "text" : ": "
-      },
-      {
-        "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:6SemVer7VersionV",
-        "text" : "Version"
-      },
-      {
-        "kind" : "text",
-        "text" : "."
-      },
-      {
-        "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:6SemVer7VersionV16EncodingStrategyO",
-        "text" : "EncodingStrategy"
+        "text" : ": `Self`"
       }
     ],
     "modules" : [
@@ -132,23 +118,7 @@
             },
             {
               "kind" : "text",
-              "text" : ": "
-            },
-            {
-              "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:6SemVer7VersionV",
-              "text" : "Version"
-            },
-            {
-              "kind" : "text",
-              "text" : "."
-            },
-            {
-              "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/EncodingStrategy",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:6SemVer7VersionV16EncodingStrategyO",
-              "text" : "EncodingStrategy"
+              "text" : ": `Self`"
             },
             {
               "kind" : "text",
@@ -352,21 +322,7 @@
     },
     {
       "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:6SemVer7VersionV",
-      "text" : "Version"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:6SemVer7VersionV16EncodingStrategyO",
-      "text" : "EncodingStrategy"
+      "text" : ": `Self`"
     }
   ],
   "identifier" : "doc:\/\/SemVer\/documentation\/SemVer\/Version\/EncodingStrategy\/components",

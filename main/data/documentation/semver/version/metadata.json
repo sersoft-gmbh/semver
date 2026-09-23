@@ -439,15 +439,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:6SemVer7VersionV",
-      "text" : "Version"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:6SemVer7VersionV20PrereleaseIdentifierV",
       "text" : "PrereleaseIdentifier"
     },
